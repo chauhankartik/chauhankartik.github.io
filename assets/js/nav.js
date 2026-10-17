@@ -4,26 +4,44 @@
  */
 
 (function () {
-  const savedTheme = localStorage.getItem('study-theme') || 'light';
-  document.documentElement.setAttribute('data-theme', savedTheme);
+  const savedTheme = localStorage.getItem('study-theme') || 'paper';
+  const effectiveTheme = savedTheme === 'light' ? 'paper' : savedTheme;
+  document.documentElement.setAttribute('data-theme', effectiveTheme);
 })();
 
 window.StudySite = window.StudySite || {};
 
 StudySite.Theme = {
+  themeConfig: {
+    paper: { label: 'Paper', icon: '📜', next: 'white' },
+    white: { label: 'White', icon: '⚪', next: 'dark' },
+    dark:  { label: 'Dark', icon: '🌙', next: 'paper' }
+  },
   current: function () {
-    return document.documentElement.getAttribute('data-theme') || 'light';
+    let t = document.documentElement.getAttribute('data-theme') || 'paper';
+    if (t === 'light') t = 'paper';
+    return t;
   },
   toggle: function () {
-    const next = this.current() === 'dark' ? 'light' : 'dark';
+    const curr = this.current();
+    const next = this.themeConfig[curr] ? this.themeConfig[curr].next : 'paper';
     document.documentElement.setAttribute('data-theme', next);
     localStorage.setItem('study-theme', next);
     this.updateButtons();
   },
+  setTheme: function (themeName) {
+    if (this.themeConfig[themeName]) {
+      document.documentElement.setAttribute('data-theme', themeName);
+      localStorage.setItem('study-theme', themeName);
+      this.updateButtons();
+    }
+  },
   updateButtons: function () {
-    const isDark = this.current() === 'dark';
+    const curr = this.current();
+    const conf = this.themeConfig[curr] || this.themeConfig.paper;
     document.querySelectorAll('.theme-toggle-btn').forEach(function (btn) {
-      btn.innerHTML = isDark ? '📜 <span>Old Paper</span>' : '🌙 <span>Dark</span>';
+      btn.innerHTML = `${conf.icon} <span>${conf.label}</span>`;
+      btn.setAttribute('title', `Active Theme: ${conf.label}. Click to cycle: Paper → White → Dark`);
     });
   },
   init: function () {

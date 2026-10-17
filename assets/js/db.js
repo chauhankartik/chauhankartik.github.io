@@ -9,8 +9,11 @@ StudySite.DB = {
   _client: null,
 
   init: function () {
-    const url = localStorage.getItem('study_supabase_url') || (window.STUDY_CONFIG && window.STUDY_CONFIG.supabaseUrl) || 'https://mnvakmqzabxyrzjbluzx.supabase.co';
-    const key = localStorage.getItem('study_supabase_key') || (window.STUDY_CONFIG && window.STUDY_CONFIG.supabaseKey);
+    const defaultUrl = 'https://mnvakmqzabxyrzjbluzx.supabase.co';
+    const defaultKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1udmFrbXF6YWJ4eXJ6amJsdXp4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTIyNDk0ODAsImV4cCI6MjEwNzgyNTQ4MH0.1Tp3OrUPPqswTKeIyAAdDdhvuQIUt3tdfMQcvnu2zn0';
+
+    const url = localStorage.getItem('study_supabase_url') || (window.STUDY_CONFIG && window.STUDY_CONFIG.supabaseUrl) || defaultUrl;
+    const key = localStorage.getItem('study_supabase_key') || (window.STUDY_CONFIG && window.STUDY_CONFIG.supabaseKey) || defaultKey;
 
     if (url && key && window.supabase) {
       try {
@@ -44,8 +47,13 @@ StudySite.DB = {
     const tempClient = window.supabase.createClient(url.trim(), key.trim());
     // Test query
     const { data, error } = await tempClient.from('study_sessions').select('id').limit(1);
-    if (error && error.code !== 'PGRST116') {
-      throw new Error('Database connection failed: ' + (error.message || JSON.stringify(error)));
+    if (error) {
+      if (error.code === 'PGRST205' || (error.message && error.message.includes('schema cache'))) {
+        throw new Error('Supabase connection verified, but database tables are not created yet! Please copy schema.sql into your Supabase SQL Editor and click Run.');
+      }
+      if (error.code !== 'PGRST116') {
+        throw new Error('Database connection failed: ' + (error.message || JSON.stringify(error)));
+      }
     }
 
     localStorage.setItem('study_supabase_url', url.trim());
@@ -428,7 +436,8 @@ StudySite.DB = {
     const syncActions = document.getElementById('dbSyncActions');
 
     urlInput.value = localStorage.getItem('study_supabase_url') || (window.STUDY_CONFIG && window.STUDY_CONFIG.supabaseUrl) || 'https://mnvakmqzabxyrzjbluzx.supabase.co';
-    keyInput.value = localStorage.getItem('study_supabase_key') || (window.STUDY_CONFIG && window.STUDY_CONFIG.supabaseKey) || '';
+    const defaultKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1udmFrbXF6YWJ4eXJ6amJsdXp4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTIyNDk0ODAsImV4cCI6MjEwNzgyNTQ4MH0.1Tp3OrUPPqswTKeIyAAdDdhvuQIUt3tdfMQcvnu2zn0';
+    keyInput.value = localStorage.getItem('study_supabase_key') || (window.STUDY_CONFIG && window.STUDY_CONFIG.supabaseKey) || defaultKey;
 
     if (this.isConnected()) {
       alert.style.background = 'rgba(22, 163, 74, 0.12)';

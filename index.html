@@ -79,7 +79,8 @@
       </p>
 
       <div class="hero-actions" style="justify-content: flex-start; gap: 0.75rem; flex-wrap: wrap;">
-        <a class="btn btn-primary" href="#interview-prep">🎯 Prep Hub</a>
+        <a class="btn btn-primary" href="#study-tracker">📊 Study Tracker</a>
+        <a class="btn" href="#interview-prep">🎯 Prep Hub</a>
         <a class="btn" href="flashcards.html">🃏 3D Flashcards</a>
         <a class="btn" href="books.html">📖 Bookshelf</a>
         <a class="btn" href="thoughts.html">💭 Thoughts Feed</a>
@@ -90,8 +91,15 @@
       </div>
     </section>
 
+    <!-- Spaced Repetition SM-2 Active Recall Banner -->
+    <div id="spacedRepetitionBanner" style="margin-bottom: 2rem;"></div>
+
+    <!-- Active Study Tracker Dashboard Mount -->
+    <div id="study-tracker"></div>
+    <div id="studyTrackerMount"></div>
+
     <!-- SECTION 1: 2026 Interview & Systems Preparation (Master Study Hub) -->
-    <section id="interview-prep" style="margin-top: 3.5rem;">
+    <section id="interview-prep" style="margin-top: 2.5rem;">
       <div class="section-header">
         <h2 class="section-title"><span>🎯</span> 2026 Systems & Interview Preparation Hub</h2>
         <a class="section-link" href="roadmap.html">Launch Full 13-Week Tracker →</a>
@@ -807,11 +815,13 @@
     </p>
   </footer>
 
-  <script src="assets/js/site.js"></script>
+  <script src="assets/js/site.js?v=20261017_5"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       StudySite.Nav.mount('home');
       StudySite.Progress.init();
+      StudySite.SpacedRepetition.render();
+      StudySite.Tracker.render();
     });
   </script>
 </body>

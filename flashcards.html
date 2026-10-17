@@ -338,15 +338,16 @@
       StudySite.Nav.mount('flashcards');
       StudySite.Progress.init();
 
-      // Check URL parameters for ?category=...&subtopic=...
+      // Check URL parameters for ?category=...&subtopic=...&review=...
       const urlParams = new URLSearchParams(window.location.search);
       const urlCat = urlParams.get('category');
       const urlSub = urlParams.get('subtopic');
+      const urlReview = urlParams.get('review');
       if (urlCat) currentCategory = urlCat;
       if (urlSub) currentSubtopic = urlSub;
 
-      // Fetch flashcards dataset
-      fetch('assets/data/flashcards.json')
+      // Fetch flashcards dataset with cache busting
+      fetch('assets/data/flashcards.json?v=' + Date.now())
         .then(r => r.json())
         .then(data => {
           allCards = data;

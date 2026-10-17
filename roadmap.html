@@ -68,6 +68,9 @@
       </p>
     </div>
 
+    <!-- Spaced Repetition SM-2 Active Recall Banner -->
+    <div id="spacedRepetitionBanner" style="margin-bottom: 1.5rem;"></div>
+
     <!-- Seniority & Language Track Selector Wrap -->
     <div class="level-selector-wrap">
       <!-- 1. Seniority Level Row -->
@@ -153,7 +156,12 @@
 
       <div class="overall-stats-text">
         <span id="overallProgressText"><strong>0 of 13</strong> curriculum weeks completed (0%)</span>
-        <span>Storage: Local browser persistence</span>
+        <div style="display: flex; gap: 0.5rem; align-items: center;">
+          <a class="btn btn-sm" href="index.html#study-tracker" style="font-size: 0.72rem; padding: 0.2rem 0.6rem;">
+            📊 Open Study Tracker Dashboard →
+          </a>
+          <span style="font-size: 0.72rem; color: var(--text-dim);">Storage: Local persistence</span>
+        </div>
       </div>
     </div>
 
@@ -168,7 +176,7 @@
     <p style="margin-top: 0.4rem; color: var(--text-dim);"><a href="index.html#about">About the Author</a> · Multi-Level & Polyglot Technical Preparation Tracks</p>
   </footer>
 
-  <script src="assets/js/site.js"></script>
+  <script src="assets/js/site.js?v=20261017_5"></script>
   <script>
     let siteLevelsData = null;
     let siteLanguagesData = null;
@@ -396,6 +404,7 @@
     document.addEventListener('DOMContentLoaded', function () {
       StudySite.Nav.mount('roadmap');
       StudySite.Progress.init();
+      StudySite.SpacedRepetition.render();
 
       StudySite.Data.load().then(function (data) {
         const container = document.getElementById('phasesList');

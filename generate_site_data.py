@@ -470,6 +470,9 @@ def main():
             
         topics = []
         raw_topics = sorted(os.listdir(dom_dir))
+        if dom_conf["id"] == "01_core_foundations" and "dsa" in raw_topics:
+            raw_topics.remove("dsa")
+            raw_topics.insert(0, "dsa")
         for t_name in raw_topics:
             if t_name in IGNORED_DIRS or t_name in IGNORED_FILES or t_name.startswith('.'):
                 continue

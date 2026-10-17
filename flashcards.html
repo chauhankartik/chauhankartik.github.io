@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Flashcards & Revision — 2026 Master Study Hub</title>
+  <meta name="description" content="Interactive staff & principal engineering flashcards covering distributed systems, Java concurrency, database internals, and system design.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🃏</text></svg>">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/nav.css">
+  <script src="assets/js/nav.js"></script>
+</head>
+<body>
+  <div class="progress-container"><div class="progress-bar" id="readingProgress"></div></div>
+
+  <!-- Sticky Top Navigation -->
+  <header class="top-bar">
+    <a class="top-bar-brand" href="index.html">
+      <span class="prompt-sign">$</span>
+      <span>2026_study</span>
+      <span class="year-badge">FLASHCARDS</span>
+    </a>
+    <nav class="top-bar-nav">
+      <a class="top-bar-link" href="index.html" data-page="home">Home</a>
+      <a class="top-bar-link" href="roadmap.html" data-page="roadmap">Roadmap</a>
+      <a class="top-bar-link" href="topics.html" data-page="topics">Topics</a>
+      <a class="top-bar-link" href="flashcards.html" data-page="flashcards">Flashcards</a>
+      <a class="top-bar-link" href="search.html" data-page="search">Search</a>
+      <button class="theme-toggle-btn" onclick="StudySite.Theme.toggle()" aria-label="Toggle Theme">
+        ☀️ <span>Light</span>
+      </button>
+      <button class="mobile-menu-btn" onclick="StudySite.Nav.toggleMobile()" aria-label="Open Navigation">
+        ☰
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile Overlay Navigation -->
+  <div class="mobile-nav-overlay" id="mobileNav">
+    <button class="mobile-nav-close" onclick="StudySite.Nav.closeMobile()">✕</button>
+    <a class="mobile-nav-link" href="index.html" data-page="home">Home</a>
+    <a class="mobile-nav-link" href="roadmap.html" data-page="roadmap">Roadmap</a>
+    <a class="mobile-nav-link" href="topics.html" data-page="topics">Topics</a>
+    <a class="mobile-nav-link" href="flashcards.html" data-page="flashcards">Flashcards</a>
+    <a class="mobile-nav-link" href="search.html" data-page="search">Search</a>
+  </div>
+
+  <main class="container">
+    <div class="page-header" style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2.3rem; font-weight: 700; margin-bottom: 0.5rem;">Staff Revision Flashcards</h1>
+      <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 65ch; margin: 0 auto;">
+        Spaced repetition & concept recall for high-bar technical loops: Distributed Consensus, Database Storage Engines, Java Memory Model, and System Design.
+      </p>
+    </div>
+
+    <!-- Category Filter Bar -->
+    <div class="topic-filter-bar" id="categoryFilterBar" style="justify-content: center; margin-bottom: 1.5rem;">
+      <button class="filter-btn active" data-cat="all">All Topics</button>
+      <button class="filter-btn" data-cat="system_design">System Design</button>
+      <button class="filter-btn" data-cat="distributed_systems">Distributed Systems</button>
+      <button class="filter-btn" data-cat="database_internals">Databases & Storage</button>
+      <button class="filter-btn" data-cat="core_java">Core Java & JMM</button>
+      <button class="filter-btn" data-cat="operating_systems">Operating Systems</button>
+      <button class="filter-btn" data-cat="infrastructure">Infrastructure</button>
+    </div>
+
+    <!-- Flashcards Container -->
+    <div class="flashcards-container">
+      <!-- Stats / Progress Bar -->
+      <div class="flashcard-stats-bar">
+        <div class="flashcard-stat-pill" id="cardCounter">
+          Card <strong>1</strong> of <strong>16</strong>
+        </div>
+        <div style="display: flex; gap: 1rem;">
+          <div class="flashcard-stat-pill" id="masteredCounter">
+            ✅ Mastered: <strong style="color: var(--accent);">0</strong>
+          </div>
+          <div class="flashcard-stat-pill" id="reviewCounter">
+            🔄 Need Review: <strong style="color: var(--amber);">0</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3D Flipping Card Viewport -->
+      <div class="flashcard-viewport" id="cardViewport" onclick="toggleFlipCard()">
+        <div class="flashcard-inner">
+          <!-- FRONT FACE (Question) -->
+          <div class="flashcard-face flashcard-front">
+            <div class="flashcard-top">
+              <span class="flashcard-category-badge" id="cardCategoryFront">SYSTEM DESIGN</span>
+              <span class="flashcard-difficulty-badge" id="cardDifficultyFront">STAFF</span>
+            </div>
+            
+            <div class="flashcard-question-text" id="cardQuestionText">
+              Loading question...
+            </div>
+
+            <div class="flashcard-bottom">
+              <span>Card prompt</span>
+              <div class="flashcard-flip-prompt">
+                <span>Click or Space to Flip</span>
+                <span>↻</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- BACK FACE (Answer) -->
+          <div class="flashcard-face flashcard-back">
+            <div class="flashcard-top">
+              <span class="flashcard-category-badge" id="cardCategoryBack">ANSWER</span>
+              <a class="btn btn-sm" id="cardDocLink" href="#" target="_blank" onclick="event.stopPropagation()">
+                📖 Open Study Note
+              </a>
+            </div>
+
+            <div class="flashcard-answer-text" id="cardAnswerText">
+              Loading answer...
+            </div>
+
+            <div class="flashcard-bottom">
+              <span>Technical Answer</span>
+              <div class="flashcard-flip-prompt">
+                <span>Click to Flip Back</span>
+                <span>↺</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Flashcard Action Controls -->
+      <div class="flashcard-controls">
+        <button class="btn" onclick="prevCard()">
+          ← Prev
+        </button>
+        <button class="btn btn-primary" onclick="toggleFlipCard()">
+          ↻ Flip Card
+        </button>
+        <button class="btn" onclick="nextCard()">
+          Next →
+        </button>
+        <button class="btn" onclick="shuffleCards()">
+          🔀 Shuffle
+        </button>
+      </div>
+
+      <!-- Self Evaluation Mastery Buttons -->
+      <div style="display: flex; justify-content: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+        <button class="btn" style="border-color: rgba(34, 197, 94, 0.4); color: var(--accent);" onclick="markCard(true)">
+          ✅ Got It / Mastered
+        </button>
+        <button class="btn" style="border-color: rgba(245, 158, 11, 0.4); color: var(--amber);" onclick="markCard(false)">
+          🔄 Need Review
+        </button>
+      </div>
+
+      <!-- Keyboard Shortcuts Hints -->
+      <div class="flashcard-keyboard-hints">
+        Shortcuts: <kbd>Space</kbd> or <kbd>Enter</kbd> Flip &middot; <kbd>→</kbd> Next &middot; <kbd>←</kbd> Prev &middot; <kbd>M</kbd> Mastered &middot; <kbd>R</kbd> Review
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Engineered with ⚡ by <strong>Kartik Chauhan</strong> · 2026 Software Engineering Master Study Repository</p>
+    <p style="margin-top: 0.4rem; color: var(--text-dim);"><a href="index.html#about">About the Author</a> · Concept Recall & Revision</p>
+  </footer>
+
+  <script src="assets/js/site.js"></script>
+  <script>
+    let allCards = [];
+    let filteredCards = [];
+    let currentIndex = 0;
+    let masteredSet = new Set();
+    let reviewSet = new Set();
+    let currentCategory = 'all';
+
+    function toggleFlipCard() {
+      const vp = document.getElementById('cardViewport');
+      if (vp) vp.classList.toggle('flipped');
+    }
+
+    function renderCurrentCard() {
+      if (filteredCards.length === 0) {
+        document.getElementById('cardQuestionText').textContent = 'No flashcards available in this category.';
+        document.getElementById('cardAnswerText').textContent = '';
+        return;
+      }
+
+      // Ensure card is on front face when switching
+      const vp = document.getElementById('cardViewport');
+      if (vp) vp.classList.remove('flipped');
+
+      const card = filteredCards[currentIndex];
+      
+      // Update text
+      document.getElementById('cardCategoryFront').textContent = card.categoryLabel.toUpperCase();
+      document.getElementById('cardDifficultyFront').textContent = card.difficulty.toUpperCase();
+      document.getElementById('cardQuestionText').textContent = card.question;
+      document.getElementById('cardAnswerText').textContent = card.answer;
+      
+      const docLink = document.getElementById('cardDocLink');
+      if (card.relatedDoc) {
+        docLink.href = 'topic.html?path=' + encodeURIComponent(card.relatedDoc);
+        docLink.style.display = 'inline-flex';
+      } else {
+        docLink.style.display = 'none';
+      }
+
+      // Update counters
+      document.getElementById('cardCounter').innerHTML = `Card <strong>${currentIndex + 1}</strong> of <strong>${filteredCards.length}</strong>`;
+      document.getElementById('masteredCounter').innerHTML = `✅ Mastered: <strong style="color: var(--accent);">${masteredSet.size}</strong>`;
+      document.getElementById('reviewCounter').innerHTML = `🔄 Need Review: <strong style="color: var(--amber);">${reviewSet.size}</strong>`;
+    }
+
+    function nextCard() {
+      if (filteredCards.length === 0) return;
+      currentIndex = (currentIndex + 1) % filteredCards.length;
+      renderCurrentCard();
+    }
+
+    function prevCard() {
+      if (filteredCards.length === 0) return;
+      currentIndex = (currentIndex - 1 + filteredCards.length) % filteredCards.length;
+      renderCurrentCard();
+    }
+
+    function shuffleCards() {
+      for (let i = filteredCards.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [filteredCards[i], filteredCards[j]] = [filteredCards[j], filteredCards[i]];
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    }
+
+    function markCard(isMastered) {
+      if (filteredCards.length === 0) return;
+      const card = filteredCards[currentIndex];
+      if (isMastered) {
+        masteredSet.add(card.id);
+        reviewSet.delete(card.id);
+      } else {
+        reviewSet.add(card.id);
+        masteredSet.delete(card.id);
+      }
+      nextCard();
+    }
+
+    function applyCategory(cat) {
+      currentCategory = cat;
+      if (cat === 'all') {
+        filteredCards = [...allCards];
+      } else {
+        filteredCards = allCards.filter(c => c.category === cat);
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      StudySite.Nav.mount('flashcards');
+      StudySite.Progress.init();
+
+      // Fetch flashcards dataset
+      fetch('assets/data/flashcards.json')
+        .then(r => r.json())
+        .then(data => {
+          allCards = data;
+          filteredCards = [...allCards];
+          renderCurrentCard();
+        })
+        .catch(err => {
+          document.getElementById('cardQuestionText').textContent = 'Failed to load flashcards dataset.';
+        });
+
+      // Category filter buttons
+      document.querySelectorAll('#categoryFilterBar .filter-btn').forEach(btn => {
+        btn.addEventListener('click', function () {
+          document.querySelectorAll('#categoryFilterBar .filter-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          applyCategory(btn.getAttribute('data-cat'));
+        });
+      });
+
+      // Keyboard navigation
+      window.addEventListener('keydown', function (e) {
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+        if (e.code === 'Space' || e.key === ' ' || e.key === 'f' || e.key === 'F' || e.key === 'Enter') {
+          e.preventDefault();
+          toggleFlipCard();
+        } else if (e.key === 'ArrowRight' || e.key === 'n' || e.key === 'N') {
+          e.preventDefault();
+          nextCard();
+        } else if (e.key === 'ArrowLeft' || e.key === 'p' || e.key === 'P') {
+          e.preventDefault();
+          prevCard();
+        } else if (e.key === 'm' || e.key === 'M') {
+          markCard(true);
+        } else if (e.key === 'r' || e.key === 'R') {
+          markCard(false);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

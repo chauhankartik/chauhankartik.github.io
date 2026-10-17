@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "category": "system_design",
+    "categoryLabel": "System Design (HLD)",
+    "difficulty": "Staff",
+    "question": "Twitter Snowflake ID: How is the 64-bit ID structured, and how does it prevent collisions across distributed workers without coordination?",
+    "answer": "A 64-bit Snowflake ID is partitioned into:\n• 1 sign bit (unused, always 0)\n• 41 timestamp bits (milliseconds since custom epoch, provides ~69 years)\n• 10 worker/machine ID bits (supports 1,024 nodes across datacenters)\n• 12 sequence number bits (supports up to 4,096 IDs per millisecond per worker)\n\nCollision avoidance: Each worker generates unique IDs independently by incrementing the sequence number within the same millisecond. If >4096 IDs are requested within 1ms, the worker spins until the next millisecond.",
+    "relatedDoc": "02_system_design/hld/02_distributed_id_generator_snowflake.md"
+  },
+  {
+    "id": 2,
+    "category": "distributed_systems",
+    "categoryLabel": "Distributed Systems",
+    "difficulty": "Principal",
+    "question": "What is the Raft Log Matching Property, and what two inductive invariants guarantee it?",
+    "answer": "If two logs contain an entry with the same index and term:\n1. They store the same command at that index.\n2. Their logs are identical in all entries up through that index.\n\nGuaranteed by:\n• Leader AppendEntries consistency check: The leader includes the index and term of its immediately preceding entry (prevLogIndex, prevLogTerm). If the follower does not find a match, it rejects the RPC, forcing the leader to decrement nextIndex until the logs match.",
+    "relatedDoc": "03_systems_and_databases/database_internals/02_distributed_storage/01_raft_consensus_invariants.md"
+  },
+  {
+    "id": 3,
+    "category": "database_internals",
+    "categoryLabel": "Databases & Storage",
+    "difficulty": "Staff",
+    "question": "Contrast B+ Tree vs LSM-Tree across Read Amplification, Write Amplification, and Space Amplification.",
+    "answer": "• Write Amplification (WA):\n  - B+ Tree: High (updates in-place cause entire 4KB-16KB pages to be re-written for tiny updates + WAL logging).\n  - LSM-Tree: Low to Medium (sequential writes to MemTable and WAL, then batch background compaction).\n\n• Read Amplification (RA):\n  - B+ Tree: Low (O(log_B N), typically 3-4 random page reads).\n  - LSM-Tree: Higher (must check MemTable + multiple SSTable levels, mitigated with Bloom filters).\n\n• Space Amplification (SA):\n  - B+ Tree: Medium (page fragmentation, typical ~67% fill factor).\n  - LSM-Tree: Low to Medium (compacted and compressed, but temporary overhead during compactions).",
+    "relatedDoc": "03_systems_and_databases/database_internals/01_storage_engines/01_btree_vs_lsm.md"
+  },
+  {
+    "id": 4,
+    "category": "core_java",
+    "categoryLabel": "Core Java & Concurrency",
+    "difficulty": "Staff",
+    "question": "In Java 21+ Project Loom, what is Virtual Thread Pinning, what causes it, and how do you resolve it?",
+    "answer": "Pinning occurs when a Virtual Thread cannot unmount from its carrier OS thread when performing a blocking I/O operation.\n\nCauses:\n1. Executing inside a `synchronized` block or method (locks the native monitor).\n2. Invoking native code via JNI or foreign functions.\n\nResolution:\n• Replace `synchronized` with `ReentrantLock` around blocking operations.\n• Run JVM with `-Djdk.tracePinnedThreads=full` to diagnose stack traces where pinning occurs.",
+    "relatedDoc": "01_core_foundations/java/concurrency/06_virtual_threads_loom.md"
+  },
+  {
+    "id": 5,
+    "category": "operating_systems",
+    "categoryLabel": "Operating Systems (OSTEP)",
+    "difficulty": "Staff",
+    "question": "Explain the 5 Rules of the Multi-Level Feedback Queue (MLFQ) scheduler.",
+    "answer": "• Rule 1: If Priority(A) > Priority(B), A runs (B does not).\n• Rule 2: If Priority(A) == Priority(B), A & B run in Round Robin using the time slice of the given queue.\n• Rule 3: When a job enters the system, it is placed at the topmost priority queue.\n• Rule 4: Once a job uses up its time allotment at a given level (regardless of how many times it gives up the CPU), its priority is reduced (moves down one queue).\n• Rule 5: After some time period S, move all the jobs in the system to the topmost queue (Priority Boost to prevent starvation).",
+    "relatedDoc": "03_systems_and_databases/ostep/01_virtualization/README.md"
+  },
+  {
+    "id": 6,
+    "category": "infrastructure",
+    "categoryLabel": "Infrastructure & Kafka",
+    "difficulty": "Staff",
+    "question": "How does Kafka achieve high write and read throughput through Linux Zero-Copy and Sequential I/O?",
+    "answer": "1. Append-Only Commit Log: Writes are strictly sequential appends to OS PageCache, avoiding random disk seeks.\n2. PageCache Reliance: Avoids JVM garbage collection overhead by letting the Linux kernel manage memory pages.\n3. Zero-Copy `sendfile()`: Instead of copying data from kernel pagecache → user space → back to kernel socket buffer → NIC buffer, `sendfile()` DMA transfers data directly from page cache to NIC buffer (0 context switches into user space, 0 CPU data copies).\n4. Batching & Compression: End-to-end compressed message batches (Snappy/Zstd) from producer to consumer without broker decompression.",
+    "relatedDoc": "04_infrastructure/tech-stack/kafka/README.md"
+  },
+  {
+    "id": 7,
+    "category": "core_java",
+    "categoryLabel": "Core Java & Concurrency",
+    "difficulty": "Staff",
+    "question": "Explain the Effective Java PECS Rule (Item 31) with generic wildcards.",
+    "answer": "PECS stands for: Producer Extends, Consumer Super.\n\n• If a parameterized type represents a T producer (you read T instances from it), use `<? extends T>`.\n  Example: `public void pushAll(Iterable<? extends E> src)`\n\n• If a parameterized type represents a T consumer (you write T instances into it), use `<? super T>`.\n  Example: `public void popAll(Collection<? super E> dst)`\n\nMnemonics: Do not use wildcard types as return types; wildcards belong in input parameters to provide API flexibility.",
+    "relatedDoc": "01_core_foundations/effective_java/README.md"
+  },
+  {
+    "id": 8,
+    "category": "system_design",
+    "categoryLabel": "System Design (HLD)",
+    "difficulty": "Staff",
+    "question": "Compare Rate Limiter algorithms: Token Bucket vs Leaky Bucket vs Sliding Window Counter.",
+    "answer": "• Token Bucket:\n  - Tokens refill at fixed rate up to capacity. Allows bursts up to bucket size. Low memory (2 numbers: count + lastRefill).\n• Leaky Bucket:\n  - FIFO queue processed at constant leak rate. Completely smooths traffic spikes; bursts are queued or dropped. Good when downstream has strict processing velocity.\n• Sliding Window Counter:\n  - Combines previous window count and current window count proportional to elapsed time: `count = prev_count * (1 - overlap) + curr_count`. Memory efficient and prevents 2x burst across window boundaries.",
+    "relatedDoc": "02_system_design/hld/03_distributed_rate_limiter.md"
+  },
+  {
+    "id": 9,
+    "category": "distributed_systems",
+    "categoryLabel": "Distributed Systems",
+    "difficulty": "Principal",
+    "question": "What is the difference between 2-Phase Commit (2PC) and the Saga Pattern (Choreography vs Orchestration)?",
+    "answer": "• 2PC (Two-Phase Commit):\n  - Synchronous blocking protocol across RM/TM with Prepare and Commit phases.\n  - Enforces strict ACID serializability.\n  - Anti-pattern for cloud/microservices: Coordinator failure causes participant lock holding and latency cascades.\n\n• Saga Pattern:\n  - Sequence of local transactions where each step updates its local DB and publishes an event.\n  - Relies on Compensating Transactions if a downstream step fails (BASE, eventual consistency).\n  - Choreography: Event-driven via pub/sub (no central controller, good for small flows).\n  - Orchestration: Central state machine coordinates requests and triggers compensations.",
+    "relatedDoc": "03_systems_and_databases/distributed-systems/README.md"
+  },
+  {
+    "id": 10,
+    "category": "database_internals",
+    "categoryLabel": "Databases & Storage",
+    "difficulty": "Staff",
+    "question": "What are the 3 phases of ARIES Crash Recovery, and what does 'Repeating History' mean?",
+    "answer": "1. Analysis Phase:\n   Scans WAL forward from the latest checkpoint to reconstruct the Dirty Page Table (DPT) and Transaction Table (TT) at the moment of crash, identifying Loser transactions.\n2. Redo Phase (Repeating History):\n   Scans forward from the smallest `RecLSN` in the DPT and re-executes all logged actions—including uncommitted Loser operations and aborted transactions—to restore database state exactly as it was when the crash occurred.\n3. Undo Phase:\n   Scans backward from the end of the log, undoing changes made by active/loser transactions and writing Compensation Log Records (CLRs) so undo operations are never repeated if another crash occurs.",
+    "relatedDoc": "03_systems_and_databases/database_system_concepts/README.md"
+  },
+  {
+    "id": 11,
+    "category": "operating_systems",
+    "categoryLabel": "Operating Systems (OSTEP)",
+    "difficulty": "Staff",
+    "question": "How does Linux `epoll` differ from `select` and `poll` in scalability and time complexity?",
+    "answer": "• `select` / `poll`:\n  - Complexity: O(N) where N is the total number of monitored file descriptors.\n  - Must copy the entire descriptor set from user space to kernel space on every syscall.\n  - Kernel must iterate over every FD to check readiness.\n\n• `epoll` (`epoll_create`, `epoll_ctl`, `epoll_wait`):\n  - Complexity: O(K) where K is only the number of active, ready events.\n  - Monitored FDs are registered in a kernel red-black tree (no repeated copying).\n  - Device drivers trigger a callback on I/O readiness that inserts ready FDs into a doubly linked list.\n  - `epoll_wait` simply returns the ready list directly.",
+    "relatedDoc": "03_systems_and_databases/ostep/02_concurrency/README.md"
+  },
+  {
+    "id": 12,
+    "category": "infrastructure",
+    "categoryLabel": "Infrastructure & Redis",
+    "difficulty": "Staff",
+    "question": "Explain Redis persistence: RDB Snapshots vs AOF (Append Only File) and AOF Rewrite mechanics.",
+    "answer": "• RDB (Redis Database):\n  - Point-in-time binary snapshot created via `bgsave` using Linux `fork()` copy-on-write.\n  - Compact and fast to restore, but risks data loss between snapshot intervals.\n\n• AOF (Append-Only File):\n  - Logs every write command (`appendfsync always`, `everysec`, or `no`).\n  - Higher durability (typically max 1 second loss with `everysec`), but larger file size.\n\n• AOF Rewrite (`bgrewriteaof`):\n  - Creates a minimal representation of current in-memory state without reading old AOF.\n  - Uses `fork()`; ongoing writes are buffered in an AOF rewrite buffer and appended when the child finishes.",
+    "relatedDoc": "04_infrastructure/tech-stack/redis/README.md"
+  },
+  {
+    "id": 13,
+    "category": "core_java",
+    "categoryLabel": "Core Java & Concurrency",
+    "difficulty": "Staff",
+    "question": "What happens under the hood when a thread contends for a lock in Java's AbstractQueuedSynchronizer (AQS)?",
+    "answer": "1. Atomically tries to acquire state via `compareAndSetState(0, 1)`.\n2. If CAS fails, packages the thread into a Node and enqueues it to the tail of the FIFO CLH queue via an atomic CAS loop.\n3. The thread tests if its predecessor is the head (meaning it's next in line). If not, sets predecessor's waitStatus to `SIGNAL` (-1).\n4. Calls `LockSupport.park(this)` to suspend execution until unparked.\n5. When the current holder releases, it resets state to 0 and invokes `LockSupport.unpark(head.next.thread)`.",
+    "relatedDoc": "01_core_foundations/java/concurrency/README.md"
+  },
+  {
+    "id": 14,
+    "category": "system_design",
+    "categoryLabel": "System Design (LLD)",
+    "difficulty": "Staff",
+    "question": "How do you implement a thread-safe LRU Cache with O(1) Get and Put, and how do you handle lock granularity?",
+    "answer": "Data Structure:\n• Doubly Linked List (DLL): Tracks eviction order (MRU at head, LRU at tail).\n• Hash Table: Maps Key → DLL Node reference for O(1) lookup.\n\nConcurrency Tradeoffs:\n• Naive: Coarse-grained `ReentrantReadWriteLock` (Get takes read lock, Put takes write lock). Problem: Get must update node position to MRU, which requires mutating pointers (a write operation!), negating read lock benefits.\n• Production / High-Throughput (like Caffeine/Guava):\n  - ConcurrentHashMap for O(1) key-value reads without locking.\n  - Ring Buffer / MPSC Queue to record read access events asynchronously.\n  - Single maintenance thread drains read buffers in batches to update LRU ordering.",
+    "relatedDoc": "02_system_design/lld/03_system_designs/02_lru_cache/README.md"
+  },
+  {
+    "id": 15,
+    "category": "distributed_systems",
+    "categoryLabel": "Distributed Systems",
+    "difficulty": "Principal",
+    "question": "State the PACELC theorem and explain its classification of Cassandra vs MongoDB vs Spanner.",
+    "answer": "PACELC expands CAP Theorem:\nIf there is a Partition (P), how does the system trade Availability (A) vs Consistency (C)?\nElse (E), how does the system trade Latency (L) vs Consistency (C)?\n\n• PA/EL (Cassandra, Dynamo):\n  - Partition: High availability over strong consistency.\n  - Normal: Low latency over strong consistency (asynchronous replication).\n\n• PC/EC (MongoDB, Spanner, Bigtable):\n  - Partition: Consistency over availability (unreachable master drops writes).\n  - Normal: Consistency over latency (synchronous replication/quorum reads before ACK).",
+    "relatedDoc": "03_systems_and_databases/distributed-systems/README.md"
+  },
+  {
+    "id": 16,
+    "category": "infrastructure",
+    "categoryLabel": "Infrastructure & Cloud",
+    "difficulty": "Staff",
+    "question": "In Kubernetes, what is the role of the kube-controller-manager, and how does the reconciliation loop work?",
+    "answer": "The Controller Manager runs core control loops that continuously regulate cluster state toward the desired state defined in manifests.\n\nReconciliation Loop (Level-Triggered):\n1. Observe: Watches `kube-apiserver` events via HTTP long-polling / watch streams.\n2. Diff: Compares actual state (e.g. 2 running Pods) with desired spec (e.g. `replicas: 3`).\n3. Act: Executes corrective actions (e.g. calls apiserver to create a Pod specification so the kube-scheduler can bind it to a node).\n4. Repeat: Never assumes previous actions succeeded; continuously re-evaluates cluster state.",
+    "relatedDoc": "04_infrastructure/tech-stack/kubernetes/README.md"
+  }
+]

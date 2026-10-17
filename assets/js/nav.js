@@ -60,6 +60,37 @@ StudySite.Nav = {
       }
     });
     StudySite.Theme.init();
+
+    // Inject Cloud DB Sync button in sticky top bar if not already present
+    const nav = document.querySelector('.top-bar-nav');
+    if (nav && !nav.querySelector('.cloud-nav-btn')) {
+      const themeBtn = nav.querySelector('.theme-toggle-btn');
+      const cloudBtn = document.createElement('button');
+      cloudBtn.className = 'cloud-nav-btn';
+      cloudBtn.onclick = function () {
+        if (window.StudySite && StudySite.DB) StudySite.DB.openSettingsModal();
+      };
+      if (themeBtn) {
+        nav.insertBefore(cloudBtn, themeBtn);
+      } else {
+        nav.appendChild(cloudBtn);
+      }
+    }
+    this.updateCloudIndicator();
+  },
+  updateCloudIndicator: function () {
+    const isConnected = window.StudySite && StudySite.DB && StudySite.DB.isConnected();
+    document.querySelectorAll('.cloud-nav-btn').forEach(function (btn) {
+      if (isConnected) {
+        btn.classList.add('connected');
+        btn.innerHTML = '🟢 <span>Sync</span>';
+        btn.title = 'Connected to Supabase PostgreSQL. Click to open cloud sync settings.';
+      } else {
+        btn.classList.remove('connected');
+        btn.innerHTML = '💾 <span>Local</span>';
+        btn.title = 'Offline / LocalStorage Mode. Click to connect cloud database.';
+      }
+    });
   },
   toggleMobile: function () {
     const el = document.getElementById('mobileNav');

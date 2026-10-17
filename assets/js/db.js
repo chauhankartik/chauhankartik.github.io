@@ -30,6 +30,9 @@ StudySite.DB = {
     if (document.body) {
       this.injectModal();
     }
+    if (StudySite.Nav && StudySite.Nav.updateCloudIndicator) {
+      StudySite.Nav.updateCloudIndicator();
+    }
   },
 
   getClient: function () {
@@ -60,6 +63,10 @@ StudySite.DB = {
     localStorage.setItem('study_supabase_key', key.trim());
     this._client = tempClient;
 
+    if (StudySite.Nav && StudySite.Nav.updateCloudIndicator) {
+      StudySite.Nav.updateCloudIndicator();
+    }
+
     // Background pull down to keep local storage in sync
     await this.syncCloudToLocal();
     return true;
@@ -69,6 +76,9 @@ StudySite.DB = {
     localStorage.removeItem('study_supabase_url');
     localStorage.removeItem('study_supabase_key');
     this._client = null;
+    if (StudySite.Nav && StudySite.Nav.updateCloudIndicator) {
+      StudySite.Nav.updateCloudIndicator();
+    }
   },
 
   // ── 1. Study Sessions ──

@@ -107,6 +107,39 @@
   background: var(--surface-hover);
 }
 
+.cloud-nav-btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 0.32rem 0.65rem;
+  font-size: 0.78rem;
+  border-radius: var(--radius-md);
+  margin-left: 0.3rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: var(--font-mono);
+  white-space: nowrap;
+}
+
+.cloud-nav-btn:hover {
+  border-color: var(--accent);
+  color: var(--text);
+  background: var(--surface-hover);
+}
+
+.cloud-nav-btn.connected {
+  background: rgba(22, 163, 74, 0.12);
+  border-color: rgba(22, 163, 74, 0.4);
+  color: #15803d;
+}
+
+[data-theme="dark"] .cloud-nav-btn.connected {
+  color: #4ade80;
+}
+
 .mobile-menu-btn {
   display: none;
   background: transparent;

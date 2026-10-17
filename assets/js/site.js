@@ -217,6 +217,8 @@ StudySite.Renderer = {
 
 // ── 3. Study Roadmap Progress ──
 StudySite.Roadmap = {
+  activeLevel: 'all',
+  levelsData: null,
   isWeekCompleted: function (weekNum) {
     return localStorage.getItem('study_week_done_' + weekNum) === 'true';
   },
@@ -225,11 +227,16 @@ StudySite.Roadmap = {
     this.updateStats();
   },
   updateStats: function () {
+    const activeLevel = this.activeLevel || 'all';
+    let targetWeeks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+    if (activeLevel !== 'all' && this.levelsData && this.levelsData[activeLevel]) {
+      targetWeeks = this.levelsData[activeLevel].targetWeeks || [];
+    }
+
     let completed = 0;
     const totalWeeks = 13;
     for (let w = 1; w <= totalWeeks; w++) {
       const isDone = this.isWeekCompleted(w);
-      if (isDone) completed++;
       const card = document.getElementById('weekCard_' + w);
       const checkbox = document.getElementById('weekCheck_' + w);
       if (card) {
@@ -239,13 +246,18 @@ StudySite.Roadmap = {
       if (checkbox) {
         checkbox.checked = isDone;
       }
+      if (targetWeeks.includes(w) && isDone) {
+        completed++;
+      }
     }
-    const percent = Math.round((completed / totalWeeks) * 100);
+    const countTarget = targetWeeks.length;
+    const percent = countTarget > 0 ? Math.round((completed / countTarget) * 100) : 0;
     const fillEl = document.getElementById('overallProgressFill');
     const textEl = document.getElementById('overallProgressText');
     if (fillEl) fillEl.style.width = percent + '%';
     if (textEl) {
-      textEl.innerHTML = `<strong>${completed} of ${totalWeeks}</strong> weeks completed (${percent}%)`;
+      const levelLabel = activeLevel === 'all' ? 'total' : activeLevel;
+      textEl.innerHTML = `<strong>${completed} of ${countTarget}</strong> ${levelLabel} weeks completed (${percent}%)`;
     }
   },
   toggleWeekCard: function (weekNum) {

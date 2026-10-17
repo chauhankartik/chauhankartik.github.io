@@ -51,18 +51,60 @@
   </div>
 
   <main class="container">
-    <div class="page-header" style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2.3rem; font-weight: 700; margin-bottom: 0.5rem;">13-Week Intensive Roadmap</h1>
-      <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 65ch; margin: 0 auto;">
-        Interactive curriculum tracker synthesized for Staff Software Engineers and Systems Architects. Click any week to expand modules, dive into notes, and mark milestones as complete.
+    <div class="page-header" style="text-align: center; margin-bottom: 1.75rem;">
+      <h1 style="font-size: 2.3rem; font-weight: 700; margin-bottom: 0.5rem;">13-Week Technical Preparation Roadmap</h1>
+      <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 70ch; margin: 0 auto;">
+        Master interview curriculum tailored across 5 career levels — from SDE-1 coding loops to Staff and Principal Systems Architect rounds. Select your target seniority below to filter modules and milestones.
       </p>
+    </div>
+
+    <!-- Level Selector Bar -->
+    <div class="level-selector-wrap">
+      <div class="level-selector-header">
+        <span class="level-selector-label">
+          <span>🎯</span> Target Seniority & Interview Level
+        </span>
+        <span style="font-size: 0.75rem; color: var(--text-dim);" id="levelCurriculumSummary">
+          Showing All 13 Weeks
+        </span>
+      </div>
+
+      <div class="level-pills-bar" id="levelPillsBar">
+        <button class="level-btn active" data-level="all" onclick="selectLevel('all')">
+          <span>🌐 All Levels</span>
+          <span class="level-btn-tag">13 Wks</span>
+        </button>
+        <button class="level-btn" data-level="L1" onclick="selectLevel('L1')">
+          <span>🟢 L1: SDE-1</span>
+          <span class="level-btn-tag">3 Wks</span>
+        </button>
+        <button class="level-btn" data-level="L2" onclick="selectLevel('L2')">
+          <span>🔵 L2: SDE-2</span>
+          <span class="level-btn-tag">8 Wks</span>
+        </button>
+        <button class="level-btn" data-level="L3" onclick="selectLevel('L3')">
+          <span>🟠 L3: Senior SDE</span>
+          <span class="level-btn-tag">10 Wks</span>
+        </button>
+        <button class="level-btn" data-level="L4" onclick="selectLevel('L4')">
+          <span>🟤 L4: Staff SDE</span>
+          <span class="level-btn-tag">8 Wks</span>
+        </button>
+        <button class="level-btn" data-level="Architect" onclick="selectLevel('Architect')">
+          <span>🔴 Architect: Principal</span>
+          <span class="level-btn-tag">4 Wks</span>
+        </button>
+      </div>
+
+      <!-- Dynamic Level Overview Card -->
+      <div id="levelOverviewContainer"></div>
     </div>
 
     <!-- Overall Progress Box -->
     <div class="roadmap-summary-box">
       <div style="display: flex; justify-content: space-between; align-items: center;">
         <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; color: var(--accent);">
-          Preparation Progress
+          Preparation Progress (<span id="progressLevelBadge">All Levels</span>)
         </span>
         <button class="btn btn-sm" onclick="resetAllProgress()" style="font-size: 0.72rem; padding: 0.25rem 0.5rem;">
           Reset Progress
@@ -87,17 +129,145 @@
 
   <footer class="site-footer">
     <p>Engineered with ⚡ by <strong>Kartik Chauhan</strong> · 2026 Software Engineering Master Study Repository</p>
-    <p style="margin-top: 0.4rem; color: var(--text-dim);"><a href="index.html#about">About the Author</a> · 13-Week Staff Engineering Curriculum</p>
+    <p style="margin-top: 0.4rem; color: var(--text-dim);"><a href="index.html#about">About the Author</a> · Multi-Level Technical Preparation Tracks</p>
   </footer>
 
   <script src="assets/js/site.js"></script>
   <script>
+    let siteLevelsData = null;
+    let siteRoadmapData = null;
+    let currentActiveLevel = 'all';
+
     function resetAllProgress() {
       if (confirm('Are you sure you want to reset all week completion checkboxes?')) {
         for (let i = 1; i <= 13; i++) {
           localStorage.removeItem('study_week_done_' + i);
         }
         StudySite.Roadmap.updateStats();
+      }
+    }
+
+    function selectLevel(levelId, updateUrl = true) {
+      currentActiveLevel = levelId;
+      StudySite.Roadmap.activeLevel = levelId;
+
+      // Update button active states
+      document.querySelectorAll('#levelPillsBar .level-btn').forEach(btn => {
+        if (btn.getAttribute('data-level') === levelId) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      // Update URL search param without refresh
+      if (updateUrl) {
+        const url = new URL(window.location);
+        if (levelId === 'all') {
+          url.searchParams.delete('level');
+        } else {
+          url.searchParams.set('level', levelId);
+        }
+        window.history.replaceState({}, '', url);
+      }
+
+      // Render Level Overview Card
+      const overviewContainer = document.getElementById('levelOverviewContainer');
+      const summaryText = document.getElementById('levelCurriculumSummary');
+      const badgeText = document.getElementById('progressLevelBadge');
+
+      if (levelId === 'all' || !siteLevelsData || !siteLevelsData[levelId]) {
+        if (badgeText) badgeText.textContent = 'All Levels';
+        if (summaryText) summaryText.textContent = 'Showing All 13 Curriculum Weeks';
+        if (overviewContainer) {
+          overviewContainer.innerHTML = `
+            <div class="level-overview-box" style="border-left-color: var(--accent);">
+              <div class="level-overview-title" style="color: var(--accent);">
+                <span>🌐 Comprehensive 13-Week Master Curriculum</span>
+                <span class="level-pill" style="background: rgba(180, 83, 9, 0.12); color: var(--accent);">
+                  Full Spectrum
+                </span>
+              </div>
+              <div class="level-overview-desc">
+                Contains the end-to-end curriculum spanning basic coding loops up to multi-region distributed systems architectures. Click any level badge above (<strong>L1</strong>, <strong>L2</strong>, <strong>L3</strong>, <strong>L4</strong>, or <strong>Architect</strong>) to filter down to the exact weeks and competencies expected in your target interview loops.
+              </div>
+            </div>
+          `;
+        }
+      } else {
+        const info = siteLevelsData[levelId];
+        if (badgeText) badgeText.textContent = info.badge;
+        if (summaryText) summaryText.textContent = `Showing ${info.targetWeeks.length} Weeks for ${info.badge}`;
+        if (overviewContainer) {
+          const skillPills = (info.keySkills || []).map(skill => 
+            `<span class="chip" style="color: ${info.color}; border: 1px solid ${info.color}33; background: ${info.color}0d;">${skill}</span>`
+          ).join('');
+
+          overviewContainer.innerHTML = `
+            <div class="level-overview-box" style="border-left-color: ${info.color};">
+              <div class="level-overview-title" style="color: ${info.color};">
+                <span>${info.name}</span>
+                <span class="level-pill" style="background: ${info.color}1a; color: ${info.color}; border: 1px solid ${info.color}44;">
+                  ${info.badge} Target
+                </span>
+              </div>
+              <div class="level-overview-desc">
+                ${info.description}
+              </div>
+              <div class="level-overview-grid">
+                <div class="level-info-block">
+                  <div class="level-info-label">Expected Interview Loop Format</div>
+                  <div class="level-info-value">${info.interviewFormat}</div>
+                </div>
+                <div class="level-info-block">
+                  <div class="level-info-label">Target Study Weeks (${info.targetWeeks.length} Weeks)</div>
+                  <div class="level-info-value">Weeks <strong>${info.targetWeeks.join(', ')}</strong></div>
+                </div>
+                <div class="level-info-block" style="grid-column: 1 / -1;">
+                  <div class="level-info-label">Core Competencies & Key Patterns</div>
+                  <div style="display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.35rem;">
+                    ${skillPills}
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+        }
+      }
+
+      // Filter week cards and phase containers
+      let firstVisibleCard = null;
+      document.querySelectorAll('.phase-container').forEach(phaseEl => {
+        let visibleInPhase = 0;
+        phaseEl.querySelectorAll('.week-card').forEach(card => {
+          const cardLevels = (card.getAttribute('data-levels') || '').split(' ');
+          const matches = (levelId === 'all') || cardLevels.includes(levelId);
+          if (matches) {
+            card.style.display = 'block';
+            visibleInPhase++;
+            if (!firstVisibleCard) firstVisibleCard = card;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        const badge = phaseEl.querySelector('.phase-badge');
+        if (visibleInPhase === 0) {
+          phaseEl.style.display = 'none';
+        } else {
+          phaseEl.style.display = 'block';
+          if (badge && phaseEl.getAttribute('data-span')) {
+            badge.textContent = `${visibleInPhase} wks (${phaseEl.getAttribute('data-span')})`;
+          }
+        }
+      });
+
+      // Update progress stats for active level
+      StudySite.Roadmap.updateStats();
+
+      // Open first visible card if none open
+      if (firstVisibleCard && !document.querySelector('.week-card.open[style*="display: block"]')) {
+        firstVisibleCard.classList.add('open');
       }
     }
 
@@ -109,11 +279,15 @@
         const container = document.getElementById('phasesList');
         if (!container || !data.roadmap) return;
 
+        siteLevelsData = data.levels || {};
+        siteRoadmapData = data.roadmap;
+        StudySite.Roadmap.levelsData = siteLevelsData;
+
         let html = '';
 
         data.roadmap.forEach(function (phase) {
           html += `
-            <div class="phase-container">
+            <div class="phase-container" data-span="${phase.weeks_span}">
               <div class="phase-title-bar">
                 <span class="phase-dot" style="background: ${phase.color};"></span>
                 <span class="phase-title">${phase.name}</span>
@@ -125,6 +299,7 @@
 
           phase.weeks.forEach(function (w) {
             const weekNum = w.week;
+            const weekLevels = w.levels || ['L2', 'L3'];
             const focusItems = w.focus.map(f => `<li>${f}</li>`).join('');
             const moduleBadges = w.modules.map(m => `
               <a class="module-link" href="topic.html?path=${encodeURIComponent(m.path)}">
@@ -132,11 +307,16 @@
               </a>
             `).join('');
 
+            const levelBadges = weekLevels.map(lvl => 
+              `<span class="level-pill level-${lvl}">${lvl}</span>`
+            ).join('');
+
             html += `
-              <div class="week-card" id="weekCard_${weekNum}">
+              <div class="week-card" id="weekCard_${weekNum}" data-levels="${weekLevels.join(' ')}">
                 <div class="week-card-header" onclick="StudySite.Roadmap.toggleWeekCard(${weekNum})">
                   <span class="week-number-pill">W${weekNum}</span>
                   <span class="week-card-title">${w.title}</span>
+                  <div class="week-level-tags">${levelBadges}</div>
                   <span class="week-toggle-arrow">▶</span>
                 </div>
                 <div class="week-card-body">
@@ -176,12 +356,15 @@
         });
 
         container.innerHTML = html;
-        // Restore checkbox states and progress bar
-        StudySite.Roadmap.updateStats();
 
-        // Default open Week 1 for better onboarding
-        const w1 = document.getElementById('weekCard_1');
-        if (w1) w1.classList.add('open');
+        // Check URL parameter for level
+        const urlParams = new URLSearchParams(window.location.search);
+        const requestedLevel = urlParams.get('level');
+        if (requestedLevel && (siteLevelsData[requestedLevel] || requestedLevel === 'all')) {
+          selectLevel(requestedLevel, false);
+        } else {
+          selectLevel('all', false);
+        }
       });
     });
   </script>

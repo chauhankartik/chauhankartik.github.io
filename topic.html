@@ -262,9 +262,14 @@
         const match = StudySite.Data.findTopicByPath(data, queryPath);
         if (match) {
           matchedTopic = match.topic;
+          const lvlBadges = (matchedTopic.levels || []).map(lvl => 
+            `<a href="roadmap.html?level=${lvl}" class="level-pill level-${lvl}" style="text-decoration: none; margin-left: 0.3rem;" title="View ${lvl} Roadmap Track">${lvl}</a>`
+          ).join('');
+
           document.getElementById('crumbTopic').innerHTML = `
             <a href="topics.html?domain=${match.domain.id}">${match.domain.name}</a> › 
             <a href="topic.html?path=${encodeURIComponent(matchedTopic.path)}">${matchedTopic.name}</a>
+            ${lvlBadges}
           `;
           document.getElementById('sidebarTopicTitle').textContent = matchedTopic.name;
 

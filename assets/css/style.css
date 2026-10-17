@@ -522,6 +522,242 @@ button {
 .chip-sql { color: #ec4899; }
 .chip-rs { color: #f97316; }
 
+/* ── Level Selector & Level Badges ── */
+.level-selector-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.level-selector-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.level-selector-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.level-pills-bar {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.level-btn {
+  background: var(--surface-hover);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-md);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: inherit;
+  user-select: none;
+}
+
+.level-btn:hover {
+  border-color: var(--text-dim);
+  color: var(--text);
+  transform: translateY(-1px);
+}
+
+.level-btn.active {
+  background: var(--surface-active);
+  color: var(--text);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
+.level-btn-tag {
+  font-size: 0.7rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  background: rgba(180, 83, 9, 0.12);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Individual level button accents when active */
+.level-btn[data-level="L1"].active {
+  border-color: #16a34a;
+  box-shadow: 0 0 0 1px #16a34a;
+  color: #16a34a;
+}
+.level-btn[data-level="L1"].active .level-btn-tag {
+  background: rgba(22, 163, 74, 0.15);
+  color: #16a34a;
+}
+
+.level-btn[data-level="L2"].active {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px #2563eb;
+  color: #2563eb;
+}
+.level-btn[data-level="L2"].active .level-btn-tag {
+  background: rgba(37, 99, 235, 0.15);
+  color: #2563eb;
+}
+
+.level-btn[data-level="L3"].active {
+  border-color: #d97706;
+  box-shadow: 0 0 0 1px #d97706;
+  color: #d97706;
+}
+.level-btn[data-level="L3"].active .level-btn-tag {
+  background: rgba(217, 119, 6, 0.15);
+  color: #d97706;
+}
+
+.level-btn[data-level="L4"].active {
+  border-color: #b45309;
+  box-shadow: 0 0 0 1px #b45309;
+  color: #b45309;
+}
+.level-btn[data-level="L4"].active .level-btn-tag {
+  background: rgba(180, 83, 9, 0.15);
+  color: #b45309;
+}
+
+.level-btn[data-level="Architect"].active {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 1px #dc2626;
+  color: #dc2626;
+}
+.level-btn[data-level="Architect"].active .level-btn-tag {
+  background: rgba(220, 38, 38, 0.15);
+  color: #dc2626;
+}
+
+/* Level Overview Box */
+.level-overview-box {
+  background: var(--surface-hover);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.4rem;
+  margin-top: 1rem;
+  animation: fadeIn 0.25s ease-in-out;
+}
+
+.level-overview-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.35rem;
+}
+
+.level-overview-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 0.85rem;
+}
+
+.level-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.85rem;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.level-info-block {
+  font-size: 0.8rem;
+}
+
+.level-info-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+  margin-bottom: 0.25rem;
+}
+
+.level-info-value {
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* Level Badges & Pills */
+.level-pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  line-height: 1.2;
+  border: 1px solid transparent;
+}
+
+.level-pill.level-L1 {
+  background: rgba(22, 163, 74, 0.12);
+  color: #16a34a;
+  border-color: rgba(22, 163, 74, 0.25);
+}
+
+.level-pill.level-L2 {
+  background: rgba(37, 99, 235, 0.12);
+  color: #2563eb;
+  border-color: rgba(37, 99, 235, 0.25);
+}
+
+.level-pill.level-L3 {
+  background: rgba(217, 119, 6, 0.12);
+  color: #d97706;
+  border-color: rgba(217, 119, 6, 0.25);
+}
+
+.level-pill.level-L4 {
+  background: rgba(180, 83, 9, 0.12);
+  color: #b45309;
+  border-color: rgba(180, 83, 9, 0.25);
+}
+
+.level-pill.level-Architect {
+  background: rgba(220, 38, 38, 0.12);
+  color: #dc2626;
+  border-color: rgba(220, 38, 38, 0.25);
+}
+
+.week-level-tags {
+  display: flex;
+  gap: 0.35rem;
+  align-items: center;
+  margin-left: auto;
+  flex-wrap: wrap;
+}
+
+.level-card-link:hover {
+  border-color: var(--accent) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
 /* ── Roadmap View ── */
 .roadmap-summary-box {
   background: var(--surface);

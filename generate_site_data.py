@@ -86,6 +86,101 @@ CUSTOM_TOPIC_NAMES = {
     "tech-stack": "Infrastructure Tech-Stack Guides (16 Systems)"
 }
 
+TOPIC_LEVELS = {
+    "dsa": ["L1", "L2", "L3"],
+    "cses": ["L1", "L2"],
+    "interviewbit": ["L1", "L2"],
+    "c_programming_a_modern_approach": ["L1", "L2", "L3"],
+    "java": ["L2", "L3"],
+    "effective_java": ["L2", "L3", "L4"],
+    "java_concurrency_in_practice": ["L2", "L3", "L4"],
+    "sql": ["L1", "L2", "L3"],
+    "cpp_programming_language": ["L2", "L3"],
+    "effective_modern_cpp": ["L3", "L4"],
+    "cpp_concurrency_in_action": ["L3", "L4"],
+    "cpp_stl": ["L1", "L2", "L3"],
+    "java_vs_cpp": ["L3", "L4"],
+    "lld": ["L1", "L2", "L3"],
+    "hld": ["L3", "L4", "Architect"],
+    "system_design_interview": ["L3", "L4", "Architect"],
+    "fundamentals_of_software_architecture": ["L4", "Architect"],
+    "monolith_to_microservices": ["L4", "Architect"],
+    "ostep": ["L2", "L3", "L4"],
+    "uiuc_cs341_system_programming": ["L2", "L3", "L4"],
+    "computer_networks": ["L2", "L3"],
+    "database_system_concepts": ["L2", "L3", "L4"],
+    "database_internals": ["L3", "L4", "Architect"],
+    "ddia_book_study": ["L3", "L4", "Architect"],
+    "distributed-systems": ["L4", "Architect"],
+    "understanding_distributed_systems": ["L3", "L4"],
+    "mit_6_5840_distributed_systems": ["L4", "Architect"],
+    "stanford_cs244b_distributed_systems": ["L4", "Architect"],
+    "cmu_15418_parallel_programming": ["L3", "L4", "Architect"],
+    "stanford_ee382c_advanced_computer_architecture": ["L4", "Architect"],
+    "mit_61060_performance_engineering": ["L3", "L4"],
+    "berkeley_cs267_parallel_computing": ["L4", "Architect"],
+    "information_retrieval_and_search_engines": ["L3", "L4", "Architect"],
+    "relevant_search_solr_elasticsearch": ["L3", "L4"],
+    "lucene_in_action": ["L3", "L4", "Architect"],
+    "minidb": ["L3", "L4", "Architect"],
+    "api_security_in_action": ["L4", "Architect"],
+    "high_throughput_data_pipelines": ["L4", "Architect"],
+    "tech-stack": ["L2", "L3", "L4", "Architect"]
+}
+
+LEVELS_CONFIG = {
+    "L1": {
+        "id": "L1",
+        "name": "L1 — SDE-1 / Junior Engineer",
+        "badge": "SDE-1",
+        "color": "#16a34a",
+        "description": "Foundational coding loops: Data Structures, Arrays, Two Pointers, Sliding Window, Linked Lists, Clean Code, and Basic SQL queries.",
+        "interviewFormat": "2-3 Coding Rounds (LeetCode Easy to Medium) + 1 CS Fundamentals / Behavioral",
+        "targetWeeks": [1, 2, 5],
+        "keySkills": ["Data Structures", "Two Pointers", "Sliding Window", "Linked Lists", "Basic Trees", "SQL Joins", "Clean OOP"]
+    },
+    "L2": {
+        "id": "L2",
+        "name": "L2 — SDE-2 / Mid-Level Engineer",
+        "badge": "SDE-2",
+        "color": "#2563eb",
+        "description": "Core engineering loops: Graph Traversals (BFS/DFS), Dynamic Programming, Low-Level Design (SOLID, GoF Patterns), Thread-safety basics, and DB Indexes.",
+        "interviewFormat": "2 Coding Rounds (LeetCode Medium to Hard) + 1 Production LLD Round + 1 Basic System Design",
+        "targetWeeks": [1, 2, 3, 5, 6, 7, 9, 11],
+        "keySkills": ["Graph Algorithms", "Dynamic Programming", "SOLID Principles", "GoF Patterns", "Java Concurrency", "SQL Window Functions", "Basic HLD"]
+    },
+    "L3": {
+        "id": "L3",
+        "name": "L3 — SDE-3 / Senior Software Engineer",
+        "badge": "Senior SDE",
+        "color": "#d97706",
+        "description": "Senior technical loops: 4-Step HLD Interview Framework, Production LLD Systems (LRU, Elevator), Operating Systems (OSTEP/epoll), and Database Storage Engines (B+ Trees & LSM-Trees).",
+        "interviewFormat": "1 Hard Algorithmic Round + 1 Advanced LLD Round + 2 Full HLD Architecture Rounds + Leadership",
+        "targetWeeks": [2, 3, 4, 6, 7, 8, 9, 10, 11, 12],
+        "keySkills": ["4-Step HLD Framework", "Production LLD Systems", "LSM vs B+ Tree", "JMM & Virtual Threads", "Linux epoll", "Capacity Math", "Rate Limiting"]
+    },
+    "L4": {
+        "id": "L4",
+        "name": "L4 — Staff Software Engineer",
+        "badge": "Staff SDE",
+        "color": "#b45309",
+        "description": "Staff-level systems loops: Large-scale Distributed Systems (Raft consensus invariants, PACELC), High-Throughput Streaming (Kafka zero-copy), Kubernetes reconciliation, and Microservices decomposition.",
+        "interviewFormat": "Multiple Systems Architecture Rounds + Cross-System Resiliency + Tech Strategy & Trade-off Defense",
+        "targetWeeks": [4, 7, 8, 9, 10, 11, 12, 13],
+        "keySkills": ["Raft Consensus", "PACELC Trade-offs", "Kafka Zero-Copy", "Kubernetes Internals", "Microservices (Strangler Fig, Saga)", "Zero-Trust Security"]
+    },
+    "Architect": {
+        "id": "Architect",
+        "name": "Architect — Principal & Systems Architect",
+        "badge": "Principal Architect",
+        "color": "#dc2626",
+        "description": "Principal & enterprise architecture loops: Global Multi-Region Latency & Consistency, High-Throughput Columnar Pipelines, Storage Engine Internals (ARIES/MiniDB), and Enterprise Security Governance.",
+        "interviewFormat": "Broad Architectural Vision + Multi-Year Technical Roadmaps + Resiliency & Enterprise Governance",
+        "targetWeeks": [8, 10, 12, 13],
+        "keySkills": ["Multi-Region Replication", "Columnar Pipelines (Parquet/ORC)", "Storage Engine Recovery (ARIES)", "ArchUnit Fitness Functions", "Enterprise Governance"]
+    }
+}
+
 IGNORED_DIRS = {".git", "target", "node_modules", "assets", "__pycache__", ".idea", ".vscode"}
 IGNORED_FILES = {".DS_Store", "generate_site_data.py", "app.log", "async.log"}
 
@@ -229,6 +324,7 @@ def main():
             topic_tree["id"] = t_name
             topic_tree["name"] = clean_name(t_name)
             topic_tree["path"] = t_rel
+            topic_tree["levels"] = TOPIC_LEVELS.get(t_name, ["L2", "L3"])
             
             # File stats for this topic
             all_t_files = collect_all_files(topic_tree)
@@ -251,7 +347,8 @@ def main():
                         "domainId": dom_conf["id"],
                         "topic": topic_tree["name"],
                         "topicPath": topic_tree["path"],
-                        "ext": t_ext
+                        "ext": t_ext,
+                        "levels": topic_tree["levels"]
                     })
             
             topics.append(topic_tree)
@@ -302,7 +399,7 @@ def main():
         elif ext == "rs":
             total_rs += 1
 
-    # Full 13-week master roadmap
+    # Full 13-week master roadmap with level tagging
     roadmap_data = [
         {
             "phase": 1,
@@ -314,6 +411,7 @@ def main():
                 {
                     "week": 1,
                     "title": "Data Structures, Algorithms, CSES & C Programming",
+                    "levels": ["L1", "L2"],
                     "focus": [
                         "Arrays, Two Pointers, Sliding Window, Linked Lists, Stacks, Queues, Hashing",
                         "C Programming: Pointers, Arena Allocators, Fixed-Width Types, Storage Classes & Linking",
@@ -331,6 +429,7 @@ def main():
                 {
                     "week": 2,
                     "title": "Advanced Graph Algorithms, Dynamic Programming & CSES Mastery",
+                    "levels": ["L1", "L2", "L3"],
                     "focus": [
                         "BFS, DFS, Kahn's Topological Sort, Dijkstra, Bellman-Ford, Union-Find / DSU",
                         "1D & 2D Dynamic Programming (Knapsack, LCS, LIS, Interval DP)",
@@ -348,6 +447,7 @@ def main():
                 {
                     "week": 3,
                     "title": "Java Internals, Effective Java (90 Items), JCiP & FAANG SQL",
+                    "levels": ["L2", "L3"],
                     "focus": [
                         "Effective Java 3rd Edition: All 12 Chapters and 90 Items thoroughly internalized",
                         "Java Concurrency in Practice: Monitors, Volatile, JMM Happens-Before, AQS & CLH Queues",
@@ -365,6 +465,7 @@ def main():
                 {
                     "week": 4,
                     "title": "Advanced C++, STL & Modern Concurrency",
+                    "levels": ["L3", "L4"],
                     "focus": [
                         "The C++ Programming Language & Tour of C++: RAII, Move Semantics, Templates",
                         "Effective Modern C++: Smart Pointers, Universal References, Perfect Forwarding, Lambdas",
@@ -392,6 +493,7 @@ def main():
                 {
                     "week": 5,
                     "title": "Object-Oriented Analysis, Design Principles & SOLID",
+                    "levels": ["L1", "L2"],
                     "focus": [
                         "SOLID Principles (Single Responsibility, Open/Closed, Liskov, ISP, Dependency Inversion)",
                         "Encapsulation, Polymorphism, and Composition vs Inheritance trade-offs",
@@ -406,6 +508,7 @@ def main():
                 {
                     "week": 6,
                     "title": "Gang of Four (GoF) Design Patterns in Practice",
+                    "levels": ["L2", "L3"],
                     "focus": [
                         "Creational: Singleton, Factory Method, Abstract Factory, Builder, Prototype",
                         "Structural: Adapter, Composite, Proxy, Decorator, Facade, Bridge, Flyweight",
@@ -419,6 +522,7 @@ def main():
                 {
                     "week": 7,
                     "title": "Low-Level System Design (LLD) Production Systems",
+                    "levels": ["L2", "L3", "L4"],
                     "focus": [
                         "Elevator System Design, LRU Cache, Parking Lot, Vending Machine, ATM System",
                         "Concurrency safety, thread-safe collections, lock granularities, and state transitions",
@@ -432,6 +536,7 @@ def main():
                 {
                     "week": 8,
                     "title": "High-Level System Design (HLD), Alex Xu, Architecture & Microservices",
+                    "levels": ["L3", "L4", "Architect"],
                     "focus": [
                         "The 4-Step HLD Interview Framework: Scope, Availability Math, Capacity Math, 80/20 RAM sizing",
                         "Alex Xu Vol 1 & 2: Rate Limiter, Snowflake ID, TinyURL, Crawler, Chat, YouTube, Proximity, Disruptor",
@@ -458,6 +563,7 @@ def main():
                 {
                     "week": 9,
                     "title": "Operating Systems (OSTEP), UIUC CS341 & Computer Networks",
+                    "levels": ["L2", "L3", "L4"],
                     "focus": [
                         "OSTEP Virtualization: fork/exec, PCB, MLFQ 5 rules, Multi-Level Page Tables, TLB, Clock Page Faults",
                         "OSTEP Concurrency & Persistence: Futex locks, Condition Variables, VSFS, Inodes, WAL Journaling",
@@ -474,6 +580,7 @@ def main():
                 {
                     "week": 10,
                     "title": "Database System Concepts, Database Internals, DDIA & Distributed Systems",
+                    "levels": ["L3", "L4", "Architect"],
                     "focus": [
                         "Database System Concepts: Relational Algebra, BCNF Normalization, Volcano Iterator, ARIES Recovery",
                         "Database Internals (Alex Petrov): B-Link Trees, LSM SSTable compaction, Raft Consensus, 2PC/3PC",
@@ -503,6 +610,7 @@ def main():
                 {
                     "week": 11,
                     "title": "Data Tier: Redis, Postgres, JDBC & Storage",
+                    "levels": ["L2", "L3", "L4"],
                     "focus": [
                         "Redis: Data structures, event loop, persistence (RDB/AOF), sentinel, cluster, memory eviction",
                         "Relational Databases & Postgres: MVCC, VACUUM, indexes (B-Tree, GIN, GiST), connection pooling (HikariCP)",
@@ -521,6 +629,7 @@ def main():
                 {
                     "week": 12,
                     "title": "Streaming, Edge & Containers",
+                    "levels": ["L3", "L4", "Architect"],
                     "focus": [
                         "Apache Kafka: Broker architecture, partitions, consumer groups, rebalancing, zero-copy, idempotence",
                         "Gateways, Proxies & Load Balancers: NGINX, HAProxy, Envoy, Envoy service mesh, L4 vs L7 routing",
@@ -539,6 +648,7 @@ def main():
                 {
                     "week": 13,
                     "title": "API Security, Observability & High-Throughput Pipelines",
+                    "levels": ["L4", "Architect"],
                     "focus": [
                         "API Security in Action: OAuth2 authorization framework, OIDC identity, JWT verification, mTLS, Zero Trust",
                         "Observability Stack: Grafana dashboards, Prometheus metrics TSDB, Splunk log aggregation, OpenTelemetry",
@@ -570,6 +680,7 @@ def main():
             "weeks": 13,
             "domains": len(domains_data)
         },
+        "levels": LEVELS_CONFIG,
         "domains": domains_data,
         "roadmap": roadmap_data,
         "searchIndex": search_index

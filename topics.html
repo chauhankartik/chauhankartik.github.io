@@ -60,6 +60,21 @@
 
     <!-- Filter & Search Controls -->
     <div style="margin-bottom: 2rem;">
+      <!-- Seniority Level Filter Bar -->
+      <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1rem; background: var(--surface); padding: 0.75rem 1.1rem; border-radius: var(--radius-md); border: 1px solid var(--border);">
+        <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); white-space: nowrap;">
+          🎯 Level:
+        </span>
+        <div class="level-pills-bar" id="topicLevelFilterBar">
+          <button class="level-btn active" data-level="all">All Levels</button>
+          <button class="level-btn" data-level="L1">🟢 L1: SDE-1</button>
+          <button class="level-btn" data-level="L2">🔵 L2: SDE-2</button>
+          <button class="level-btn" data-level="L3">🟠 L3: Senior</button>
+          <button class="level-btn" data-level="L4">🟤 L4: Staff</button>
+          <button class="level-btn" data-level="Architect">🔴 Architect</button>
+        </div>
+      </div>
+
       <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
         <!-- Domain Tabs -->
         <div class="topic-filter-bar" id="domainFilterTabs">
@@ -102,12 +117,17 @@
 
       let allTopics = [];
       let activeDomain = 'all';
+      let activeLevel = 'all';
 
-      // Check URL parameters for ?domain=...
+      // Check URL parameters for ?domain=... and ?level=...
       const urlParams = new URLSearchParams(window.location.search);
       const paramDomain = urlParams.get('domain');
+      const paramLevel = urlParams.get('level');
       if (paramDomain) {
         activeDomain = paramDomain;
+      }
+      if (paramLevel) {
+        activeLevel = paramLevel;
       }
 
       StudySite.Data.load().then(function (data) {
@@ -121,6 +141,33 @@
               domainBadge: dom.badge,
               topic: t
             });
+          });
+        });
+
+        // Set initial active state on level buttons
+        const levelButtons = document.querySelectorAll('#topicLevelFilterBar .level-btn');
+        levelButtons.forEach(btn => {
+          if (btn.getAttribute('data-level') === activeLevel) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
+        });
+
+        // Attach level button listeners
+        levelButtons.forEach(btn => {
+          btn.addEventListener('click', function () {
+            levelButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            activeLevel = btn.getAttribute('data-level');
+            
+            // Sync URL query param
+            const url = new URL(window.location);
+            if (activeLevel === 'all') url.searchParams.delete('level');
+            else url.searchParams.set('level', activeLevel);
+            window.history.replaceState({}, '', url);
+
+            renderTopics();
           });
         });
 
@@ -144,6 +191,12 @@
             tabsContainer.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             activeDomain = btn.getAttribute('data-domain');
+            
+            const url = new URL(window.location);
+            if (activeDomain === 'all') url.searchParams.delete('domain');
+            else url.searchParams.set('domain', activeDomain);
+            window.history.replaceState({}, '', url);
+
             renderTopics();
           });
         });
@@ -163,6 +216,12 @@
             if (activeDomain !== 'all' && item.domainId !== activeDomain) {
               return false;
             }
+            if (activeLevel !== 'all') {
+              const topicLevels = item.topic.levels || [];
+              if (!topicLevels.includes(activeLevel)) {
+                return false;
+              }
+            }
             if (!query) return true;
             const name = item.topic.name.toLowerCase();
             const desc = (item.topic.description || '').toLowerCase();
@@ -170,10 +229,11 @@
             return name.includes(query) || desc.includes(query) || path.includes(query);
           });
 
-          countDisplay.innerHTML = `Showing <strong>${filtered.length}</strong> of <strong>${allTopics.length}</strong> topics`;
+          const levelNotice = activeLevel !== 'all' ? ` (filtered for <strong>${activeLevel}</strong>)` : '';
+          countDisplay.innerHTML = `Showing <strong>${filtered.length}</strong> of <strong>${allTopics.length}</strong> topics${levelNotice}`;
 
           if (filtered.length === 0) {
-            grid.innerHTML = '<div style="text-align: center; padding: 3rem; color: var(--text-muted); grid-column: 1 / -1;">No topics match your filter criteria.</div>';
+            grid.innerHTML = '<div style="text-align: center; padding: 3rem; color: var(--text-muted); grid-column: 1 / -1;">No topics match your current level and domain filters.</div>';
             return;
           }
 
@@ -186,10 +246,19 @@
             if (counts.sql) chips.push(`<span class="chip chip-sql">${counts.sql} SQL</span>`);
             if (counts.rs) chips.push(`<span class="chip chip-rs">${counts.rs} Rust</span>`);
 
+            const levelBadges = (t.levels || []).map(lvl => 
+              `<span class="level-pill level-${lvl}">${lvl}</span>`
+            ).join(' ');
+
             return `
               <a class="topic-card" href="topic.html?path=${encodeURIComponent(t.path)}">
-                <div class="topic-card-domain" style="color: ${item.domainColor};">
-                  ${item.domainName}
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                  <span class="topic-card-domain" style="color: ${item.domainColor}; margin-bottom: 0;">
+                    ${item.domainName}
+                  </span>
+                  <div style="display: flex; gap: 0.25rem;">
+                    ${levelBadges}
+                  </div>
                 </div>
                 <div class="topic-card-title">${t.name}</div>
                 <div class="topic-card-desc">

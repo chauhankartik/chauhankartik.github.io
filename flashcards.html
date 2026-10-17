@@ -54,14 +54,37 @@
     </div>
 
     <!-- Category Filter Bar -->
-    <div class="topic-filter-bar" id="categoryFilterBar" style="justify-content: center; margin-bottom: 1.5rem;">
-      <button class="filter-btn active" data-cat="all">All Topics</button>
+    <div class="topic-filter-bar" id="categoryFilterBar" style="justify-content: center; margin-bottom: 0.75rem;">
+      <button class="filter-btn active" data-cat="all">All Topics (<span id="countAll">34</span>)</button>
+      <button class="filter-btn" data-cat="dsa_patterns" style="border-color: rgba(34, 197, 94, 0.4); color: var(--accent);">⚡ DSA Patterns (<span id="countDsa">18</span>)</button>
       <button class="filter-btn" data-cat="system_design">System Design</button>
       <button class="filter-btn" data-cat="distributed_systems">Distributed Systems</button>
       <button class="filter-btn" data-cat="database_internals">Databases & Storage</button>
       <button class="filter-btn" data-cat="core_java">Core Java & JMM</button>
       <button class="filter-btn" data-cat="operating_systems">Operating Systems</button>
       <button class="filter-btn" data-cat="infrastructure">Infrastructure</button>
+    </div>
+
+    <!-- Subtopic Filter Bar for DSA Patterns -->
+    <div id="subtopicFilterWrap" style="margin-bottom: 1.5rem; text-align: center;">
+      <div style="font-size: 0.72rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;">
+        DSA Pattern Sub-Topics:
+      </div>
+      <div class="topic-filter-bar" id="dsaSubtopicBar" style="justify-content: center; gap: 0.35rem;">
+        <button class="filter-btn active" data-sub="all" style="font-size: 0.72rem; padding: 0.25rem 0.55rem;">All DSA (18)</button>
+        <button class="filter-btn" data-sub="array" style="font-size: 0.72rem; padding: 0.25rem 0.55rem;">Two Pointers & Prefix Sum</button>
+        <button class="filter-btn" data-sub="sliding_window" style="font-size: 0.72rem; padding: 0.25rem 0.55rem;">Sliding Window</button>
+        <button class="filter-btn" data-sub="stack" style="font-size: 0.72rem; padding: 0.25rem 0.55rem;">Monotonic Stack</button>
+        <button class="filter-btn" data-sub="queue" style="font-size: 0.72rem; padding: 0.25rem 0.55rem;">Monotonic Deque</button>
+        <button class="filter-btn" data-sub="linkedlist" style="font-size: 0.72rem; padding: 0.25rem 0.55rem;">Linked List</button>
+        <button class="filter-btn" data-sub="tree" style="font-size: 0.72rem; padding: 0.25rem 0.55rem;">Trees & LCA</button>
+        <button class="filter-btn" data-sub="trie" style="font-size: 0.72rem; padding: 0.25rem 0.55rem;">Trie & Bitwise XOR</button>
+        <button class="filter-btn" data-sub="backtracking" style="font-size: 0.72rem; padding: 0.25rem 0.55rem;">Backtracking</button>
+        <button class="filter-btn" data-sub="greedy" style="font-size: 0.72rem; padding: 0.25rem 0.55rem;">Greedy & Intervals</button>
+        <button class="filter-btn" data-sub="dynamicprogramming" style="font-size: 0.72rem; padding: 0.25rem 0.55rem;">Dynamic Programming</button>
+        <button class="filter-btn" data-sub="graph" style="font-size: 0.72rem; padding: 0.25rem 0.55rem;">Graphs & DSU</button>
+        <button class="filter-btn" data-sub="linesweep" style="font-size: 0.72rem; padding: 0.25rem 0.55rem;">Line Sweep</button>
+      </div>
     </div>
 
     <!-- Flashcards Container -->
@@ -247,28 +270,93 @@
       nextCard();
     }
 
-    function applyCategory(cat) {
-      currentCategory = cat;
-      if (cat === 'all') {
-        filteredCards = [...allCards];
-      } else {
-        filteredCards = allCards.filter(c => c.category === cat);
+    let currentSubtopic = 'all';
+
+    function applyFilters() {
+      filteredCards = allCards.filter(c => {
+        const catMatch = (currentCategory === 'all' || c.category === currentCategory);
+        const subMatch = (currentSubtopic === 'all' || c.subtopic === currentSubtopic);
+        return catMatch && subMatch;
+      });
+
+      // Show/hide subtopic filter wrap based on whether dsa_patterns is active or relevant
+      const subWrap = document.getElementById('subtopicFilterWrap');
+      if (subWrap) {
+        if (currentCategory === 'dsa_patterns' || currentCategory === 'all') {
+          subWrap.style.display = 'block';
+        } else {
+          subWrap.style.display = 'none';
+        }
       }
+
       currentIndex = 0;
       renderCurrentCard();
+    }
+
+    function applyCategory(cat) {
+      currentCategory = cat;
+      currentSubtopic = 'all'; // reset subtopic when changing main category
+      
+      // Update subtopic active pill
+      document.querySelectorAll('#dsaSubtopicBar .filter-btn').forEach(b => {
+        if (b.getAttribute('data-sub') === 'all') b.classList.add('active');
+        else b.classList.remove('active');
+      });
+
+      applyFilters();
+    }
+
+    function applySubtopic(sub) {
+      currentSubtopic = sub;
+      if (sub !== 'all' && currentCategory !== 'dsa_patterns' && currentCategory !== 'all') {
+        currentCategory = 'dsa_patterns';
+        document.querySelectorAll('#categoryFilterBar .filter-btn').forEach(b => {
+          if (b.getAttribute('data-cat') === 'dsa_patterns') b.classList.add('active');
+          else b.classList.remove('active');
+        });
+      }
+      applyFilters();
     }
 
     document.addEventListener('DOMContentLoaded', function () {
       StudySite.Nav.mount('flashcards');
       StudySite.Progress.init();
 
+      // Check URL parameters for ?category=...&subtopic=...
+      const urlParams = new URLSearchParams(window.location.search);
+      const urlCat = urlParams.get('category');
+      const urlSub = urlParams.get('subtopic');
+      if (urlCat) currentCategory = urlCat;
+      if (urlSub) currentSubtopic = urlSub;
+
       // Fetch flashcards dataset
       fetch('assets/data/flashcards.json')
         .then(r => r.json())
         .then(data => {
           allCards = data;
-          filteredCards = [...allCards];
-          renderCurrentCard();
+          
+          // Update counts
+          const dsaCount = allCards.filter(c => c.category === 'dsa_patterns').length;
+          const countAllEl = document.getElementById('countAll');
+          const countDsaEl = document.getElementById('countDsa');
+          if (countAllEl) countAllEl.textContent = allCards.length;
+          if (countDsaEl) countDsaEl.textContent = dsaCount;
+
+          // Set active buttons based on initial state
+          if (currentCategory) {
+            document.querySelectorAll('#categoryFilterBar .filter-btn').forEach(b => {
+              if (b.getAttribute('data-cat') === currentCategory) b.classList.add('active');
+              else b.classList.remove('active');
+            });
+          }
+          if (currentSubtopic) {
+            document.querySelectorAll('#dsaSubtopicBar .filter-btn').forEach(b => {
+              if (b.getAttribute('data-sub') === currentSubtopic) b.classList.add('active');
+              else b.classList.remove('active');
+            });
+          }
+
+          applyFilters();
         })
         .catch(err => {
           document.getElementById('cardQuestionText').textContent = 'Failed to load flashcards dataset.';
@@ -280,6 +368,15 @@
           document.querySelectorAll('#categoryFilterBar .filter-btn').forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
           applyCategory(btn.getAttribute('data-cat'));
+        });
+      });
+
+      // Subtopic filter buttons
+      document.querySelectorAll('#dsaSubtopicBar .filter-btn').forEach(btn => {
+        btn.addEventListener('click', function () {
+          document.querySelectorAll('#dsaSubtopicBar .filter-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          applySubtopic(btn.getAttribute('data-sub'));
         });
       });
 

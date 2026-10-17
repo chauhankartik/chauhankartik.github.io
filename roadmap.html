@@ -156,11 +156,13 @@
 
       <div class="overall-stats-text">
         <span id="overallProgressText"><strong>0 of 13</strong> curriculum weeks completed (0%)</span>
-        <div style="display: flex; gap: 0.5rem; align-items: center;">
+        <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
           <a class="btn btn-sm" href="index.html#study-tracker" style="font-size: 0.72rem; padding: 0.2rem 0.6rem;">
             📊 Open Study Tracker Dashboard →
           </a>
-          <span style="font-size: 0.72rem; color: var(--text-dim);">Storage: Local persistence</span>
+          <button class="cloud-status-btn" onclick="StudySite.DB ? StudySite.DB.openSettingsModal() : null" style="font-size: 0.72rem; padding: 0.2rem 0.6rem;" id="roadmapCloudStatusBtn">
+            ☁️ Cloud Sync
+          </button>
         </div>
       </div>
     </div>
@@ -176,7 +178,9 @@
     <p style="margin-top: 0.4rem; color: var(--text-dim);"><a href="index.html#about">About the Author</a> · Multi-Level & Polyglot Technical Preparation Tracks</p>
   </footer>
 
-  <script src="assets/js/site.js?v=20261017_5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/js/db.js?v=1"></script>
+  <script src="assets/js/site.js?v=20261017_6"></script>
   <script>
     let siteLevelsData = null;
     let siteLanguagesData = null;
@@ -526,6 +530,12 @@
         }
 
         applyFilters(false);
+
+        const cloudBtn = document.getElementById('roadmapCloudStatusBtn');
+        if (cloudBtn && window.StudySite && StudySite.DB && StudySite.DB.isConnected()) {
+          cloudBtn.classList.add('connected');
+          cloudBtn.innerHTML = '🟢 Cloud Synced';
+        }
       });
     });
   </script>

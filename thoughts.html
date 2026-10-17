@@ -74,9 +74,14 @@
           <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-dim);">
             Filter by Topic / Tag:
           </div>
-          <button class="btn btn-sm btn-primary" onclick="toggleComposeBox()">
-            ✍️ Draft New Thought
-          </button>
+          <div style="display: flex; gap: 0.5rem; align-items: center;">
+            <button class="cloud-status-btn" onclick="StudySite.DB ? StudySite.DB.openSettingsModal() : null" id="thoughtsCloudStatusBtn" title="Connect Supabase PostgreSQL for live cloud comments">
+              ☁️ Cloud Sync
+            </button>
+            <button class="btn btn-sm btn-primary" onclick="toggleComposeBox()">
+              ✍️ Draft New Thought
+            </button>
+          </div>
         </div>
 
         <div style="display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.85rem;" id="tagFilterBar">
@@ -159,7 +164,9 @@
   <!-- Toast Notification -->
   <div id="toast" class="toast-msg">Link copied to clipboard!</div>
 
-  <script src="assets/js/site.js?v=20261017_4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/js/db.js?v=1"></script>
+  <script src="assets/js/site.js?v=20261017_6"></script>
   <script>
     let rawThoughts = [];
     let activeTag = 'all';
@@ -274,10 +281,24 @@
         const isLiked = localStorage.getItem(likedKey) === 'true';
         const likeCount = (t.likes || 0) + (isLiked ? 1 : 0);
 
-        // Load local user comments for this thought
+        // Load local & cloud comments for this thought
         const storedCommentsKey = 'thought_user_comments_' + t.id;
         const userComments = JSON.parse(localStorage.getItem(storedCommentsKey) || '[]');
-        const combinedComments = [...(t.comments || []), ...userComments];
+        let cloudComments = [];
+        try {
+          const allCloud = JSON.parse(localStorage.getItem('user_thought_comments') || '{}');
+          cloudComments = allCloud[t.id] || [];
+        } catch (e) {}
+
+        const seen = new Set();
+        const combinedComments = [];
+        [...(t.comments || []), ...userComments, ...cloudComments].forEach(c => {
+          const sig = (c.author || '') + ':' + (c.text || '');
+          if (!seen.has(sig)) {
+            seen.add(sig);
+            combinedComments.push(c);
+          }
+        });
         const commentsCount = combinedComments.length;
 
         const tagsHtml = (t.tags || []).map(tag => `
@@ -420,6 +441,43 @@
         if (isOpen) btn.classList.add('active-comments');
         else btn.classList.remove('active-comments');
       }
+
+      if (isOpen && window.StudySite && StudySite.DB && StudySite.DB.isConnected()) {
+        StudySite.DB.fetchThoughtComments(id).then(function (cloudItems) {
+          if (!cloudItems || cloudItems.length === 0) return;
+          const listEl = document.getElementById('comments-list-' + id);
+          const countEl = document.getElementById('comment-count-' + id);
+          const t = rawThoughts.find(function (x) { return x.id === id; });
+          const baseComments = (t && t.comments) || [];
+
+          const seen = new Set();
+          const all = [];
+          [...baseComments, ...cloudItems].forEach(function (c) {
+            const sig = (c.author || '') + ':' + (c.text || '');
+            if (!seen.has(sig)) {
+              seen.add(sig);
+              all.push(c);
+            }
+          });
+
+          if (listEl && all.length > 0) {
+            listEl.innerHTML = all.map(function (c) {
+              return `
+                <div class="comment-bubble">
+                  <div class="comment-meta">
+                    <div class="comment-avatar">${escapeHtml(c.avatar || 'U')}</div>
+                    <span class="comment-author">${escapeHtml(c.author || 'Anonymous')}</span>
+                    <span class="comment-handle">${escapeHtml(c.handle || '@engineer')}</span>
+                    <span class="comment-time">${escapeHtml(c.timestamp || 'Recently')}</span>
+                  </div>
+                  <div class="comment-text">${escapeHtml(c.text || '')}</div>
+                </div>
+              `;
+            }).join('');
+          }
+          if (countEl) countEl.textContent = all.length;
+        }).catch(function () {});
+      }
     }
 
     function submitReply(id) {
@@ -455,6 +513,11 @@
       const existing = JSON.parse(localStorage.getItem(key) || '[]');
       existing.push(newComment);
       localStorage.setItem(key, JSON.stringify(existing));
+
+      // Push to Supabase if connected
+      if (window.StudySite && StudySite.DB) {
+        StudySite.DB.addThoughtComment(id, name, handle, avatar, text);
+      }
 
       // Append bubble to DOM
       const listEl = document.getElementById('comments-list-' + id);
@@ -545,6 +608,12 @@
             el.style.borderColor = 'var(--accent)';
           }
         }, 500);
+      }
+
+      const cloudBtn = document.getElementById('thoughtsCloudStatusBtn');
+      if (cloudBtn && window.StudySite && StudySite.DB && StudySite.DB.isConnected()) {
+        cloudBtn.classList.add('connected');
+        cloudBtn.innerHTML = '🟢 Cloud Synced';
       }
     });
   </script>

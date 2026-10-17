@@ -279,7 +279,11 @@ StudySite.Roadmap = {
     return localStorage.getItem('study_week_done_' + weekNum) === 'true';
   },
   setWeekCompleted: function (weekNum, isDone) {
-    localStorage.setItem('study_week_done_' + weekNum, isDone ? 'true' : 'false');
+    if (window.StudySite && StudySite.DB) {
+      StudySite.DB.saveRoadmapWeek(weekNum, isDone);
+    } else {
+      localStorage.setItem('study_week_done_' + weekNum, isDone ? 'true' : 'false');
+    }
     this.updateStats();
   },
   updateStats: function () {
@@ -755,6 +759,9 @@ StudySite.SpacedRepetition = {
 
   markReviewed: function () {
     localStorage.setItem('study_sr_reviewed_' + this.getTodayKey(), 'true');
+    if (window.StudySite && StudySite.DB) {
+      StudySite.DB.saveSpacedReview(this.getTodayKey());
+    }
     // Save to review history array
     try {
       const history = JSON.parse(localStorage.getItem('study_sr_history') || '[]');
@@ -973,12 +980,22 @@ StudySite.Tracker = {
     else if (current === 'mastered') next = 'review';
     else if (current === 'review') next = 'unstarted';
 
-    localStorage.setItem('study_status_' + id, next);
+    const mod = this.canonicalModules.find(function (m) { return m.id === id; });
+    if (window.StudySite && StudySite.DB) {
+      StudySite.DB.setModuleStatus(id, next, mod ? mod.name : id, mod ? mod.phase : 1);
+    } else {
+      localStorage.setItem('study_status_' + id, next);
+    }
     this.render();
   },
 
   setStatus: function (id, status) {
-    localStorage.setItem('study_status_' + id, status);
+    const mod = this.canonicalModules.find(function (m) { return m.id === id; });
+    if (window.StudySite && StudySite.DB) {
+      StudySite.DB.setModuleStatus(id, status, mod ? mod.name : id, mod ? mod.phase : 1);
+    } else {
+      localStorage.setItem('study_status_' + id, status);
+    }
     this.render();
   },
 
@@ -991,17 +1008,21 @@ StudySite.Tracker = {
   },
 
   logSession: function (topic, hours, notes) {
-    const sessions = this.getSessions();
-    sessions.unshift({
-      date: new Date().toISOString(),
-      topic: topic || 'Staff Systems Preparation',
-      hours: parseFloat(hours) || 1.5,
-      notes: notes || 'Reviewed invariants and algorithmic patterns.'
-    });
-    localStorage.setItem('study_user_sessions', JSON.stringify(sessions));
-    const streak = parseInt(localStorage.getItem('study_streak_count') || '14', 10);
-    localStorage.setItem('study_streak_count', (streak + 1).toString());
-    this.render();
+    if (window.StudySite && StudySite.DB) {
+      StudySite.DB.saveSession(topic, hours, notes);
+    } else {
+      const sessions = this.getSessions();
+      sessions.unshift({
+        date: new Date().toISOString(),
+        topic: topic || 'Staff Systems Preparation',
+        hours: parseFloat(hours) || 1.5,
+        notes: notes || 'Reviewed invariants and algorithmic patterns.'
+      });
+      localStorage.setItem('study_user_sessions', JSON.stringify(sessions));
+      const streak = parseInt(localStorage.getItem('study_streak_count') || '14', 10);
+      localStorage.setItem('study_streak_count', (streak + 1).toString());
+      this.render();
+    }
   },
 
   render: function (containerEl) {
@@ -1076,6 +1097,8 @@ StudySite.Tracker = {
       `;
     }).join('');
 
+    const isCloud = window.StudySite && StudySite.DB && StudySite.DB.isConnected();
+
     containerEl.innerHTML = `
       <div class="study-tracker-container">
         <!-- Tracker Top Bar -->
@@ -1091,7 +1114,10 @@ StudySite.Tracker = {
               Live tracking for staff engineering milestones, daily retention streaks, and curriculum phase completion.
             </div>
           </div>
-          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;">
+            <button class="cloud-status-btn ${isCloud ? 'connected' : ''}" onclick="StudySite.DB ? StudySite.DB.openSettingsModal() : null" title="Configure Cloud Database Sync">
+              ${isCloud ? '🟢 Cloud Synced (PostgreSQL)' : '💾 LocalStorage Mode (Click to connect DB)'}
+            </button>
             <button class="btn btn-sm btn-primary" onclick="StudySite.Tracker.toggleSessionForm()">
               ⏱️ + Log Study Session
             </button>

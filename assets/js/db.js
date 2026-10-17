@@ -368,7 +368,7 @@ StudySite.DB = {
     if (StudySite.Roadmap) StudySite.Roadmap.updateStats();
   },
 
-  // ── Interactive Cloud Settings Modal ──
+  // ── Interactive Cloud Synchronization Console Modal ──
   injectModal: function () {
     if (document.getElementById('dbSettingsModal')) return;
 
@@ -380,48 +380,51 @@ StudySite.DB = {
       <div class="db-modal-card">
         <div class="db-modal-header">
           <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <span style="font-size: 1.3rem;">🔌</span>
+            <span style="font-size: 1.3rem;">⚡</span>
             <div>
-              <h3 style="margin: 0; font-size: 1.15rem; font-weight: 700;">Database Cloud Sync Settings</h3>
-              <div style="font-size: 0.72rem; color: var(--text-dim);">PostgreSQL / Supabase Integration</div>
+              <h3 style="margin: 0; font-size: 1.15rem; font-weight: 700;">Database Cloud Synchronization</h3>
+              <div style="font-size: 0.72rem; color: var(--text-dim);">PostgreSQL Distributed Storage Engine</div>
             </div>
           </div>
-          <button class="btn btn-sm" onclick="StudySite.DB.closeSettingsModal()" style="padding: 0.2rem 0.5rem;">✕</button>
+          <button class="btn btn-sm" onclick="StudySite.DB.closeSettingsModal()" style="padding: 0.2rem 0.5rem;" aria-label="Close modal">✕</button>
         </div>
 
         <div class="db-modal-body">
-          <div id="dbStatusAlert" style="margin-bottom: 1.25rem; padding: 0.75rem 1rem; border-radius: var(--radius-sm); font-size: 0.8rem;">
+          <div id="dbStatusAlert" style="margin-bottom: 1.25rem; padding: 0.85rem 1rem; border-radius: var(--radius-sm); font-size: 0.82rem;">
             <!-- Injected dynamically -->
           </div>
 
-          <div style="margin-bottom: 1rem;">
-            <label style="display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); margin-bottom: 0.35rem;">
-              Supabase Project URL
-            </label>
-            <input type="url" id="inputSupabaseUrl" placeholder="https://xyzcompany.supabase.co" style="width: 100%; padding: 0.5rem 0.75rem; font-size: 0.82rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text);">
+          <!-- Architecture & Specifications Grid -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.25rem;">
+            <div style="background: var(--surface-hover); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0.75rem;">
+              <div style="font-size: 0.68rem; text-transform: uppercase; color: var(--text-dim); font-weight: 700;">Storage Backend</div>
+              <div style="font-size: 0.88rem; font-weight: 600; color: var(--text); margin-top: 0.2rem;">PostgreSQL 15+</div>
+            </div>
+            <div style="background: var(--surface-hover); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0.75rem;">
+              <div style="font-size: 0.68rem; text-transform: uppercase; color: var(--text-dim); font-weight: 700;">Replication Model</div>
+              <div style="font-size: 0.88rem; font-weight: 600; color: #16a34a; margin-top: 0.2rem;">Active Multi-Device</div>
+            </div>
+            <div style="background: var(--surface-hover); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0.75rem;">
+              <div style="font-size: 0.68rem; text-transform: uppercase; color: var(--text-dim); font-weight: 700;">Cache Architecture</div>
+              <div style="font-size: 0.88rem; font-weight: 600; color: var(--text); margin-top: 0.2rem;">Offline-First (0ms)</div>
+            </div>
+            <div style="background: var(--surface-hover); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0.75rem;">
+              <div style="font-size: 0.68rem; text-transform: uppercase; color: var(--text-dim); font-weight: 700;">Security Policy</div>
+              <div style="font-size: 0.88rem; font-weight: 600; color: var(--accent); margin-top: 0.2rem;">RLS Enforced</div>
+            </div>
           </div>
 
-          <div style="margin-bottom: 1.25rem;">
-            <label style="display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); margin-bottom: 0.35rem;">
-              Anon Public API Key
-            </label>
-            <input type="password" id="inputSupabaseKey" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." style="width: 100%; padding: 0.5rem 0.75rem; font-size: 0.82rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text);">
-          </div>
-
-          <div style="background: var(--surface-hover); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 0.75rem; font-size: 0.75rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1.25rem;">
-            💡 <strong>Need to create tables?</strong> Run the pre-built <code>schema.sql</code> script in your Supabase SQL editor. It provisions tables for study sessions, module checklist, spaced repetition, and comments with public Row-Level Security (RLS).
+          <div style="background: var(--surface-hover); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 0.75rem 1rem; font-size: 0.76rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1.25rem;">
+            🛡️ <strong>Encapsulated Infrastructure:</strong> Database endpoints and authentication keys are internal to the runtime. Progress across Study Sessions, Module Checklist, 13-Week Roadmap, and Comments replicates continuously in the background.
           </div>
 
           <div style="display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: space-between; align-items: center;">
             <div style="display: flex; gap: 0.5rem;">
-              <button class="btn btn-primary btn-sm" id="btnConnectDb" onclick="StudySite.DB.handleConnect()">
-                ⚡ Connect & Sync
-              </button>
-              <button class="btn btn-sm" id="btnDisconnectDb" onclick="StudySite.DB.handleDisconnect()" style="display: none; color: #ef4444;">
-                Disconnect
+              <button class="btn btn-primary btn-sm" id="btnTestDb" onclick="StudySite.DB.handleTestConnection()">
+                ⚡ Test Latency & Ping
               </button>
             </div>
-            <div style="display: flex; gap: 0.5rem;" id="dbSyncActions" style="display: none;">
+            <div style="display: flex; gap: 0.5rem;" id="dbSyncActions">
               <button class="btn btn-sm" onclick="StudySite.DB.handlePush()" title="Upload existing localStorage data to Cloud DB">
                 ⬆️ Push to Cloud
               </button>
@@ -440,29 +443,17 @@ StudySite.DB = {
     this.injectModal();
     const modal = document.getElementById('dbSettingsModal');
     const alert = document.getElementById('dbStatusAlert');
-    const urlInput = document.getElementById('inputSupabaseUrl');
-    const keyInput = document.getElementById('inputSupabaseKey');
-    const btnDisconnect = document.getElementById('btnDisconnectDb');
-    const syncActions = document.getElementById('dbSyncActions');
-
-    urlInput.value = localStorage.getItem('study_supabase_url') || (window.STUDY_CONFIG && window.STUDY_CONFIG.supabaseUrl) || 'https://mnvakmqzabxyrzjbluzx.supabase.co';
-    const defaultKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1udmFrbXF6YWJ4eXJ6amJsdXp4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTIyNDk0ODAsImV4cCI6MjEwNzgyNTQ4MH0.1Tp3OrUPPqswTKeIyAAdDdhvuQIUt3tdfMQcvnu2zn0';
-    keyInput.value = localStorage.getItem('study_supabase_key') || (window.STUDY_CONFIG && window.STUDY_CONFIG.supabaseKey) || defaultKey;
 
     if (this.isConnected()) {
       alert.style.background = 'rgba(22, 163, 74, 0.12)';
       alert.style.border = '1px solid rgba(22, 163, 74, 0.35)';
       alert.style.color = '#15803d';
-      alert.innerHTML = '🟢 <strong>Connected to Supabase PostgreSQL</strong>. Your study progress and sessions sync live across all devices.';
-      btnDisconnect.style.display = 'inline-flex';
-      syncActions.style.display = 'flex';
+      alert.innerHTML = '🟢 <strong>Connected to Supabase PostgreSQL</strong>. Your study progress, checklist, and notes sync live across all your devices.';
     } else {
       alert.style.background = 'var(--surface-active)';
       alert.style.border = '1px solid var(--border)';
       alert.style.color = 'var(--text-muted)';
-      alert.innerHTML = '⚪ <strong>Currently in Offline / LocalStorage Mode</strong>. Connect Supabase to sync progress across your laptop, desktop, and mobile devices.';
-      btnDisconnect.style.display = 'none';
-      syncActions.style.display = 'none';
+      alert.innerHTML = '⚪ <strong>Currently in Offline / LocalStorage Mode</strong>. Cloud database is not reachable.';
     }
 
     modal.style.display = 'flex';
@@ -473,24 +464,42 @@ StudySite.DB = {
     if (modal) modal.style.display = 'none';
   },
 
-  handleConnect: async function () {
-    const url = (document.getElementById('inputSupabaseUrl').value || '').trim();
-    const key = (document.getElementById('inputSupabaseKey').value || '').trim();
-    const btn = document.getElementById('btnConnectDb');
-
-    btn.textContent = '⏳ Testing connection...';
-    btn.disabled = true;
+  handleTestConnection: async function () {
+    const btn = document.getElementById('btnTestDb');
+    if (btn) {
+      btn.textContent = '⏳ Testing latency...';
+      btn.disabled = true;
+    }
 
     try {
-      await this.connect(url, key);
-      alert('✅ Connected successfully to Supabase PostgreSQL! Cloud sync is now active.');
-      this.closeSettingsModal();
-      if (StudySite.Tracker) StudySite.Tracker.render();
+      if (!this.isConnected()) {
+        this.init();
+      }
+      if (!this.isConnected()) {
+        throw new Error('Database client not initialized.');
+      }
+
+      const start = performance.now();
+      const { data, error } = await this._client.from('study_sessions').select('id').limit(1);
+      const latency = Math.round(performance.now() - start);
+
+      if (error) {
+        if (error.code === 'PGRST205' || (error.message && error.message.includes('schema cache'))) {
+          alert('⚠️ Connection successful (' + latency + 'ms), but tables need to be created. Please run schema.sql in your Supabase SQL Editor.');
+        } else {
+          throw error;
+        }
+      } else {
+        alert('✅ Connection verified healthy! Round-trip latency: ' + latency + 'ms.');
+      }
+      this.openSettingsModal();
     } catch (err) {
-      alert('❌ ' + err.message);
+      alert('❌ Connection test error: ' + (err.message || err));
     } finally {
-      btn.textContent = '⚡ Connect & Sync';
-      btn.disabled = false;
+      if (btn) {
+        btn.textContent = '⚡ Test Latency & Ping';
+        btn.disabled = false;
+      }
     }
   },
 

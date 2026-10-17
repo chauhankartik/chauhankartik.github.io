@@ -61,17 +61,30 @@
     <!-- Filter & Search Controls -->
     <div style="margin-bottom: 2rem;">
       <!-- Seniority Level Filter Bar -->
-      <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1rem; background: var(--surface); padding: 0.75rem 1.1rem; border-radius: var(--radius-md); border: 1px solid var(--border);">
+      <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 0.75rem; background: var(--surface); padding: 0.75rem 1.1rem; border-radius: var(--radius-md); border: 1px solid var(--border);">
         <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); white-space: nowrap;">
-          🎯 Level:
+          🎯 Seniority:
         </span>
         <div class="level-pills-bar" id="topicLevelFilterBar">
-          <button class="level-btn active" data-level="all">All Levels</button>
+          <button class="level-btn active" data-level="all">All Seniorities</button>
           <button class="level-btn" data-level="L1">🟢 L1: SDE-1</button>
           <button class="level-btn" data-level="L2">🔵 L2: SDE-2</button>
           <button class="level-btn" data-level="L3">🟠 L3: Senior</button>
           <button class="level-btn" data-level="L4">🟤 L4: Staff</button>
           <button class="level-btn" data-level="Architect">🔴 Architect</button>
+        </div>
+      </div>
+
+      <!-- Language Path Filter Bar -->
+      <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1rem; background: var(--surface); padding: 0.75rem 1.1rem; border-radius: var(--radius-md); border: 1px solid var(--border);">
+        <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #3b82f6; white-space: nowrap;">
+          💻 Language:
+        </span>
+        <div class="level-pills-bar" id="topicLangFilterBar">
+          <button class="lang-btn active" data-lang="all">All Languages (Polyglot)</button>
+          <button class="lang-btn" data-lang="java">☕ Java Track</button>
+          <button class="lang-btn" data-lang="cpp">🔷 C++ Track</button>
+          <button class="lang-btn" data-lang="rust">⚙️ Rust Track</button>
         </div>
       </div>
 
@@ -118,17 +131,16 @@
       let allTopics = [];
       let activeDomain = 'all';
       let activeLevel = 'all';
+      let activeLang = 'all';
 
-      // Check URL parameters for ?domain=... and ?level=...
+      // Check URL parameters for ?domain=..., ?level=..., ?lang=...
       const urlParams = new URLSearchParams(window.location.search);
       const paramDomain = urlParams.get('domain');
       const paramLevel = urlParams.get('level');
-      if (paramDomain) {
-        activeDomain = paramDomain;
-      }
-      if (paramLevel) {
-        activeLevel = paramLevel;
-      }
+      const paramLang = urlParams.get('lang');
+      if (paramDomain) activeDomain = paramDomain;
+      if (paramLevel) activeLevel = paramLevel;
+      if (paramLang) activeLang = paramLang;
 
       StudySite.Data.load().then(function (data) {
         // Build flat list of topics annotated with domain metadata
@@ -147,11 +159,7 @@
         // Set initial active state on level buttons
         const levelButtons = document.querySelectorAll('#topicLevelFilterBar .level-btn');
         levelButtons.forEach(btn => {
-          if (btn.getAttribute('data-level') === activeLevel) {
-            btn.classList.add('active');
-          } else {
-            btn.classList.remove('active');
-          }
+          btn.classList.toggle('active', btn.getAttribute('data-level') === activeLevel);
         });
 
         // Attach level button listeners
@@ -160,16 +168,40 @@
             levelButtons.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             activeLevel = btn.getAttribute('data-level');
-            
-            // Sync URL query param
-            const url = new URL(window.location);
-            if (activeLevel === 'all') url.searchParams.delete('level');
-            else url.searchParams.set('level', activeLevel);
-            window.history.replaceState({}, '', url);
-
-            renderTopics();
+            syncUrlAndRender();
           });
         });
+
+        // Set initial active state on language buttons
+        const langButtons = document.querySelectorAll('#topicLangFilterBar .lang-btn');
+        langButtons.forEach(btn => {
+          btn.classList.toggle('active', btn.getAttribute('data-lang') === activeLang);
+        });
+
+        // Attach language button listeners
+        langButtons.forEach(btn => {
+          btn.addEventListener('click', function () {
+            langButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            activeLang = btn.getAttribute('data-lang');
+            syncUrlAndRender();
+          });
+        });
+
+        function syncUrlAndRender() {
+          const url = new URL(window.location);
+          if (activeLevel === 'all') url.searchParams.delete('level');
+          else url.searchParams.set('level', activeLevel);
+
+          if (activeLang === 'all') url.searchParams.delete('lang');
+          else url.searchParams.set('lang', activeLang);
+
+          if (activeDomain === 'all') url.searchParams.delete('domain');
+          else url.searchParams.set('domain', activeDomain);
+
+          window.history.replaceState({}, '', url);
+          renderTopics();
+        }
 
         // Render domain tabs
         const tabsContainer = document.getElementById('domainFilterTabs');
@@ -191,13 +223,7 @@
             tabsContainer.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             activeDomain = btn.getAttribute('data-domain');
-            
-            const url = new URL(window.location);
-            if (activeDomain === 'all') url.searchParams.delete('domain');
-            else url.searchParams.set('domain', activeDomain);
-            window.history.replaceState({}, '', url);
-
-            renderTopics();
+            syncUrlAndRender();
           });
         });
 
@@ -222,6 +248,18 @@
                 return false;
               }
             }
+            if (activeLang !== 'all') {
+              const topicLangs = item.topic.languages || ['universal'];
+              let langMatches = false;
+              if (activeLang === 'java') {
+                langMatches = topicLangs.includes('java') || topicLangs.includes('universal');
+              } else if (activeLang === 'cpp') {
+                langMatches = topicLangs.includes('cpp') || topicLangs.includes('c') || topicLangs.includes('universal');
+              } else if (activeLang === 'rust') {
+                langMatches = topicLangs.includes('rust') || topicLangs.includes('universal');
+              }
+              if (!langMatches) return false;
+            }
             if (!query) return true;
             const name = item.topic.name.toLowerCase();
             const desc = (item.topic.description || '').toLowerCase();
@@ -229,11 +267,15 @@
             return name.includes(query) || desc.includes(query) || path.includes(query);
           });
 
-          const levelNotice = activeLevel !== 'all' ? ` (filtered for <strong>${activeLevel}</strong>)` : '';
-          countDisplay.innerHTML = `Showing <strong>${filtered.length}</strong> of <strong>${allTopics.length}</strong> topics${levelNotice}`;
+          let filterNotes = [];
+          if (activeLevel !== 'all') filterNotes.push(`Seniority: <strong>${activeLevel}</strong>`);
+          if (activeLang !== 'all') filterNotes.push(`Language: <strong>${activeLang.toUpperCase()}</strong>`);
+          const filterSuffix = filterNotes.length > 0 ? ` (${filterNotes.join(' · ')})` : '';
+
+          countDisplay.innerHTML = `Showing <strong>${filtered.length}</strong> of <strong>${allTopics.length}</strong> topics${filterSuffix}`;
 
           if (filtered.length === 0) {
-            grid.innerHTML = '<div style="text-align: center; padding: 3rem; color: var(--text-muted); grid-column: 1 / -1;">No topics match your current level and domain filters.</div>';
+            grid.innerHTML = '<div style="text-align: center; padding: 3rem; color: var(--text-muted); grid-column: 1 / -1;">No topics match your current seniority, language, and domain filters.</div>';
             return;
           }
 
@@ -250,14 +292,19 @@
               `<span class="level-pill level-${lvl}">${lvl}</span>`
             ).join(' ');
 
+            const langBadges = (t.languages || []).filter(l => l !== 'universal').map(l => 
+              `<span class="lang-pill lang-${l}">${l.toUpperCase()}</span>`
+            ).join(' ');
+
             return `
               <a class="topic-card" href="topic.html?path=${encodeURIComponent(t.path)}">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem; flex-wrap: wrap; gap: 0.3rem;">
                   <span class="topic-card-domain" style="color: ${item.domainColor}; margin-bottom: 0;">
                     ${item.domainName}
                   </span>
-                  <div style="display: flex; gap: 0.25rem;">
+                  <div style="display: flex; gap: 0.25rem; align-items: center;">
                     ${levelBadges}
+                    ${langBadges}
                   </div>
                 </div>
                 <div class="topic-card-title">${t.name}</div>

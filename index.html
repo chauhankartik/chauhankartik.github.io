@@ -177,6 +177,54 @@
           </div>
         </div>
 
+        <!-- Primary Language Path Selector Strip -->
+        <div style="background: var(--surface-hover); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1.25rem 1.4rem; margin-bottom: 1.5rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.85rem; flex-wrap: wrap; gap: 0.5rem;">
+            <div style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #3b82f6;">
+              💻 Choose Your Primary Language Path:
+            </div>
+            <span style="font-size: 0.72rem; color: var(--text-dim);">Tailors language-specific modules, concurrency models & codebases</span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0.75rem;">
+            <a href="roadmap.html?lang=java" class="level-card-link" style="text-decoration: none; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0.85rem; transition: var(--transition); display: block;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                <span class="lang-pill lang-java">☕ Java Track</span>
+                <span style="font-size: 0.7rem; color: var(--text-dim); font-weight: 600;">Java 21+ & JVM</span>
+              </div>
+              <div style="font-size: 0.88rem; font-weight: 700; color: var(--text); margin-bottom: 0.2rem;">Enterprise & Concurrency</div>
+              <div style="font-size: 0.72rem; color: var(--text-muted); line-height: 1.4;">Effective Java (90 items), JCiP, Loom Virtual Threads, AQS & Netty</div>
+            </a>
+
+            <a href="roadmap.html?lang=cpp" class="level-card-link" style="text-decoration: none; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0.85rem; transition: var(--transition); display: block;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                <span class="lang-pill lang-cpp">🔷 C++ Track</span>
+                <span style="font-size: 0.7rem; color: var(--text-dim); font-weight: 600;">Modern C++20</span>
+              </div>
+              <div style="font-size: 0.88rem; font-weight: 700; color: var(--text); margin-bottom: 0.2rem;">High-Perf & Systems</div>
+              <div style="font-size: 0.72rem; color: var(--text-muted); line-height: 1.4;">RAII, Move Semantics, std::atomic memory orders, Lock-free & epoll</div>
+            </a>
+
+            <a href="roadmap.html?lang=rust" class="level-card-link" style="text-decoration: none; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0.85rem; transition: var(--transition); display: block;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                <span class="lang-pill lang-rust">⚙️ Rust Track</span>
+                <span style="font-size: 0.7rem; color: var(--text-dim); font-weight: 600;">Embedded Storage</span>
+              </div>
+              <div style="font-size: 0.88rem; font-weight: 700; color: var(--text); margin-bottom: 0.2rem;">Memory Safety / Systems</div>
+              <div style="font-size: 0.72rem; color: var(--text-muted); line-height: 1.4;">MiniDB LSM-Tree, WAL recovery, MemTable SkipList & Bloom Filters</div>
+            </a>
+
+            <div style="background: var(--surface); border: 1px dashed var(--border); border-radius: var(--radius-sm); padding: 0.85rem; display: block; opacity: 0.75;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                <span style="font-size: 0.68rem; font-weight: 700; color: var(--text-dim);">🚀 Emerging Tracks</span>
+                <span style="font-size: 0.7rem; color: var(--text-dim); font-weight: 600;">Roadmap</span>
+              </div>
+              <div style="font-size: 0.88rem; font-weight: 700; color: var(--text); margin-bottom: 0.2rem;">Go & Python Systems</div>
+              <div style="font-size: 0.72rem; color: var(--text-muted); line-height: 1.4;">Goroutines runtime, GIL internals & async I/O pipelines (in prep)</div>
+            </div>
+          </div>
+        </div>
+
         <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
           <a class="btn btn-sm" href="roadmap.html">🗺️ Study Roadmap</a>
           <a class="btn btn-sm" href="topics.html">📚 Topic Directory</a>

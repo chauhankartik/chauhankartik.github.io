@@ -218,7 +218,9 @@ StudySite.Renderer = {
 // ── 3. Study Roadmap Progress ──
 StudySite.Roadmap = {
   activeLevel: 'all',
+  activeLang: 'all',
   levelsData: null,
+  languagesData: null,
   isWeekCompleted: function (weekNum) {
     return localStorage.getItem('study_week_done_' + weekNum) === 'true';
   },
@@ -228,9 +230,17 @@ StudySite.Roadmap = {
   },
   updateStats: function () {
     const activeLevel = this.activeLevel || 'all';
+    const activeLang = this.activeLang || 'all';
+
     let targetWeeks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+
     if (activeLevel !== 'all' && this.levelsData && this.levelsData[activeLevel]) {
       targetWeeks = this.levelsData[activeLevel].targetWeeks || [];
+    }
+
+    if (activeLang !== 'all' && this.languagesData && this.languagesData[activeLang]) {
+      const langWeeks = this.languagesData[activeLang].primaryWeeks || [];
+      targetWeeks = targetWeeks.filter(w => langWeeks.includes(w));
     }
 
     let completed = 0;
@@ -256,8 +266,14 @@ StudySite.Roadmap = {
     const textEl = document.getElementById('overallProgressText');
     if (fillEl) fillEl.style.width = percent + '%';
     if (textEl) {
-      const levelLabel = activeLevel === 'all' ? 'total' : activeLevel;
-      textEl.innerHTML = `<strong>${completed} of ${countTarget}</strong> ${levelLabel} weeks completed (${percent}%)`;
+      let labelParts = [];
+      if (activeLevel !== 'all') labelParts.push(activeLevel);
+      if (activeLang !== 'all') {
+        const langBadge = this.languagesData && this.languagesData[activeLang] ? this.languagesData[activeLang].badge : activeLang.toUpperCase();
+        labelParts.push(langBadge);
+      }
+      const labelStr = labelParts.length > 0 ? labelParts.join(' · ') : 'curriculum';
+      textEl.innerHTML = `<strong>${completed} of ${countTarget}</strong> ${labelStr} weeks completed (${percent}%)`;
     }
   },
   toggleWeekCard: function (weekNum) {

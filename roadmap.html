@@ -58,20 +58,21 @@
       </p>
     </div>
 
-    <!-- Level Selector Bar -->
+    <!-- Seniority & Language Track Selector Wrap -->
     <div class="level-selector-wrap">
+      <!-- 1. Seniority Level Row -->
       <div class="level-selector-header">
         <span class="level-selector-label">
-          <span>🎯</span> Target Seniority & Interview Level
+          <span>🎯</span> Target Seniority Track
         </span>
         <span style="font-size: 0.75rem; color: var(--text-dim);" id="levelCurriculumSummary">
-          Showing All 13 Weeks
+          Showing All Curriculum Weeks
         </span>
       </div>
 
-      <div class="level-pills-bar" id="levelPillsBar">
+      <div class="level-pills-bar" id="levelPillsBar" style="margin-bottom: 1.1rem;">
         <button class="level-btn active" data-level="all" onclick="selectLevel('all')">
-          <span>🌐 All Levels</span>
+          <span>🌐 All Seniorities</span>
           <span class="level-btn-tag">13 Wks</span>
         </button>
         <button class="level-btn" data-level="L1" onclick="selectLevel('L1')">
@@ -96,7 +97,32 @@
         </button>
       </div>
 
-      <!-- Dynamic Level Overview Card -->
+      <!-- 2. Language Path Row -->
+      <div class="level-selector-header" style="border-top: 1px solid var(--border); padding-top: 0.85rem;">
+        <span class="level-selector-label" style="color: #3b82f6;">
+          <span>💻</span> Primary Programming Language Path
+        </span>
+        <span style="font-size: 0.75rem; color: var(--text-dim);">
+          Filters language-specific deep dives & deliverables
+        </span>
+      </div>
+
+      <div class="level-pills-bar" id="langPillsBar">
+        <button class="lang-btn active" data-lang="all" onclick="selectLang('all')">
+          <span>🌐 Polyglot / Both (All)</span>
+        </button>
+        <button class="lang-btn" data-lang="java" onclick="selectLang('java')">
+          <span>☕ Java Track (JVM & Loom)</span>
+        </button>
+        <button class="lang-btn" data-lang="cpp" onclick="selectLang('cpp')">
+          <span>🔷 C++ Track (Modern C++20)</span>
+        </button>
+        <button class="lang-btn" data-lang="rust" onclick="selectLang('rust')">
+          <span>⚙️ Rust Track (Storage Engine)</span>
+        </button>
+      </div>
+
+      <!-- Dynamic Combined Overview Card -->
       <div id="levelOverviewContainer"></div>
     </div>
 
@@ -104,7 +130,7 @@
     <div class="roadmap-summary-box">
       <div style="display: flex; justify-content: space-between; align-items: center;">
         <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; color: var(--accent);">
-          Preparation Progress (<span id="progressLevelBadge">All Levels</span>)
+          Preparation Progress (<span id="progressLevelBadge">All Levels · Polyglot</span>)
         </span>
         <button class="btn btn-sm" onclick="resetAllProgress()" style="font-size: 0.72rem; padding: 0.25rem 0.5rem;">
           Reset Progress
@@ -116,7 +142,7 @@
       </div>
 
       <div class="overall-stats-text">
-        <span id="overallProgressText"><strong>0 of 13</strong> weeks completed (0%)</span>
+        <span id="overallProgressText"><strong>0 of 13</strong> curriculum weeks completed (0%)</span>
         <span>Storage: Local browser persistence</span>
       </div>
     </div>
@@ -129,14 +155,16 @@
 
   <footer class="site-footer">
     <p>Engineered with ⚡ by <strong>Kartik Chauhan</strong> · 2026 Software Engineering Master Study Repository</p>
-    <p style="margin-top: 0.4rem; color: var(--text-dim);"><a href="index.html#about">About the Author</a> · Multi-Level Technical Preparation Tracks</p>
+    <p style="margin-top: 0.4rem; color: var(--text-dim);"><a href="index.html#about">About the Author</a> · Multi-Level & Polyglot Technical Preparation Tracks</p>
   </footer>
 
   <script src="assets/js/site.js"></script>
   <script>
     let siteLevelsData = null;
+    let siteLanguagesData = null;
     let siteRoadmapData = null;
     let currentActiveLevel = 'all';
+    let currentActiveLang = 'all';
 
     function resetAllProgress() {
       if (confirm('Are you sure you want to reset all week completion checkboxes?')) {
@@ -151,7 +179,6 @@
       currentActiveLevel = levelId;
       StudySite.Roadmap.activeLevel = levelId;
 
-      // Update button active states
       document.querySelectorAll('#levelPillsBar .level-btn').forEach(btn => {
         if (btn.getAttribute('data-level') === levelId) {
           btn.classList.add('active');
@@ -160,88 +187,176 @@
         }
       });
 
-      // Update URL search param without refresh
+      applyFilters(updateUrl);
+    }
+
+    function selectLang(langId, updateUrl = true) {
+      currentActiveLang = langId;
+      StudySite.Roadmap.activeLang = langId;
+
+      document.querySelectorAll('#langPillsBar .lang-btn').forEach(btn => {
+        if (btn.getAttribute('data-lang') === langId) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      applyFilters(updateUrl);
+    }
+
+    function applyFilters(updateUrl = true) {
       if (updateUrl) {
         const url = new URL(window.location);
-        if (levelId === 'all') {
-          url.searchParams.delete('level');
-        } else {
-          url.searchParams.set('level', levelId);
-        }
+        if (currentActiveLevel === 'all') url.searchParams.delete('level');
+        else url.searchParams.set('level', currentActiveLevel);
+
+        if (currentActiveLang === 'all') url.searchParams.delete('lang');
+        else url.searchParams.set('lang', currentActiveLang);
+
         window.history.replaceState({}, '', url);
       }
 
-      // Render Level Overview Card
+      renderOverviewCard();
+      filterRoadmapWeeks();
+      StudySite.Roadmap.updateStats();
+    }
+
+    function renderOverviewCard() {
       const overviewContainer = document.getElementById('levelOverviewContainer');
       const summaryText = document.getElementById('levelCurriculumSummary');
       const badgeText = document.getElementById('progressLevelBadge');
 
-      if (levelId === 'all' || !siteLevelsData || !siteLevelsData[levelId]) {
-        if (badgeText) badgeText.textContent = 'All Levels';
+      const levelInfo = (siteLevelsData && siteLevelsData[currentActiveLevel]) || null;
+      const langInfo = (siteLanguagesData && siteLanguagesData[currentActiveLang]) || null;
+
+      let badgeLabel = currentActiveLevel === 'all' ? 'All Seniorities' : (levelInfo ? levelInfo.badge : currentActiveLevel);
+      let langLabel = currentActiveLang === 'all' ? 'Polyglot Track' : (langInfo ? langInfo.badge : currentActiveLang);
+      if (badgeText) badgeText.textContent = `${badgeLabel} · ${langLabel}`;
+
+      if (currentActiveLevel === 'all' && currentActiveLang === 'all') {
         if (summaryText) summaryText.textContent = 'Showing All 13 Curriculum Weeks';
         if (overviewContainer) {
           overviewContainer.innerHTML = `
             <div class="level-overview-box" style="border-left-color: var(--accent);">
               <div class="level-overview-title" style="color: var(--accent);">
-                <span>🌐 Comprehensive 13-Week Master Curriculum</span>
+                <span>🌐 Comprehensive Polyglot Preparation Hub</span>
                 <span class="level-pill" style="background: rgba(180, 83, 9, 0.12); color: var(--accent);">
-                  Full Spectrum
+                  Full 13 Weeks
                 </span>
               </div>
               <div class="level-overview-desc">
-                Contains the end-to-end curriculum spanning basic coding loops up to multi-region distributed systems architectures. Click any level badge above (<strong>L1</strong>, <strong>L2</strong>, <strong>L3</strong>, <strong>L4</strong>, or <strong>Architect</strong>) to filter down to the exact weeks and competencies expected in your target interview loops.
+                Covering the complete systems spectrum from DSA foundations, Java 21+ concurrency (JCiP/Loom), and Modern C++20 memory models up to Raft distributed consensus, Kafka streaming, and enterprise architecture. Select a <strong>Seniority Level</strong> or <strong>Language Path</strong> above to tailor your study plan.
               </div>
             </div>
           `;
         }
-      } else {
-        const info = siteLevelsData[levelId];
-        if (badgeText) badgeText.textContent = info.badge;
-        if (summaryText) summaryText.textContent = `Showing ${info.targetWeeks.length} Weeks for ${info.badge}`;
-        if (overviewContainer) {
-          const skillPills = (info.keySkills || []).map(skill => 
-            `<span class="chip" style="color: ${info.color}; border: 1px solid ${info.color}33; background: ${info.color}0d;">${skill}</span>`
-          ).join('');
-
-          overviewContainer.innerHTML = `
-            <div class="level-overview-box" style="border-left-color: ${info.color};">
-              <div class="level-overview-title" style="color: ${info.color};">
-                <span>${info.name}</span>
-                <span class="level-pill" style="background: ${info.color}1a; color: ${info.color}; border: 1px solid ${info.color}44;">
-                  ${info.badge} Target
-                </span>
-              </div>
-              <div class="level-overview-desc">
-                ${info.description}
-              </div>
-              <div class="level-overview-grid">
-                <div class="level-info-block">
-                  <div class="level-info-label">Expected Interview Loop Format</div>
-                  <div class="level-info-value">${info.interviewFormat}</div>
-                </div>
-                <div class="level-info-block">
-                  <div class="level-info-label">Target Study Weeks (${info.targetWeeks.length} Weeks)</div>
-                  <div class="level-info-value">Weeks <strong>${info.targetWeeks.join(', ')}</strong></div>
-                </div>
-                <div class="level-info-block" style="grid-column: 1 / -1;">
-                  <div class="level-info-label">Core Competencies & Key Patterns</div>
-                  <div style="display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.35rem;">
-                    ${skillPills}
-                  </div>
-                </div>
-              </div>
-            </div>
-          `;
-        }
+        return;
       }
 
-      // Filter week cards and phase containers
+      // Build customized overview for active level and/or language
+      let titleColor = levelInfo ? levelInfo.color : (langInfo ? langInfo.color : 'var(--accent)');
+      let titleName = '';
+      if (levelInfo && langInfo && currentActiveLang !== 'all') {
+        titleName = `${levelInfo.name} · ${langInfo.name}`;
+      } else if (levelInfo) {
+        titleName = levelInfo.name;
+      } else if (langInfo) {
+        titleName = langInfo.name;
+      }
+
+      let desc = '';
+      if (langInfo && currentActiveLang !== 'all') {
+        desc += `<strong>Language Track (${langInfo.name}):</strong> ${langInfo.description} `;
+      }
+      if (levelInfo) {
+        desc += `<br style="margin-bottom: 0.35rem;"><strong>Seniority Profile (${levelInfo.name}):</strong> ${levelInfo.description}`;
+      }
+
+      let skills = [];
+      if (levelInfo && levelInfo.keySkills) skills = skills.concat(levelInfo.keySkills);
+      if (langInfo && langInfo.keyTopics) skills = skills.concat(langInfo.keyTopics);
+
+      const skillPills = skills.map(skill => 
+        `<span class="chip" style="color: ${titleColor}; border: 1px solid ${titleColor}33; background: ${titleColor}0d;">${skill}</span>`
+      ).join('');
+
+      let interviewBlock = '';
+      if (levelInfo) {
+        interviewBlock = `
+          <div class="level-info-block">
+            <div class="level-info-label">Expected Interview Loop Format</div>
+            <div class="level-info-value">${levelInfo.interviewFormat}</div>
+          </div>
+        `;
+      }
+
+      let weeksTargetText = '';
+      if (levelInfo && langInfo && currentActiveLang !== 'all') {
+        const intersection = levelInfo.targetWeeks.filter(w => (langInfo.primaryWeeks || []).includes(w));
+        weeksTargetText = `Weeks <strong>${intersection.join(', ')}</strong> (${intersection.length} Primary Weeks)`;
+        if (summaryText) summaryText.textContent = `Filtered to ${intersection.length} Weeks for ${levelInfo.badge} + ${langInfo.badge}`;
+      } else if (levelInfo) {
+        weeksTargetText = `Weeks <strong>${levelInfo.targetWeeks.join(', ')}</strong> (${levelInfo.targetWeeks.length} Weeks)`;
+        if (summaryText) summaryText.textContent = `Filtered to ${levelInfo.targetWeeks.length} Weeks for ${levelInfo.badge}`;
+      } else if (langInfo) {
+        weeksTargetText = `Weeks <strong>${langInfo.primaryWeeks.join(', ')}</strong> (${langInfo.primaryWeeks.length} Primary Weeks)`;
+        if (summaryText) summaryText.textContent = `Filtered to ${langInfo.primaryWeeks.length} Weeks for ${langInfo.badge}`;
+      }
+
+      if (overviewContainer) {
+        overviewContainer.innerHTML = `
+          <div class="level-overview-box" style="border-left-color: ${titleColor};">
+            <div class="level-overview-title" style="color: ${titleColor};">
+              <span>${titleName}</span>
+              <span class="level-pill" style="background: ${titleColor}1a; color: ${titleColor}; border: 1px solid ${titleColor}44;">
+                ${badgeLabel}
+              </span>
+              ${currentActiveLang !== 'all' ? `<span class="lang-pill lang-${currentActiveLang}">${langLabel}</span>` : ''}
+            </div>
+            <div class="level-overview-desc">
+              ${desc}
+            </div>
+            <div class="level-overview-grid">
+              ${interviewBlock}
+              <div class="level-info-block">
+                <div class="level-info-label">Target Curriculum Milestones</div>
+                <div class="level-info-value">${weeksTargetText}</div>
+              </div>
+              <div class="level-info-block" style="grid-column: 1 / -1;">
+                <div class="level-info-label">Target Core Competencies & Deep Dives</div>
+                <div style="display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.35rem;">
+                  ${skillPills}
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    function filterRoadmapWeeks() {
       let firstVisibleCard = null;
+
       document.querySelectorAll('.phase-container').forEach(phaseEl => {
         let visibleInPhase = 0;
         phaseEl.querySelectorAll('.week-card').forEach(card => {
           const cardLevels = (card.getAttribute('data-levels') || '').split(' ');
-          const matches = (levelId === 'all') || cardLevels.includes(levelId);
+          const cardLangs = (card.getAttribute('data-languages') || '').split(' ');
+
+          const levelMatches = (currentActiveLevel === 'all') || cardLevels.includes(currentActiveLevel);
+
+          let langMatches = true;
+          if (currentActiveLang === 'java') {
+            langMatches = cardLangs.includes('java') || cardLangs.includes('universal');
+          } else if (currentActiveLang === 'cpp') {
+            langMatches = cardLangs.includes('cpp') || cardLangs.includes('c') || cardLangs.includes('universal');
+          } else if (currentActiveLang === 'rust') {
+            langMatches = cardLangs.includes('rust') || cardLangs.includes('universal');
+          }
+
+          const matches = levelMatches && langMatches;
+
           if (matches) {
             card.style.display = 'block';
             visibleInPhase++;
@@ -262,10 +377,7 @@
         }
       });
 
-      // Update progress stats for active level
-      StudySite.Roadmap.updateStats();
-
-      // Open first visible card if none open
+      // Expand first visible card if needed
       if (firstVisibleCard && !document.querySelector('.week-card.open[style*="display: block"]')) {
         firstVisibleCard.classList.add('open');
       }
@@ -280,8 +392,11 @@
         if (!container || !data.roadmap) return;
 
         siteLevelsData = data.levels || {};
+        siteLanguagesData = data.languages || {};
         siteRoadmapData = data.roadmap;
+
         StudySite.Roadmap.levelsData = siteLevelsData;
+        StudySite.Roadmap.languagesData = siteLanguagesData;
 
         let html = '';
 
@@ -300,6 +415,7 @@
           phase.weeks.forEach(function (w) {
             const weekNum = w.week;
             const weekLevels = w.levels || ['L2', 'L3'];
+            const weekLangs = w.languages || ['universal'];
             const focusItems = w.focus.map(f => `<li>${f}</li>`).join('');
             const moduleBadges = w.modules.map(m => `
               <a class="module-link" href="topic.html?path=${encodeURIComponent(m.path)}">
@@ -311,12 +427,24 @@
               `<span class="level-pill level-${lvl}">${lvl}</span>`
             ).join('');
 
+            const langBadges = [];
+            if (weekLangs.includes('java') && !weekLangs.includes('universal')) {
+              langBadges.push(`<span class="lang-pill lang-java">☕ Java Focus</span>`);
+            } else if (weekLangs.includes('cpp') && !weekLangs.includes('universal')) {
+              langBadges.push(`<span class="lang-pill lang-cpp">🔷 C++ Focus</span>`);
+            } else if (weekLangs.includes('rust')) {
+              langBadges.push(`<span class="lang-pill lang-rust">⚙️ Rust Focus</span>`);
+            }
+
             html += `
-              <div class="week-card" id="weekCard_${weekNum}" data-levels="${weekLevels.join(' ')}">
+              <div class="week-card" id="weekCard_${weekNum}" data-levels="${weekLevels.join(' ')}" data-languages="${weekLangs.join(' ')}">
                 <div class="week-card-header" onclick="StudySite.Roadmap.toggleWeekCard(${weekNum})">
                   <span class="week-number-pill">W${weekNum}</span>
                   <span class="week-card-title">${w.title}</span>
-                  <div class="week-level-tags">${levelBadges}</div>
+                  <div class="week-level-tags">
+                    ${levelBadges}
+                    ${langBadges.join('')}
+                  </div>
                   <span class="week-toggle-arrow">▶</span>
                 </div>
                 <div class="week-card-body">
@@ -357,14 +485,28 @@
 
         container.innerHTML = html;
 
-        // Check URL parameter for level
+        // Check URL parameters for level and lang
         const urlParams = new URLSearchParams(window.location.search);
         const requestedLevel = urlParams.get('level');
+        const requestedLang = urlParams.get('lang');
+
         if (requestedLevel && (siteLevelsData[requestedLevel] || requestedLevel === 'all')) {
-          selectLevel(requestedLevel, false);
-        } else {
-          selectLevel('all', false);
+          currentActiveLevel = requestedLevel;
+          StudySite.Roadmap.activeLevel = requestedLevel;
+          document.querySelectorAll('#levelPillsBar .level-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-level') === requestedLevel);
+          });
         }
+
+        if (requestedLang && (siteLanguagesData[requestedLang] || requestedLang === 'all')) {
+          currentActiveLang = requestedLang;
+          StudySite.Roadmap.activeLang = requestedLang;
+          document.querySelectorAll('#langPillsBar .lang-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-lang') === requestedLang);
+          });
+        }
+
+        applyFilters(false);
       });
     });
   </script>

@@ -322,5 +322,32 @@
     "question": "Interval DP Pattern: What is the loop order for subproblem formulation (e.g. Burst Balloons, Matrix Chain Multiplication)?",
     "answer": "Interval DP Invariant:\nTo compute `dp[i][j]` (representing the interval from index `i` to `j`), all smaller sub-intervals within `[i, j]` must already be solved!\n\nStandard Loop Order (by Interval Length):\n```java\nfor (int len = 1; len <= n; len++) {       // 1. Outer loop: interval length\n    for (int i = 0; i <= n - len; i++) {   // 2. Left boundary\n        int j = i + len - 1;               // 3. Right boundary\n        for (int k = i; k < j; k++) {      // 4. Split point\n            dp[i][j] = Math.min(dp[i][j], dp[i][k] + dp[k + 1][j] + cost(i, k, j));\n        }\n    }\n}\n```\n• Complexity: O(N^3) time, O(N^2) space.",
     "relatedDoc": "01_core_foundations/dsa/dynamicprogramming/README.md"
+  },
+  {
+    "id": 119,
+    "category": "cpp_systems",
+    "categoryLabel": "C++: Memory Models & Concurrency",
+    "difficulty": "Staff",
+    "question": "What is the acquire-release memory ordering semantic in C++ (std::memory_order_acquire / release), and how does it prevent reordering across threads?",
+    "answer": "• Release Operation (`store(..., memory_order_release)`):\n  Prevents any prior memory reads or writes from being reordered AFTER the store.\n  Ensures all modifications made by the writing thread are committed before this atomic flag is published.\n\n• Acquire Operation (`load(memory_order_acquire)`):\n  Prevents subsequent memory reads or writes from being reordered BEFORE the load.\n  Ensures the reading thread sees all values that were committed before the matching release store.\n\n• Synchronizes-with Relationship:\n  When thread B loads with acquire the value stored with release by thread A, all writes by A become visible to B without full `memory_order_seq_cst` bus lock overhead.",
+    "relatedDoc": "01_core_foundations/cpp_concurrency_in_action/README.md"
+  },
+  {
+    "id": 120,
+    "category": "cpp_systems",
+    "categoryLabel": "C++: Move Semantics & RAII",
+    "difficulty": "Senior",
+    "question": "In Modern C++, what is the difference between an rvalue reference (Type&&) and a Universal (Forwarding) Reference (auto&& / T&&)?",
+    "answer": "• Rvalue Reference (`Widget&&`):\n  Binds exclusively to rvalues (temporaries or `std::move` results).\n  Does not undergo type deduction.\n\n• Universal Reference (`T&&` or `auto&&` with type deduction):\n  Occurs where type deduction takes place (`template <typename T> void f(T&& x)` or `auto&& y`).\n  Under Reference Collapsing Rules:\n  - If an lvalue of type `X` is passed, `T` deduces to `X&`, and `X& &&` collapses to `X&` (lvalue reference).\n  - If an rvalue of type `X` is passed, `T` deduces to `X`, and `X&&` remains an rvalue reference.\n\n• Use `std::forward<T>(x)` to preserve original value category when forwarding parameters to other functions.",
+    "relatedDoc": "01_core_foundations/effective_modern_cpp/README.md"
+  },
+  {
+    "id": 121,
+    "category": "rust_systems",
+    "categoryLabel": "Rust: Ownership & Concurrency",
+    "difficulty": "Staff",
+    "question": "Explain Rust's 'Aliasing XOR Mutability' invariant and how RefCell / Mutex provide interior mutability.",
+    "answer": "• Aliasing XOR Mutability:\n  At any point in time, you may have EITHER:\n  1. Any number of immutable references (`&T`) to a resource, OR\n  2. Exactly one mutable reference (`&mut T`).\n  Guarantees compile-time data race freedom without runtime overhead.\n\n• Interior Mutability Pattern:\n  Allows mutating data even when there are immutable references to the container.\n  - `RefCell<T>`: Enforces borrowing rules dynamically at runtime on a single thread (panics on violation).\n  - `Mutex<T>` / `RwLock<T>`: Enforces mutual exclusion safely across multiple threads by acquiring an OS/futex lock guard.",
+    "relatedDoc": "03_systems_and_databases/minidb/README.md"
   }
 ]

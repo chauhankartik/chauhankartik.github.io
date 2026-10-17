@@ -181,6 +181,95 @@ LEVELS_CONFIG = {
     }
 }
 
+TOPIC_LANGUAGES = {
+    "dsa": ["java", "cpp", "universal"],
+    "cses": ["cpp", "java", "universal"],
+    "interviewbit": ["java", "cpp", "universal"],
+    "c_programming_a_modern_approach": ["cpp", "c"],
+    "java": ["java"],
+    "effective_java": ["java"],
+    "java_concurrency_in_practice": ["java"],
+    "sql": ["sql", "universal"],
+    "cpp_programming_language": ["cpp"],
+    "tour_of_cpp": ["cpp"],
+    "effective_modern_cpp": ["cpp"],
+    "cpp_concurrency_in_action": ["cpp"],
+    "cpp_stl": ["cpp"],
+    "java_vs_cpp": ["java", "cpp"],
+    "lld": ["java", "cpp", "universal"],
+    "hld": ["universal", "java", "cpp"],
+    "system_design_interview": ["universal", "java", "cpp"],
+    "fundamentals_of_software_architecture": ["universal"],
+    "monolith_to_microservices": ["universal"],
+    "ostep": ["cpp", "c", "universal"],
+    "uiuc_cs341_system_programming": ["cpp", "c"],
+    "computer_networks": ["universal"],
+    "database_system_concepts": ["universal", "sql"],
+    "database_internals": ["universal", "cpp", "rust", "java"],
+    "ddia_book_study": ["universal"],
+    "distributed-systems": ["universal"],
+    "understanding_distributed_systems": ["universal"],
+    "mit_6_5840_distributed_systems": ["universal"],
+    "stanford_cs244b_distributed_systems": ["universal"],
+    "cmu_15418_parallel_programming": ["cpp", "universal"],
+    "stanford_ee382c_advanced_computer_architecture": ["universal"],
+    "mit_61060_performance_engineering": ["cpp", "c"],
+    "berkeley_cs267_parallel_computing": ["cpp", "universal"],
+    "information_retrieval_and_search_engines": ["universal"],
+    "relevant_search_solr_elasticsearch": ["java", "universal"],
+    "lucene_in_action": ["java", "universal"],
+    "minidb": ["rust"],
+    "api_security_in_action": ["universal", "java"],
+    "high_throughput_data_pipelines": ["universal", "java"],
+    "tech-stack": ["universal", "java", "cpp"]
+}
+
+LANGUAGES_CONFIG = {
+    "all": {
+        "id": "all",
+        "name": "All Languages (Polyglot / Systems)",
+        "badge": "Polyglot Track",
+        "icon": "🌐",
+        "color": "#b45309",
+        "description": "Full-spectrum systems curriculum covering Java 21+, Modern C++20, Rust, and language-agnostic distributed architectures.",
+        "primaryWeeks": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+        "keyTopics": ["Java 21+ & JVM Internals", "Modern C++20 & Lock-Free Concurrency", "Rust Storage Engines", "Distributed Systems", "SQL & Storage"]
+    },
+    "java": {
+        "id": "java",
+        "name": "Java Engineering Track",
+        "badge": "Java 21+ Track",
+        "icon": "☕",
+        "color": "#f59e0b",
+        "description": "Enterprise & High-Concurrency JVM track: Core Java 21+, Effective Java 3rd Edition (90 Items), Java Concurrency in Practice (JCiP), Project Loom Virtual Threads, JMM memory model, AQS, Netty, HikariCP, and Spring Boot.",
+        "primaryWeeks": [1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+        "electiveWeeks": [4],
+        "keyTopics": ["Core Java & Memory Internals", "Effective Java (90 Items)", "Java Concurrency in Practice", "Java Production LLD", "HikariCP & JDBC", "Spring Boot & Netty"]
+    },
+    "cpp": {
+        "id": "cpp",
+        "name": "C++ Systems Track",
+        "badge": "Modern C++20 Track",
+        "icon": "🔷",
+        "color": "#3b82f6",
+        "description": "High-Performance Systems & Mechanical Sympathy track: C Programming (Pointers & Arenas), Modern C++20 (Move Semantics & Concepts), Effective Modern C++ (42 Items), C++ Concurrency in Action (Lock-Free Atomics), Linux POSIX epoll, and Cache-line optimization.",
+        "primaryWeeks": [1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+        "electiveWeeks": [3],
+        "keyTopics": ["C Programming: A Modern Approach", "The C++ Programming Language", "Effective Modern C++ (42 Items)", "C++ Concurrency in Action", "C++ STL Masterclass", "Java vs C++ Systems Mind Map"]
+    },
+    "rust": {
+        "id": "rust",
+        "name": "Rust Systems Track (Storage & Infra)",
+        "badge": "Rust Systems Track",
+        "icon": "⚙️",
+        "color": "#ea580c",
+        "description": "Memory safety without garbage collection: MiniDB LSM-Tree key-value embedded storage engine, MemTable SkipList, WAL journaling, binary SSTables, Bloom filters, and zero-cost abstractions.",
+        "primaryWeeks": [1, 2, 7, 8, 9, 10, 11, 12, 13],
+        "electiveWeeks": [3, 4],
+        "keyTopics": ["MiniDB Embedded Storage Engine", "LSM-Tree & SSTables", "WAL Crash Recovery", "SkipList Concurrency", "Zero-Cost Abstractions"]
+    }
+}
+
 IGNORED_DIRS = {".git", "target", "node_modules", "assets", "__pycache__", ".idea", ".vscode"}
 IGNORED_FILES = {".DS_Store", "generate_site_data.py", "app.log", "async.log"}
 
@@ -325,6 +414,7 @@ def main():
             topic_tree["name"] = clean_name(t_name)
             topic_tree["path"] = t_rel
             topic_tree["levels"] = TOPIC_LEVELS.get(t_name, ["L2", "L3"])
+            topic_tree["languages"] = TOPIC_LANGUAGES.get(t_name, ["universal"])
             
             # File stats for this topic
             all_t_files = collect_all_files(topic_tree)
@@ -348,7 +438,8 @@ def main():
                         "topic": topic_tree["name"],
                         "topicPath": topic_tree["path"],
                         "ext": t_ext,
-                        "levels": topic_tree["levels"]
+                        "levels": topic_tree["levels"],
+                        "languages": topic_tree["languages"]
                     })
             
             topics.append(topic_tree)
@@ -412,6 +503,7 @@ def main():
                     "week": 1,
                     "title": "Data Structures, Algorithms, CSES & C Programming",
                     "levels": ["L1", "L2"],
+                    "languages": ["universal", "java", "cpp"],
                     "focus": [
                         "Arrays, Two Pointers, Sliding Window, Linked Lists, Stacks, Queues, Hashing",
                         "C Programming: Pointers, Arena Allocators, Fixed-Width Types, Storage Classes & Linking",
@@ -430,6 +522,7 @@ def main():
                     "week": 2,
                     "title": "Advanced Graph Algorithms, Dynamic Programming & CSES Mastery",
                     "levels": ["L1", "L2", "L3"],
+                    "languages": ["universal", "java", "cpp"],
                     "focus": [
                         "BFS, DFS, Kahn's Topological Sort, Dijkstra, Bellman-Ford, Union-Find / DSU",
                         "1D & 2D Dynamic Programming (Knapsack, LCS, LIS, Interval DP)",
@@ -448,6 +541,7 @@ def main():
                     "week": 3,
                     "title": "Java Internals, Effective Java (90 Items), JCiP & FAANG SQL",
                     "levels": ["L2", "L3"],
+                    "languages": ["java"],
                     "focus": [
                         "Effective Java 3rd Edition: All 12 Chapters and 90 Items thoroughly internalized",
                         "Java Concurrency in Practice: Monitors, Volatile, JMM Happens-Before, AQS & CLH Queues",
@@ -466,6 +560,7 @@ def main():
                     "week": 4,
                     "title": "Advanced C++, STL & Modern Concurrency",
                     "levels": ["L3", "L4"],
+                    "languages": ["cpp"],
                     "focus": [
                         "The C++ Programming Language & Tour of C++: RAII, Move Semantics, Templates",
                         "Effective Modern C++: Smart Pointers, Universal References, Perfect Forwarding, Lambdas",
@@ -494,6 +589,7 @@ def main():
                     "week": 5,
                     "title": "Object-Oriented Analysis, Design Principles & SOLID",
                     "levels": ["L1", "L2"],
+                    "languages": ["universal", "java", "cpp"],
                     "focus": [
                         "SOLID Principles (Single Responsibility, Open/Closed, Liskov, ISP, Dependency Inversion)",
                         "Encapsulation, Polymorphism, and Composition vs Inheritance trade-offs",
@@ -509,6 +605,7 @@ def main():
                     "week": 6,
                     "title": "Gang of Four (GoF) Design Patterns in Practice",
                     "levels": ["L2", "L3"],
+                    "languages": ["universal", "java", "cpp"],
                     "focus": [
                         "Creational: Singleton, Factory Method, Abstract Factory, Builder, Prototype",
                         "Structural: Adapter, Composite, Proxy, Decorator, Facade, Bridge, Flyweight",
@@ -523,6 +620,7 @@ def main():
                     "week": 7,
                     "title": "Low-Level System Design (LLD) Production Systems",
                     "levels": ["L2", "L3", "L4"],
+                    "languages": ["universal", "java", "cpp", "rust"],
                     "focus": [
                         "Elevator System Design, LRU Cache, Parking Lot, Vending Machine, ATM System",
                         "Concurrency safety, thread-safe collections, lock granularities, and state transitions",
@@ -537,6 +635,7 @@ def main():
                     "week": 8,
                     "title": "High-Level System Design (HLD), Alex Xu, Architecture & Microservices",
                     "levels": ["L3", "L4", "Architect"],
+                    "languages": ["universal", "java", "cpp"],
                     "focus": [
                         "The 4-Step HLD Interview Framework: Scope, Availability Math, Capacity Math, 80/20 RAM sizing",
                         "Alex Xu Vol 1 & 2: Rate Limiter, Snowflake ID, TinyURL, Crawler, Chat, YouTube, Proximity, Disruptor",
@@ -564,6 +663,7 @@ def main():
                     "week": 9,
                     "title": "Operating Systems (OSTEP), UIUC CS341 & Computer Networks",
                     "levels": ["L2", "L3", "L4"],
+                    "languages": ["universal", "cpp"],
                     "focus": [
                         "OSTEP Virtualization: fork/exec, PCB, MLFQ 5 rules, Multi-Level Page Tables, TLB, Clock Page Faults",
                         "OSTEP Concurrency & Persistence: Futex locks, Condition Variables, VSFS, Inodes, WAL Journaling",
@@ -581,6 +681,7 @@ def main():
                     "week": 10,
                     "title": "Database System Concepts, Database Internals, DDIA & Distributed Systems",
                     "levels": ["L3", "L4", "Architect"],
+                    "languages": ["universal", "java", "cpp", "rust"],
                     "focus": [
                         "Database System Concepts: Relational Algebra, BCNF Normalization, Volcano Iterator, ARIES Recovery",
                         "Database Internals (Alex Petrov): B-Link Trees, LSM SSTable compaction, Raft Consensus, 2PC/3PC",
@@ -611,6 +712,7 @@ def main():
                     "week": 11,
                     "title": "Data Tier: Redis, Postgres, JDBC & Storage",
                     "levels": ["L2", "L3", "L4"],
+                    "languages": ["universal", "java", "cpp"],
                     "focus": [
                         "Redis: Data structures, event loop, persistence (RDB/AOF), sentinel, cluster, memory eviction",
                         "Relational Databases & Postgres: MVCC, VACUUM, indexes (B-Tree, GIN, GiST), connection pooling (HikariCP)",
@@ -630,6 +732,7 @@ def main():
                     "week": 12,
                     "title": "Streaming, Edge & Containers",
                     "levels": ["L3", "L4", "Architect"],
+                    "languages": ["universal", "java", "cpp"],
                     "focus": [
                         "Apache Kafka: Broker architecture, partitions, consumer groups, rebalancing, zero-copy, idempotence",
                         "Gateways, Proxies & Load Balancers: NGINX, HAProxy, Envoy, Envoy service mesh, L4 vs L7 routing",
@@ -649,6 +752,7 @@ def main():
                     "week": 13,
                     "title": "API Security, Observability & High-Throughput Pipelines",
                     "levels": ["L4", "Architect"],
+                    "languages": ["universal", "java", "cpp"],
                     "focus": [
                         "API Security in Action: OAuth2 authorization framework, OIDC identity, JWT verification, mTLS, Zero Trust",
                         "Observability Stack: Grafana dashboards, Prometheus metrics TSDB, Splunk log aggregation, OpenTelemetry",
@@ -681,6 +785,7 @@ def main():
             "domains": len(domains_data)
         },
         "levels": LEVELS_CONFIG,
+        "languages": LANGUAGES_CONFIG,
         "domains": domains_data,
         "roadmap": roadmap_data,
         "searchIndex": search_index

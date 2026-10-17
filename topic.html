@@ -266,10 +266,15 @@
             `<a href="roadmap.html?level=${lvl}" class="level-pill level-${lvl}" style="text-decoration: none; margin-left: 0.3rem;" title="View ${lvl} Roadmap Track">${lvl}</a>`
           ).join('');
 
+          const langBadges = (matchedTopic.languages || []).filter(l => l !== 'universal').map(l => 
+            `<a href="roadmap.html?lang=${l}" class="lang-pill lang-${l}" style="text-decoration: none; margin-left: 0.3rem;" title="View ${l.toUpperCase()} Track">${l.toUpperCase()}</a>`
+          ).join('');
+
           document.getElementById('crumbTopic').innerHTML = `
             <a href="topics.html?domain=${match.domain.id}">${match.domain.name}</a> › 
             <a href="topic.html?path=${encodeURIComponent(matchedTopic.path)}">${matchedTopic.name}</a>
             ${lvlBadges}
+            ${langBadges}
           `;
           document.getElementById('sidebarTopicTitle').textContent = matchedTopic.name;
 

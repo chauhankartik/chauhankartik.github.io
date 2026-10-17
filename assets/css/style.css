@@ -758,6 +758,104 @@ button {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
+/* ── Language Path Selector & Badges ── */
+.lang-btn {
+  background: var(--surface-hover);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-md);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: inherit;
+  user-select: none;
+}
+
+.lang-btn:hover {
+  border-color: var(--text-dim);
+  color: var(--text);
+  transform: translateY(-1px);
+}
+
+.lang-btn.active {
+  background: var(--surface-active);
+  color: var(--text);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
+.lang-btn[data-lang="java"].active {
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 1px #f59e0b;
+  color: #f59e0b;
+}
+
+.lang-btn[data-lang="cpp"].active {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 1px #3b82f6;
+  color: #3b82f6;
+}
+
+.lang-btn[data-lang="rust"].active {
+  border-color: #ea580c;
+  box-shadow: 0 0 0 1px #ea580c;
+  color: #ea580c;
+}
+
+/* Language Pill Badges */
+.lang-pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  line-height: 1.2;
+  border: 1px solid transparent;
+}
+
+.lang-pill.lang-java {
+  background: rgba(245, 158, 11, 0.12);
+  color: #f59e0b;
+  border-color: rgba(245, 158, 11, 0.25);
+}
+
+.lang-pill.lang-cpp {
+  background: rgba(59, 130, 246, 0.12);
+  color: #3b82f6;
+  border-color: rgba(59, 130, 246, 0.25);
+}
+
+.lang-pill.lang-rust {
+  background: rgba(234, 88, 12, 0.12);
+  color: #ea580c;
+  border-color: rgba(234, 88, 12, 0.25);
+}
+
+.lang-pill.lang-universal {
+  background: rgba(16, 185, 129, 0.12);
+  color: #10b981;
+  border-color: rgba(16, 185, 129, 0.25);
+}
+
+.week-elective-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.12rem 0.4rem;
+  border-radius: 4px;
+  background: var(--surface);
+  color: var(--text-dim);
+  border: 1px dashed var(--border);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
 /* ── Roadmap View ── */
 .roadmap-summary-box {
   background: var(--surface);

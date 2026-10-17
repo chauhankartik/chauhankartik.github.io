@@ -27,6 +27,7 @@
       <a class="top-bar-link" href="roadmap.html" data-page="roadmap">Roadmap</a>
       <a class="top-bar-link" href="topics.html" data-page="topics">Topics</a>
       <a class="top-bar-link" href="search.html" data-page="search">Search</a>
+      <a class="top-bar-link" href="#about">About</a>
       <button class="theme-toggle-btn" onclick="StudySite.Theme.toggle()" aria-label="Toggle Theme">
         ☀️ <span>Light</span>
       </button>
@@ -43,21 +44,22 @@
     <a class="mobile-nav-link" href="roadmap.html" data-page="roadmap">Roadmap</a>
     <a class="mobile-nav-link" href="topics.html" data-page="topics">Topics</a>
     <a class="mobile-nav-link" href="search.html" data-page="search">Search</a>
+    <a class="mobile-nav-link" href="#about" onclick="StudySite.Nav.closeMobile()">About Kartik Chauhan</a>
   </div>
 
   <main class="container">
     <!-- Hero Section -->
     <section class="hero">
-      <div class="hero-pill">⚡ 2026 Master Study Repository</div>
+      <div class="hero-pill">⚡ Curated by Kartik Chauhan · 2026 Master Study Hub</div>
       <h1>Engineering Knowledge Base</h1>
       <p class="hero-lede">
-        A production-grade, staff-level preparation system synthesizing 800+ technical modules: Data Structures & Algorithms, Java Internals, Modern C++, Low-Level Design, High-Level Distributed Architectures, Operating Systems, and Cloud Infrastructure.
+        Kartik Chauhan's Staff & Principal Systems Engineering preparation system synthesizing 800+ technical modules: Data Structures & Algorithms, Java Internals, Modern C++, Low-Level Design, High-Level Distributed Architectures, Operating Systems, and Cloud Infrastructure.
       </p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="roadmap.html">🗺️ 13-Week Roadmap</a>
         <a class="btn" href="topics.html">📚 Browse All Topics</a>
         <a class="btn" href="search.html">🔍 Search 800+ Files</a>
-        <a class="btn" href="topic.html?path=STUDY_PLAN_2026.md">📋 Master Curriculum</a>
+        <a class="btn" href="#about">👤 About Kartik</a>
       </div>
     </section>
 
@@ -132,10 +134,84 @@
         <a class="btn btn-primary" href="roadmap.html">Open Full Interactive Roadmap →</a>
       </div>
     </div>
+
+    <!-- About Kartik Chauhan Section -->
+    <div class="section-header" id="about">
+      <h2 class="section-title"><span>👤</span> About Kartik Chauhan & This Repository</h2>
+      <a class="section-link" href="https://github.com/chauhankartik" target="_blank" rel="noopener">GitHub Profile ↗</a>
+    </div>
+
+    <section class="about-section">
+      <div class="about-card">
+        <div class="about-header">
+          <div class="about-avatar">KC</div>
+          <div class="about-identity">
+            <h3 class="about-name">Kartik Chauhan</h3>
+            <div class="about-role">
+              <span>⚡ Staff Software Engineer & Systems Architect</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="about-bio">
+          Welcome to my <strong>2026 Software Engineering Master Study Repository</strong>. This project represents an intensive, first-principles synthesis of staff-level software engineering, systems design, database internals, and cloud infrastructure.
+        </p>
+        <p class="about-bio" style="margin-top: -0.75rem;">
+          Rather than relying on surface-level cheat sheets, every topic in this 800+ file repository is built to develop true mechanical sympathy — spanning from Linux kernel epoll syscalls, CPU cache line false sharing, and virtual memory page tables, up to distributed Raft consensus invariants, LSM-tree compaction mathematics, and zero-copy Kafka streaming pipelines.
+        </p>
+
+        <!-- 3 Core Pillars -->
+        <div class="about-pillars-grid">
+          <div class="about-pillar">
+            <div class="about-pillar-title">🏛️ System Architecture</div>
+            <div class="about-pillar-desc">
+              High-throughput distributed systems, 4-step capacity estimation math, 28 Alex Xu HLD case studies, and monolith-to-microservices patterns (Strangler Fig, CDC, Outbox, Saga).
+            </div>
+          </div>
+
+          <div class="about-pillar">
+            <div class="about-pillar-title">⚙️ Systems & Storage Engines</div>
+            <div class="about-pillar-desc">
+              OSTEP operating systems virtualization, B+ tree & LSM-tree storage engines, ARIES 3-phase recovery, distributed transactions (2PC/3PC), and Lucene search indexing.
+            </div>
+          </div>
+
+          <div class="about-pillar">
+            <div class="about-pillar-title">☕ Languages & Foundations</div>
+            <div class="about-pillar-desc">
+              Effective Java (all 90 items), JMM Happens-Before & Java 21 Project Loom virtual threads, modern C++ RAII/smart pointers, and CSES competitive algorithmic mastery.
+            </div>
+          </div>
+        </div>
+
+        <!-- Technical Specialization Tags -->
+        <div class="about-tags">
+          <span class="about-tag">Distributed Systems</span>
+          <span class="about-tag">System Design (HLD & LLD)</span>
+          <span class="about-tag">Java Internals & JMM</span>
+          <span class="about-tag">Virtual Threads (Project Loom)</span>
+          <span class="about-tag">Modern C++ (RAII & STL)</span>
+          <span class="about-tag">Database Storage Engines</span>
+          <span class="about-tag">Raft Consensus</span>
+          <span class="about-tag">Operating Systems (OSTEP)</span>
+          <span class="about-tag">Apache Kafka & Streaming</span>
+          <span class="about-tag">Kubernetes & Containers</span>
+          <span class="about-tag">Zero-Trust & API Security</span>
+          <span class="about-tag">FAANG Staff SQL Masterclass</span>
+        </div>
+
+        <!-- Direct Links -->
+        <div class="about-links">
+          <a class="btn btn-primary" href="roadmap.html">🗺️ Explore 13-Week Curriculum</a>
+          <a class="btn" href="topic.html?path=STUDY_PLAN_2026.md">📋 Master Study Plan</a>
+          <a class="btn" href="https://github.com/chauhankartik" target="_blank" rel="noopener">🐙 GitHub @chauhankartik</a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
-    <p>2026 Software Engineering Master Study Repository · Staff & Principal Systems Preparation</p>
+    <p>Engineered with ⚡ by <strong>Kartik Chauhan</strong> · 2026 Software Engineering Master Study Repository</p>
     <p style="margin-top: 0.4rem; color: var(--text-dim);">Static HTML / CSS / JavaScript · Inspired by CS_basics</p>
   </footer>
 

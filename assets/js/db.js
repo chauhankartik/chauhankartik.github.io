@@ -9,7 +9,7 @@ StudySite.DB = {
   _client: null,
 
   init: function () {
-    const url = localStorage.getItem('study_supabase_url') || (window.STUDY_CONFIG && window.STUDY_CONFIG.supabaseUrl);
+    const url = localStorage.getItem('study_supabase_url') || (window.STUDY_CONFIG && window.STUDY_CONFIG.supabaseUrl) || 'https://mnvakmqzabxyrzjbluzx.supabase.co';
     const key = localStorage.getItem('study_supabase_key') || (window.STUDY_CONFIG && window.STUDY_CONFIG.supabaseKey);
 
     if (url && key && window.supabase) {
@@ -427,8 +427,8 @@ StudySite.DB = {
     const btnDisconnect = document.getElementById('btnDisconnectDb');
     const syncActions = document.getElementById('dbSyncActions');
 
-    urlInput.value = localStorage.getItem('study_supabase_url') || '';
-    keyInput.value = localStorage.getItem('study_supabase_key') || '';
+    urlInput.value = localStorage.getItem('study_supabase_url') || (window.STUDY_CONFIG && window.STUDY_CONFIG.supabaseUrl) || 'https://mnvakmqzabxyrzjbluzx.supabase.co';
+    keyInput.value = localStorage.getItem('study_supabase_key') || (window.STUDY_CONFIG && window.STUDY_CONFIG.supabaseKey) || '';
 
     if (this.isConnected()) {
       alert.style.background = 'rgba(22, 163, 74, 0.12)';

@@ -11,32 +11,35 @@ Each module follows the same proven structure:
 
 ---
 
-## 📂 Modules
+## 📂 Modules & Pedagogical Learning Path
 
-| Module | Topics Covered | Files |
+### Phase 1: Core Linear Foundations
+| Module | Focus & Patterns | Files |
 |---|---|---|
-| [Array](./array/) | Two Pointers, Prefix Sum, Kadane's, Binary Search, Intervals, Matrix | 7 files |
-| [Hashing](./hashing/) | Frequency Count, Complement Lookup, Prefix+HashMap, Grouping, Design | 7 files |
-| [Sliding Window](./sliding_window/) | Fixed Window, Variable Window, Counting, Monotonic Deque, DP+Deque | 7 files |
-| [Greedy](./greedy/) | Interval Scheduling, Two-Pointer Greedy, Heap Greedy, Monotonic Stack, Two-Pass | 7 files |
-| [Trie](./trie/) | Prefix Trees, Bitwise XOR Trie, Reverse Suffix Trie, Trie+Backtracking, Autocomplete | 7 files |
-| [Backtracking](./backtracking/) | Subsets, Permutations, Duplicate Pruning, Grid DFS, Bitmask Queens, Sudoku | 7 files |
-| [Graph](./graph/) | BFS/DFS, Topological Sort, Dijkstra, Union-Find, MST, Tarjan's | 7 files |
+| [Array](./array/) | Memory Contiguity, Two Pointers, Prefix Sums, Kadane's, Binary Search, Matrix | 7 files |
+| [Two Pointers](./twopointers/) | Left-Right Pointers, Fast-Slow Pointers, Container With Most Water, 3Sum | 7 files |
+| [Sliding Window](./sliding_window/) | Fixed Window, Dynamic Window, Monotonic Deque, Substring Maps | 7 files |
+| [Linked List](./linkedlist/) | Pointer Inversion, Cycle Detection (Floyd's), Merge K Sorted Lists, LRU Cache | 5 files |
+| [Stack](./stack/) | LIFO Parsing, Balanced Parentheses, Monotonic Stack Linear Lookbehinds | 7 files |
+| [Queue](./queue/) | FIFO Buffers, Circular Queues, Monotonic Deques, Breadth Buffering | 7 files |
+| [Hashing](./hashing/) | Frequency Counting, Complement Lookup, Prefix+HashMap, Distributed Hash Maps | 8 files |
+| [Linear Data Structures Masterclass](./Linear-Data-Structures-Masterclass/) | 7 Master Patterns: Stacks, Deques, Heaps, Two Heaps & Stream Buffering | 28+ files |
 
----
+### Phase 2: Hierarchical, Trees & Combinatorial Search
+| Module | Focus & Patterns | Files |
+|---|---|---|
+| [Tree](./tree/) | Binary Trees, BST Invariants, DFS/BFS, Lowest Common Ancestor (LCA), Serializer | 5 files |
+| [Trie](./trie/) | Prefix Trees, Bitwise XOR Tries, Autocomplete Engines, Word Search II | 7 files |
+| [Greedy](./greedy/) | Interval Scheduling, Two-Pointer Greedy, Heap Greedy, Monotonic Stacks | 7 files |
+| [Backtracking](./backtracking/) | State-Space Search Trees, Choose-Explore-Unchoose, Pruning, N-Queens, Sudoku | 7 files |
 
-## 📁 File Structure (Per Module)
-
-```
-<topic>/
-├── 00_theory.md          # Internals, proofs, complexity tables, interview vocab
-├── 01_easy.java          # 8 easy problems with brute-force → optimal + follow-ups
-├── 02_medium.java        # 8 medium problems
-├── 03_hard.java          # 6 hard problems
-├── 04_google_level.java  # 6 Google-level multi-pattern problems
-├── 05_cheatsheet.md      # Quick reference — templates, patterns, complexity
-└── 06_top50_problems.md  # Curated list, ordered by intuition-building phases
-```
+### Phase 3: Advanced Graphs, Geometry & Dynamic Programming
+| Module | Focus & Patterns | Files |
+|---|---|---|
+| [Graph](./graph/) | BFS/DFS, Cycle Detection, Kahn's Topo Sort, Dijkstra, Bellman-Ford, Tarjan's | 7 files |
+| [Graph Algorithms Masterclass](./Graph-Algorithms-Masterclass/) | 8 Master Patterns: Single-Source & All-Pairs Shortest Paths, MST, DSU, Bridges, Flow | 32+ files |
+| [Dynamic Programming Masterclass](./dynamicprogramming/) | 9 Master Patterns: Linear DP, 0/1 Knapsack, Unbounded, Matrix DP, Interval, Bitmask | 20+ files |
+| [Line Sweep](./linesweep/) | 1D & 2D Event Sweeping, Interval Overlaps, Meeting Rooms II, Skyline Problem | 2 files |
 
 ---
 
@@ -45,13 +48,14 @@ Each module follows the same proven structure:
 Work through modules in this order for maximum concept transfer:
 
 ```
-1. Array          → Foundation of all other topics (memory, pointers, sorting)
-2. Hashing        → Complements arrays; unlocks O(1) lookup patterns
-3. Sliding Window → Builds on arrays + hashing; unlocks O(n) subarray patterns
-4. Greedy         → Interval scheduling, monotonic stack, local optimization proofs
-5. Trie           → Fast prefix matching, Bitwise XOR Trie, autocomplete design
-6. Backtracking   → State-space tree search, Choose-Explore-Unchoose, pruning, grid DFS
-7. Graph          → Brings everything together (BFS uses queues, Dijkstra uses heaps)
+Phase 1: Linear Foundations
+ └── 1. Array ➔ 2. Two Pointers ➔ 3. Sliding Window ➔ 4. Linked List ➔ 5. Stack ➔ 6. Queue ➔ 7. Hashing ➔ 8. Linear DS Masterclass
+
+Phase 2: Hierarchical & State-Space
+ └── 9. Tree ➔ 10. Trie ➔ 11. Greedy ➔ 12. Backtracking
+
+Phase 3: Complex Graphs & Dynamic Optimization
+ └── 13. Graph ➔ 14. Graph Masterclass ➔ 15. Dynamic Programming ➔ 16. Line Sweep
 ```
 
 Within each module, follow the **Phase order** in `06_top50_problems.md`:

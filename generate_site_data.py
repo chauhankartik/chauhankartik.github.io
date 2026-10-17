@@ -83,8 +83,44 @@ CUSTOM_TOPIC_NAMES = {
     "minidb": "MiniDB (Rust Embedded Storage Engine)",
     "api_security_in_action": "API Security in Action (OAuth2 & Zero Trust)",
     "high_throughput_data_pipelines": "High-Throughput Data Pipelines",
-    "tech-stack": "Infrastructure Tech-Stack Guides (16 Systems)"
+    "tech-stack": "Infrastructure Tech-Stack Guides (16 Systems)",
+    # DSA Reorganized Modules
+    "array": "Arrays & Memory Foundations",
+    "twopointers": "Two Pointers Pattern",
+    "sliding_window": "Sliding Window Pattern",
+    "linkedlist": "Linked Lists & Pointers",
+    "stack": "Stack Mechanics & Monotonic Stacks",
+    "queue": "Queue & Deque Mechanics",
+    "hashing": "Hash Tables & Frequency Maps",
+    "Linear-Data-Structures-Masterclass": "Linear Data Structures Masterclass",
+    "tree": "Trees & Binary Search Trees",
+    "trie": "Trie & Prefix Trees",
+    "greedy": "Greedy Algorithms",
+    "backtracking": "Backtracking & Recursion",
+    "graph": "Graph Algorithms & Traversals",
+    "Graph-Algorithms-Masterclass": "Graph Algorithms Masterclass (Advanced)",
+    "dynamicprogramming": "Dynamic Programming Masterclass",
+    "linesweep": "Line Sweep & Interval Geometry"
 }
+
+DSA_SUBTOPIC_ORDER = [
+    "array",
+    "twopointers",
+    "sliding_window",
+    "linkedlist",
+    "stack",
+    "queue",
+    "hashing",
+    "Linear-Data-Structures-Masterclass",
+    "tree",
+    "trie",
+    "greedy",
+    "backtracking",
+    "graph",
+    "Graph-Algorithms-Masterclass",
+    "dynamicprogramming",
+    "linesweep"
+]
 
 TOPIC_LEVELS = {
     "dsa": ["L1", "L2", "L3"],
@@ -315,9 +351,8 @@ def extract_desc_and_title(md_path):
     return title, desc
 
 def scan_folder(folder_path, rel_root):
-    entries = []
     try:
-        raw_entries = sorted(os.listdir(folder_path))
+        raw_entries = os.listdir(folder_path)
     except Exception:
         return [], []
     
@@ -340,6 +375,40 @@ def scan_folder(folder_path, rel_root):
                 "ext": ext,
                 "size": size
             })
+
+    # Sort files naturally (README.md first, then 00_, 01_, 02_, etc.)
+    def get_file_sort_key(f):
+        name = f["name"].lower()
+        if name == "readme.md":
+            return (-1, 0, name)
+        match = re.match(r"^(\d+)", name)
+        if match:
+            return (0, int(match.group(1)), name)
+        return (1, 0, name)
+    files.sort(key=get_file_sort_key)
+
+    # Sort subdirectories logically
+    folder_base = os.path.basename(folder_path)
+    if folder_base == "dsa":
+        def get_dsa_sort_key(sub):
+            s_name = sub[0]
+            if s_name in DSA_SUBTOPIC_ORDER:
+                return (0, DSA_SUBTOPIC_ORDER.index(s_name))
+            return (1, s_name.lower())
+        subdirs.sort(key=get_dsa_sort_key)
+    else:
+        # Check if subdirs have numeric pattern prefixes like Pattern-1, Pattern-2
+        def get_general_subdir_sort_key(sub):
+            s_name = sub[0]
+            match = re.search(r'pattern[-_]?(\d+)', s_name, re.IGNORECASE)
+            if match:
+                return (0, int(match.group(1)), s_name.lower())
+            match2 = re.match(r'^(\d+)', s_name)
+            if match2:
+                return (0, int(match2.group(1)), s_name.lower())
+            return (1, 0, s_name.lower())
+        subdirs.sort(key=get_general_subdir_sort_key)
+
     return files, subdirs
 
 def build_topic_tree(topic_folder, rel_root):
@@ -531,9 +600,10 @@ def main():
                     ],
                     "deliverable": "Complete graph traversal & DP state formulation exercises across DSA and CSES problem sets.",
                     "modules": [
-                        {"name": "Graph Algorithms Masterclass", "path": "01_core_foundations/dsa/Graph-Algorithms-Masterclass"},
+                        {"name": "Graph Algorithms & Traversals (Foundational)", "path": "01_core_foundations/dsa/graph"},
+                        {"name": "Graph Algorithms Masterclass (Advanced)", "path": "01_core_foundations/dsa/Graph-Algorithms-Masterclass"},
                         {"name": "Dynamic Programming Masterclass", "path": "01_core_foundations/dsa/dynamicprogramming"},
-                        {"name": "Line Sweep Masterclass", "path": "01_core_foundations/dsa/linesweep"},
+                        {"name": "Line Sweep & Interval Geometry", "path": "01_core_foundations/dsa/linesweep"},
                         {"name": "CSES Range & Tree Algorithms", "path": "01_core_foundations/cses"}
                     ]
                 },

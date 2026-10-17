@@ -84,7 +84,7 @@ StudySite.DB = {
   // ── 1. Study Sessions ──
   saveSession: async function (topic, hours, notes) {
     const newSession = {
-      topic: topic || 'Staff Systems Preparation',
+      topic: topic || 'Systems & Engineering Prep',
       hours: parseFloat(hours) || 1.5,
       notes: notes || 'Reviewed invariants and algorithmic patterns.',
       created_at: new Date().toISOString(),
@@ -219,7 +219,7 @@ StudySite.DB = {
   addThoughtComment: async function (thoughtId, authorName, authorHandle, authorAvatar, commentText) {
     const commentObj = {
       thought_id: thoughtId,
-      author_name: authorName || 'Staff Systems Engineer',
+      author_name: authorName || 'Systems Engineer',
       author_handle: authorHandle || '@engineer',
       author_avatar: authorAvatar || '💬',
       comment_text: commentText,

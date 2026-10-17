@@ -1014,7 +1014,7 @@ StudySite.Tracker = {
       const sessions = this.getSessions();
       sessions.unshift({
         date: new Date().toISOString(),
-        topic: topic || 'Staff Systems Preparation',
+        topic: topic || 'Systems & Engineering Prep',
         hours: parseFloat(hours) || 1.5,
         notes: notes || 'Reviewed invariants and algorithmic patterns.'
       });
@@ -1111,7 +1111,7 @@ StudySite.Tracker = {
               Kartik's Active Study Dashboard
             </h3>
             <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.25rem;">
-              Live tracking for staff engineering milestones, daily retention streaks, and curriculum phase completion.
+              Live tracking for technical preparation milestones, daily retention streaks, and curriculum phase completion.
             </div>
           </div>
           <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;">
@@ -1143,7 +1143,7 @@ StudySite.Tracker = {
           </div>
           <div class="tracker-metric-card">
             <div class="tracker-metric-val" style="color: var(--accent);">${Math.max(68, totalMasteredPct)}%</div>
-            <div class="tracker-metric-lbl">Staff Readiness</div>
+            <div class="tracker-metric-lbl">Curriculum Mastery</div>
           </div>
         </div>
 

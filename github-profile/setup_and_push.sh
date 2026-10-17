@@ -27,7 +27,7 @@ fi
 echo "🔗 Remote origin set to $REMOTE_URL"
 
 # Stage files
-git add README.md header.svg
+git add README.md profile-banner.svg
 if git diff --staged --quiet; then
     echo "ℹ️  No changes to commit."
 else

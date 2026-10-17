@@ -1121,9 +1121,7 @@ StudySite.Tracker = {
             <button class="btn btn-sm btn-primary" onclick="StudySite.Tracker.toggleSessionForm()">
               ⏱️ + Log Study Session
             </button>
-            <a class="btn btn-sm" href="roadmap.html">
-              🗺️ 13-Week Tracker
-            </a>
+            ${window.location.pathname.includes('roadmap') ? '<a class="btn btn-sm" href="#phasesList">🗺️ Weeks List ↓</a>' : '<a class="btn btn-sm" href="roadmap.html">🗺️ 13-Week Tracker</a>'}
           </div>
         </div>
 

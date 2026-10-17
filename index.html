@@ -79,24 +79,16 @@
       </p>
 
       <div class="hero-actions" style="justify-content: flex-start; gap: 0.75rem; flex-wrap: wrap;">
-        <a class="btn btn-primary" href="#study-tracker">📊 Study Tracker</a>
-        <a class="btn" href="#interview-prep">🎯 Prep Hub</a>
-        <a class="btn" href="flashcards.html">🃏 3D Flashcards</a>
+        <a class="btn btn-primary" href="#projects">🚀 Featured Projects</a>
+        <a class="btn" href="cv.html">📄 Curriculum Vitae</a>
+        <a class="btn" href="roadmap.html">🎯 13-Week Prep Hub</a>
+        <a class="btn" href="#blogs">📝 Tech Blogs</a>
         <a class="btn" href="books.html">📖 Bookshelf</a>
         <a class="btn" href="thoughts.html">💭 Thoughts Feed</a>
-        <a class="btn" href="#projects">🚀 Projects</a>
-        <a class="btn" href="#blogs">📝 Blogs</a>
-        <a class="btn" href="cv.html">📄 CV</a>
+        <a class="btn" href="flashcards.html">🃏 Flashcards</a>
         <a class="btn" href="https://github.com/chauhankartik" target="_blank" rel="noopener">🐙 GitHub</a>
       </div>
     </section>
-
-    <!-- Spaced Repetition SM-2 Active Recall Banner -->
-    <div id="spacedRepetitionBanner" style="margin-bottom: 2rem;"></div>
-
-    <!-- Active Study Tracker Dashboard Mount -->
-    <div id="study-tracker"></div>
-    <div id="studyTrackerMount"></div>
 
     <!-- SECTION 1: 2026 Interview & Systems Preparation (Master Study Hub) -->
     <section id="interview-prep" style="margin-top: 2.5rem;">
@@ -818,13 +810,11 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="assets/js/config.js"></script>
   <script src="assets/js/db.js?v=1"></script>
-  <script src="assets/js/site.js?v=20261017_6"></script>
+  <script src="assets/js/site.js?v=20261017_7"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       StudySite.Nav.mount('home');
       StudySite.Progress.init();
-      StudySite.SpacedRepetition.render();
-      StudySite.Tracker.render();
     });
   </script>
 </body>

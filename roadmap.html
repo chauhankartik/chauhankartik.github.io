@@ -157,8 +157,8 @@
       <div class="overall-stats-text">
         <span id="overallProgressText"><strong>0 of 13</strong> curriculum weeks completed (0%)</span>
         <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
-          <a class="btn btn-sm" href="index.html#study-tracker" style="font-size: 0.72rem; padding: 0.2rem 0.6rem;">
-            📊 Open Study Tracker Dashboard →
+          <a class="btn btn-sm" href="#study-tracker" style="font-size: 0.72rem; padding: 0.2rem 0.6rem;">
+            📊 Jump to Study Dashboard ↓
           </a>
           <button class="cloud-status-btn" onclick="StudySite.DB ? StudySite.DB.openSettingsModal() : null" style="font-size: 0.72rem; padding: 0.2rem 0.6rem;" id="roadmapCloudStatusBtn">
             ☁️ Cloud Sync
@@ -166,6 +166,10 @@
         </div>
       </div>
     </div>
+
+    <!-- Active Study Tracker Dashboard Mount -->
+    <div id="study-tracker"></div>
+    <div id="studyTrackerMount" style="margin-bottom: 2.5rem;"></div>
 
     <!-- Phases & Weeks Container -->
     <div id="phasesList">
@@ -181,7 +185,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="assets/js/config.js"></script>
   <script src="assets/js/db.js?v=1"></script>
-  <script src="assets/js/site.js?v=20261017_6"></script>
+  <script src="assets/js/site.js?v=20261017_7"></script>
   <script>
     let siteLevelsData = null;
     let siteLanguagesData = null;
@@ -410,6 +414,7 @@
       StudySite.Nav.mount('roadmap');
       StudySite.Progress.init();
       StudySite.SpacedRepetition.render();
+      StudySite.Tracker.render();
 
       StudySite.Data.load().then(function (data) {
         const container = document.getElementById('phasesList');

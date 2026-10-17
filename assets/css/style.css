@@ -1,8 +1,42 @@
 /* ── CS_basics & Terminal-inspired Study Design System ── */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
 
-:root {
-  /* Dark Theme (Default) */
+:root, [data-theme="light"] {
+  /* Vintage Old Paper / Warm Parchment Yellow-Brownish Theme (Default) */
+  --bg: #f7f1e3;            /* Warm antique paper / parchment background */
+  --surface: #ede3cc;       /* Rich parchment card surface */
+  --surface-hover: #e4d8be; /* Deepened parchment on hover */
+  --surface-active: #dccfb2;/* Pressed vintage card */
+  --border: #d4c4a4;        /* Vintage aged edge / sepia ink line */
+  --border-subtle: #dfd0b5;
+  --border-focus: #9a3412;  /* Terracotta leather focus ring */
+  
+  --text: #2a2018;          /* Antique espresso typewriter ink */
+  --text-muted: #695341;    /* Faded sepia / aged brown ink */
+  --text-dim: #947b66;      /* Soft graphite / warm pencil */
+  
+  --accent: #b45309;        /* Warm antique amber leather */
+  --accent-hover: #92400e;  /* Deep saddle brown */
+  --accent-dim: rgba(180, 83, 9, 0.12);
+  --accent-border: rgba(180, 83, 9, 0.35);
+  
+  --blue: #1e40af;          /* Classic fountain pen blue */
+  --blue-dim: rgba(30, 64, 175, 0.12);
+  --amber: #b45309;         /* Antique brass */
+  --amber-dim: rgba(180, 83, 9, 0.14);
+  --red: #b91c1c;           /* Wax seal crimson */
+  --red-dim: rgba(185, 28, 28, 0.12);
+  --purple: #7e22ce;
+  
+  --font-mono: 'JetBrains Mono', 'SF Mono', 'Cascadia Code', 'Fira Code', Menlo, Consolas, monospace;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --transition: all 0.15s ease;
+}
+
+[data-theme="dark"] {
+  /* Dark Terminal Theme (Toggled) */
   --bg: #0a0a0c;
   --surface: #111116;
   --surface-hover: #181820;
@@ -27,38 +61,6 @@
   --red: #ef4444;
   --red-dim: rgba(239, 68, 68, 0.12);
   --purple: #a855f7;
-  
-  --font-mono: 'JetBrains Mono', 'SF Mono', 'Cascadia Code', 'Fira Code', Menlo, Consolas, monospace;
-  --radius-sm: 4px;
-  --radius-md: 6px;
-  --radius-lg: 8px;
-  --transition: all 0.15s ease;
-}
-
-[data-theme="light"] {
-  --bg: #f8fafc;
-  --surface: #ffffff;
-  --surface-hover: #f1f5f9;
-  --surface-active: #e2e8f0;
-  --border: #e2e8f0;
-  --border-subtle: #f1f5f9;
-  --border-focus: #2563eb;
-  
-  --text: #0f172a;
-  --text-muted: #64748b;
-  --text-dim: #94a3b8;
-  
-  --accent: #16a34a;
-  --accent-hover: #15803d;
-  --accent-dim: rgba(22, 163, 74, 0.1);
-  --accent-border: rgba(22, 163, 74, 0.3);
-  
-  --blue: #2563eb;
-  --blue-dim: rgba(37, 99, 235, 0.1);
-  --amber: #d97706;
-  --amber-dim: rgba(217, 119, 6, 0.1);
-  --red: #dc2626;
-  --red-dim: rgba(220, 38, 38, 0.1);
 }
 
 /* ── Base Reset ── */
@@ -863,7 +865,22 @@ button {
   overflow-x: auto;
   font-size: 0.84rem;
   line-height: 1.55;
+  color: var(--text);
 }
+
+.rendered-md pre code, .code-viewer-body code {
+  color: var(--text);
+  background: transparent;
+}
+
+/* Vintage Old Paper Syntax Highlighting */
+:root:not([data-theme="dark"]) .hljs-keyword, [data-theme="light"] .hljs-keyword { color: #9a3412; font-weight: 600; }
+:root:not([data-theme="dark"]) .hljs-string, [data-theme="light"] .hljs-string { color: #166534; }
+:root:not([data-theme="dark"]) .hljs-title, [data-theme="light"] .hljs-title { color: #1e40af; font-weight: 600; }
+:root:not([data-theme="dark"]) .hljs-comment, [data-theme="light"] .hljs-comment { color: #786657; font-style: italic; }
+:root:not([data-theme="dark"]) .hljs-number, [data-theme="light"] .hljs-number { color: #b45309; }
+:root:not([data-theme="dark"]) .hljs-type, [data-theme="light"] .hljs-type { color: #854d0e; font-weight: 600; }
+:root:not([data-theme="dark"]) .hljs-attr, [data-theme="light"] .hljs-attr { color: #1e3a8a; }
 
 .rendered-md table {
   width: 100%;

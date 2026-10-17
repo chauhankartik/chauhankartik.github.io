@@ -4,7 +4,7 @@
  */
 
 (function () {
-  const savedTheme = localStorage.getItem('study-theme') || 'dark';
+  const savedTheme = localStorage.getItem('study-theme') || 'light';
   document.documentElement.setAttribute('data-theme', savedTheme);
 })();
 
@@ -12,7 +12,7 @@ window.StudySite = window.StudySite || {};
 
 StudySite.Theme = {
   current: function () {
-    return document.documentElement.getAttribute('data-theme') || 'dark';
+    return document.documentElement.getAttribute('data-theme') || 'light';
   },
   toggle: function () {
     const next = this.current() === 'dark' ? 'light' : 'dark';
@@ -23,7 +23,7 @@ StudySite.Theme = {
   updateButtons: function () {
     const isDark = this.current() === 'dark';
     document.querySelectorAll('.theme-toggle-btn').forEach(function (btn) {
-      btn.innerHTML = isDark ? '☀️ <span>Light</span>' : '🌙 <span>Dark</span>';
+      btn.innerHTML = isDark ? '📜 <span>Old Paper</span>' : '🌙 <span>Dark</span>';
     });
   },
   init: function () {

@@ -8,14 +8,14 @@
   align-items: center;
   justify-content: space-between;
   padding: 0.65rem 1.75rem;
-  background: rgba(10, 10, 12, 0.88);
+  background: rgba(247, 241, 227, 0.94);
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
 
-[data-theme="light"] .top-bar {
-  background: rgba(248, 250, 252, 0.88);
+[data-theme="dark"] .top-bar {
+  background: rgba(10, 10, 12, 0.88);
 }
 
 .top-bar-brand {

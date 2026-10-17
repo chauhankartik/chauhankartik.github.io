@@ -107,7 +107,7 @@ StudySite.Renderer = {
         try {
           mermaid.initialize({
             startOnLoad: false,
-            theme: document.documentElement.getAttribute('data-theme') === 'light' ? 'default' : 'dark',
+            theme: document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'neutral',
             securityLevel: 'loose'
           });
           mermaid.run({ nodes: containerEl.querySelectorAll('.mermaid') });

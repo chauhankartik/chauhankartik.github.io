@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>2026 Software Engineering Master Study Hub</title>
-  <meta name="description" content="Staff & Principal Software Engineer preparation — 500+ documents, 280+ Java masterclasses, 13-week structured curriculum covering DSA, LLD, HLD, Distributed Systems, and Infrastructure.">
+  <title>Kartik Chauhan — Staff Software Engineer & Systems Architect</title>
+  <meta name="description" content="Personal website of Kartik Chauhan. Staff Software Engineer specializing in distributed systems, database storage engines, and high-throughput cloud infrastructure.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/nav.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
-  <!-- Blocking script to restore theme before paint -->
   <script src="assets/js/nav.js"></script>
 </head>
 <body>
@@ -19,16 +18,16 @@
   <header class="top-bar">
     <a class="top-bar-brand" href="index.html">
       <span class="prompt-sign">$</span>
-      <span>2026_study</span>
-      <span class="year-badge">STAFF / PRINCIPAL</span>
+      <span>kartik_chauhan</span>
+      <span class="year-badge">STAFF ARCHITECT</span>
     </a>
     <nav class="top-bar-nav">
       <a class="top-bar-link" href="index.html" data-page="home">Home</a>
-      <a class="top-bar-link" href="roadmap.html" data-page="roadmap">Roadmap</a>
-      <a class="top-bar-link" href="topics.html" data-page="topics">Topics</a>
-      <a class="top-bar-link" href="flashcards.html" data-page="flashcards">Flashcards</a>
-      <a class="top-bar-link" href="search.html" data-page="search">Search</a>
-      <a class="top-bar-link" href="#about">About</a>
+      <a class="top-bar-link" href="#interview-prep">Interview Prep</a>
+      <a class="top-bar-link" href="#projects">Projects</a>
+      <a class="top-bar-link" href="#blogs">Blogs</a>
+      <a class="top-bar-link" href="flashcards.html">Flashcards</a>
+      <a class="top-bar-link" href="#cv">CV</a>
       <button class="theme-toggle-btn" onclick="StudySite.Theme.toggle()" aria-label="Toggle Theme">
         ☀️ <span>Light</span>
       </button>
@@ -41,131 +40,396 @@
   <!-- Mobile Overlay Navigation -->
   <div class="mobile-nav-overlay" id="mobileNav">
     <button class="mobile-nav-close" onclick="StudySite.Nav.closeMobile()">✕</button>
-    <a class="mobile-nav-link" href="index.html" data-page="home">Home</a>
-    <a class="mobile-nav-link" href="roadmap.html" data-page="roadmap">Roadmap</a>
-    <a class="mobile-nav-link" href="topics.html" data-page="topics">Topics</a>
-    <a class="mobile-nav-link" href="flashcards.html" data-page="flashcards">Flashcards</a>
-    <a class="mobile-nav-link" href="search.html" data-page="search">Search</a>
-    <a class="mobile-nav-link" href="#about" onclick="StudySite.Nav.closeMobile()">About Kartik Chauhan</a>
+    <a class="mobile-nav-link" href="index.html">Home</a>
+    <a class="mobile-nav-link" href="#interview-prep" onclick="StudySite.Nav.closeMobile()">Interview Prep</a>
+    <a class="mobile-nav-link" href="#projects" onclick="StudySite.Nav.closeMobile()">Projects</a>
+    <a class="mobile-nav-link" href="#blogs" onclick="StudySite.Nav.closeMobile()">Engineering Blogs</a>
+    <a class="mobile-nav-link" href="flashcards.html">Flashcards</a>
+    <a class="mobile-nav-link" href="cv.html">Curriculum Vitae (CV)</a>
+    <a class="mobile-nav-link" href="roadmap.html">13-Week Roadmap</a>
   </div>
 
   <main class="container">
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-pill">⚡ Curated by Kartik Chauhan · 2026 Master Study Hub</div>
-      <h1>Engineering Knowledge Base</h1>
-      <p class="hero-lede">
-        Kartik Chauhan's Staff & Principal Systems Engineering preparation system synthesizing 800+ technical modules: Data Structures & Algorithms, Java Internals, Modern C++, Low-Level Design, High-Level Distributed Architectures, Operating Systems, and Cloud Infrastructure.
+    <!-- Hero Profile Section -->
+    <section class="hero" style="text-align: left; padding: 3rem 0 2rem; max-width: 950px; margin: 0 auto;">
+      <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+        <div class="about-avatar" style="width: 76px; height: 76px; font-size: 2rem;">KC</div>
+        <div>
+          <div class="hero-pill" style="margin-bottom: 0.4rem;">⚡ Available for Staff & Lead Systems Roles</div>
+          <h1 style="font-size: 2.8rem; margin-bottom: 0.2rem; letter-spacing: -0.03em;">Kartik Chauhan</h1>
+          <div style="font-size: 1.1rem; color: var(--accent); font-weight: 600;">
+            Staff Software Engineer & Distributed Systems Architect
+          </div>
+        </div>
+      </div>
+
+      <p class="hero-lede" style="margin: 0 0 1.75rem 0; font-size: 1.05rem; line-height: 1.75; max-width: 80ch;">
+        I engineer high-throughput distributed systems, database storage engines, and cloud platforms with first-principles mechanical sympathy — from Linux kernel syscalls (`epoll`, zero-copy `sendfile()`) and memory barriers up to Raft consensus, LSM-tree compactions, and event-driven architectures.
       </p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="roadmap.html">🗺️ 13-Week Roadmap</a>
-        <a class="btn" href="flashcards.html">🃏 Staff Flashcards</a>
-        <a class="btn" href="topics.html">📚 Browse Topics</a>
-        <a class="btn" href="search.html">🔍 Search 800+ Files</a>
-        <a class="btn" href="#about">👤 About Kartik</a>
+
+      <div class="hero-actions" style="justify-content: flex-start; gap: 0.75rem;">
+        <a class="btn btn-primary" href="#interview-prep">🎯 2026 Interview Prep Hub</a>
+        <a class="btn" href="#projects">🚀 Projects Showcase</a>
+        <a class="btn" href="#blogs">📝 Engineering Blogs</a>
+        <a class="btn" href="#cv">📄 Curriculum Vitae</a>
+        <a class="btn" href="https://github.com/chauhankartik" target="_blank" rel="noopener">🐙 GitHub</a>
       </div>
     </section>
 
-    <!-- Stats Strip inspired by CS_basics -->
-    <section class="stat-strip" id="statsStrip">
-      <div class="stat-cell">
-        <span class="stat-n">509</span>
-        <span class="stat-l">Markdown Guides</span>
+    <!-- SECTION 1: 2026 Interview & Systems Preparation (Master Study Hub) -->
+    <section id="interview-prep" style="margin-top: 3.5rem;">
+      <div class="section-header">
+        <h2 class="section-title"><span>🎯</span> 2026 Systems & Interview Preparation Hub</h2>
+        <a class="section-link" href="roadmap.html">Launch Full 13-Week Tracker →</a>
       </div>
-      <div class="stat-cell">
-        <span class="stat-n">283</span>
-        <span class="stat-l">Java Masterclasses</span>
-      </div>
-      <div class="stat-cell">
-        <span class="stat-n">43</span>
-        <span class="stat-l">Curated Topics</span>
-      </div>
-      <div class="stat-cell">
-        <span class="stat-n">13</span>
-        <span class="stat-l">Intensive Weeks</span>
-      </div>
-    </section>
 
-    <!-- 4 Domains Section -->
-    <div class="section-header">
-      <h2 class="section-title"><span>🏗️</span> Four Core Curriculum Domains</h2>
-      <a class="section-link" href="topics.html">View all topics →</a>
-    </div>
-
-    <div class="domain-grid" id="domainsGrid">
-      <!-- Injected dynamically from topics.json -->
-    </div>
-
-    <!-- Quick Curriculum Preview -->
-    <div class="section-header">
-      <h2 class="section-title"><span>📅</span> 13-Week Roadmap Overview</h2>
-      <a class="section-link" href="roadmap.html">Interactive Tracker →</a>
-    </div>
-
-    <div class="roadmap-summary-box">
-      <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.6; margin-bottom: 1.25rem;">
-        The curriculum is split into 4 distinct phases designed to build depth from bare metal and algorithms up to distributed cloud infrastructure:
-      </p>
-
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;">
-        <div style="background: var(--surface-hover); border: 1px solid var(--border); border-left: 3px solid #22c55e; padding: 1rem; border-radius: var(--radius-md);">
-          <div style="font-weight: 700; color: #22c55e; font-size: 0.82rem; margin-bottom: 0.25rem;">PHASE 1 (WEEKS 1–4)</div>
-          <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 0.4rem;">Core Foundations</div>
-          <p style="font-size: 0.78rem; color: var(--text-muted); line-height: 1.5;">Algorithms, CSES, C Memory Management, Modern C++ STL, Effective Java (90 items), JCiP & FAANG SQL.</p>
+      <div style="background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: var(--radius-lg); padding: 2rem; margin-bottom: 2rem;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem;">
+          <div>
+            <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); background: var(--surface-active); padding: 0.2rem 0.5rem; border-radius: 4px;">
+              MASTER STUDY SYSTEM
+            </span>
+            <h3 style="font-size: 1.4rem; font-weight: 700; margin-top: 0.5rem;">
+              Staff & Principal Technical Preparation Curriculum
+            </h3>
+          </div>
+          <a class="btn btn-primary" href="roadmap.html">🗺️ Open 13-Week Roadmap</a>
         </div>
 
-        <div style="background: var(--surface-hover); border: 1px solid var(--border); border-left: 3px solid #3b82f6; padding: 1rem; border-radius: var(--radius-md);">
-          <div style="font-weight: 700; color: #3b82f6; font-size: 0.82rem; margin-bottom: 0.25rem;">PHASE 2 (WEEKS 5–8)</div>
-          <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 0.4rem;">System Design (LLD & HLD)</div>
-          <p style="font-size: 0.78rem; color: var(--text-muted); line-height: 1.5;">SOLID principles, GoF patterns, 5 full production LLD systems, and 28 Alex Xu HLD architectures.</p>
-        </div>
-
-        <div style="background: var(--surface-hover); border: 1px solid var(--border); border-left: 3px solid #f59e0b; padding: 1rem; border-radius: var(--radius-md);">
-          <div style="font-weight: 700; color: #f59e0b; font-size: 0.82rem; margin-bottom: 0.25rem;">PHASE 3 (WEEKS 9–10)</div>
-          <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 0.4rem;">Systems & Databases</div>
-          <p style="font-size: 0.78rem; color: var(--text-muted); line-height: 1.5;">OSTEP kernel internals, 5-layer networking, B+ trees & LSM-trees, DDIA, Raft consensus, and Lucene search.</p>
-        </div>
-
-        <div style="background: var(--surface-hover); border: 1px solid var(--border); border-left: 3px solid #ef4444; padding: 1rem; border-radius: var(--radius-md);">
-          <div style="font-weight: 700; color: #ef4444; font-size: 0.82rem; margin-bottom: 0.25rem;">PHASE 4 (WEEKS 11–13)</div>
-          <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 0.4rem;">Infrastructure & Cloud</div>
-          <p style="font-size: 0.78rem; color: var(--text-muted); line-height: 1.5;">Kafka, Redis, K8s, Docker, Envoy/NGINX, API security with OAuth2/mTLS, and high-throughput data pipelines.</p>
-        </div>
-      </div>
-      
-      <div style="margin-top: 1.5rem; text-align: center;">
-        <a class="btn btn-primary" href="roadmap.html">Open Full Interactive Roadmap →</a>
-      </div>
-    </div>
-
-    <!-- Flashcards Showcase Callout -->
-    <div class="section-header">
-      <h2 class="section-title"><span>🃏</span> Concept Recall & Staff Flashcards</h2>
-      <a class="section-link" href="flashcards.html">Practice Flashcards →</a>
-    </div>
-
-    <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.75rem; margin-bottom: 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap;">
-      <div style="flex: 1; min-width: 280px;">
-        <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.35rem;">
-          SPACED REPETITION & ACTIVE RECALL
-        </div>
-        <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;">
-          Interactive 3D Revision Flashcards
-        </h3>
-        <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
-          Quickly test and sharpen your recall on critical system design gotchas, Raft invariants, B+ Tree vs LSM trade-offs, Effective Java items, Linux <code>epoll</code> mechanics, and Kafka zero-copy streaming.
+        <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.5rem;">
+          A production-grade, 13-week curriculum covering <strong>800+ technical modules</strong>. Synthesizes canonical textbooks (DDIA, OSTEP, Effective Java, Database Internals), university courses (MIT 6.5840, Stanford CS244B), and 28 real-world Alex Xu high-level design systems.
         </p>
-      </div>
-      <div style="display: flex; gap: 0.75rem;">
-        <a class="btn btn-primary" href="flashcards.html">
-          🃏 Launch Flashcards
-        </a>
-      </div>
-    </div>
 
-    <!-- About Kartik Chauhan Section -->
-    <div class="section-header" id="about">
-      <h2 class="section-title"><span>👤</span> About Kartik Chauhan & This Repository</h2>
+        <!-- Quick Stats Strip -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; margin-bottom: 1.5rem;">
+          <div style="background: var(--surface-hover); padding: 0.8rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--border);">
+            <div style="font-size: 1.6rem; font-weight: 700; color: var(--accent);">509</div>
+            <div style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase;">Markdown Notes</div>
+          </div>
+          <div style="background: var(--surface-hover); padding: 0.8rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--border);">
+            <div style="font-size: 1.6rem; font-weight: 700; color: #3b82f6;">283</div>
+            <div style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase;">Java Masterclasses</div>
+          </div>
+          <div style="background: var(--surface-hover); padding: 0.8rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--border);">
+            <div style="font-size: 1.6rem; font-weight: 700; color: #f59e0b;">43</div>
+            <div style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase;">Curated Topics</div>
+          </div>
+          <div style="background: var(--surface-hover); padding: 0.8rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--border);">
+            <div style="font-size: 1.6rem; font-weight: 700; color: #ef4444;">13</div>
+            <div style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase;">Intensive Weeks</div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+          <a class="btn btn-sm" href="roadmap.html">🗺️ Study Roadmap</a>
+          <a class="btn btn-sm" href="topics.html">📚 Topic Directory</a>
+          <a class="btn btn-sm" href="flashcards.html">🃏 DSA & Staff Flashcards</a>
+          <a class="btn btn-sm" href="search.html">🔍 Search 800+ Files</a>
+          <a class="btn btn-sm" href="topic.html?path=STUDY_PLAN_2026.md">📋 Master Plan</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: Featured Projects Showcase -->
+    <section id="projects" style="margin-top: 3.5rem;">
+      <div class="section-header">
+        <h2 class="section-title"><span>🚀</span> Featured Projects Showcase</h2>
+        <a class="section-link" href="topics.html">All project modules →</a>
+      </div>
+
+      <div class="project-grid">
+        <!-- Project 1: MiniDB -->
+        <div class="project-card">
+          <div class="project-card-top">
+            <span class="project-type-badge">STORAGE ENGINE</span>
+            <span style="font-size: 0.72rem; color: var(--text-dim);">Rust / Systems</span>
+          </div>
+          <h3 class="project-card-title">MiniDB: Embedded LSM-Tree Storage Engine</h3>
+          <p class="project-card-desc">
+            A high-performance embedded key-value storage engine engineered in Rust. Features Write-Ahead Logging (WAL) for durability, MemTable SkipList for lock-free concurrent ingestion, binary SSTable layout with Bloom Filters, and background leveled compaction.
+          </p>
+          <div class="project-metrics-row">
+            <span class="project-metric">P99 Write: <strong>&lt; 0.8ms</strong></span>
+            <span class="project-metric">Bloom Filter: <strong>1% FPR</strong></span>
+            <span class="project-metric">Format: <strong>Binary SSTable</strong></span>
+          </div>
+          <div class="project-tech-tags">
+            <span class="chip">Rust</span>
+            <span class="chip">LSM-Tree</span>
+            <span class="chip">SkipList</span>
+            <span class="chip">WAL</span>
+            <span class="chip">Bloom Filters</span>
+          </div>
+          <div class="project-links">
+            <a class="btn btn-sm btn-primary" href="topic.html?path=03_systems_and_databases/minidb">View Code & Architecture</a>
+          </div>
+        </div>
+
+        <!-- Project 2: Twitter Snowflake -->
+        <div class="project-card">
+          <div class="project-card-top">
+            <span class="project-type-badge">DISTRIBUTED SYSTEMS</span>
+            <span style="font-size: 0.72rem; color: var(--text-dim);">Java 21 / HLD</span>
+          </div>
+          <h3 class="project-card-title">Distributed Snowflake ID Generator</h3>
+          <p class="project-card-desc">
+            High-concurrency, coordinate-free unique 64-bit ID generator based on the Twitter Snowflake specification. Eliminates network coordination round-trips while guaranteeing time-sortable IDs across multi-datacenter clusters.
+          </p>
+          <div class="project-metrics-row">
+            <span class="project-metric">Throughput: <strong>4,096 IDs/ms/node</strong></span>
+            <span class="project-metric">Clock Skew: <strong>NTP Guard</strong></span>
+            <span class="project-metric">Coordination: <strong>Zero</strong></span>
+          </div>
+          <div class="project-tech-tags">
+            <span class="chip">Java 21</span>
+            <span class="chip">Distributed IDs</span>
+            <span class="chip">Lock-Free CAS</span>
+            <span class="chip">High Concurrency</span>
+          </div>
+          <div class="project-links">
+            <a class="btn btn-sm btn-primary" href="topic.html?path=02_system_design/hld/02_distributed_id_generator_snowflake.md">Architecture Specification</a>
+          </div>
+        </div>
+
+        <!-- Project 3: Kafka Streaming Pipeline -->
+        <div class="project-card">
+          <div class="project-card-top">
+            <span class="project-type-badge">STREAMING & INFRA</span>
+            <span style="font-size: 0.72rem; color: var(--text-dim);">Kafka / Zero-Copy</span>
+          </div>
+          <h3 class="project-card-title">High-Throughput Streaming Event Pipeline</h3>
+          <p class="project-card-desc">
+            End-to-end event streaming architecture engineered with Apache Kafka, Zero-Copy Linux PageCache socket transfers, and partitioned consumer group rebalances. Incorporates idempotent producers and transactional outbox patterns.
+          </p>
+          <div class="project-metrics-row">
+            <span class="project-metric">Capacity: <strong>500k+ events/s</strong></span>
+            <span class="project-metric">I/O: <strong>Zero-Copy sendfile()</strong></span>
+            <span class="project-metric">Guarantees: <strong>Exactly-Once</strong></span>
+          </div>
+          <div class="project-tech-tags">
+            <span class="chip">Apache Kafka</span>
+            <span class="chip">Zero-Copy</span>
+            <span class="chip">Avro / Protobuf</span>
+            <span class="chip">PageCache</span>
+          </div>
+          <div class="project-links">
+            <a class="btn btn-sm btn-primary" href="topic.html?path=04_infrastructure/high_throughput_data_pipelines">Pipeline Deep Dive</a>
+          </div>
+        </div>
+
+        <!-- Project 4: Production LLD Suite -->
+        <div class="project-card">
+          <div class="project-card-top">
+            <span class="project-type-badge">OBJECT-ORIENTED DESIGN</span>
+            <span style="font-size: 0.72rem; color: var(--text-dim);">Java / Patterns</span>
+          </div>
+          <h3 class="project-card-title">Production Low-Level Design Engine Suite</h3>
+          <p class="project-card-desc">
+            Complete implementations of classic staff-level LLD systems: thread-safe LRU Cache with MPSC write buffers, concurrent Elevator Dispatching Engine, Multi-Floor Parking Lot, and distributed Token Bucket Rate Limiters.
+          </p>
+          <div class="project-metrics-row">
+            <span class="project-metric">Systems: <strong>5 Full Case Studies</strong></span>
+            <span class="project-metric">Revision: <strong>9 1-Page PDF Cards</strong></span>
+            <span class="project-metric">Design: <strong>GoF + SOLID</strong></span>
+          </div>
+          <div class="project-tech-tags">
+            <span class="chip">Java</span>
+            <span class="chip">SOLID</span>
+            <span class="chip">GoF Patterns</span>
+            <span class="chip">Thread-Safety</span>
+          </div>
+          <div class="project-links">
+            <a class="btn btn-sm btn-primary" href="topic.html?path=02_system_design/lld">Browse LLD Suite</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: Engineering Blogs & Architectural Writeups -->
+    <section id="blogs" style="margin-top: 3.5rem;">
+      <div class="section-header">
+        <h2 class="section-title"><span>📝</span> Engineering Blogs & Deep Dives</h2>
+        <span style="font-size: 0.75rem; color: var(--text-dim);">First-principles systems essays</span>
+      </div>
+
+      <div class="blog-grid">
+        <!-- Blog 1 -->
+        <article class="blog-card">
+          <div class="blog-meta-row">
+            <span class="blog-domain-badge">DATABASES & STORAGE</span>
+            <span>12 min read</span>
+            <span>&middot;</span>
+            <span>Mechanical Sympathy</span>
+          </div>
+          <h3 class="blog-card-title">
+            Mechanical Sympathy in Storage Engines: B+ Trees vs LSM-Trees
+          </h3>
+          <p class="blog-card-excerpt">
+            An architectural breakdown of read, write, and space amplification. Explains why LSM-Trees dominate write-intensive workloads through sequential append-only logs and compaction, while B+ Trees excel at point lookups via slotted-page layouts.
+          </p>
+          <div class="blog-card-foot">
+            <span style="color: var(--text-dim);">Oct 2026</span>
+            <a class="section-link" href="topic.html?path=03_systems_and_databases/database_internals">Read Article →</a>
+          </div>
+        </article>
+
+        <!-- Blog 2 -->
+        <article class="blog-card">
+          <div class="blog-meta-row">
+            <span class="blog-domain-badge">JAVA & CONCURRENCY</span>
+            <span>10 min read</span>
+            <span>&middot;</span>
+            <span>JVM Internals</span>
+          </div>
+          <h3 class="blog-card-title">
+            Demystifying Java 21 Loom: Virtual Threads, Monitors & Pinning Traps
+          </h3>
+          <p class="blog-card-excerpt">
+            Deep dive into Project Loom continuation mechanics, carrier thread unmounting, and why `synchronized` blocks and JNI calls cause carrier thread pinning. Shows migration patterns to `ReentrantLock` and `StructuredTaskScope`.
+          </p>
+          <div class="blog-card-foot">
+            <span style="color: var(--text-dim);">Oct 2026</span>
+            <a class="section-link" href="topic.html?path=01_core_foundations/java/concurrency/06_virtual_threads_loom.md">Read Article →</a>
+          </div>
+        </article>
+
+        <!-- Blog 3 -->
+        <article class="blog-card">
+          <div class="blog-meta-row">
+            <span class="blog-domain-badge">SYSTEM DESIGN</span>
+            <span>14 min read</span>
+            <span>&middot;</span>
+            <span>Distributed Scale</span>
+          </div>
+          <h3 class="blog-card-title">
+            Distributed Rate Limiting at Scale: Token Buckets vs Sliding Window Logs
+          </h3>
+          <p class="blog-card-excerpt">
+            How to architect multi-region rate limiters capable of handling 100,000+ RPS. Compares Redis Lua script token buckets against sliding window approximations, addressing race conditions and clock drift.
+          </p>
+          <div class="blog-card-foot">
+            <span style="color: var(--text-dim);">Oct 2026</span>
+            <a class="section-link" href="topic.html?path=02_system_design/hld/03_distributed_rate_limiter.md">Read Article →</a>
+          </div>
+        </article>
+
+        <!-- Blog 4 -->
+        <article class="blog-card">
+          <div class="blog-meta-row">
+            <span class="blog-domain-badge">KERNEL & NETWORKING</span>
+            <span>15 min read</span>
+            <span>&middot;</span>
+            <span>Operating Systems</span>
+          </div>
+          <h3 class="blog-card-title">
+            Linux Zero-Copy & Kernel Internals: Why Kafka and epoll Outperform Traditional I/O
+          </h3>
+          <p class="blog-card-excerpt">
+            Tracing system calls from disk to socket. Explains how `epoll_wait` uses red-black trees and ready lists to achieve O(1) scaling, and how `sendfile()` eliminates user-space context switches through DMA copy.
+          </p>
+          <div class="blog-card-foot">
+            <span style="color: var(--text-dim);">Oct 2026</span>
+            <a class="section-link" href="topic.html?path=04_infrastructure/tech-stack/kafka/README.md">Read Article →</a>
+          </div>
+        </article>
+
+        <!-- Blog 5 -->
+        <article class="blog-card">
+          <div class="blog-meta-row">
+            <span class="blog-domain-badge">SYSTEM DESIGN HLD</span>
+            <span>11 min read</span>
+            <span>&middot;</span>
+            <span>Capacity Math</span>
+          </div>
+          <h3 class="blog-card-title">
+            Scalable URL Shortener Architecture: KGS Key Generation & 5-Year Capacity Math
+          </h3>
+          <p class="blog-card-excerpt">
+            Complete high-level design walkthrough for TinyURL. Features base62 encoding calculations, Key Generation Service (KGS) pre-allocation, 80/20 caching distribution, and partition strategy for 5-year storage scaling.
+          </p>
+          <div class="blog-card-foot">
+            <span style="color: var(--text-dim);">Oct 2026</span>
+            <a class="section-link" href="topic.html?path=URL_Shortener_HLD.md">Read Article →</a>
+          </div>
+        </article>
+
+        <!-- Blog 6 -->
+        <article class="blog-card">
+          <div class="blog-meta-row">
+            <span class="blog-domain-badge">DISTRIBUTED CONSENSUS</span>
+            <span>13 min read</span>
+            <span>&middot;</span>
+            <span>Consensus & Raft</span>
+          </div>
+          <h3 class="blog-card-title">
+            Raft Consensus Invariants: Dissecting Leader Election & Log Matching
+          </h3>
+          <p class="blog-card-excerpt">
+            Understanding why Raft is understandable without sacrificing rigor. Detailed walkthrough of the Election Safety, Leader Append-Only, and State Machine Safety properties.
+          </p>
+          <div class="blog-card-foot">
+            <span style="color: var(--text-dim);">Oct 2026</span>
+            <a class="section-link" href="topic.html?path=03_systems_and_databases/database_internals/02_distributed_storage/01_raft_consensus_invariants.md">Read Article →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Curriculum Vitae (CV) & Experience Summary -->
+    <section id="cv" style="margin-top: 3.5rem;">
+      <div class="section-header">
+        <h2 class="section-title"><span>📄</span> Curriculum Vitae & Experience</h2>
+        <div style="display: flex; gap: 0.5rem;">
+          <a class="btn btn-sm btn-primary" href="cv.html">🖨️ View & Print Full CV</a>
+        </div>
+      </div>
+
+      <div class="cv-container">
+        <div class="cv-top-header">
+          <div>
+            <h3 class="cv-name">Kartik Chauhan</h3>
+            <div class="cv-title">Staff Software Engineer & Distributed Systems Architect</div>
+            <div class="cv-contact-strip">
+              <span>📍 India / Remote</span>
+              <span>✉️ contact@kartik.dev</span>
+              <span>🐙 <a href="https://github.com/chauhankartik" target="_blank" rel="noopener">github.com/chauhankartik</a></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cv-section-block">
+          <div class="cv-heading">Profile & Philosophy</div>
+          <p style="font-size: 0.88rem; line-height: 1.7; color: var(--text-muted);">
+            Senior/Staff engineer specializing in distributed systems, high-throughput JVM applications, storage engines, and cloud platforms. Proven track record of designing resilient systems processing hundreds of thousands of events per second with sub-15ms latencies.
+          </p>
+        </div>
+
+        <div class="cv-section-block">
+          <div class="cv-heading">Experience Highlights</div>
+          <div class="cv-timeline-item">
+            <div class="cv-role-title">Staff Software Engineer & Systems Architect</div>
+            <div class="cv-company-date">
+              <span>Distributed Platforms & Core Infrastructure</span>
+              <span>2022 – Present</span>
+            </div>
+            <ul class="cv-bullets">
+              <li>Architected event streaming platforms scaling to <strong>500,000+ events/sec</strong> utilizing Apache Kafka, zero-copy socket buffers, and consumer group partitioning.</li>
+              <li>Engineered distributed unique ID services based on <strong>Twitter Snowflake</strong> (4,096 IDs/ms per worker node with zero coordination overhead).</li>
+              <li>Migrated mission-critical JVM services to <strong>Java 21 Project Loom virtual threads</strong>, cutting thread memory footprints by 70% and increasing blocking I/O throughput by 4x.</li>
+              <li>Led enterprise database decomposition using <strong>Strangler Fig</strong>, <strong>Transactional Outbox</strong>, and <strong>Debezium Change Data Capture (CDC)</strong> patterns.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 1.5rem;">
+          <a class="btn btn-primary" href="cv.html">Open Full Dedicated CV Document →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: About Section -->
+    <div class="section-header" id="about" style="margin-top: 3.5rem;">
+      <h2 class="section-title"><span>👤</span> About Kartik Chauhan</h2>
       <a class="section-link" href="https://github.com/chauhankartik" target="_blank" rel="noopener">GitHub Profile ↗</a>
     </div>
 
@@ -182,35 +446,8 @@
         </div>
 
         <p class="about-bio">
-          Welcome to my <strong>2026 Software Engineering Master Study Repository</strong>. This project represents an intensive, first-principles synthesis of staff-level software engineering, systems design, database internals, and cloud infrastructure.
+          I am passionate about building fault-tolerant distributed platforms and sharing deeply researched engineering knowledge. This personal hub unites my production projects, architectural essays, and the comprehensive 2026 Master Study Repository.
         </p>
-        <p class="about-bio" style="margin-top: -0.75rem;">
-          Rather than relying on surface-level cheat sheets, every topic in this 800+ file repository is built to develop true mechanical sympathy — spanning from Linux kernel epoll syscalls, CPU cache line false sharing, and virtual memory page tables, up to distributed Raft consensus invariants, LSM-tree compaction mathematics, and zero-copy Kafka streaming pipelines.
-        </p>
-
-        <!-- 3 Core Pillars -->
-        <div class="about-pillars-grid">
-          <div class="about-pillar">
-            <div class="about-pillar-title">🏛️ System Architecture</div>
-            <div class="about-pillar-desc">
-              High-throughput distributed systems, 4-step capacity estimation math, 28 Alex Xu HLD case studies, and monolith-to-microservices patterns (Strangler Fig, CDC, Outbox, Saga).
-            </div>
-          </div>
-
-          <div class="about-pillar">
-            <div class="about-pillar-title">⚙️ Systems & Storage Engines</div>
-            <div class="about-pillar-desc">
-              OSTEP operating systems virtualization, B+ tree & LSM-tree storage engines, ARIES 3-phase recovery, distributed transactions (2PC/3PC), and Lucene search indexing.
-            </div>
-          </div>
-
-          <div class="about-pillar">
-            <div class="about-pillar-title">☕ Languages & Foundations</div>
-            <div class="about-pillar-desc">
-              Effective Java (all 90 items), JMM Happens-Before & Java 21 Project Loom virtual threads, modern C++ RAII/smart pointers, and CSES competitive algorithmic mastery.
-            </div>
-          </div>
-        </div>
 
         <!-- Technical Specialization Tags -->
         <div class="about-tags">
@@ -230,8 +467,9 @@
 
         <!-- Direct Links -->
         <div class="about-links">
-          <a class="btn btn-primary" href="roadmap.html">🗺️ Explore 13-Week Curriculum</a>
-          <a class="btn" href="topic.html?path=STUDY_PLAN_2026.md">📋 Master Study Plan</a>
+          <a class="btn btn-primary" href="roadmap.html">🎯 13-Week Interview Roadmap</a>
+          <a class="btn" href="flashcards.html">🃏 Active Recall Flashcards</a>
+          <a class="btn" href="cv.html">📄 Curriculum Vitae</a>
           <a class="btn" href="https://github.com/chauhankartik" target="_blank" rel="noopener">🐙 GitHub @chauhankartik</a>
         </div>
       </div>
@@ -239,8 +477,14 @@
   </main>
 
   <footer class="site-footer">
-    <p>Engineered with ⚡ by <strong>Kartik Chauhan</strong> · 2026 Software Engineering Master Study Repository</p>
-    <p style="margin-top: 0.4rem; color: var(--text-dim);">Static HTML / CSS / JavaScript · Inspired by CS_basics</p>
+    <p>Engineered with ⚡ by <strong>Kartik Chauhan</strong> · Staff Software Engineer & Systems Architect</p>
+    <p style="margin-top: 0.4rem; color: var(--text-dim);">
+      <a href="#interview-prep">Interview Prep</a> &middot; 
+      <a href="#projects">Projects</a> &middot; 
+      <a href="#blogs">Engineering Blogs</a> &middot; 
+      <a href="cv.html">CV</a> &middot; 
+      <a href="flashcards.html">Flashcards</a>
+    </p>
   </footer>
 
   <script src="assets/js/site.js"></script>
@@ -248,40 +492,6 @@
     document.addEventListener('DOMContentLoaded', function () {
       StudySite.Nav.mount('home');
       StudySite.Progress.init();
-
-      StudySite.Data.load().then(function (data) {
-        // Update stats strip dynamically
-        if (data.stats) {
-          const s = data.stats;
-          document.getElementById('statsStrip').innerHTML = `
-            <div class="stat-cell"><span class="stat-n">${s.markdownFiles}</span><span class="stat-l">Markdown Guides</span></div>
-            <div class="stat-cell"><span class="stat-n">${s.javaFiles}</span><span class="stat-l">Java Masterclasses</span></div>
-            <div class="stat-cell"><span class="stat-n">${s.topics}</span><span class="stat-l">Curated Topics</span></div>
-            <div class="stat-cell"><span class="stat-n">${s.weeks}</span><span class="stat-l">Intensive Weeks</span></div>
-          `;
-        }
-
-        // Render Domain Cards
-        const grid = document.getElementById('domainsGrid');
-        if (grid && data.domains) {
-          grid.innerHTML = data.domains.map(function (dom) {
-            return `
-              <a class="domain-card" href="topics.html?domain=${dom.id}" style="--card-color: ${dom.color}">
-                <div class="domain-card-head">
-                  <span class="domain-card-icon">${dom.icon}</span>
-                  <span class="domain-card-badge">${dom.badge}</span>
-                </div>
-                <h3 class="domain-card-title">${dom.name}</h3>
-                <p class="domain-card-desc">${dom.description}</p>
-                <div class="domain-card-foot">
-                  <span><strong>${dom.topicCount}</strong> Topics</span>
-                  <span><strong>${dom.fileCount}</strong> Total Files</span>
-                </div>
-              </a>
-            `;
-          }).join('');
-        }
-      });
     });
   </script>
 </body>

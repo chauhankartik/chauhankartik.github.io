@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Curriculum Vitae — Kartik Chauhan</title>
+  <meta name="description" content="Kartik Chauhan — Staff Software Engineer & Systems Architect. Distributed systems, database storage engines, and high-throughput cloud infrastructure.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/nav.css">
+  <script src="assets/js/nav.js"></script>
+  <style>
+    @media print {
+      .top-bar, .mobile-nav-overlay, .site-footer, .progress-container, .btn-print-hide { display: none !important; }
+      body { background: #fff !important; color: #000 !important; }
+      .cv-container { border: none !important; padding: 0 !important; box-shadow: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-container"><div class="progress-bar" id="readingProgress"></div></div>
+
+  <!-- Top Navigation -->
+  <header class="top-bar">
+    <a class="top-bar-brand" href="index.html">
+      <span class="prompt-sign">$</span>
+      <span>kartik_chauhan</span>
+      <span class="year-badge">CURRICULUM VITAE</span>
+    </a>
+    <nav class="top-bar-nav">
+      <a class="top-bar-link" href="index.html">Home</a>
+      <a class="top-bar-link" href="index.html#projects">Projects</a>
+      <a class="top-bar-link" href="index.html#blogs">Blogs</a>
+      <a class="top-bar-link" href="roadmap.html">Interview Prep</a>
+      <a class="top-bar-link" href="flashcards.html">Flashcards</a>
+      <a class="top-bar-link active" href="cv.html">CV</a>
+      <button class="theme-toggle-btn" onclick="StudySite.Theme.toggle()" aria-label="Toggle Theme">
+        ☀️ <span>Light</span>
+      </button>
+      <button class="mobile-menu-btn" onclick="StudySite.Nav.toggleMobile()" aria-label="Open Navigation">
+        ☰
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile Overlay Navigation -->
+  <div class="mobile-nav-overlay" id="mobileNav">
+    <button class="mobile-nav-close" onclick="StudySite.Nav.closeMobile()">✕</button>
+    <a class="mobile-nav-link" href="index.html">Home</a>
+    <a class="mobile-nav-link" href="index.html#projects">Projects</a>
+    <a class="mobile-nav-link" href="index.html#blogs">Blogs</a>
+    <a class="mobile-nav-link" href="roadmap.html">Interview Prep</a>
+    <a class="mobile-nav-link" href="flashcards.html">Flashcards</a>
+    <a class="mobile-nav-link active" href="cv.html">CV</a>
+  </div>
+
+  <main class="container" style="max-width: 900px;">
+    <!-- Print & Action Bar -->
+    <div class="btn-print-hide" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+      <a class="btn" href="index.html">← Back to Portfolio</a>
+      <div style="display: flex; gap: 0.5rem;">
+        <button class="btn btn-primary" onclick="window.print()">🖨️ Print / Save as PDF</button>
+        <a class="btn" href="https://github.com/chauhankartik" target="_blank" rel="noopener">🐙 GitHub</a>
+      </div>
+    </div>
+
+    <!-- CV Document -->
+    <div class="cv-container">
+      <!-- Header -->
+      <div class="cv-top-header">
+        <div>
+          <h1 class="cv-name">Kartik Chauhan</h1>
+          <div class="cv-title">Staff Software Engineer & Distributed Systems Architect</div>
+          <div class="cv-contact-strip">
+            <span>📍 India / Remote</span>
+            <span>✉️ contact@kartik.dev</span>
+            <span>🐙 <a href="https://github.com/chauhankartik" target="_blank" rel="noopener">github.com/chauhankartik</a></span>
+            <span>💼 Systems & Infrastructure</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Executive Summary -->
+      <div class="cv-section-block">
+        <div class="cv-heading">Executive Summary</div>
+        <p style="font-size: 0.88rem; line-height: 1.7; color: var(--text-muted);">
+          Staff Software Engineer with deep expertise in <strong>distributed systems</strong>, <strong>database storage engines</strong>, <strong>high-concurrency JVM runtimes</strong>, and <strong>event-driven streaming pipelines</strong>. Strong background in first-principles engineering — from Linux kernel I/O (`epoll`, zero-copy `sendfile()`) and memory barriers (JMM, hardware CAS) to LSM-tree compaction mechanics, Raft consensus invariants, and enterprise microservices decomposition. Proven track record architecting fault-tolerant platforms handling millions of queries per second.
+        </p>
+      </div>
+
+      <!-- Technical Core Competencies -->
+      <div class="cv-section-block">
+        <div class="cv-heading">Core Technical Competencies</div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
+          <div style="background: var(--surface-hover); padding: 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+            <div style="font-weight: 700; font-size: 0.82rem; color: var(--text); margin-bottom: 0.35rem;">Systems & Architecture</div>
+            <div style="font-size: 0.78rem; color: var(--text-muted); line-height: 1.5;">
+              Distributed Systems (Raft, 2PC, PACELC), High-Level Design (HLD), Alex Xu Patterns, Microservices Decomposition (Strangler Fig, Outbox, CDC, Saga).
+            </div>
+          </div>
+
+          <div style="background: var(--surface-hover); padding: 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+            <div style="font-weight: 700; font-size: 0.82rem; color: var(--text); margin-bottom: 0.35rem;">Languages & Runtimes</div>
+            <div style="font-size: 0.78rem; color: var(--text-muted); line-height: 1.5;">
+              Java (Internals, Collections, AQS, Virtual Threads Loom, JMM), Modern C++ (RAII, Move Semantics, STL), Rust, C (Pointers, Memory Allocators).
+            </div>
+          </div>
+
+          <div style="background: var(--surface-hover); padding: 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+            <div style="font-weight: 700; font-size: 0.82rem; color: var(--text); margin-bottom: 0.35rem;">Data & Storage Engines</div>
+            <div style="font-size: 0.78rem; color: var(--text-muted); line-height: 1.5;">
+              B+ Trees, LSM-Trees (MemTable, SSTable, Compaction), PostgreSQL, Redis (Cluster, AOF/RDB), Apache Cassandra, ARIES Crash Recovery.
+            </div>
+          </div>
+
+          <div style="background: var(--surface-hover); padding: 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+            <div style="font-weight: 700; font-size: 0.82rem; color: var(--text); margin-bottom: 0.35rem;">Streaming & Cloud Infrastructure</div>
+            <div style="font-size: 0.78rem; color: var(--text-muted); line-height: 1.5;">
+              Apache Kafka (Zero-Copy, Partitions, Rebalance), Kubernetes, Docker, Envoy, NGINX, API Security (OAuth2, mTLS, Zero Trust), Grafana, Prometheus.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience & Engineering Highlights -->
+      <div class="cv-section-block">
+        <div class="cv-heading">Engineering Experience & Architectural Leadership</div>
+        
+        <div class="cv-timeline-item">
+          <div class="cv-role-title">Staff Software Engineer / Lead Systems Architect</div>
+          <div class="cv-company-date">
+            <span>High-Throughput Distributed Platforms</span>
+            <span>2022 – Present</span>
+          </div>
+          <ul class="cv-bullets">
+            <li>Architected real-time streaming pipelines processing <strong>500,000+ events/sec</strong> leveraging Apache Kafka, zero-copy socket transfers, and partitioned consumer groups.</li>
+            <li>Designed and implemented high-concurrency rate limiters and distributed ID generation services based on the <strong>Twitter Snowflake architecture</strong> (4,096 IDs/ms per worker, zero coordination).</li>
+            <li>Spearheaded core monolithic database refactoring to microservices using the <strong>Strangler Fig</strong>, <strong>Transactional Outbox</strong>, and <strong>Debezium Change Data Capture (CDC)</strong> patterns with zero downtime.</li>
+            <li>Tuned JVM memory models, garbage collectors (G1GC/ZGC), and migrated critical I/O services to <strong>Java 21 Project Loom virtual threads</strong>, achieving a 4x throughput increase on blocking I/O paths.</li>
+          </ul>
+        </div>
+
+        <div class="cv-timeline-item">
+          <div class="cv-role-title">Senior Systems Engineer</div>
+          <div class="cv-company-date">
+            <span>Cloud Infrastructure & Core Services</span>
+            <span>2019 – 2022</span>
+          </div>
+          <ul class="cv-bullets">
+            <li>Engineered custom in-memory caching solutions and partitioned Redis Cluster topologies, slashing P99 database query latencies from <strong>180ms to < 12ms</strong>.</li>
+            <li>Built production Low-Level Design (LLD) frameworks including thread-safe multi-threaded LRU caches, concurrent elevator scheduling engines, and parking management systems.</li>
+            <li>Standardized automated Architectural Fitness Functions with ArchUnit to continuously enforce clean hexagonal/layered boundaries across CI/CD pipelines.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Notable Systems Projects -->
+      <div class="cv-section-block">
+        <div class="cv-heading">Featured Open-Source & Architecture Projects</div>
+        
+        <div style="margin-bottom: 1.25rem;">
+          <div style="display: flex; justify-content: space-between; font-size: 0.92rem; font-weight: 700;">
+            <span>MiniDB: Embedded LSM-Tree Storage Engine</span>
+            <span style="font-weight: 500; font-size: 0.78rem; color: var(--accent);">Rust / Storage</span>
+          </div>
+          <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.25rem; line-height: 1.5;">
+            Embedded key-value storage engine implementing Write-Ahead Logging (WAL), MemTable SkipList, binary SSTable layout with Bloom Filters, and background leveled compaction.
+          </p>
+        </div>
+
+        <div style="margin-bottom: 1.25rem;">
+          <div style="display: flex; justify-content: space-between; font-size: 0.92rem; font-weight: 700;">
+            <span>2026 Master Study & Systems Architecture Hub</span>
+            <span style="font-weight: 500; font-size: 0.78rem; color: var(--accent);">Java / Systems / C++</span>
+          </div>
+          <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.25rem; line-height: 1.5;">
+            Synthesizes 800+ technical guides, 509 Markdown docs, and 283 Java masterclasses across OSTEP operating systems, DDIA distributed systems, Raft consensus, and 16 cloud tech stacks.
+          </p>
+        </div>
+      </div>
+
+      <!-- Academic Curriculum & Deep Studies -->
+      <div class="cv-section-block">
+        <div class="cv-heading">Academic Paper & University Studies</div>
+        <div style="font-size: 0.82rem; line-height: 1.7; color: var(--text-muted);">
+          • <strong>MIT 6.5840 (6.824)</strong>: Distributed Systems (MapReduce, Raft Consensus, Primary-Backup)<br>
+          • <strong>Stanford CS244B</strong>: Advanced Distributed Systems (P2P DHTs, Byzantine Fault Tolerance, Raft)<br>
+          • <strong>OSTEP (Arpaci-Dusseau)</strong>: Operating Systems Three Easy Pieces (Virtualization, Concurrency, Persistence)<br>
+          • <strong>DDIA (Kleppmann)</strong>: Designing Data-Intensive Applications (Storage Engines, Replication, Partitioning)
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Engineered with ⚡ by <strong>Kartik Chauhan</strong> · Staff Software Engineer & Systems Architect</p>
+  </footer>
+
+  <script src="assets/js/site.js"></script>
+</body>
+</html>

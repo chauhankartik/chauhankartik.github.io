@@ -1,0 +1,151 @@
+/* ── CS_basics Sticky Navigation Bar & Controls ── */
+
+.top-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 1.75rem;
+  background: rgba(10, 10, 12, 0.88);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+[data-theme="light"] .top-bar {
+  background: rgba(248, 250, 252, 0.88);
+}
+
+.top-bar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.top-bar-brand .prompt-sign {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.top-bar-brand .year-badge {
+  font-size: 0.65rem;
+  background: var(--surface-active);
+  color: var(--accent);
+  border: 1px solid var(--accent-border);
+  padding: 0.1rem 0.4rem;
+  border-radius: var(--radius-sm);
+  margin-left: 0.25rem;
+  letter-spacing: 0.05em;
+}
+
+.top-bar-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.top-bar-link {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.top-bar-link:hover {
+  color: var(--text);
+  background: var(--surface-hover);
+}
+
+.top-bar-link.active {
+  color: var(--accent);
+  background: var(--accent-dim);
+  font-weight: 600;
+}
+
+.theme-toggle-btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.35rem 0.7rem;
+  font-size: 0.78rem;
+  border-radius: var(--radius-md);
+  margin-left: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: var(--transition);
+}
+
+.theme-toggle-btn:hover {
+  border-color: var(--text-muted);
+  background: var(--surface-hover);
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-size: 1.25rem;
+  padding: 0.4rem;
+  cursor: pointer;
+}
+
+/* ── Mobile Overlay Navigation ── */
+.mobile-nav-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg);
+  z-index: 999;
+  padding: 5rem 2rem 2rem;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.mobile-nav-overlay.open {
+  display: flex;
+}
+
+.mobile-nav-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.5rem;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.mobile-nav-overlay a {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+
+.mobile-nav-overlay a.active {
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .top-bar-link {
+    display: none;
+  }
+  .mobile-menu-btn {
+    display: block;
+  }
+}

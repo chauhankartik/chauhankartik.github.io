@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Study Roadmap — 2026 Master Study Hub</title>
+  <meta name="description" content="13-week structured staff & principal preparation roadmap. Track progress, modules, and focus topics across all 4 phases.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗺️</text></svg>">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/nav.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <script src="assets/js/nav.js"></script>
+</head>
+<body>
+  <div class="progress-container"><div class="progress-bar" id="readingProgress"></div></div>
+
+  <!-- Sticky Top Navigation -->
+  <header class="top-bar">
+    <a class="top-bar-brand" href="index.html">
+      <span class="prompt-sign">$</span>
+      <span>2026_study</span>
+      <span class="year-badge">ROADMAP</span>
+    </a>
+    <nav class="top-bar-nav">
+      <a class="top-bar-link" href="index.html" data-page="home">Home</a>
+      <a class="top-bar-link" href="roadmap.html" data-page="roadmap">Roadmap</a>
+      <a class="top-bar-link" href="topics.html" data-page="topics">Topics</a>
+      <a class="top-bar-link" href="search.html" data-page="search">Search</a>
+      <button class="theme-toggle-btn" onclick="StudySite.Theme.toggle()" aria-label="Toggle Theme">
+        ☀️ <span>Light</span>
+      </button>
+      <button class="mobile-menu-btn" onclick="StudySite.Nav.toggleMobile()" aria-label="Open Navigation">
+        ☰
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile Overlay Navigation -->
+  <div class="mobile-nav-overlay" id="mobileNav">
+    <button class="mobile-nav-close" onclick="StudySite.Nav.closeMobile()">✕</button>
+    <a class="mobile-nav-link" href="index.html" data-page="home">Home</a>
+    <a class="mobile-nav-link" href="roadmap.html" data-page="roadmap">Roadmap</a>
+    <a class="mobile-nav-link" href="topics.html" data-page="topics">Topics</a>
+    <a class="mobile-nav-link" href="search.html" data-page="search">Search</a>
+  </div>
+
+  <main class="container">
+    <div class="page-header" style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2.3rem; font-weight: 700; margin-bottom: 0.5rem;">13-Week Intensive Roadmap</h1>
+      <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 65ch; margin: 0 auto;">
+        Interactive curriculum tracker synthesized for Staff Software Engineers and Systems Architects. Click any week to expand modules, dive into notes, and mark milestones as complete.
+      </p>
+    </div>
+
+    <!-- Overall Progress Box -->
+    <div class="roadmap-summary-box">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; color: var(--accent);">
+          Preparation Progress
+        </span>
+        <button class="btn btn-sm" onclick="resetAllProgress()" style="font-size: 0.72rem; padding: 0.25rem 0.5rem;">
+          Reset Progress
+        </button>
+      </div>
+
+      <div class="overall-progress-bar">
+        <div class="overall-progress-fill" id="overallProgressFill"></div>
+      </div>
+
+      <div class="overall-stats-text">
+        <span id="overallProgressText"><strong>0 of 13</strong> weeks completed (0%)</span>
+        <span>Storage: Local browser persistence</span>
+      </div>
+    </div>
+
+    <!-- Phases & Weeks Container -->
+    <div id="phasesList">
+      <div style="text-align: center; padding: 3rem; color: var(--text-dim);">Loading roadmap curriculum...</div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>2026 Software Engineering Master Study Repository · 13-Week Staff Engineering Curriculum</p>
+  </footer>
+
+  <script src="assets/js/site.js"></script>
+  <script>
+    function resetAllProgress() {
+      if (confirm('Are you sure you want to reset all week completion checkboxes?')) {
+        for (let i = 1; i <= 13; i++) {
+          localStorage.removeItem('study_week_done_' + i);
+        }
+        StudySite.Roadmap.updateStats();
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      StudySite.Nav.mount('roadmap');
+      StudySite.Progress.init();
+
+      StudySite.Data.load().then(function (data) {
+        const container = document.getElementById('phasesList');
+        if (!container || !data.roadmap) return;
+
+        let html = '';
+
+        data.roadmap.forEach(function (phase) {
+          html += `
+            <div class="phase-container">
+              <div class="phase-title-bar">
+                <span class="phase-dot" style="background: ${phase.color};"></span>
+                <span class="phase-title">${phase.name}</span>
+                <span class="phase-badge">${phase.weeks_span}</span>
+              </div>
+
+              <div class="week-cards-list">
+          `;
+
+          phase.weeks.forEach(function (w) {
+            const weekNum = w.week;
+            const focusItems = w.focus.map(f => `<li>${f}</li>`).join('');
+            const moduleBadges = w.modules.map(m => `
+              <a class="module-link" href="topic.html?path=${encodeURIComponent(m.path)}">
+                📖 ${m.name}
+              </a>
+            `).join('');
+
+            html += `
+              <div class="week-card" id="weekCard_${weekNum}">
+                <div class="week-card-header" onclick="StudySite.Roadmap.toggleWeekCard(${weekNum})">
+                  <span class="week-number-pill">W${weekNum}</span>
+                  <span class="week-card-title">${w.title}</span>
+                  <span class="week-toggle-arrow">▶</span>
+                </div>
+                <div class="week-card-body">
+                  <div style="font-weight: 700; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-dim);">
+                    Core Focus Topics
+                  </div>
+                  <ul class="focus-list">
+                    ${focusItems}
+                  </ul>
+
+                  <div style="font-weight: 700; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-dim); margin-top: 1rem;">
+                    Target Modules & Codebases
+                  </div>
+                  <div class="module-link-grid">
+                    ${moduleBadges}
+                  </div>
+
+                  <div style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted); background: var(--surface); padding: 0.7rem 0.9rem; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+                    <strong style="color: var(--text);">Deliverable:</strong> ${w.deliverable}
+                  </div>
+
+                  <div class="week-complete-checkbox">
+                    <input type="checkbox" id="weekCheck_${weekNum}" onchange="StudySite.Roadmap.setWeekCompleted(${weekNum}, this.checked)">
+                    <label for="weekCheck_${weekNum}" style="cursor: pointer; user-select: none;">
+                      Mark Week ${weekNum} as Completed
+                    </label>
+                  </div>
+                </div>
+              </div>
+            `;
+          });
+
+          html += `
+              </div>
+            </div>
+          `;
+        });
+
+        container.innerHTML = html;
+        // Restore checkbox states and progress bar
+        StudySite.Roadmap.updateStats();
+
+        // Default open Week 1 for better onboarding
+        const w1 = document.getElementById('weekCard_1');
+        if (w1) w1.classList.add('open');
+      });
+    });
+  </script>
+</body>
+</html>

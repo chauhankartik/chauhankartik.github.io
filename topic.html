@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Document Viewer — 2026 Master Study Hub</title>
+  <meta name="description" content="Read and study deep-dive architecture documents, Java source implementations, and systems design notes.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/nav.css">
+  
+  <!-- Highlight.js dark syntax theme -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  
+  <!-- Blocking script to restore theme -->
+  <script src="assets/js/nav.js"></script>
+
+  <!-- Marked, Highlight.js and Mermaid -->
+  <script src="https://cdn.jsdelivr.net/npm/marked@14/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <div class="progress-container"><div class="progress-bar" id="readingProgress"></div></div>
+
+  <!-- Sticky Top Navigation -->
+  <header class="top-bar">
+    <a class="top-bar-brand" href="index.html">
+      <span class="prompt-sign">$</span>
+      <span>2026_study</span>
+      <span class="year-badge">VIEWER</span>
+    </a>
+    <nav class="top-bar-nav">
+      <a class="top-bar-link" href="index.html" data-page="home">Home</a>
+      <a class="top-bar-link" href="roadmap.html" data-page="roadmap">Roadmap</a>
+      <a class="top-bar-link" href="topics.html" data-page="topics">Topics</a>
+      <a class="top-bar-link" href="search.html" data-page="search">Search</a>
+      <button class="theme-toggle-btn" onclick="StudySite.Theme.toggle()" aria-label="Toggle Theme">
+        ☀️ <span>Light</span>
+      </button>
+      <button class="mobile-menu-btn" onclick="StudySite.Nav.toggleMobile()" aria-label="Open Navigation">
+        ☰
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile Overlay Navigation -->
+  <div class="mobile-nav-overlay" id="mobileNav">
+    <button class="mobile-nav-close" onclick="StudySite.Nav.closeMobile()">✕</button>
+    <a class="mobile-nav-link" href="index.html" data-page="home">Home</a>
+    <a class="mobile-nav-link" href="roadmap.html" data-page="roadmap">Roadmap</a>
+    <a class="mobile-nav-link" href="topics.html" data-page="topics">Topics</a>
+    <a class="mobile-nav-link" href="search.html" data-page="search">Search</a>
+  </div>
+
+  <main class="container" style="max-width: 1400px; padding: 1.5rem 1rem 3rem;">
+    <!-- Breadcrumbs & Quick Bar -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.75rem;">
+      <nav class="breadcrumb" id="viewerBreadcrumbs">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <a href="topics.html">Topics</a>
+        <span>›</span>
+        <span id="crumbTopic">Topic</span>
+        <span>›</span>
+        <span id="crumbFile" style="color: var(--text);">Document</span>
+      </nav>
+
+      <div style="display: flex; gap: 0.5rem;">
+        <button class="btn btn-sm" onclick="copyCurrentPath()" title="Copy relative path to clipboard">
+          📋 Copy Path
+        </button>
+        <a class="btn btn-sm" id="btnRawSource" href="#" target="_blank" title="View raw source in new tab">
+          📄 Raw File
+        </a>
+        <a class="btn btn-sm" href="topics.html">
+          ← Topics
+        </a>
+      </div>
+    </div>
+
+    <!-- Viewer Split Layout -->
+    <div class="viewer-layout">
+      <!-- Left Sidebar: Topic File Explorer -->
+      <aside class="viewer-sidebar">
+        <div class="sidebar-title" id="sidebarTopicTitle">Topic Explorer</div>
+        <div id="sidebarTreeContainer">
+          <div style="font-size: 0.78rem; color: var(--text-dim);">Loading folder tree...</div>
+        </div>
+      </aside>
+
+      <!-- Right Content Pane -->
+      <section class="viewer-content-pane">
+        <div class="doc-header">
+          <div class="doc-file-path" id="docHeaderPath">file_path</div>
+          <h1 class="doc-title" id="docHeaderTitle">Document Title</h1>
+        </div>
+
+        <div id="docViewerBody">
+          <!-- Rendered Markdown or Source Code -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>2026 Software Engineering Master Study Repository · Staff & Principal Systems Preparation</p>
+  </footer>
+
+  <script src="assets/js/site.js"></script>
+  <script>
+    let currentLoadedPath = '';
+
+    function copyCurrentPath() {
+      if (!currentLoadedPath) return;
+      navigator.clipboard.writeText(currentLoadedPath).then(function () {
+        alert('Copied: ' + currentLoadedPath);
+      });
+    }
+
+    function getFileIcon(ext) {
+      switch (ext) {
+        case 'md': return '📄';
+        case 'java': return '☕';
+        case 'sql': return '🗃️';
+        case 'rs': return '⚙️';
+        case 'c':
+        case 'cpp':
+        case 'h': return '🔷';
+        case 'pdf': return '📕';
+        case 'json': return '📋';
+        default: return '📄';
+      }
+    }
+
+    function renderTree(node, containerEl) {
+      const ul = document.createElement('ul');
+      ul.className = 'tree-list';
+
+      // First render subfolders/subtopics
+      if (node.subtopics && node.subtopics.length > 0) {
+        node.subtopics.forEach(function (sub) {
+          const li = document.createElement('li');
+          li.className = 'tree-node';
+
+          const folderHead = document.createElement('div');
+          folderHead.className = 'tree-folder';
+          folderHead.innerHTML = `<span>📁</span> <span>${sub.name}</span>`;
+
+          const subWrap = document.createElement('div');
+          subWrap.className = 'tree-subgroup';
+          renderTree(sub, subWrap);
+
+          folderHead.addEventListener('click', function () {
+            subWrap.style.display = subWrap.style.display === 'none' ? 'block' : 'none';
+          });
+
+          li.appendChild(folderHead);
+          li.appendChild(subWrap);
+          ul.appendChild(li);
+        });
+      }
+
+      // Then render direct files
+      if (node.files && node.files.length > 0) {
+        node.files.forEach(function (file) {
+          const li = document.createElement('li');
+          li.className = 'tree-node';
+
+          const item = document.createElement('div');
+          item.className = 'tree-file';
+          item.setAttribute('data-path', file.path);
+          item.innerHTML = `<span>${getFileIcon(file.ext)}</span> <span>${file.name}</span>`;
+
+          item.addEventListener('click', function () {
+            loadFile(file.path, file.name);
+          });
+
+          li.appendChild(item);
+          ul.appendChild(li);
+        });
+      }
+
+      containerEl.innerHTML = '';
+      containerEl.appendChild(ul);
+    }
+
+    function loadFile(filePath, displayName) {
+      currentLoadedPath = filePath;
+      window.history.replaceState(null, '', 'topic.html?path=' + encodeURIComponent(filePath));
+
+      document.getElementById('docHeaderPath').textContent = filePath;
+      document.getElementById('docHeaderTitle').textContent = displayName || filePath.split('/').pop();
+      document.getElementById('crumbFile').textContent = displayName || filePath.split('/').pop();
+      document.getElementById('btnRawSource').href = filePath;
+
+      // Update tree active selection
+      document.querySelectorAll('.tree-file').forEach(function (el) {
+        if (el.getAttribute('data-path') === filePath) {
+          el.classList.add('active');
+        } else {
+          el.classList.remove('active');
+        }
+      });
+
+      // Scroll top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Render content
+      const viewerBody = document.getElementById('docViewerBody');
+      StudySite.Renderer.renderFile(viewerBody, filePath).then(function () {
+        // Update title from first H1 if found
+        const firstH1 = viewerBody.querySelector('.rendered-md h1');
+        if (firstH1) {
+          document.getElementById('docHeaderTitle').textContent = firstH1.textContent;
+          document.title = firstH1.textContent + ' — 2026 Study Hub';
+        } else {
+          document.title = (displayName || filePath) + ' — 2026 Study Hub';
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      StudySite.Nav.mount('topics');
+      StudySite.Progress.init();
+
+      const urlParams = new URLSearchParams(window.location.search);
+      let queryPath = urlParams.get('path') || 'STUDY_PLAN_2026.md';
+      queryPath = decodeURIComponent(queryPath).replace(/^\/+/, '');
+
+      StudySite.Data.load().then(function (data) {
+        let matchedTopic = null;
+        let targetFilePath = queryPath;
+
+        // Check if queryPath matches a root markdown file
+        if (queryPath === 'STUDY_PLAN_2026.md' || queryPath === 'README.md' || queryPath === 'URL_Shortener_HLD.md') {
+          document.getElementById('sidebarTopicTitle').textContent = 'Curriculum & Plans';
+          document.getElementById('crumbTopic').textContent = 'Root Overview';
+
+          // Simple sidebar list for root files
+          const rootTree = {
+            files: [
+              { name: 'STUDY_PLAN_2026.md', path: 'STUDY_PLAN_2026.md', ext: 'md' },
+              { name: 'README.md', path: 'README.md', ext: 'md' },
+              { name: 'URL_Shortener_HLD.md', path: 'URL_Shortener_HLD.md', ext: 'md' }
+            ],
+            subtopics: []
+          };
+          renderTree(rootTree, document.getElementById('sidebarTreeContainer'));
+          loadFile(queryPath, queryPath);
+          return;
+        }
+
+        // Try to find topic in data
+        const match = StudySite.Data.findTopicByPath(data, queryPath);
+        if (match) {
+          matchedTopic = match.topic;
+          document.getElementById('crumbTopic').innerHTML = `
+            <a href="topics.html?domain=${match.domain.id}">${match.domain.name}</a> › 
+            <a href="topic.html?path=${encodeURIComponent(matchedTopic.path)}">${matchedTopic.name}</a>
+          `;
+          document.getElementById('sidebarTopicTitle').textContent = matchedTopic.name;
+
+          // Render sidebar tree
+          renderTree(matchedTopic, document.getElementById('sidebarTreeContainer'));
+
+          // If queryPath is a topic folder, pick README or first file
+          if (!queryPath.includes('.')) {
+            // Pick README.md or first markdown file
+            let defaultFile = null;
+            if (matchedTopic.files) {
+              defaultFile = matchedTopic.files.find(f => f.name.toLowerCase() === 'readme.md') || matchedTopic.files[0];
+            }
+            if (!defaultFile && matchedTopic.subtopics && matchedTopic.subtopics[0]) {
+              defaultFile = matchedTopic.subtopics[0].files[0];
+            }
+            targetFilePath = defaultFile ? defaultFile.path : (queryPath + '/README.md');
+          }
+
+          loadFile(targetFilePath);
+        } else {
+          // If path doesn't match a known topic directly, attempt to load file anyway
+          document.getElementById('sidebarTopicTitle').textContent = 'Document';
+          document.getElementById('crumbTopic').textContent = queryPath.split('/')[0] || 'Files';
+          loadFile(queryPath);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

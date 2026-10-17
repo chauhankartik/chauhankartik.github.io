@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>2026 Software Engineering Master Study Hub</title>
+  <meta name="description" content="Staff & Principal Software Engineer preparation — 500+ documents, 280+ Java masterclasses, 13-week structured curriculum covering DSA, LLD, HLD, Distributed Systems, and Infrastructure.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/nav.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <!-- Blocking script to restore theme before paint -->
+  <script src="assets/js/nav.js"></script>
+</head>
+<body>
+  <div class="progress-container"><div class="progress-bar" id="readingProgress"></div></div>
+
+  <!-- Sticky Top Navigation -->
+  <header class="top-bar">
+    <a class="top-bar-brand" href="index.html">
+      <span class="prompt-sign">$</span>
+      <span>2026_study</span>
+      <span class="year-badge">STAFF / PRINCIPAL</span>
+    </a>
+    <nav class="top-bar-nav">
+      <a class="top-bar-link" href="index.html" data-page="home">Home</a>
+      <a class="top-bar-link" href="roadmap.html" data-page="roadmap">Roadmap</a>
+      <a class="top-bar-link" href="topics.html" data-page="topics">Topics</a>
+      <a class="top-bar-link" href="search.html" data-page="search">Search</a>
+      <button class="theme-toggle-btn" onclick="StudySite.Theme.toggle()" aria-label="Toggle Theme">
+        ☀️ <span>Light</span>
+      </button>
+      <button class="mobile-menu-btn" onclick="StudySite.Nav.toggleMobile()" aria-label="Open Navigation">
+        ☰
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile Overlay Navigation -->
+  <div class="mobile-nav-overlay" id="mobileNav">
+    <button class="mobile-nav-close" onclick="StudySite.Nav.closeMobile()">✕</button>
+    <a class="mobile-nav-link" href="index.html" data-page="home">Home</a>
+    <a class="mobile-nav-link" href="roadmap.html" data-page="roadmap">Roadmap</a>
+    <a class="mobile-nav-link" href="topics.html" data-page="topics">Topics</a>
+    <a class="mobile-nav-link" href="search.html" data-page="search">Search</a>
+  </div>
+
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-pill">⚡ 2026 Master Study Repository</div>
+      <h1>Engineering Knowledge Base</h1>
+      <p class="hero-lede">
+        A production-grade, staff-level preparation system synthesizing 800+ technical modules: Data Structures & Algorithms, Java Internals, Modern C++, Low-Level Design, High-Level Distributed Architectures, Operating Systems, and Cloud Infrastructure.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="roadmap.html">🗺️ 13-Week Roadmap</a>
+        <a class="btn" href="topics.html">📚 Browse All Topics</a>
+        <a class="btn" href="search.html">🔍 Search 800+ Files</a>
+        <a class="btn" href="topic.html?path=STUDY_PLAN_2026.md">📋 Master Curriculum</a>
+      </div>
+    </section>
+
+    <!-- Stats Strip inspired by CS_basics -->
+    <section class="stat-strip" id="statsStrip">
+      <div class="stat-cell">
+        <span class="stat-n">509</span>
+        <span class="stat-l">Markdown Guides</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-n">283</span>
+        <span class="stat-l">Java Masterclasses</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-n">43</span>
+        <span class="stat-l">Curated Topics</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-n">13</span>
+        <span class="stat-l">Intensive Weeks</span>
+      </div>
+    </section>
+
+    <!-- 4 Domains Section -->
+    <div class="section-header">
+      <h2 class="section-title"><span>🏗️</span> Four Core Curriculum Domains</h2>
+      <a class="section-link" href="topics.html">View all topics →</a>
+    </div>
+
+    <div class="domain-grid" id="domainsGrid">
+      <!-- Injected dynamically from topics.json -->
+    </div>
+
+    <!-- Quick Curriculum Preview -->
+    <div class="section-header">
+      <h2 class="section-title"><span>📅</span> 13-Week Roadmap Overview</h2>
+      <a class="section-link" href="roadmap.html">Interactive Tracker →</a>
+    </div>
+
+    <div class="roadmap-summary-box">
+      <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.6; margin-bottom: 1.25rem;">
+        The curriculum is split into 4 distinct phases designed to build depth from bare metal and algorithms up to distributed cloud infrastructure:
+      </p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;">
+        <div style="background: var(--surface-hover); border: 1px solid var(--border); border-left: 3px solid #22c55e; padding: 1rem; border-radius: var(--radius-md);">
+          <div style="font-weight: 700; color: #22c55e; font-size: 0.82rem; margin-bottom: 0.25rem;">PHASE 1 (WEEKS 1–4)</div>
+          <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 0.4rem;">Core Foundations</div>
+          <p style="font-size: 0.78rem; color: var(--text-muted); line-height: 1.5;">Algorithms, CSES, C Memory Management, Modern C++ STL, Effective Java (90 items), JCiP & FAANG SQL.</p>
+        </div>
+
+        <div style="background: var(--surface-hover); border: 1px solid var(--border); border-left: 3px solid #3b82f6; padding: 1rem; border-radius: var(--radius-md);">
+          <div style="font-weight: 700; color: #3b82f6; font-size: 0.82rem; margin-bottom: 0.25rem;">PHASE 2 (WEEKS 5–8)</div>
+          <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 0.4rem;">System Design (LLD & HLD)</div>
+          <p style="font-size: 0.78rem; color: var(--text-muted); line-height: 1.5;">SOLID principles, GoF patterns, 5 full production LLD systems, and 28 Alex Xu HLD architectures.</p>
+        </div>
+
+        <div style="background: var(--surface-hover); border: 1px solid var(--border); border-left: 3px solid #f59e0b; padding: 1rem; border-radius: var(--radius-md);">
+          <div style="font-weight: 700; color: #f59e0b; font-size: 0.82rem; margin-bottom: 0.25rem;">PHASE 3 (WEEKS 9–10)</div>
+          <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 0.4rem;">Systems & Databases</div>
+          <p style="font-size: 0.78rem; color: var(--text-muted); line-height: 1.5;">OSTEP kernel internals, 5-layer networking, B+ trees & LSM-trees, DDIA, Raft consensus, and Lucene search.</p>
+        </div>
+
+        <div style="background: var(--surface-hover); border: 1px solid var(--border); border-left: 3px solid #ef4444; padding: 1rem; border-radius: var(--radius-md);">
+          <div style="font-weight: 700; color: #ef4444; font-size: 0.82rem; margin-bottom: 0.25rem;">PHASE 4 (WEEKS 11–13)</div>
+          <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 0.4rem;">Infrastructure & Cloud</div>
+          <p style="font-size: 0.78rem; color: var(--text-muted); line-height: 1.5;">Kafka, Redis, K8s, Docker, Envoy/NGINX, API security with OAuth2/mTLS, and high-throughput data pipelines.</p>
+        </div>
+      </div>
+      
+      <div style="margin-top: 1.5rem; text-align: center;">
+        <a class="btn btn-primary" href="roadmap.html">Open Full Interactive Roadmap →</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>2026 Software Engineering Master Study Repository · Staff & Principal Systems Preparation</p>
+    <p style="margin-top: 0.4rem; color: var(--text-dim);">Static HTML / CSS / JavaScript · Inspired by CS_basics</p>
+  </footer>
+
+  <script src="assets/js/site.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      StudySite.Nav.mount('home');
+      StudySite.Progress.init();
+
+      StudySite.Data.load().then(function (data) {
+        // Update stats strip dynamically
+        if (data.stats) {
+          const s = data.stats;
+          document.getElementById('statsStrip').innerHTML = `
+            <div class="stat-cell"><span class="stat-n">${s.markdownFiles}</span><span class="stat-l">Markdown Guides</span></div>
+            <div class="stat-cell"><span class="stat-n">${s.javaFiles}</span><span class="stat-l">Java Masterclasses</span></div>
+            <div class="stat-cell"><span class="stat-n">${s.topics}</span><span class="stat-l">Curated Topics</span></div>
+            <div class="stat-cell"><span class="stat-n">${s.weeks}</span><span class="stat-l">Intensive Weeks</span></div>
+          `;
+        }
+
+        // Render Domain Cards
+        const grid = document.getElementById('domainsGrid');
+        if (grid && data.domains) {
+          grid.innerHTML = data.domains.map(function (dom) {
+            return `
+              <a class="domain-card" href="topics.html?domain=${dom.id}" style="--card-color: ${dom.color}">
+                <div class="domain-card-head">
+                  <span class="domain-card-icon">${dom.icon}</span>
+                  <span class="domain-card-badge">${dom.badge}</span>
+                </div>
+                <h3 class="domain-card-title">${dom.name}</h3>
+                <p class="domain-card-desc">${dom.description}</p>
+                <div class="domain-card-foot">
+                  <span><strong>${dom.topicCount}</strong> Topics</span>
+                  <span><strong>${dom.fileCount}</strong> Total Files</span>
+                </div>
+              </a>
+            `;
+          }).join('');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

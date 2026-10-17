@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Topics Directory — 2026 Master Study Hub</title>
+  <meta name="description" content="Browse all 43 topics across Core Foundations, System Design, Systems & Databases, and Cloud Infrastructure.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/nav.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <script src="assets/js/nav.js"></script>
+</head>
+<body>
+  <div class="progress-container"><div class="progress-bar" id="readingProgress"></div></div>
+
+  <!-- Sticky Top Navigation -->
+  <header class="top-bar">
+    <a class="top-bar-brand" href="index.html">
+      <span class="prompt-sign">$</span>
+      <span>2026_study</span>
+      <span class="year-badge">TOPICS</span>
+    </a>
+    <nav class="top-bar-nav">
+      <a class="top-bar-link" href="index.html" data-page="home">Home</a>
+      <a class="top-bar-link" href="roadmap.html" data-page="roadmap">Roadmap</a>
+      <a class="top-bar-link" href="topics.html" data-page="topics">Topics</a>
+      <a class="top-bar-link" href="search.html" data-page="search">Search</a>
+      <button class="theme-toggle-btn" onclick="StudySite.Theme.toggle()" aria-label="Toggle Theme">
+        ☀️ <span>Light</span>
+      </button>
+      <button class="mobile-menu-btn" onclick="StudySite.Nav.toggleMobile()" aria-label="Open Navigation">
+        ☰
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile Overlay Navigation -->
+  <div class="mobile-nav-overlay" id="mobileNav">
+    <button class="mobile-nav-close" onclick="StudySite.Nav.closeMobile()">✕</button>
+    <a class="mobile-nav-link" href="index.html" data-page="home">Home</a>
+    <a class="mobile-nav-link" href="roadmap.html" data-page="roadmap">Roadmap</a>
+    <a class="mobile-nav-link" href="topics.html" data-page="topics">Topics</a>
+    <a class="mobile-nav-link" href="search.html" data-page="search">Search</a>
+  </div>
+
+  <main class="container">
+    <div class="page-header" style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2.3rem; font-weight: 700; margin-bottom: 0.5rem;">Curriculum Topics Directory</h1>
+      <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 65ch; margin: 0 auto;">
+        Explore 43 curated technical modules spanning algorithms, languages, design patterns, systems architecture, and infrastructure guides.
+      </p>
+    </div>
+
+    <!-- Filter & Search Controls -->
+    <div style="margin-bottom: 2rem;">
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+        <!-- Domain Tabs -->
+        <div class="topic-filter-bar" id="domainFilterTabs">
+          <button class="filter-btn active" data-domain="all">All Domains</button>
+          <!-- Injected dynamically -->
+        </div>
+
+        <!-- Filter Input -->
+        <input 
+          type="text" 
+          id="topicFilterInput" 
+          placeholder="Filter topics by title or keyword..." 
+          style="padding: 0.5rem 0.9rem; font-size: 0.8rem; font-family: inherit; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); color: var(--text); min-width: 250px; outline: none;"
+        >
+      </div>
+
+      <div style="font-size: 0.78rem; color: var(--text-dim);" id="topicCountDisplay">
+        Showing all topics
+      </div>
+    </div>
+
+    <!-- Topics Grid -->
+    <div class="topic-grid" id="topicsGrid">
+      <div style="text-align: center; padding: 3rem; color: var(--text-dim); grid-column: 1 / -1;">
+        Loading topics...
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>2026 Software Engineering Master Study Repository · Staff & Principal Systems Preparation</p>
+  </footer>
+
+  <script src="assets/js/site.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      StudySite.Nav.mount('topics');
+      StudySite.Progress.init();
+
+      let allTopics = [];
+      let activeDomain = 'all';
+
+      // Check URL parameters for ?domain=...
+      const urlParams = new URLSearchParams(window.location.search);
+      const paramDomain = urlParams.get('domain');
+      if (paramDomain) {
+        activeDomain = paramDomain;
+      }
+
+      StudySite.Data.load().then(function (data) {
+        // Build flat list of topics annotated with domain metadata
+        data.domains.forEach(function (dom) {
+          dom.topics.forEach(function (t) {
+            allTopics.push({
+              domainId: dom.id,
+              domainName: dom.name,
+              domainColor: dom.color,
+              domainBadge: dom.badge,
+              topic: t
+            });
+          });
+        });
+
+        // Render domain tabs
+        const tabsContainer = document.getElementById('domainFilterTabs');
+        let tabsHtml = `<button class="filter-btn ${activeDomain === 'all' ? 'active' : ''}" data-domain="all">All (${allTopics.length})</button>`;
+        
+        data.domains.forEach(function (dom) {
+          const isActive = activeDomain === dom.id ? 'active' : '';
+          tabsHtml += `
+            <button class="filter-btn ${isActive}" data-domain="${dom.id}">
+              ${dom.icon} ${dom.name} (${dom.topics.length})
+            </button>
+          `;
+        });
+        tabsContainer.innerHTML = tabsHtml;
+
+        // Attach tab listeners
+        tabsContainer.querySelectorAll('.filter-btn').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            tabsContainer.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            activeDomain = btn.getAttribute('data-domain');
+            renderTopics();
+          });
+        });
+
+        // Attach search filter
+        const filterInput = document.getElementById('topicFilterInput');
+        filterInput.addEventListener('input', function () {
+          renderTopics();
+        });
+
+        function renderTopics() {
+          const query = (filterInput.value || '').trim().toLowerCase();
+          const grid = document.getElementById('topicsGrid');
+          const countDisplay = document.getElementById('topicCountDisplay');
+
+          const filtered = allTopics.filter(function (item) {
+            if (activeDomain !== 'all' && item.domainId !== activeDomain) {
+              return false;
+            }
+            if (!query) return true;
+            const name = item.topic.name.toLowerCase();
+            const desc = (item.topic.description || '').toLowerCase();
+            const path = item.topic.path.toLowerCase();
+            return name.includes(query) || desc.includes(query) || path.includes(query);
+          });
+
+          countDisplay.innerHTML = `Showing <strong>${filtered.length}</strong> of <strong>${allTopics.length}</strong> topics`;
+
+          if (filtered.length === 0) {
+            grid.innerHTML = '<div style="text-align: center; padding: 3rem; color: var(--text-muted); grid-column: 1 / -1;">No topics match your filter criteria.</div>';
+            return;
+          }
+
+          grid.innerHTML = filtered.map(function (item) {
+            const t = item.topic;
+            const counts = t.extCounts || {};
+            const chips = [];
+            if (counts.md) chips.push(`<span class="chip chip-md">${counts.md} MD</span>`);
+            if (counts.java) chips.push(`<span class="chip chip-java">${counts.java} Java</span>`);
+            if (counts.sql) chips.push(`<span class="chip chip-sql">${counts.sql} SQL</span>`);
+            if (counts.rs) chips.push(`<span class="chip chip-rs">${counts.rs} Rust</span>`);
+
+            return `
+              <a class="topic-card" href="topic.html?path=${encodeURIComponent(t.path)}">
+                <div class="topic-card-domain" style="color: ${item.domainColor};">
+                  ${item.domainName}
+                </div>
+                <div class="topic-card-title">${t.name}</div>
+                <div class="topic-card-desc">
+                  ${t.description || 'Master deep dive notes, code implementations, and systems architecture guides.'}
+                </div>
+                <div class="topic-card-meta">
+                  <span>${t.totalFiles || t.fileCount} files</span>
+                  <div style="display: flex; gap: 0.35rem; margin-left: auto;">
+                    ${chips.join('')}
+                  </div>
+                </div>
+              </a>
+            `;
+          }).join('');
+        }
+
+        renderTopics();
+      });
+    });
+  </script>
+</body>
+</html>

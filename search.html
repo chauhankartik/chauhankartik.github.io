@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Search — 2026 Master Study Hub</title>
+  <meta name="description" content="Instant full-text index across 800+ technical guides, Java masterclasses, and system designs.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔍</text></svg>">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/nav.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <script src="assets/js/nav.js"></script>
+</head>
+<body>
+  <div class="progress-container"><div class="progress-bar" id="readingProgress"></div></div>
+
+  <!-- Sticky Top Navigation -->
+  <header class="top-bar">
+    <a class="top-bar-brand" href="index.html">
+      <span class="prompt-sign">$</span>
+      <span>2026_study</span>
+      <span class="year-badge">SEARCH</span>
+    </a>
+    <nav class="top-bar-nav">
+      <a class="top-bar-link" href="index.html" data-page="home">Home</a>
+      <a class="top-bar-link" href="roadmap.html" data-page="roadmap">Roadmap</a>
+      <a class="top-bar-link" href="topics.html" data-page="topics">Topics</a>
+      <a class="top-bar-link" href="search.html" data-page="search">Search</a>
+      <button class="theme-toggle-btn" onclick="StudySite.Theme.toggle()" aria-label="Toggle Theme">
+        ☀️ <span>Light</span>
+      </button>
+      <button class="mobile-menu-btn" onclick="StudySite.Nav.toggleMobile()" aria-label="Open Navigation">
+        ☰
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile Overlay Navigation -->
+  <div class="mobile-nav-overlay" id="mobileNav">
+    <button class="mobile-nav-close" onclick="StudySite.Nav.closeMobile()">✕</button>
+    <a class="mobile-nav-link" href="index.html" data-page="home">Home</a>
+    <a class="mobile-nav-link" href="roadmap.html" data-page="roadmap">Roadmap</a>
+    <a class="mobile-nav-link" href="topics.html" data-page="topics">Topics</a>
+    <a class="mobile-nav-link" href="search.html" data-page="search">Search</a>
+  </div>
+
+  <main class="container">
+    <div class="page-header" style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2.3rem; font-weight: 700; margin-bottom: 0.5rem;">Repository Search</h1>
+      <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 65ch; margin: 0 auto;">
+        Fast client-side index covering 800+ study files across Data Structures, Java Internals, System Design, and Cloud Tech Stack.
+      </p>
+    </div>
+
+    <!-- Search Controls -->
+    <div class="search-box-wrap">
+      <input 
+        type="text" 
+        id="globalSearchInput" 
+        class="search-input-field" 
+        placeholder="Type keywords (e.g. Raft, Snowflake, Virtual Threads, Kafka, B-Tree, DDIA)..." 
+        autofocus
+      >
+
+      <!-- Quick query pills -->
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.85rem; align-items: center;">
+        <span style="font-size: 0.72rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.05em;">Popular:</span>
+        <button class="filter-btn" style="padding: 0.2rem 0.55rem; font-size: 0.72rem;" onclick="setSearchQuery('Raft')">Raft</button>
+        <button class="filter-btn" style="padding: 0.2rem 0.55rem; font-size: 0.72rem;" onclick="setSearchQuery('Snowflake')">Snowflake ID</button>
+        <button class="filter-btn" style="padding: 0.2rem 0.55rem; font-size: 0.72rem;" onclick="setSearchQuery('Virtual Threads')">Virtual Threads</button>
+        <button class="filter-btn" style="padding: 0.2rem 0.55rem; font-size: 0.72rem;" onclick="setSearchQuery('Kafka')">Kafka</button>
+        <button class="filter-btn" style="padding: 0.2rem 0.55rem; font-size: 0.72rem;" onclick="setSearchQuery('SOLID')">SOLID</button>
+        <button class="filter-btn" style="padding: 0.2rem 0.55rem; font-size: 0.72rem;" onclick="setSearchQuery('DDIA')">DDIA</button>
+        <button class="filter-btn" style="padding: 0.2rem 0.55rem; font-size: 0.72rem;" onclick="setSearchQuery('OSTEP')">OSTEP</button>
+        <button class="filter-btn" style="padding: 0.2rem 0.55rem; font-size: 0.72rem;" onclick="setSearchQuery('SQL')">SQL</button>
+      </div>
+
+      <!-- Domain Selector & Results Meta -->
+      <div class="search-meta-bar">
+        <span id="searchResultCount">Ready to search</span>
+        
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <label for="domainSelectFilter" style="font-size: 0.75rem; color: var(--text-dim);">Domain:</label>
+          <select 
+            id="domainSelectFilter" 
+            style="background: var(--surface); color: var(--text); border: 1px solid var(--border); padding: 0.35rem 0.65rem; font-family: inherit; font-size: 0.78rem; border-radius: var(--radius-sm); outline: none;"
+          >
+            <option value="all">All Domains</option>
+            <option value="01_core_foundations">Core Foundations</option>
+            <option value="02_system_design">System Design</option>
+            <option value="03_systems_and_databases">Systems & Databases</option>
+            <option value="04_infrastructure">Infrastructure</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Results List -->
+      <div class="search-results-list" id="searchResultsContainer">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>2026 Software Engineering Master Study Repository · Staff & Principal Systems Preparation</p>
+  </footer>
+
+  <script src="assets/js/site.js"></script>
+  <script>
+    function setSearchQuery(text) {
+      const input = document.getElementById('globalSearchInput');
+      if (input) {
+        input.value = text;
+        input.dispatchEvent(new Event('input'));
+        input.focus();
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      StudySite.Nav.mount('search');
+      StudySite.Progress.init();
+
+      const inputEl = document.getElementById('globalSearchInput');
+      const resultsEl = document.getElementById('searchResultsContainer');
+      const countEl = document.getElementById('searchResultCount');
+      const domainFilterEl = document.getElementById('domainSelectFilter');
+
+      StudySite.Search.init(inputEl, resultsEl, countEl, domainFilterEl);
+    });
+  </script>
+</body>
+</html>

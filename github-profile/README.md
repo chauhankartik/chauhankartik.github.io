@@ -16,8 +16,8 @@
   <a href="https://chauhankartik.github.io/roadmap.html">
     <img src="https://img.shields.io/badge/Systems_Roadmap-13_Weeks_Prep-10b981?style=flat-square&logo=target&logoColor=white" alt="Roadmap" />
   </a>
-  <a href="mailto:contact@kartik.dev">
-    <img src="https://img.shields.io/badge/Contact-contact%40kartik.dev-f59e0b?style=flat-square&logo=mail.ru&logoColor=white" alt="Email" />
+  <a href="mailto:kartikchauhan987@gmail.com">
+    <img src="https://img.shields.io/badge/Email-kartikchauhan987%40gmail.com-f59e0b?style=flat-square&logo=gmail&logoColor=white" alt="Email" />
   </a>
   <a href="https://github.com/chauhankartik">
     <img src="https://img.shields.io/badge/Focus-Distributed_Systems_%26_Backend-38bdf8?style=flat-square&logo=apachekafka&logoColor=white" alt="Focus" />
@@ -232,8 +232,8 @@ My engineering framework is grounded in foundational computer science literature
     <img src="https://img.shields.io/badge/Resume-Curriculum_Vitae-818cf8?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" alt="Resume" />
   </a>
   &nbsp;
-  <a href="mailto:contact@kartik.dev">
-    <img src="https://img.shields.io/badge/Email-contact@kartik.dev-10b981?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  <a href="mailto:kartikchauhan987@gmail.com">
+    <img src="https://img.shields.io/badge/Email-kartikchauhan987%40gmail.com-10b981?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
   </a>
   &nbsp;
   <a href="https://github.com/chauhankartik">

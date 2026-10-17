@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="paper">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Engineering Thoughts & Micro-Posts — Kartik Chauhan</title>
+  <meta name="description" content="Personal thoughts, micro-posts, low-latency gotchas, and staff-level systems engineering discussions by Kartik Chauhan.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💭</text></svg>">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/nav.css">
+  <script src="assets/js/nav.js"></script>
+</head>
+<body>
+  <div class="progress-container"><div class="progress-bar" id="readingProgress"></div></div>
+
+  <!-- Sticky Top Navigation -->
+  <header class="top-bar">
+    <a class="top-bar-brand" href="index.html">
+      <span class="prompt-sign">$</span>
+      <span>kartik_chauhan</span>
+      <span class="year-badge">STAFF ARCHITECT</span>
+    </a>
+    <nav class="top-bar-nav">
+      <a class="top-bar-link" href="index.html" data-page="home">Home</a>
+      <a class="top-bar-link" href="roadmap.html" data-page="roadmap">Roadmap</a>
+      <a class="top-bar-link" href="topics.html" data-page="topics">Topics</a>
+      <a class="top-bar-link" href="flashcards.html" data-page="flashcards">Flashcards</a>
+      <a class="top-bar-link" href="books.html" data-page="books">Books</a>
+      <a class="top-bar-link active" href="thoughts.html" data-page="thoughts">Thoughts</a>
+      <a class="top-bar-link" href="index.html#projects" data-page="projects">Projects</a>
+      <a class="top-bar-link" href="index.html#blogs" data-page="blogs">Blogs</a>
+      <a class="top-bar-link" href="cv.html" data-page="cv">CV</a>
+      <button class="theme-toggle-btn" onclick="StudySite.Theme.toggle()" aria-label="Toggle Theme">
+        📜 <span>Paper</span>
+      </button>
+      <button class="mobile-menu-btn" onclick="StudySite.Nav.toggleMobile()" aria-label="Open Navigation">
+        ☰
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile Overlay Navigation -->
+  <div class="mobile-nav-overlay" id="mobileNav">
+    <button class="mobile-nav-close" onclick="StudySite.Nav.closeMobile()">✕</button>
+    <div class="mobile-nav-section-title">Core Profile</div>
+    <a class="mobile-nav-link" href="index.html">🏠 Home</a>
+    <a class="mobile-nav-link" href="index.html#projects" onclick="StudySite.Nav.closeMobile()">🚀 Projects Showcase</a>
+    <a class="mobile-nav-link" href="index.html#blogs" onclick="StudySite.Nav.closeMobile()">📝 Engineering Blogs</a>
+    <a class="mobile-nav-link" href="cv.html">📄 Curriculum Vitae (CV)</a>
+    
+    <div class="mobile-nav-section-title">2026 Interview Prep Hub</div>
+    <a class="mobile-nav-link" href="roadmap.html">🎯 13-Week Roadmap</a>
+    <a class="mobile-nav-link" href="topics.html">📚 Topics & Deep Notes</a>
+    <a class="mobile-nav-link" href="flashcards.html">🃏 3D Flashcards</a>
+
+    <div class="mobile-nav-section-title">Knowledge Ecosystem</div>
+    <a class="mobile-nav-link" href="books.html">📖 Bookshelf & Mental Models</a>
+    <a class="mobile-nav-link active" href="thoughts.html">💭 Engineering Thoughts (Tweets)</a>
+    <a class="mobile-nav-link" href="search.html">🔍 Search 800+ Docs</a>
+  </div>
+
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero" style="text-align: left; padding: 2.5rem 0 1.5rem; max-width: 760px; margin: 0 auto;">
+      <div class="hero-pill">💭 ENGINEERING MICRO-POSTS & THREADS</div>
+      <h1 style="font-size: 2.3rem; margin-bottom: 0.5rem; letter-spacing: -0.02em;">Personal Thoughts & Systems Musings</h1>
+      <p class="hero-lede" style="margin-bottom: 1.5rem; font-size: 1.05rem; line-height: 1.7;">
+        Low-latency thoughts, staff-level trade-offs, gotchas, and architectural observations. Reply, share insights, and discuss first-principles computing.
+      </p>
+
+      <!-- Filter Controls & Compose Bar -->
+      <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; margin-bottom: 2rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.85rem;">
+          <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-dim);">
+            Filter by Topic / Tag:
+          </div>
+          <button class="btn btn-sm btn-primary" onclick="toggleComposeBox()">
+            ✍️ Draft New Thought
+          </button>
+        </div>
+
+        <div style="display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.85rem;" id="tagFilterBar">
+          <button class="filter-btn active" data-tag="all" onclick="filterThoughtsByTag('all')">#All (7)</button>
+          <button class="filter-btn" data-tag="#Java21" onclick="filterThoughtsByTag('#Java21')">#Java21</button>
+          <button class="filter-btn" data-tag="#DistributedSystems" onclick="filterThoughtsByTag('#DistributedSystems')">#DistributedSystems</button>
+          <button class="filter-btn" data-tag="#DatabaseInternals" onclick="filterThoughtsByTag('#DatabaseInternals')">#DatabaseInternals</button>
+          <button class="filter-btn" data-tag="#LinuxKernel" onclick="filterThoughtsByTag('#LinuxKernel')">#LinuxKernel</button>
+          <button class="filter-btn" data-tag="#MechanicalSympathy" onclick="filterThoughtsByTag('#MechanicalSympathy')">#MechanicalSympathy</button>
+          <button class="filter-btn" data-tag="#Microservices" onclick="filterThoughtsByTag('#Microservices')">#Microservices</button>
+        </div>
+
+        <!-- Keyword Search -->
+        <input 
+          type="text" 
+          id="thoughtSearchInput" 
+          placeholder="🔍 Search thoughts (e.g. 'epoll', 'Loom', 'Redlock', 'Compaction', 'MESI')..." 
+          class="comment-input" 
+          style="width: 100%; font-size: 0.85rem; padding: 0.5rem 0.75rem;"
+          oninput="handleThoughtSearch(this.value)"
+        >
+      </div>
+
+      <!-- Quick Compose Box (Hidden by default, toggles on click) -->
+      <div id="composeBox" style="display: none; background: var(--surface); border: 1px solid var(--accent); border-radius: var(--radius-lg); padding: 1.25rem; margin-bottom: 2rem;">
+        <div style="font-weight: 700; font-size: 0.95rem; margin-bottom: 0.5rem; color: var(--text);">
+          ✍️ Post a New Engineering Micro-Thought
+        </div>
+        <p style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+          Your micro-post will be published locally into this feed and persisted in your browser's local storage.
+        </p>
+        <textarea 
+          id="composeText" 
+          class="comment-textarea" 
+          rows="4" 
+          placeholder="What systems trade-off, gotcha, or architectural insight are you thinking about today?"
+        ></textarea>
+        <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;">
+          <input 
+            type="text" 
+            id="composeTags" 
+            class="comment-input" 
+            placeholder="Tags separated by spaces (e.g. #DistributedSystems #Java21 #Architecture)"
+          >
+        </div>
+        <div style="display: flex; justify-content: flex-end; gap: 0.5rem;">
+          <button class="btn btn-sm" onclick="toggleComposeBox()">Cancel</button>
+          <button class="btn btn-sm btn-primary" onclick="publishCustomThought()">Publish Thought 🚀</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Thoughts Feed -->
+    <section class="thoughts-container">
+      <div id="thoughtsFeed">
+        <div style="text-align: center; padding: 3rem; color: var(--text-dim);">
+          ⏳ Loading engineering thoughts and discussions...
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div style="max-width: 760px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+      <div>
+        <strong>Kartik Chauhan</strong> — Staff Software Engineer & Systems Architect
+      </div>
+      <div>
+        <a href="index.html">Home</a> · 
+        <a href="roadmap.html">Roadmap</a> · 
+        <a href="topics.html">Topics</a> · 
+        <a href="flashcards.html">Flashcards</a> · 
+        <a href="books.html">Books</a> · 
+        <a href="thoughts.html">Thoughts</a> · 
+        <a href="cv.html">CV</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast-msg">Link copied to clipboard!</div>
+
+  <script src="assets/js/site.js"></script>
+  <script>
+    let rawThoughts = [];
+    let activeTag = 'all';
+    let searchQuery = '';
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      if (!t) return;
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => {
+        t.classList.remove('show');
+      }, 2500);
+    }
+
+    function toggleComposeBox() {
+      const box = document.getElementById('composeBox');
+      if (!box) return;
+      if (box.style.display === 'none' || box.style.display === '') {
+        box.style.display = 'block';
+        document.getElementById('composeText').focus();
+      } else {
+        box.style.display = 'none';
+      }
+    }
+
+    function publishCustomThought() {
+      const text = document.getElementById('composeText').value.trim();
+      const tagsInput = document.getElementById('composeTags').value.trim();
+      if (!text) {
+        alert('Please enter some text for your thought.');
+        return;
+      }
+
+      let tags = tagsInput.split(/\s+/).filter(t => t.length > 0);
+      if (tags.length === 0) tags = ['#Engineering', '#Systems'];
+      tags = tags.map(t => t.startsWith('#') ? t : '#' + t);
+
+      const newId = 'thought-custom-' + Date.now();
+      const customThought = {
+        id: newId,
+        author: "Kartik Chauhan",
+        handle: "@chauhankartik",
+        role: "Staff Systems Architect",
+        avatar: "KC",
+        timestamp: "Just now",
+        content: text,
+        tags: tags,
+        likes: 1,
+        retweets: 0,
+        commentsCount: 0,
+        comments: []
+      };
+
+      // Save to localStorage
+      const userThoughts = JSON.parse(localStorage.getItem('user_created_thoughts') || '[]');
+      userThoughts.unshift(customThought);
+      localStorage.setItem('user_created_thoughts', JSON.stringify(userThoughts));
+
+      // Reset form & hide
+      document.getElementById('composeText').value = '';
+      document.getElementById('composeTags').value = '';
+      toggleComposeBox();
+
+      // Reload thoughts
+      loadAllThoughts();
+      showToast('Thought published successfully! 🚀');
+    }
+
+    function loadAllThoughts() {
+      StudySite.Data.loadThoughts().then(data => {
+        const userThoughts = JSON.parse(localStorage.getItem('user_created_thoughts') || '[]');
+        rawThoughts = [...userThoughts, ...data];
+        renderFeed();
+      }).catch(err => {
+        const f = document.getElementById('thoughtsFeed');
+        if (f) f.innerHTML = `<div style="padding: 2rem; color: var(--red);">Error loading thoughts: ${err.message}</div>`;
+      });
+    }
+
+    function renderFeed() {
+      const container = document.getElementById('thoughtsFeed');
+      if (!container) return;
+
+      const filtered = rawThoughts.filter(t => {
+        const tagMatch = (activeTag === 'all' || (t.tags && t.tags.includes(activeTag)));
+        let searchMatch = true;
+        if (searchQuery.trim()) {
+          const q = searchQuery.toLowerCase();
+          const content = (t.content || '').toLowerCase();
+          const author = (t.author || '').toLowerCase();
+          const tags = (t.tags || []).join(' ').toLowerCase();
+          searchMatch = content.includes(q) || author.includes(q) || tags.includes(q);
+        }
+        return tagMatch && searchMatch;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div style="text-align: center; padding: 3rem 1rem; color: var(--text-dim); background: var(--surface); border: 1px dashed var(--border); border-radius: var(--radius-md);">
+            <h3>No thoughts match your filter</h3>
+            <p style="font-size: 0.85rem; margin-top: 0.5rem;">Try selecting #All or clearing your search query.</p>
+            <button class="btn btn-sm" style="margin-top: 0.75rem;" onclick="resetThoughtFilters()">Reset Filter</button>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = filtered.map(t => {
+        // Load likes state from localStorage
+        const likedKey = 'thought_liked_' + t.id;
+        const isLiked = localStorage.getItem(likedKey) === 'true';
+        const likeCount = (t.likes || 0) + (isLiked ? 1 : 0);
+
+        // Load local user comments for this thought
+        const storedCommentsKey = 'thought_user_comments_' + t.id;
+        const userComments = JSON.parse(localStorage.getItem(storedCommentsKey) || '[]');
+        const combinedComments = [...(t.comments || []), ...userComments];
+        const commentsCount = combinedComments.length;
+
+        const tagsHtml = (t.tags || []).map(tag => `
+          <span class="thought-tag-pill" onclick="event.stopPropagation(); filterThoughtsByTag('${escapeHtml(tag)}')">${escapeHtml(tag)}</span>
+        `).join('');
+
+        const commentsListHtml = combinedComments.map(c => `
+          <div class="comment-bubble">
+            <div class="comment-meta">
+              <div class="comment-avatar">${escapeHtml(c.avatar || 'U')}</div>
+              <span class="comment-author">${escapeHtml(c.author || 'Anonymous')}</span>
+              <span class="comment-handle">${escapeHtml(c.handle || '@engineer')}</span>
+              <span class="comment-time">${escapeHtml(c.timestamp || 'Recently')}</span>
+            </div>
+            <div class="comment-text">${escapeHtml(c.text || '')}</div>
+          </div>
+        `).join('');
+
+        // Format body text: preserve backticks for code and format newlines
+        let formattedBody = escapeHtml(t.content);
+        formattedBody = formattedBody.replace(/`([^`]+)`/g, '<code>$1</code>');
+
+        return `
+          <article class="thought-card" id="${t.id}">
+            <div class="thought-header">
+              <div class="thought-author-box">
+                <div class="thought-avatar">${escapeHtml(t.avatar || 'KC')}</div>
+                <div class="thought-author-info">
+                  <div class="thought-name-row">
+                    <span class="thought-name">${escapeHtml(t.author)}</span>
+                    <span class="thought-handle">${escapeHtml(t.handle)}</span>
+                    <span class="thought-role-badge">${escapeHtml(t.role || 'ENGINEER')}</span>
+                  </div>
+                  <span class="thought-time">${escapeHtml(t.timestamp)}</span>
+                </div>
+              </div>
+              <button class="thought-btn" onclick="shareThought('${t.id}')" title="Share direct link">
+                🔗
+              </button>
+            </div>
+
+            <div class="thought-body">${formattedBody}</div>
+
+            <div class="thought-tags">
+              ${tagsHtml}
+            </div>
+
+            <div class="thought-actions">
+              <div class="thought-action-group">
+                <button 
+                  class="thought-btn ${isLiked ? 'liked' : ''}" 
+                  id="like-btn-${t.id}" 
+                  onclick="toggleLike('${t.id}', ${t.likes || 0})"
+                >
+                  <span class="heart-icon">${isLiked ? '❤️' : '🤍'}</span> 
+                  <span id="like-count-${t.id}">${likeCount}</span>
+                </button>
+
+                <button 
+                  class="thought-btn" 
+                  id="comment-btn-${t.id}" 
+                  onclick="toggleComments('${t.id}')"
+                >
+                  💬 <span id="comment-count-${t.id}">${commentsCount}</span> Replies
+                </button>
+
+                <button class="thought-btn" onclick="shareThought('${t.id}')">
+                  🔁 <span>${t.retweets || 0}</span>
+                </button>
+              </div>
+
+              <button class="thought-btn" onclick="toggleBookmark('${t.id}')" title="Bookmark thought">
+                🔖
+              </button>
+            </div>
+
+            <!-- Comment Accordion Section -->
+            <div class="thought-comments-thread" id="comments-${t.id}">
+              <div class="comments-list" id="comments-list-${t.id}">
+                ${commentsListHtml.length > 0 ? commentsListHtml : '<div style="color: var(--text-dim); font-size: 0.82rem; text-align: center; padding: 0.5rem 0;">No comments yet. Start the conversation!</div>'}
+              </div>
+
+              <!-- Interactive Reply Form -->
+              <div class="comment-form-wrap">
+                <div class="comment-form-title">💬 Leave a Constructive Reply</div>
+                <div class="comment-input-row">
+                  <input type="text" id="input-name-${t.id}" class="comment-input" placeholder="Your Name (e.g. Alex Doe)" />
+                  <input type="text" id="input-handle-${t.id}" class="comment-input" placeholder="@handle (optional)" />
+                </div>
+                <textarea id="input-text-${t.id}" class="comment-textarea" placeholder="Add technical thoughts, challenge an assumption, or ask a question..."></textarea>
+                <div class="comment-submit-row">
+                  <button class="btn btn-sm btn-primary" onclick="submitReply('${t.id}')">Post Reply</button>
+                </div>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    function escapeHtml(text) {
+      if (!text) return '';
+      return text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    function toggleLike(id, baseLikes) {
+      const key = 'thought_liked_' + id;
+      const isLiked = localStorage.getItem(key) === 'true';
+      const newStatus = !isLiked;
+      
+      localStorage.setItem(key, newStatus ? 'true' : 'false');
+      
+      const btn = document.getElementById('like-btn-' + id);
+      const countEl = document.getElementById('like-count-' + id);
+      if (btn && countEl) {
+        if (newStatus) {
+          btn.classList.add('liked');
+          btn.querySelector('.heart-icon').textContent = '❤️';
+          countEl.textContent = baseLikes + 1;
+        } else {
+          btn.classList.remove('liked');
+          btn.querySelector('.heart-icon').textContent = '🤍';
+          countEl.textContent = baseLikes;
+        }
+      }
+    }
+
+    function toggleComments(id) {
+      const thread = document.getElementById('comments-' + id);
+      const btn = document.getElementById('comment-btn-' + id);
+      if (!thread) return;
+
+      const isOpen = thread.classList.toggle('open');
+      if (btn) {
+        if (isOpen) btn.classList.add('active-comments');
+        else btn.classList.remove('active-comments');
+      }
+    }
+
+    function submitReply(id) {
+      const nameInput = document.getElementById('input-name-' + id);
+      const handleInput = document.getElementById('input-handle-' + id);
+      const textInput = document.getElementById('input-text-' + id);
+
+      const name = (nameInput.value.trim()) || 'Fellow Engineer';
+      let handle = (handleInput.value.trim()) || '@engineer';
+      if (!handle.startsWith('@')) handle = '@' + handle;
+      const text = textInput.value.trim();
+
+      if (!text) {
+        alert('Please write a reply before posting.');
+        return;
+      }
+
+      // Generate avatar initials
+      const parts = name.split(/\s+/);
+      const avatar = parts.length > 1 ? (parts[0][0] + parts[1][0]).toUpperCase() : parts[0].slice(0, 2).toUpperCase();
+
+      const newComment = {
+        id: 'reply-' + Date.now(),
+        author: name,
+        handle: handle,
+        avatar: avatar,
+        timestamp: 'Just now',
+        text: text
+      };
+
+      // Save to localStorage
+      const key = 'thought_user_comments_' + id;
+      const existing = JSON.parse(localStorage.getItem(key) || '[]');
+      existing.push(newComment);
+      localStorage.setItem(key, JSON.stringify(existing));
+
+      // Append bubble to DOM
+      const listEl = document.getElementById('comments-list-' + id);
+      if (listEl) {
+        const bubble = document.createElement('div');
+        bubble.className = 'comment-bubble';
+        bubble.innerHTML = `
+          <div class="comment-meta">
+            <div class="comment-avatar">${escapeHtml(newComment.avatar)}</div>
+            <span class="comment-author">${escapeHtml(newComment.author)}</span>
+            <span class="comment-handle">${escapeHtml(newComment.handle)}</span>
+            <span class="comment-time">${escapeHtml(newComment.timestamp)}</span>
+          </div>
+          <div class="comment-text">${escapeHtml(newComment.text)}</div>
+        `;
+        listEl.appendChild(bubble);
+      }
+
+      // Update comment counter
+      const countEl = document.getElementById('comment-count-' + id);
+      if (countEl) {
+        countEl.textContent = parseInt(countEl.textContent || '0', 10) + 1;
+      }
+
+      // Reset text input
+      textInput.value = '';
+      showToast('Reply posted successfully! 🎉');
+    }
+
+    function shareThought(id) {
+      const url = window.location.origin + window.location.pathname + '#' + id;
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(url).then(() => {
+          showToast('Direct thought link copied to clipboard! 📋');
+        }).catch(() => {
+          showToast('Thought link: ' + url);
+        });
+      } else {
+        showToast('Thought link: ' + url);
+      }
+    }
+
+    function toggleBookmark(id) {
+      const key = 'thought_bookmarked_' + id;
+      const isBookmarked = localStorage.getItem(key) === 'true';
+      const next = !isBookmarked;
+      localStorage.setItem(key, next ? 'true' : 'false');
+      showToast(next ? 'Thought bookmarked! 🔖' : 'Bookmark removed');
+    }
+
+    function filterThoughtsByTag(tag) {
+      activeTag = tag;
+      document.querySelectorAll('#tagFilterBar .filter-btn').forEach(btn => {
+        if (btn.getAttribute('data-tag') === tag) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+      renderFeed();
+    }
+
+    function handleThoughtSearch(val) {
+      searchQuery = val;
+      renderFeed();
+    }
+
+    function resetThoughtFilters() {
+      activeTag = 'all';
+      searchQuery = '';
+      document.getElementById('thoughtSearchInput').value = '';
+      filterThoughtsByTag('all');
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      StudySite.Nav.mount('thoughts');
+      StudySite.Progress.init();
+
+      // Check URL hash or query params
+      const hash = window.location.hash;
+      loadAllThoughts();
+
+      if (hash && hash.startsWith('#thought-')) {
+        setTimeout(() => {
+          const el = document.querySelector(hash);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            el.style.borderColor = 'var(--accent)';
+          }
+        }, 500);
+      }
+    });
+  </script>
+</body>
+</html>

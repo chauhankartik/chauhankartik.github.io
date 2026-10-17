@@ -20,6 +20,32 @@ StudySite.Data = {
         return data;
       });
   },
+  _booksCache: null,
+  loadBooks: function () {
+    if (this._booksCache) return Promise.resolve(this._booksCache);
+    return fetch('assets/data/books.json')
+      .then(function (res) {
+        if (!res.ok) throw new Error('Failed to load books.json: ' + res.status);
+        return res.json();
+      })
+      .then(function (data) {
+        StudySite.Data._booksCache = data;
+        return data;
+      });
+  },
+  _thoughtsCache: null,
+  loadThoughts: function () {
+    if (this._thoughtsCache) return Promise.resolve(this._thoughtsCache);
+    return fetch('assets/data/thoughts.json')
+      .then(function (res) {
+        if (!res.ok) throw new Error('Failed to load thoughts.json: ' + res.status);
+        return res.json();
+      })
+      .then(function (data) {
+        StudySite.Data._thoughtsCache = data;
+        return data;
+      });
+  },
   findTopicByPath: function (data, pathQuery) {
     if (!pathQuery || !data || !data.domains) return null;
     const norm = pathQuery.replace(/^\/+|\/+$/g, '');

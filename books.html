@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="paper">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Bookshelf & Mental Models — Kartik Chauhan</title>
+  <meta name="description" content="Canonical reading list, active study notes, and architectural mental models from foundational systems and database literature.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/nav.css">
+  <script src="assets/js/nav.js"></script>
+</head>
+<body>
+  <div class="progress-container"><div class="progress-bar" id="readingProgress"></div></div>
+
+  <!-- Sticky Top Navigation -->
+  <header class="top-bar">
+    <a class="top-bar-brand" href="index.html">
+      <span class="prompt-sign">$</span>
+      <span>kartik_chauhan</span>
+      <span class="year-badge">STAFF ARCHITECT</span>
+    </a>
+    <nav class="top-bar-nav">
+      <a class="top-bar-link" href="index.html" data-page="home">Home</a>
+      <a class="top-bar-link" href="roadmap.html" data-page="roadmap">Roadmap</a>
+      <a class="top-bar-link" href="topics.html" data-page="topics">Topics</a>
+      <a class="top-bar-link" href="flashcards.html" data-page="flashcards">Flashcards</a>
+      <a class="top-bar-link active" href="books.html" data-page="books">Books</a>
+      <a class="top-bar-link" href="thoughts.html" data-page="thoughts">Thoughts</a>
+      <a class="top-bar-link" href="index.html#projects" data-page="projects">Projects</a>
+      <a class="top-bar-link" href="index.html#blogs" data-page="blogs">Blogs</a>
+      <a class="top-bar-link" href="cv.html" data-page="cv">CV</a>
+      <button class="theme-toggle-btn" onclick="StudySite.Theme.toggle()" aria-label="Toggle Theme">
+        📜 <span>Paper</span>
+      </button>
+      <button class="mobile-menu-btn" onclick="StudySite.Nav.toggleMobile()" aria-label="Open Navigation">
+        ☰
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile Overlay Navigation -->
+  <div class="mobile-nav-overlay" id="mobileNav">
+    <button class="mobile-nav-close" onclick="StudySite.Nav.closeMobile()">✕</button>
+    <div class="mobile-nav-section-title">Core Profile</div>
+    <a class="mobile-nav-link" href="index.html">🏠 Home</a>
+    <a class="mobile-nav-link" href="index.html#projects" onclick="StudySite.Nav.closeMobile()">🚀 Projects Showcase</a>
+    <a class="mobile-nav-link" href="index.html#blogs" onclick="StudySite.Nav.closeMobile()">📝 Engineering Blogs</a>
+    <a class="mobile-nav-link" href="cv.html">📄 Curriculum Vitae (CV)</a>
+    
+    <div class="mobile-nav-section-title">2026 Interview Prep Hub</div>
+    <a class="mobile-nav-link" href="roadmap.html">🎯 13-Week Roadmap</a>
+    <a class="mobile-nav-link" href="topics.html">📚 Topics & Deep Notes</a>
+    <a class="mobile-nav-link" href="flashcards.html">🃏 3D Flashcards</a>
+
+    <div class="mobile-nav-section-title">Knowledge Ecosystem</div>
+    <a class="mobile-nav-link active" href="books.html">📖 Bookshelf & Mental Models</a>
+    <a class="mobile-nav-link" href="thoughts.html">💭 Engineering Thoughts (Tweets)</a>
+    <a class="mobile-nav-link" href="search.html">🔍 Search 800+ Docs</a>
+  </div>
+
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero" style="text-align: left; padding: 2.5rem 0 1.5rem; max-width: 1000px; margin: 0 auto;">
+      <div class="hero-pill">📚 CANONICAL KNOWLEDGE ECOSYSTEM</div>
+      <h1 style="font-size: 2.4rem; margin-bottom: 0.5rem; letter-spacing: -0.02em;">Bookshelf, Reading Tracker & Core Mental Models</h1>
+      <p class="hero-lede" style="margin-bottom: 1.5rem; font-size: 1.05rem; line-height: 1.7; max-width: 82ch;">
+        Foundational computer science, distributed systems, and low-level engineering literature distilled into actionable architectural mental models. Every canonical book is directly linked to chapter notes in this repository and interactive 3D flashcards.
+      </p>
+
+      <!-- Reading Stats Strip -->
+      <div class="stat-strip" style="margin-bottom: 2rem;">
+        <div class="stat-card">
+          <div class="stat-val" id="statTotalBooks">12</div>
+          <div class="stat-lbl">Canonical Books</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val" id="statCompletedBooks" style="color: #15803d;">6</div>
+          <div class="stat-lbl">Read & Synthesized</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val" id="statReadingBooks" style="color: var(--accent);">3</div>
+          <div class="stat-lbl">Currently Reading</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val" id="statRecommendedBooks" style="color: var(--purple);">3</div>
+          <div class="stat-lbl">Staff Recommended</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val" style="color: var(--blue);">48+</div>
+          <div class="stat-lbl">Mental Models Linked</div>
+        </div>
+      </div>
+
+      <!-- Filter Controls & Search -->
+      <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; margin-bottom: 2rem;">
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+          <!-- Status Tabs -->
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;" id="statusFilterBar">
+            <button class="filter-btn active" data-status="all" onclick="filterBooksByStatus('all')">All Books (12)</button>
+            <button class="filter-btn" data-status="currently_reading" onclick="filterBooksByStatus('currently_reading')">📖 Currently Reading (3)</button>
+            <button class="filter-btn" data-status="read" onclick="filterBooksByStatus('read')">✅ Read & Synthesized (6)</button>
+            <button class="filter-btn" data-status="recommended" onclick="filterBooksByStatus('recommended')">⭐ Staff Recommended (3)</button>
+          </div>
+
+          <!-- Category Selector -->
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <label for="categorySelect" style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted);">Topic:</label>
+            <select id="categorySelect" class="filter-btn" style="padding: 0.35rem 0.65rem;" onchange="filterBooksByCategory(this.value)">
+              <option value="all">All Topics</option>
+              <option value="Distributed Systems">Distributed Systems</option>
+              <option value="Database Engines">Database Engines & Internals</option>
+              <option value="Operating Systems">Operating Systems & Kernel</option>
+              <option value="Core Java">Core Java & Concurrency</option>
+              <option value="System Design">System Design & Architecture</option>
+              <option value="Low-Level Systems">C++ & Low-Level Systems</option>
+              <option value="Infrastructure & Security">Security & Infrastructure</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Keyword Search -->
+        <div style="display: flex; gap: 0.5rem; align-items: center;">
+          <input 
+            type="text" 
+            id="bookSearchInput" 
+            placeholder="🔍 Search by title, author, or architectural concept (e.g. 'LSM', 'Raft', 'ARIES', 'Lock-free')..." 
+            class="comment-input" 
+            style="width: 100%; font-size: 0.88rem; padding: 0.55rem 0.85rem;"
+            oninput="handleBookSearch(this.value)"
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Bookshelf Cards Grid -->
+    <section style="max-width: 1000px; margin: 0 auto 3.5rem;">
+      <div id="booksGrid" class="bookshelf-grid">
+        <div style="grid-column: 1/-1; text-align: center; padding: 3rem; color: var(--text-dim);">
+          ⏳ Loading curated bookshelf and reading notes...
+        </div>
+      </div>
+    </section>
+
+    <!-- High-Yield Mental Models Matrix -->
+    <section style="max-width: 1000px; margin: 0 auto 4rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem;">
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+        <div>
+          <div class="hero-pill" style="margin-bottom: 0.35rem;">🧠 FIRST-PRINCIPLES CHEATSHEET</div>
+          <h2 style="font-size: 1.5rem; margin-bottom: 0.25rem;">Key Mental Models Derived from Canonical Literature</h2>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">
+            Architectural invariants and trade-offs that distinguish senior from staff-level systems design.
+          </p>
+        </div>
+        <a class="btn btn-sm btn-primary" href="flashcards.html">🃏 Drill All Mental Models on Flashcards</a>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+        <div style="background: var(--surface-hover); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.1rem;">
+          <div style="font-size: 0.72rem; font-weight: 700; color: var(--accent); text-transform: uppercase;">Storage Engines (DDIA & Petrov)</div>
+          <h4 style="margin: 0.35rem 0 0.5rem 0; font-size: 0.95rem;">LSM-Tree vs B-Tree Duality</h4>
+          <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 0.75rem;">
+            LSM-trees turn random writes into sequential disk writes at the cost of compaction overhead and read-amplification. B-trees optimize point reads with deterministic tree depths at the cost of random write I/O.
+          </p>
+          <a href="flashcards.html?category=database_internals" class="btn btn-sm" style="font-size: 0.75rem;">🃏 Practice Flashcard</a>
+        </div>
+
+        <div style="background: var(--surface-hover); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.1rem;">
+          <div style="font-size: 0.72rem; font-weight: 700; color: var(--blue); text-transform: uppercase;">Operating Systems (OSTEP)</div>
+          <h4 style="margin: 0.35rem 0 0.5rem 0; font-size: 0.95rem;">Futexes & Fast User-Space Locking</h4>
+          <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 0.75rem;">
+            Uncontended locks should execute via hardware CAS without a syscall. Kernel context switching into sleep queues only occurs when contention is detected, saving thousands of CPU cycles.
+          </p>
+          <a href="flashcards.html?category=operating_systems" class="btn btn-sm" style="font-size: 0.75rem;">🃏 Practice Flashcard</a>
+        </div>
+
+        <div style="background: var(--surface-hover); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.1rem;">
+          <div style="font-size: 0.72rem; font-weight: 700; color: #15803d; text-transform: uppercase;">Concurrency (JCIP & Effective Java)</div>
+          <h4 style="margin: 0.35rem 0 0.5rem 0; font-size: 0.95rem;">Happens-Before & Memory Visibility</h4>
+          <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 0.75rem;">
+            Synchronization isn't just about atomic mutual exclusion. Without happens-before edges (volatile writes or lock releases), CPU registers and out-of-order execution leave state changes invisible to other cores.
+          </p>
+          <a href="flashcards.html?category=core_java" class="btn btn-sm" style="font-size: 0.75rem;">🃏 Practice Flashcard</a>
+        </div>
+
+        <div style="background: var(--surface-hover); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.1rem;">
+          <div style="font-size: 0.72rem; font-weight: 700; color: var(--purple); text-transform: uppercase;">Distributed Systems (Vitillo & DDIA)</div>
+          <h4 style="margin: 0.35rem 0 0.5rem 0; font-size: 0.95rem;">Fencing Tokens & Lease Invalidation</h4>
+          <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 0.75rem;">
+            Distributed locks with TTLs (e.g. Redlock) are unsafe against GC pauses unless target storage enforces strictly monotonic fencing tokens on every mutation (`version &gt; prev_version`).
+          </p>
+          <a href="flashcards.html?category=distributed_systems" class="btn btn-sm" style="font-size: 0.75rem;">🃏 Practice Flashcard</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div style="max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+      <div>
+        <strong>Kartik Chauhan</strong> — Staff Software Engineer & Systems Architect
+      </div>
+      <div>
+        <a href="index.html">Home</a> · 
+        <a href="roadmap.html">Roadmap</a> · 
+        <a href="topics.html">Topics</a> · 
+        <a href="flashcards.html">Flashcards</a> · 
+        <a href="books.html">Books</a> · 
+        <a href="thoughts.html">Thoughts</a> · 
+        <a href="cv.html">CV</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js"></script>
+  <script>
+    let allBooks = [];
+    let activeStatus = 'all';
+    let activeCategory = 'all';
+    let searchQuery = '';
+
+    function renderBooks() {
+      const container = document.getElementById('booksGrid');
+      if (!container) return;
+
+      const filtered = allBooks.filter(book => {
+        const statusMatch = (activeStatus === 'all' || book.status === activeStatus);
+        const catMatch = (activeCategory === 'all' || book.category === activeCategory);
+        let searchMatch = true;
+        if (searchQuery.trim()) {
+          const q = searchQuery.toLowerCase();
+          const title = (book.title || '').toLowerCase();
+          const author = (book.author || '').toLowerCase();
+          const oneLiner = (book.oneLiner || '').toLowerCase();
+          const learnings = (book.keyLearnings || []).join(' ').toLowerCase();
+          searchMatch = title.includes(q) || author.includes(q) || oneLiner.includes(q) || learnings.includes(q);
+        }
+        return statusMatch && catMatch && searchMatch;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div style="grid-column: 1/-1; text-align: center; padding: 3rem 1rem; color: var(--text-dim); background: var(--surface); border: 1px dashed var(--border); border-radius: var(--radius-md);">
+            <h3>No books match your current filters</h3>
+            <p style="font-size: 0.85rem; margin-top: 0.5rem;">Try selecting "All Books" or clearing your search term.</p>
+            <button class="btn btn-sm" style="margin-top: 0.75rem;" onclick="resetFilters()">Reset Filters</button>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = filtered.map(book => {
+        const statusClass = 'status-' + book.status;
+        const progressPercent = book.progress || 0;
+        const learningsHtml = (book.keyLearnings || []).map(l => `<li>${escapeHtml(l)}</li>`).join('');
+        
+        return `
+          <div class="book-card" id="book-${book.id}">
+            <div class="book-card-header">
+              <div class="book-cover-icon">${book.coverIcon || '📖'}</div>
+              <div class="book-meta" style="flex: 1;">
+                <h3 class="book-title">${escapeHtml(book.title)}</h3>
+                <div class="book-author">by ${escapeHtml(book.author)} (${book.year})</div>
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 0.25rem;">
+                  <span class="book-rating">⭐ ${book.rating || '5.0/5.0'}</span>
+                  <span class="book-status-pill ${statusClass}">${book.statusBadge || book.status}</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="book-progress-wrap">
+              <div class="book-progress-labels">
+                <span>Reading Progress</span>
+                <strong>${progressPercent}%</strong>
+              </div>
+              <div class="book-progress-bar">
+                <div class="book-progress-fill" style="width: ${progressPercent}%;"></div>
+              </div>
+            </div>
+
+            <div class="book-oneliner">"${escapeHtml(book.oneLiner)}"</div>
+
+            <div class="book-learnings-title">
+              <span>⚡</span> Key Architectural Learnings & Mental Models:
+            </div>
+            <ul class="book-learnings-list">
+              ${learningsHtml}
+            </ul>
+
+            <div class="book-actions">
+              <a href="topic.html?path=${encodeURIComponent(book.relatedDoc)}" class="btn btn-sm btn-primary">
+                📖 Chapter Notes
+              </a>
+              <a href="flashcards.html?category=${encodeURIComponent(book.flashcardCategory)}" class="btn btn-sm">
+                🃏 Practice Flashcards
+              </a>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function escapeHtml(text) {
+      if (!text) return '';
+      return text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    function filterBooksByStatus(status) {
+      activeStatus = status;
+      document.querySelectorAll('#statusFilterBar .filter-btn').forEach(btn => {
+        if (btn.getAttribute('data-status') === status) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+      renderBooks();
+    }
+
+    function filterBooksByCategory(cat) {
+      activeCategory = cat;
+      renderBooks();
+    }
+
+    function handleBookSearch(val) {
+      searchQuery = val;
+      renderBooks();
+    }
+
+    function resetFilters() {
+      activeStatus = 'all';
+      activeCategory = 'all';
+      searchQuery = '';
+      document.getElementById('bookSearchInput').value = '';
+      document.getElementById('categorySelect').value = 'all';
+      filterBooksByStatus('all');
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      StudySite.Nav.mount('books');
+      StudySite.Progress.init();
+
+      // Check URL query parameters (e.g. ?status=currently_reading or ?category=Distributed+Systems)
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('status')) {
+        activeStatus = urlParams.get('status');
+      }
+      if (urlParams.get('category')) {
+        activeCategory = urlParams.get('category');
+        const sel = document.getElementById('categorySelect');
+        if (sel) sel.value = activeCategory;
+      }
+
+      StudySite.Data.loadBooks().then(data => {
+        allBooks = data;
+        
+        // Update stats
+        const completed = data.filter(b => b.status === 'read').length;
+        const reading = data.filter(b => b.status === 'currently_reading').length;
+        const recommended = data.filter(b => b.status === 'recommended').length;
+        
+        const elTotal = document.getElementById('statTotalBooks');
+        const elCompleted = document.getElementById('statCompletedBooks');
+        const elReading = document.getElementById('statReadingBooks');
+        const elRec = document.getElementById('statRecommendedBooks');
+        
+        if (elTotal) elTotal.textContent = data.length;
+        if (elCompleted) elCompleted.textContent = completed;
+        if (elReading) elReading.textContent = reading;
+        if (elRec) elRec.textContent = recommended;
+
+        // Sync filter button labels
+        const allBtn = document.querySelector('#statusFilterBar [data-status="all"]');
+        const readBtn = document.querySelector('#statusFilterBar [data-status="read"]');
+        const curBtn = document.querySelector('#statusFilterBar [data-status="currently_reading"]');
+        const recBtn = document.querySelector('#statusFilterBar [data-status="recommended"]');
+
+        if (allBtn) allBtn.textContent = `All Books (${data.length})`;
+        if (readBtn) readBtn.textContent = `✅ Read & Synthesized (${completed})`;
+        if (curBtn) curBtn.textContent = `📖 Currently Reading (${reading})`;
+        if (recBtn) recBtn.textContent = `⭐ Staff Recommended (${recommended})`;
+
+        filterBooksByStatus(activeStatus);
+      }).catch(err => {
+        const container = document.getElementById('booksGrid');
+        if (container) {
+          container.innerHTML = `<div style="grid-column: 1/-1; padding: 2rem; color: var(--red);">Error loading books: ${err.message}</div>`;
+        }
+      });
+    });
+  </script>
+</body>
+</html>

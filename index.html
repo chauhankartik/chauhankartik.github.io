@@ -22,14 +22,17 @@
       <span class="year-badge">STAFF ARCHITECT</span>
     </a>
     <nav class="top-bar-nav">
-      <a class="top-bar-link" href="index.html" data-page="home">Home</a>
-      <a class="top-bar-link" href="#interview-prep">Interview Prep</a>
+      <a class="top-bar-link active" href="index.html" data-page="home">Home</a>
+      <a class="top-bar-link" href="roadmap.html" data-page="roadmap">Roadmap</a>
+      <a class="top-bar-link" href="topics.html" data-page="topics">Topics</a>
+      <a class="top-bar-link" href="flashcards.html" data-page="flashcards">Flashcards</a>
+      <a class="top-bar-link" href="books.html" data-page="books">Books</a>
+      <a class="top-bar-link" href="thoughts.html" data-page="thoughts">Thoughts</a>
       <a class="top-bar-link" href="#projects">Projects</a>
       <a class="top-bar-link" href="#blogs">Blogs</a>
-      <a class="top-bar-link" href="flashcards.html">Flashcards</a>
-      <a class="top-bar-link" href="#cv">CV</a>
+      <a class="top-bar-link" href="cv.html">CV</a>
       <button class="theme-toggle-btn" onclick="StudySite.Theme.toggle()" aria-label="Toggle Theme">
-        ☀️ <span>Light</span>
+        📜 <span>Paper</span>
       </button>
       <button class="mobile-menu-btn" onclick="StudySite.Nav.toggleMobile()" aria-label="Open Navigation">
         ☰
@@ -40,13 +43,21 @@
   <!-- Mobile Overlay Navigation -->
   <div class="mobile-nav-overlay" id="mobileNav">
     <button class="mobile-nav-close" onclick="StudySite.Nav.closeMobile()">✕</button>
-    <a class="mobile-nav-link" href="index.html">Home</a>
-    <a class="mobile-nav-link" href="#interview-prep" onclick="StudySite.Nav.closeMobile()">Interview Prep</a>
-    <a class="mobile-nav-link" href="#projects" onclick="StudySite.Nav.closeMobile()">Projects</a>
-    <a class="mobile-nav-link" href="#blogs" onclick="StudySite.Nav.closeMobile()">Engineering Blogs</a>
-    <a class="mobile-nav-link" href="flashcards.html">Flashcards</a>
-    <a class="mobile-nav-link" href="cv.html">Curriculum Vitae (CV)</a>
-    <a class="mobile-nav-link" href="roadmap.html">13-Week Roadmap</a>
+    <div class="mobile-nav-section-title">Core Profile</div>
+    <a class="mobile-nav-link active" href="index.html">🏠 Home</a>
+    <a class="mobile-nav-link" href="#projects" onclick="StudySite.Nav.closeMobile()">🚀 Projects Showcase</a>
+    <a class="mobile-nav-link" href="#blogs" onclick="StudySite.Nav.closeMobile()">📝 Engineering Blogs</a>
+    <a class="mobile-nav-link" href="cv.html">📄 Curriculum Vitae (CV)</a>
+    
+    <div class="mobile-nav-section-title">2026 Interview Prep Hub</div>
+    <a class="mobile-nav-link" href="roadmap.html">🎯 13-Week Roadmap</a>
+    <a class="mobile-nav-link" href="topics.html">📚 Topics & Deep Notes</a>
+    <a class="mobile-nav-link" href="flashcards.html">🃏 3D Flashcards</a>
+
+    <div class="mobile-nav-section-title">Knowledge Ecosystem</div>
+    <a class="mobile-nav-link" href="books.html">📖 Bookshelf & Mental Models</a>
+    <a class="mobile-nav-link" href="thoughts.html">💭 Engineering Thoughts (Tweets)</a>
+    <a class="mobile-nav-link" href="search.html">🔍 Search 800+ Docs</a>
   </div>
 
   <main class="container">
@@ -67,11 +78,14 @@
         I engineer high-throughput distributed systems, database storage engines, and cloud platforms with first-principles mechanical sympathy — from Linux kernel syscalls (`epoll`, zero-copy `sendfile()`) and memory barriers up to Raft consensus, LSM-tree compactions, and event-driven architectures.
       </p>
 
-      <div class="hero-actions" style="justify-content: flex-start; gap: 0.75rem;">
-        <a class="btn btn-primary" href="#interview-prep">🎯 2026 Interview Prep Hub</a>
-        <a class="btn" href="#projects">🚀 Projects Showcase</a>
-        <a class="btn" href="#blogs">📝 Engineering Blogs</a>
-        <a class="btn" href="#cv">📄 Curriculum Vitae</a>
+      <div class="hero-actions" style="justify-content: flex-start; gap: 0.75rem; flex-wrap: wrap;">
+        <a class="btn btn-primary" href="#interview-prep">🎯 Prep Hub</a>
+        <a class="btn" href="flashcards.html">🃏 3D Flashcards</a>
+        <a class="btn" href="books.html">📖 Bookshelf</a>
+        <a class="btn" href="thoughts.html">💭 Thoughts Feed</a>
+        <a class="btn" href="#projects">🚀 Projects</a>
+        <a class="btn" href="#blogs">📝 Blogs</a>
+        <a class="btn" href="cv.html">📄 CV</a>
         <a class="btn" href="https://github.com/chauhankartik" target="_blank" rel="noopener">🐙 GitHub</a>
       </div>
     </section>
@@ -480,6 +494,203 @@
       </div>
     </section>
 
+    <!-- SECTION: Personal Thoughts & Systems Musings (Micro-Posts Feed Preview) -->
+    <section id="thoughts-preview" style="margin-top: 3.5rem;">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title"><span>💭</span> Personal Thoughts & Systems Musings</h2>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.25rem 0 0 0;">
+            Low-latency engineering observations, gotchas, and architectural trade-offs. Join the discussion and reply.
+          </p>
+        </div>
+        <a class="section-link" href="thoughts.html">View All Micro-Posts & Discussion Feed →</a>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.5rem; margin-top: 1.25rem;">
+        <!-- Thought Preview 1 -->
+        <div class="thought-card" style="margin-bottom: 0;">
+          <div class="thought-header">
+            <div class="thought-author-box">
+              <div class="thought-avatar">KC</div>
+              <div class="thought-author-info">
+                <div class="thought-name-row">
+                  <span class="thought-name">Kartik Chauhan</span>
+                  <span class="thought-handle">@chauhankartik</span>
+                  <span class="thought-role-badge">STAFF ARCHITECT</span>
+                </div>
+                <span class="thought-time">3 hours ago</span>
+              </div>
+            </div>
+            <a href="thoughts.html#thought-1" class="thought-btn" title="View thread">🔗</a>
+          </div>
+
+          <div class="thought-body" style="font-size: 0.88rem;">
+            A hot take that every senior backend engineer needs to hear: Java 21 Virtual Threads (Project Loom) do NOT replace Netty for high-throughput gateway infrastructure.<br><br>
+            Virtual threads simplify blocking synchronous code, but if code touches <code>synchronized</code> or JNI that pins carrier threads, your pool deadlocks. For 1M idle WebSockets, Netty's epoll event-loop wins on memory efficiency.
+          </div>
+
+          <div class="thought-tags">
+            <span class="thought-tag-pill">#Java21</span>
+            <span class="thought-tag-pill">#Loom</span>
+            <span class="thought-tag-pill">#Netty</span>
+            <span class="thought-tag-pill">#Systems</span>
+          </div>
+
+          <div class="thought-actions">
+            <div class="thought-action-group">
+              <span class="thought-btn liked"><span class="heart-icon">❤️</span> 54</span>
+              <span class="thought-btn">💬 3 Replies</span>
+              <span class="thought-btn">🔁 18</span>
+            </div>
+            <a href="thoughts.html#thought-1" class="btn btn-sm btn-primary" style="font-size: 0.75rem;">Join Discussion & Reply →</a>
+          </div>
+        </div>
+
+        <!-- Thought Preview 2 -->
+        <div class="thought-card" style="margin-bottom: 0;">
+          <div class="thought-header">
+            <div class="thought-author-box">
+              <div class="thought-avatar">KC</div>
+              <div class="thought-author-info">
+                <div class="thought-name-row">
+                  <span class="thought-name">Kartik Chauhan</span>
+                  <span class="thought-handle">@chauhankartik</span>
+                  <span class="thought-role-badge">STAFF ARCHITECT</span>
+                </div>
+                <span class="thought-time">1 day ago</span>
+              </div>
+            </div>
+            <a href="thoughts.html#thought-2" class="thought-btn" title="View thread">🔗</a>
+          </div>
+
+          <div class="thought-body" style="font-size: 0.88rem;">
+            Why LSM Compactions will quietly destroy your P99 latency if you only tune for write-throughput:<br><br>
+            When RocksDB Level 0 reaches capacity, the compaction worker MUST merge-sort L0 into L1. If write ingress outpaces compaction, the engine initiates a write stall. Your p50 is 1.2ms; your p99 spikes to 850ms. Monitor <code>rocksdb.write-stall-micros</code>!
+          </div>
+
+          <div class="thought-tags">
+            <span class="thought-tag-pill">#DatabaseInternals</span>
+            <span class="thought-tag-pill">#LSMTree</span>
+            <span class="thought-tag-pill">#P99Latency</span>
+          </div>
+
+          <div class="thought-actions">
+            <div class="thought-action-group">
+              <span class="thought-btn liked"><span class="heart-icon">❤️</span> 89</span>
+              <span class="thought-btn">💬 2 Replies</span>
+              <span class="thought-btn">🔁 34</span>
+            </div>
+            <a href="thoughts.html#thought-2" class="btn btn-sm btn-primary" style="font-size: 0.75rem;">Join Discussion & Reply →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Canonical Bookshelf & Reading Notes -->
+    <section id="books-preview" style="margin-top: 3.5rem;">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title"><span>📖</span> Canonical Bookshelf & Reading Notes</h2>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.25rem 0 0 0;">
+            12 foundational computer science texts distilled into architectural mental models and flashcards.
+          </p>
+        </div>
+        <a class="section-link" href="books.html">Explore All 12 Books & Mental Models →</a>
+      </div>
+
+      <div class="bookshelf-grid" style="margin-top: 1.25rem;">
+        <!-- Book 1: DDIA -->
+        <div class="book-card">
+          <div class="book-card-header">
+            <div class="book-cover-icon">🗄️</div>
+            <div class="book-meta" style="flex: 1;">
+              <h3 class="book-title">Designing Data-Intensive Applications</h3>
+              <div class="book-author">by Martin Kleppmann (2017)</div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 0.25rem;">
+                <span class="book-rating">⭐ 5.0/5.0</span>
+                <span class="book-status-pill status-read">✅ Completed & Synthesized</span>
+              </div>
+            </div>
+          </div>
+          <div class="book-progress-wrap">
+            <div class="book-progress-labels"><span>Reading Progress</span><strong>100%</strong></div>
+            <div class="book-progress-bar"><div class="book-progress-fill" style="width: 100%;"></div></div>
+          </div>
+          <div class="book-oneliner">"The definitive architecture manual for reliability, scalability, storage engines, and consensus algorithms."</div>
+          <div class="book-learnings-title"><span>⚡</span> Key Architectural Learnings:</div>
+          <ul class="book-learnings-list">
+            <li>LSM-Trees vs B-Trees: sequential write speed vs deterministic point-read latency.</li>
+            <li>Linearizability (single-op real-time recency) vs Serializability (multi-op transaction isolation).</li>
+            <li>Unreliable NTP clocks: rely on logical clocks or Spanner bounded TrueTime uncertainty.</li>
+          </ul>
+          <div class="book-actions">
+            <a href="topic.html?path=03_systems_and_databases/ddia_book_study/00_DDIA_MindMap.md" class="btn btn-sm btn-primary">📖 Chapter Notes</a>
+            <a href="flashcards.html?category=distributed_systems" class="btn btn-sm">🃏 Practice Flashcards</a>
+          </div>
+        </div>
+
+        <!-- Book 2: Database Internals -->
+        <div class="book-card">
+          <div class="book-card-header">
+            <div class="book-cover-icon">💾</div>
+            <div class="book-meta" style="flex: 1;">
+              <h3 class="book-title">Database Internals: A Deep Dive</h3>
+              <div class="book-author">by Alex Petrov (2019)</div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 0.25rem;">
+                <span class="book-rating">⭐ 5.0/5.0</span>
+                <span class="book-status-pill status-currently_reading">📖 Currently Reading (82%)</span>
+              </div>
+            </div>
+          </div>
+          <div class="book-progress-wrap">
+            <div class="book-progress-labels"><span>Reading Progress</span><strong>82%</strong></div>
+            <div class="book-progress-bar"><div class="book-progress-fill" style="width: 82%;"></div></div>
+          </div>
+          <div class="book-oneliner">"From slotted disk pages and ARIES crash recovery up to Raft, Paxos, and distributed consensus."</div>
+          <div class="book-learnings-title"><span>⚡</span> Key Architectural Learnings:</div>
+          <ul class="book-learnings-list">
+            <li>Slotted Page Layout: Storing record offset pointers in header to prevent block fragmentation.</li>
+            <li>ARIES Recovery: Steal/No-Force buffer management with Redo (repeating history) and Undo.</li>
+            <li>Leveled vs Size-Tiered compaction trade-offs in RocksDB storage engines.</li>
+          </ul>
+          <div class="book-actions">
+            <a href="topic.html?path=03_systems_and_databases/database_internals/00_internals_cheatsheet.md" class="btn btn-sm btn-primary">📖 Chapter Notes</a>
+            <a href="flashcards.html?category=database_internals" class="btn btn-sm">🃏 Practice Flashcards</a>
+          </div>
+        </div>
+
+        <!-- Book 3: OSTEP -->
+        <div class="book-card">
+          <div class="book-card-header">
+            <div class="book-cover-icon">⚙️</div>
+            <div class="book-meta" style="flex: 1;">
+              <h3 class="book-title">Operating Systems: Three Easy Pieces</h3>
+              <div class="book-author">by Remzi & Andrea Arpaci-Dusseau (2018)</div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 0.25rem;">
+                <span class="book-rating">⭐ 5.0/5.0</span>
+                <span class="book-status-pill status-read">✅ Completed & Synthesized</span>
+              </div>
+            </div>
+          </div>
+          <div class="book-progress-wrap">
+            <div class="book-progress-labels"><span>Reading Progress</span><strong>100%</strong></div>
+            <div class="book-progress-bar"><div class="book-progress-fill" style="width: 100%;"></div></div>
+          </div>
+          <div class="book-oneliner">"First-principles deep dive into Virtualization (CPU & Memory), Concurrency, and Persistence."</div>
+          <div class="book-learnings-title"><span>⚡</span> Key Architectural Learnings:</div>
+          <ul class="book-learnings-list">
+            <li>Virtual Memory Translation: Hardware TLB lookups, multi-level page tables, and Copy-On-Write (COW).</li>
+            <li>Locks & Futexes: Linux futex fast user-space execution with kernel sleep queues only on contention.</li>
+            <li>Crash Consistency: Ordered journaling preventing dangling metadata across unexpected power loss.</li>
+          </ul>
+          <div class="book-actions">
+            <a href="topic.html?path=03_systems_and_databases/ostep/00_ostep_cheatsheet.md" class="btn btn-sm btn-primary">📖 Chapter Notes</a>
+            <a href="flashcards.html?category=operating_systems" class="btn btn-sm">🃏 Practice Flashcards</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- SECTION 4: Curriculum Vitae (CV) & Experience Summary -->
     <section id="cv" style="margin-top: 3.5rem;">
       <div class="section-header">
@@ -584,11 +795,15 @@
   <footer class="site-footer">
     <p>Engineered with ⚡ by <strong>Kartik Chauhan</strong> · Staff Software Engineer & Systems Architect</p>
     <p style="margin-top: 0.4rem; color: var(--text-dim);">
-      <a href="#interview-prep">Interview Prep</a> &middot; 
+      <a href="index.html">Home</a> &middot; 
+      <a href="roadmap.html">Roadmap</a> &middot; 
+      <a href="topics.html">Topics</a> &middot; 
+      <a href="flashcards.html">Flashcards</a> &middot; 
+      <a href="books.html">Books</a> &middot; 
+      <a href="thoughts.html">Thoughts</a> &middot; 
       <a href="#projects">Projects</a> &middot; 
-      <a href="#blogs">Engineering Blogs</a> &middot; 
-      <a href="cv.html">CV</a> &middot; 
-      <a href="flashcards.html">Flashcards</a>
+      <a href="#blogs">Blogs</a> &middot; 
+      <a href="cv.html">CV</a>
     </p>
   </footer>
 

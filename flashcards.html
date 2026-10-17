@@ -17,17 +17,21 @@
   <header class="top-bar">
     <a class="top-bar-brand" href="index.html">
       <span class="prompt-sign">$</span>
-      <span>2026_study</span>
+      <span>kartik_chauhan</span>
       <span class="year-badge">FLASHCARDS</span>
     </a>
     <nav class="top-bar-nav">
       <a class="top-bar-link" href="index.html" data-page="home">Home</a>
       <a class="top-bar-link" href="roadmap.html" data-page="roadmap">Roadmap</a>
       <a class="top-bar-link" href="topics.html" data-page="topics">Topics</a>
-      <a class="top-bar-link" href="flashcards.html" data-page="flashcards">Flashcards</a>
-      <a class="top-bar-link" href="search.html" data-page="search">Search</a>
+      <a class="top-bar-link active" href="flashcards.html" data-page="flashcards">Flashcards</a>
+      <a class="top-bar-link" href="books.html" data-page="books">Books</a>
+      <a class="top-bar-link" href="thoughts.html" data-page="thoughts">Thoughts</a>
+      <a class="top-bar-link" href="index.html#projects" data-page="projects">Projects</a>
+      <a class="top-bar-link" href="index.html#blogs" data-page="blogs">Blogs</a>
+      <a class="top-bar-link" href="cv.html" data-page="cv">CV</a>
       <button class="theme-toggle-btn" onclick="StudySite.Theme.toggle()" aria-label="Toggle Theme">
-        ☀️ <span>Light</span>
+        📜 <span>Paper</span>
       </button>
       <button class="mobile-menu-btn" onclick="StudySite.Nav.toggleMobile()" aria-label="Open Navigation">
         ☰
@@ -38,11 +42,21 @@
   <!-- Mobile Overlay Navigation -->
   <div class="mobile-nav-overlay" id="mobileNav">
     <button class="mobile-nav-close" onclick="StudySite.Nav.closeMobile()">✕</button>
-    <a class="mobile-nav-link" href="index.html" data-page="home">Home</a>
-    <a class="mobile-nav-link" href="roadmap.html" data-page="roadmap">Roadmap</a>
-    <a class="mobile-nav-link" href="topics.html" data-page="topics">Topics</a>
-    <a class="mobile-nav-link" href="flashcards.html" data-page="flashcards">Flashcards</a>
-    <a class="mobile-nav-link" href="search.html" data-page="search">Search</a>
+    <div class="mobile-nav-section-title">Core Profile</div>
+    <a class="mobile-nav-link" href="index.html">🏠 Home</a>
+    <a class="mobile-nav-link" href="index.html#projects" onclick="StudySite.Nav.closeMobile()">🚀 Projects Showcase</a>
+    <a class="mobile-nav-link" href="index.html#blogs" onclick="StudySite.Nav.closeMobile()">📝 Engineering Blogs</a>
+    <a class="mobile-nav-link" href="cv.html">📄 Curriculum Vitae (CV)</a>
+    
+    <div class="mobile-nav-section-title">2026 Interview Prep Hub</div>
+    <a class="mobile-nav-link" href="roadmap.html">🎯 13-Week Roadmap</a>
+    <a class="mobile-nav-link" href="topics.html">📚 Topics & Deep Notes</a>
+    <a class="mobile-nav-link active" href="flashcards.html">🃏 3D Flashcards</a>
+
+    <div class="mobile-nav-section-title">Knowledge Ecosystem</div>
+    <a class="mobile-nav-link" href="books.html">📖 Bookshelf & Mental Models</a>
+    <a class="mobile-nav-link" href="thoughts.html">💭 Engineering Thoughts (Tweets)</a>
+    <a class="mobile-nav-link" href="search.html">🔍 Search 800+ Docs</a>
   </div>
 
   <main class="container">

@@ -4,6 +4,10 @@ Welcome to the **Company-Wise Technical Interview Preparation** module. While co
 
 This module maps engineering knowledge directly to the specific interview loops, high-frequency question patterns, machine coding standards, and system design expectations of top tech companies.
 
+> [!TIP]
+> 📊 **Looking for compensation bands & difficulty ratings?**
+> Refer to the dedicated guide: **[`company_tiers_salary_and_interview_difficulty.md`](company_tiers_salary_and_interview_difficulty.md)** — Comprehensive breakdown of 40+ product companies offering **₹30 LPA to ₹1.5+ Cr** across HFTs, Big Tech, US Unicorns, Indian Startups, and FinTech GICs.
+
 ---
 
 ## 🏢 Company Playbooks Index

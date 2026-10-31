@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-31T14:08:06.230765Z",
+  "generated": "2026-10-31T16:15:34.286291Z",
   "stats": {
     "totalFiles": 821,
     "markdownFiles": 521,
@@ -385,7 +385,7 @@
                   "name": "06_top50_problems.md",
                   "path": "01_core_foundations/dsa/twopointers/06_top50_problems.md",
                   "ext": "md",
-                  "size": 8251
+                  "size": 13952
                 }
               ],
               "subtopics": [],
@@ -438,7 +438,7 @@
                   "name": "06_top50_problems.md",
                   "path": "01_core_foundations/dsa/sliding_window/06_top50_problems.md",
                   "ext": "md",
-                  "size": 8082
+                  "size": 13477
                 }
               ],
               "subtopics": [],
@@ -532,7 +532,7 @@
                   "name": "06_top50_problems.md",
                   "path": "01_core_foundations/dsa/stack/06_top50_problems.md",
                   "ext": "md",
-                  "size": 8420
+                  "size": 14101
                 }
               ],
               "subtopics": [],
@@ -585,7 +585,7 @@
                   "name": "06_top50_problems.md",
                   "path": "01_core_foundations/dsa/queue/06_top50_problems.md",
                   "ext": "md",
-                  "size": 8651
+                  "size": 14373
                 }
               ],
               "subtopics": [],
@@ -638,7 +638,7 @@
                   "name": "06_top50_problems.md",
                   "path": "01_core_foundations/dsa/hashing/06_top50_problems.md",
                   "ext": "md",
-                  "size": 6409
+                  "size": 12255
                 },
                 {
                   "name": "prompt",
@@ -1001,7 +1001,7 @@
                   "name": "06_top50_problems.md",
                   "path": "01_core_foundations/dsa/trie/06_top50_problems.md",
                   "ext": "md",
-                  "size": 4912
+                  "size": 9689
                 }
               ],
               "subtopics": [],
@@ -1054,7 +1054,7 @@
                   "name": "06_top50_problems.md",
                   "path": "01_core_foundations/dsa/greedy/06_top50_problems.md",
                   "ext": "md",
-                  "size": 6044
+                  "size": 11259
                 }
               ],
               "subtopics": [],
@@ -1107,7 +1107,7 @@
                   "name": "06_top50_problems.md",
                   "path": "01_core_foundations/dsa/backtracking/06_top50_problems.md",
                   "ext": "md",
-                  "size": 5149
+                  "size": 9874
                 }
               ],
               "subtopics": [],
@@ -1160,7 +1160,7 @@
                   "name": "06_top50_problems.md",
                   "path": "01_core_foundations/dsa/graph/06_top50_problems.md",
                   "ext": "md",
-                  "size": 6423
+                  "size": 11912
                 }
               ],
               "subtopics": [],
@@ -1505,7 +1505,7 @@
                   "name": "06_top50_problems.md",
                   "path": "01_core_foundations/dsa/dynamicprogramming/06_top50_problems.md",
                   "ext": "md",
-                  "size": 8732
+                  "size": 14696
                 }
               ],
               "subtopics": [

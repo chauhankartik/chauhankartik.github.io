@@ -1,6 +1,42 @@
 # Sliding Window — Top 50 Problems (Intuition-Building Order)
 > **How to use this list:** Work through each section in order.
 > Each section builds on the previous one. Don't skip ahead until the pattern clicks.
+> Use the **Interview Frequency** column to prioritize must-solve problems for upcoming FAANG/Tier-1 interviews.
+
+---
+
+## 📊 Interview Frequency Legend
+
+| Tier | Badge | Interview Frequency | Description | Target Companies |
+|---|---|---|---|---|
+| **Tier 1** | 🔥🔥🔥 **Very High** | Appears in >70% of candidate question pools | Absolute must-solve before any interview | Meta, Google, Amazon, Microsoft, Apple, Bloomberg |
+| **Tier 2** | 🔥🔥 **High** | Core interview standard (35%–70%) | Regular interview staple; tests pattern variation fluency | Amazon, Google, Meta, Uber, ByteDance |
+| **Tier 3** | 🔥 **Medium** | Follow-up / classic variant (<35%) | Tests edge cases, extensions, and deeper mathematical insight | Top tech phone screens & online assessments |
+
+---
+
+## 🏆 Top 15 Must-Solve Sliding Window Problems (Highest Frequency)
+
+If you have limited time before an interview, solve these first:
+
+| Rank | Problem | LC# | Difficulty | Frequency | Top Companies | Core Pattern / Concept |
+|---|---|---|---|---|---|---|
+| 1 | **Longest Substring Without Repeating Characters** | 3 | Medium | 🔥🔥🔥 Very High | Amazon, Meta, Google, Microsoft, Apple | HashMap of last-seen index, jump left pointer |
+| 2 | **Max Consecutive Ones III** | 1004 | Medium | 🔥🔥🔥 Very High | Meta, Google, Amazon | Window with at most k zeros (counter-based) |
+| 3 | **Longest Repeating Character Replacement** | 424 | Medium | 🔥🔥🔥 Very High | Google, Amazon, Meta | maxFreq trick — don't decrement on shrink |
+| 4 | **Minimum Size Subarray Sum** | 209 | Medium | 🔥🔥🔥 Very High | Amazon, Google, Microsoft | Shortest subarray with sum ≥ target (positives) |
+| 5 | **Minimum Window Substring** | 76 | Hard | 🔥🔥🔥 Very High | Meta, Google, Amazon, Airbnb | Shortest window containing all chars of t |
+| 6 | **Permutation in String** | 567 | Medium | 🔥🔥🔥 Very High | Meta, Microsoft, Amazon | Fixed window, 26-char freq match |
+| 7 | **Find All Anagrams in a String** | 438 | Medium | 🔥🔥🔥 Very High | Amazon, Meta, Microsoft | Same as #23, collect ALL positions |
+| 8 | **Sliding Window Maximum** | 239 | Hard | 🔥🔥🔥 Very High | Amazon, Google, Meta, Citadel | Monotonic decreasing deque, stores indices |
+| 9 | **Maximum Average Subarray I** | 643 | Easy | 🔥🔥 High | Amazon, Meta | Fixed window, average = sum/k |
+| 10 | **Maximum Number of Vowels in a Substring of Given Length** | 1456 | Medium | 🔥🔥 High | Amazon, Meta | Fixed window + character counting |
+| 11 | **Max Consecutive Ones** | 485 | Easy | 🔥🔥 High | Google, Amazon | Simplest variable window (just a counter) |
+| 12 | **Fruit Into Baskets** | 904 | Medium | 🔥🔥 High | Google, Amazon | At most 2 distinct (freq map + shrink) |
+| 13 | **Longest Substring with At Most Two Distinct Characters** | 159 | Medium | 🔥🔥 High | Google, Meta, Amazon | Same pattern as #13, string version |
+| 14 | **Longest Substring with At Most K Distinct Characters** | 340 | Medium | 🔥🔥 High | Google, Meta | Generalized K distinct |
+| 15 | **Longest Subarray of 1's After Deleting One Element** | 1493 | Medium | 🔥🔥 High | Google, Meta | At most 1 zero + must delete one element |
+
 
 ---
 
@@ -8,16 +44,16 @@
 
 *Goal: Get comfortable with the "add right, remove left" mechanic.*
 
-| # | Problem | LC# | Difficulty | Key Concept |
-|---|---|---|---|---|
-| 1 | Maximum Sum Subarray of Size K | — | Easy | Pure fixed window, running sum |
-| 2 | Maximum Average Subarray I | 643 | Easy | Fixed window, average = sum/k |
-| 3 | Number of Sub-arrays of Size K with Avg ≥ Threshold | 1343 | Medium | Fixed window + counting, avoid float division |
-| 4 | Maximum Number of Vowels in a Substring of Given Length | 1456 | Medium | Fixed window + character counting |
-| 5 | Defuse the Bomb | 1652 | Easy | Fixed window + circular array (modular index) |
-| 6 | Diet Plan Performance | 1176 | Easy | Fixed window + conditional scoring |
-| 7 | Minimum Difference Between Highest and Lowest of K Scores | 1984 | Easy | Sort first, then fixed window |
-| 8 | Grumpy Bookstore Owner | 1052 | Medium | Fixed window "overlay" on base calculation |
+| # | Problem | LC# | Difficulty | Frequency | Top Companies | Key Concept |
+|---|---|---|---|---|---|---|
+| 1 | Maximum Sum Subarray of Size K | — | Easy | 🔥 Medium | Amazon, Google, Meta | Pure fixed window, running sum |
+| 2 | Maximum Average Subarray I | 643 | Easy | 🔥🔥 High | Amazon, Meta | Fixed window, average = sum/k |
+| 3 | Number of Sub-arrays of Size K with Avg ≥ Threshold | 1343 | Medium | 🔥 Medium | Amazon | Fixed window + counting, avoid float division |
+| 4 | Maximum Number of Vowels in a Substring of Given Length | 1456 | Medium | 🔥🔥 High | Amazon, Meta | Fixed window + character counting |
+| 5 | Defuse the Bomb | 1652 | Easy | 🔥 Medium | Amazon | Fixed window + circular array (modular index) |
+| 6 | Diet Plan Performance | 1176 | Easy | 🔥 Medium | Amazon, Google, Meta | Fixed window + conditional scoring |
+| 7 | Minimum Difference Between Highest and Lowest of K Scores | 1984 | Easy | 🔥 Medium | Amazon | Sort first, then fixed window |
+| 8 | Grumpy Bookstore Owner | 1052 | Medium | 🔥 Medium | Amazon, Google | Fixed window "overlay" on base calculation |
 
 ---
 
@@ -25,18 +61,18 @@
 
 *Goal: Internalize "expand right always, shrink left only when broken".*
 
-| # | Problem | LC# | Difficulty | Key Concept |
-|---|---|---|---|---|
-| 9 | Max Consecutive Ones | 485 | Easy | Simplest variable window (just a counter) |
-| 10 | Longest Substring Without Repeating Characters | 3 | Medium | HashMap of last-seen index, jump left pointer |
-| 11 | Max Consecutive Ones III | 1004 | Medium | Window with at most k zeros (counter-based) |
-| 12 | Longest Repeating Character Replacement | 424 | Medium | maxFreq trick — don't decrement on shrink |
-| 13 | Fruit Into Baskets | 904 | Medium | At most 2 distinct (freq map + shrink) |
-| 14 | Longest Substring with At Most Two Distinct Characters | 159 | Medium | Same pattern as #13, string version |
-| 15 | Longest Substring with At Most K Distinct Characters | 340 | Medium | Generalized K distinct |
-| 16 | Longest Subarray of 1's After Deleting One Element | 1493 | Medium | At most 1 zero + must delete one element |
-| 17 | Get Equal Substrings Within Budget | 1208 | Medium | Window where cost ≤ maxCost |
-| 18 | Maximum Points You Can Obtain from Cards | 1423 | Medium | Reverse thinking: minimize middle subarray |
+| # | Problem | LC# | Difficulty | Frequency | Top Companies | Key Concept |
+|---|---|---|---|---|---|---|
+| 9 | Max Consecutive Ones | 485 | Easy | 🔥🔥 High | Google, Amazon | Simplest variable window (just a counter) |
+| 10 | Longest Substring Without Repeating Characters | 3 | Medium | 🔥🔥🔥 Very High | Amazon, Meta, Google, Microsoft, Apple | HashMap of last-seen index, jump left pointer |
+| 11 | Max Consecutive Ones III | 1004 | Medium | 🔥🔥🔥 Very High | Meta, Google, Amazon | Window with at most k zeros (counter-based) |
+| 12 | Longest Repeating Character Replacement | 424 | Medium | 🔥🔥🔥 Very High | Google, Amazon, Meta | maxFreq trick — don't decrement on shrink |
+| 13 | Fruit Into Baskets | 904 | Medium | 🔥🔥 High | Google, Amazon | At most 2 distinct (freq map + shrink) |
+| 14 | Longest Substring with At Most Two Distinct Characters | 159 | Medium | 🔥🔥 High | Google, Meta, Amazon | Same pattern as #13, string version |
+| 15 | Longest Substring with At Most K Distinct Characters | 340 | Medium | 🔥🔥 High | Google, Meta | Generalized K distinct |
+| 16 | Longest Subarray of 1's After Deleting One Element | 1493 | Medium | 🔥🔥 High | Google, Meta | At most 1 zero + must delete one element |
+| 17 | Get Equal Substrings Within Budget | 1208 | Medium | 🔥 Medium | Google | Window where cost ≤ maxCost |
+| 18 | Maximum Points You Can Obtain from Cards | 1423 | Medium | 🔥🔥 High | Google, Amazon | Reverse thinking: minimize middle subarray |
 
 ---
 
@@ -44,12 +80,12 @@
 
 *Goal: Flip the logic — record answer when valid, then shrink to find shorter.*
 
-| # | Problem | LC# | Difficulty | Key Concept |
-|---|---|---|---|---|
-| 19 | Minimum Size Subarray Sum | 209 | Medium | Shortest subarray with sum ≥ target (positives) |
-| 20 | Minimum Window Substring | 76 | Hard | Shortest window containing all chars of t |
-| 21 | Minimum Window Subsequence | 727 | Hard | Shortest window containing t as subsequence |
-| 22 | Minimum Operations to Reduce X to Zero | 1658 | Medium | Reverse: find longest middle with sum = total - x |
+| # | Problem | LC# | Difficulty | Frequency | Top Companies | Key Concept |
+|---|---|---|---|---|---|---|
+| 19 | Minimum Size Subarray Sum | 209 | Medium | 🔥🔥🔥 Very High | Amazon, Google, Microsoft | Shortest subarray with sum ≥ target (positives) |
+| 20 | Minimum Window Substring | 76 | Hard | 🔥🔥🔥 Very High | Meta, Google, Amazon, Airbnb | Shortest window containing all chars of t |
+| 21 | Minimum Window Subsequence | 727 | Hard | 🔥 Medium | Google, Meta | Shortest window containing t as subsequence |
+| 22 | Minimum Operations to Reduce X to Zero | 1658 | Medium | 🔥🔥 High | Google, Amazon | Reverse: find longest middle with sum = total - x |
 
 ---
 
@@ -57,11 +93,11 @@
 
 *Goal: Master the "matches counter" technique for O(1) frequency comparison.*
 
-| # | Problem | LC# | Difficulty | Key Concept |
-|---|---|---|---|---|
-| 23 | Permutation in String | 567 | Medium | Fixed window, 26-char freq match |
-| 24 | Find All Anagrams in a String | 438 | Medium | Same as #23, collect ALL positions |
-| 25 | Substring with Concatenation of All Words | 30 | Hard | Word-level sliding window, multiple offsets |
+| # | Problem | LC# | Difficulty | Frequency | Top Companies | Key Concept |
+|---|---|---|---|---|---|---|
+| 23 | Permutation in String | 567 | Medium | 🔥🔥🔥 Very High | Meta, Microsoft, Amazon | Fixed window, 26-char freq match |
+| 24 | Find All Anagrams in a String | 438 | Medium | 🔥🔥🔥 Very High | Amazon, Meta, Microsoft | Same as #23, collect ALL positions |
+| 25 | Substring with Concatenation of All Words | 30 | Hard | 🔥🔥 High | Amazon, Apple | Word-level sliding window, multiple offsets |
 
 ---
 
@@ -69,13 +105,13 @@
 
 *Goal: Understand why `right - left + 1` counts all valid subarrays ending at right.*
 
-| # | Problem | LC# | Difficulty | Key Concept |
-|---|---|---|---|---|
-| 26 | Subarray Product Less Than K | 713 | Medium | Product monotonic (positives), count valid |
-| 27 | Count Number of Nice Subarrays | 1248 | Medium | exactly(K) = atMost(K) - atMost(K-1) |
-| 28 | Subarrays with K Different Integers | 992 | Hard | exactly(K) decomposition, freq map |
-| 29 | Binary Subarrays With Sum | 930 | Medium | exactly(K) on binary array |
-| 30 | Count Subarrays Where Max Element Appears at Least K Times | 2962 | Medium | Track max occurrences in window |
+| # | Problem | LC# | Difficulty | Frequency | Top Companies | Key Concept |
+|---|---|---|---|---|---|---|
+| 26 | Subarray Product Less Than K | 713 | Medium | 🔥🔥 High | Amazon, Google | Product monotonic (positives), count valid |
+| 27 | Count Number of Nice Subarrays | 1248 | Medium | 🔥🔥 High | Amazon, Meta | exactly(K) = atMost(K) - atMost(K-1) |
+| 28 | Subarrays with K Different Integers | 992 | Hard | 🔥🔥 High | Google, Amazon | exactly(K) decomposition, freq map |
+| 29 | Binary Subarrays With Sum | 930 | Medium | 🔥🔥 High | Meta, Google | exactly(K) on binary array |
+| 30 | Count Subarrays Where Max Element Appears at Least K Times | 2962 | Medium | 🔥 Medium | Amazon, Google | Track max occurrences in window |
 
 ---
 
@@ -83,15 +119,15 @@
 
 *Goal: Master the "remove dominated elements" deque technique.*
 
-| # | Problem | LC# | Difficulty | Key Concept |
-|---|---|---|---|---|
-| 31 | Sliding Window Maximum | 239 | Hard | Monotonic decreasing deque, stores indices |
-| 32 | Sliding Window Minimum | — | — | Same as #31, flip to increasing deque |
-| 33 | Jump Game VI | 1696 | Medium | DP + monotonic deque (look back k) |
-| 34 | Constrained Subsequence Sum | 1425 | Hard | DP + monotonic deque (same pattern as #33) |
-| 35 | Longest Continuous Subarray With Abs Diff ≤ Limit | 1438 | Medium | Two deques (one for max, one for min) |
-| 36 | Max Value of Equation | 1499 | Hard | Rewrite equation, deque on (yi - xi) |
-| 37 | Shortest Subarray with Sum at Least K | 862 | Hard | Prefix sums + monotonic INCREASING deque |
+| # | Problem | LC# | Difficulty | Frequency | Top Companies | Key Concept |
+|---|---|---|---|---|---|---|
+| 31 | Sliding Window Maximum | 239 | Hard | 🔥🔥🔥 Very High | Amazon, Google, Meta, Citadel | Monotonic decreasing deque, stores indices |
+| 32 | Sliding Window Minimum | — | — | 🔥 Medium | Amazon, Google, Meta | Same as #31, flip to increasing deque |
+| 33 | Jump Game VI | 1696 | Medium | 🔥🔥 High | Google, Amazon | DP + monotonic deque (look back k) |
+| 34 | Constrained Subsequence Sum | 1425 | Hard | 🔥🔥 High | Google, ByteDance | DP + monotonic deque (same pattern as #33) |
+| 35 | Longest Continuous Subarray With Abs Diff ≤ Limit | 1438 | Medium | 🔥🔥 High | Google, Amazon, Uber | Two deques (one for max, one for min) |
+| 36 | Max Value of Equation | 1499 | Hard | 🔥 Medium | Google, Citadel | Rewrite equation, deque on (yi - xi) |
+| 37 | Shortest Subarray with Sum at Least K | 862 | Hard | 🔥🔥 High | Google, Amazon | Prefix sums + monotonic INCREASING deque |
 
 ---
 
@@ -99,25 +135,31 @@
 
 *Goal: Combine sliding window with other patterns (DP, binary search, greedy).*
 
-| # | Problem | LC# | Difficulty | Key Concept |
-|---|---|---|---|---|
-| 38 | Longest Substring with At Least K Repeating Characters | 395 | Medium | Fix unique count (1..26), run variable window |
-| 39 | Minimum Number of K Consecutive Bit Flips | 995 | Hard | Greedy + flip tracking with window |
-| 40 | Maximum Number of Visible People in a Queue | 1944 | Hard | Monotonic stack (window-like thinking) |
-| 41 | Minimum Swaps to Group All 1's Together | 1151 | Medium | Fixed window of size = count(1s), minimize zeros |
-| 42 | Minimum Swaps to Group All 1's Together II | 2134 | Medium | Circular version of #41 |
-| 43 | Replace the Substring for Balanced String | 1234 | Medium | Shortest window to remove excess chars |
-| 44 | Count Subarrays With Fixed Bounds | 2444 | Hard | Track last positions of minK, maxK, and invalid |
-| 45 | Maximum Beauty of an Array After Applying Operation | 2779 | Medium | Sort + variable window |
-| 46 | Frequency of the Most Frequent Element | 1838 | Medium | Sort + variable window + budget |
-| 47 | Minimum Number of Flips to Make Binary String Alternating | 1888 | Medium | Circular + fixed window on doubled string |
-| 48 | K Radius Subarray Averages | 2090 | Easy | Fixed window centered at each index |
-| 49 | Maximum Sum of Distinct Subarrays With Length K | 2461 | Medium | Fixed window + HashSet for uniqueness |
-| 50 | Count Complete Subarrays in an Array | 2799 | Medium | Exactly K distinct (K = total unique in array) |
+| # | Problem | LC# | Difficulty | Frequency | Top Companies | Key Concept |
+|---|---|---|---|---|---|---|
+| 38 | Longest Substring with At Least K Repeating Characters | 395 | Medium | 🔥🔥 High | Amazon, Google | Fix unique count (1..26), run variable window |
+| 39 | Minimum Number of K Consecutive Bit Flips | 995 | Hard | 🔥 Medium | Google, ByteDance | Greedy + flip tracking with window |
+| 40 | Maximum Number of Visible People in a Queue | 1944 | Hard | 🔥🔥 High | Google, Meta | Monotonic stack (window-like thinking) |
+| 41 | Minimum Swaps to Group All 1's Together | 1151 | Medium | 🔥🔥 High | Amazon, Google | Fixed window of size = count(1s), minimize zeros |
+| 42 | Minimum Swaps to Group All 1's Together II | 2134 | Medium | 🔥 Medium | Amazon | Circular version of #41 |
+| 43 | Replace the Substring for Balanced String | 1234 | Medium | 🔥 Medium | Google, Amazon | Shortest window to remove excess chars |
+| 44 | Count Subarrays With Fixed Bounds | 2444 | Hard | 🔥🔥 High | Google, Amazon | Track last positions of minK, maxK, and invalid |
+| 45 | Maximum Beauty of an Array After Applying Operation | 2779 | Medium | 🔥 Medium | Amazon | Sort + variable window |
+| 46 | Frequency of the Most Frequent Element | 1838 | Medium | 🔥🔥 High | Google, Amazon | Sort + variable window + budget |
+| 47 | Minimum Number of Flips to Make Binary String Alternating | 1888 | Medium | 🔥 Medium | Amazon | Circular + fixed window on doubled string |
+| 48 | K Radius Subarray Averages | 2090 | Easy | 🔥 Medium | Meta, Amazon | Fixed window centered at each index |
+| 49 | Maximum Sum of Distinct Subarrays With Length K | 2461 | Medium | 🔥🔥 High | Amazon, Google | Fixed window + HashSet for uniqueness |
+| 50 | Count Complete Subarrays in an Array | 2799 | Medium | 🔥 Medium | Google | Exactly K distinct (K = total unique in array) |
 
 ---
 
 ## Study Roadmap
+
+```
+Tier 1 Sprint (Emergency FAANG Prep):
+  Focus exclusively on 🔥🔥🔥 (Very High) problems in the Top list above.
+
+Complete Roadmap (Intuition-Building):
 
 ```
 Week 1 (Days 1-2):  Phase 1 — Fixed window (#1-#8)

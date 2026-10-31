@@ -90,6 +90,7 @@ Welcome to the **2026 Software Engineering Master Study Repository**. This repos
 
 ### 8. Company-Wise Technical Interview Preparation
 * **[`05_company_prep/`](05_company_prep/README.md)** — Targeted company-specific interview playbooks, real past question banks, runnable machine coding solutions, and domain-specific distributed system designs:
+  * **[`05_company_prep/company_tiers_salary_and_interview_difficulty.md`](05_company_prep/company_tiers_salary_and_interview_difficulty.md)** — **Salary & Interview Difficulty Tiers (₹30 LPA+ Minimum)**: Segregation of 40+ product companies across HFTs, Big Tech, US Unicorns, Indian Startups, and FinTech GICs.
   * **[`05_company_prep/zepto/`](05_company_prep/zepto/README.md)** — **Zepto SDE-2 & SDE-3 Flagship Guide**: 10-minute dark-store dispatch HLD, flash-sale inventory reservation machine coding, database row-level locking (`SKIP LOCKED`), Kafka ordering, and verified past questions bank.
   * **[`05_company_prep/swiggy_zomato/`](05_company_prep/swiggy_zomato/README.md)** — **Swiggy & Zomato**: Food delivery and quick-commerce (Instamart/Blinkit), real-time dynamic surge pricing, and catalog search engines.
   * **[`05_company_prep/uber_ola/`](05_company_prep/uber_ola/README.md)** — **Uber & Ola**: Planetary-scale mobility networks, Uber H3 hexagonal geospatial dispatch, and GPS telemetry streaming.

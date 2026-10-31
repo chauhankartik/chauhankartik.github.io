@@ -6,13 +6,13 @@
  *  questions. Each problem is designed to test MULTIPLE topics
  *  simultaneously and require system-level thinking.
  *
- *  Problems:
- *   G1. Count of Range Sum (Merge Sort + Counting)
- *   G2. Shortest Subarray with Sum at Least K (Monotonic Deque + Prefix Sum)
- *   G3. Maximum Sum of 3 Non-Overlapping Subarrays (DP + Prefix Sum)
- *   G4. Split Array Largest Sum (Binary Search on Answer)
- *   G5. Candy (Two-Pass Greedy)
- *   G6. Minimum Number of Increments on Subarrays to Form a Target Array
+ *  Problems & Interview Frequencies:
+ *   G1. Count of Range Sum (LC 327)                                [🔥 Medium / Google Classic - Google]
+ *   G2. Shortest Subarray with Sum at Least K (LC 862)             [🔥🔥 High / Google Tier - Google, Amazon]
+ *   G3. Maximum Sum of 3 Non-Overlapping Subarrays (LC 689)        [🔥🔥 High - Meta, Google]
+ *   G4. Split Array Largest Sum (LC 410)                           [🔥🔥 High / Google Favorite - Google, Amazon, ByteDance]
+ *   G5. Candy (LC 135)                                             [🔥🔥🔥 Very High - Google, Amazon, Microsoft]
+ *   G6. Minimum Number of Increments on Subarrays to Form a Target Array (LC 1526) [🔥 Medium / Google Hard - Google]
  *
  *  Multi-topic matrix:
  *   G1: Merge Sort + Counting + Divide and Conquer
@@ -30,6 +30,8 @@ public class GoogleLevel {
     // =========================================================
     // G1. COUNT OF RANGE SUM
     // Topics: Merge Sort + Counting + Divide & Conquer
+    // LeetCode: LC 327
+    // Frequency: 🔥 Medium / Google Classic (Google)
     // =========================================================
     /**
      * Problem: Given integer array nums, count range sums S(i,j) = sum(nums[i..j])
@@ -113,6 +115,8 @@ public class GoogleLevel {
     // =========================================================
     // G2. SHORTEST SUBARRAY WITH SUM AT LEAST K
     // Topics: Monotonic Deque + Prefix Sum + Negative Numbers
+    // LeetCode: LC 862
+    // Frequency: 🔥🔥 High / Google Tier (Google, Amazon)
     // =========================================================
     /**
      * Problem: Find the shortest subarray with sum ≥ k. (LeetCode 862)
@@ -189,6 +193,8 @@ public class GoogleLevel {
     // =========================================================
     // G3. MAXIMUM SUM OF 3 NON-OVERLAPPING SUBARRAYS
     // Topics: DP + Prefix Sum + Interval Optimization
+    // LeetCode: LC 689
+    // Frequency: 🔥🔥 High (Meta, Google)
     // =========================================================
     /**
      * Problem: Find three non-overlapping subarrays of length k with
@@ -272,6 +278,8 @@ public class GoogleLevel {
     // =========================================================
     // G4. SPLIT ARRAY LARGEST SUM
     // Topics: Binary Search on Answer + Greedy Validation
+    // LeetCode: LC 410
+    // Frequency: 🔥🔥 High / Google Favorite (Google, Amazon, ByteDance)
     // =========================================================
     /**
      * Problem: Split array into m subarrays to minimize the largest
@@ -354,6 +362,8 @@ public class GoogleLevel {
     // =========================================================
     // G5. CANDY
     // Topics: Two-Pass Greedy + Constraint Propagation
+    // LeetCode: LC 135
+    // Frequency: 🔥🔥🔥 Very High (Google, Amazon, Microsoft)
     // =========================================================
     /**
      * Problem: n children in a line, each with a rating. Assign candy:
@@ -430,6 +440,8 @@ public class GoogleLevel {
     // =========================================================
     // G6. MINIMUM INCREMENTS ON SUBARRAYS TO FORM TARGET
     // Topics: Greedy + Difference Reasoning + Math
+    // LeetCode: LC 1526
+    // Frequency: 🔥 Medium / Google Hard (Google)
     // =========================================================
     /**
      * Problem: Starting from an all-zero array, each operation picks a subarray

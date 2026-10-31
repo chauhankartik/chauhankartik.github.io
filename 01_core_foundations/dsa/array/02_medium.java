@@ -5,15 +5,15 @@
  *  or require non-obvious transformations.
  * ============================================================
  *
- *  Problems:
- *   M1. 3Sum
- *   M2. Product of Array Except Self
- *   M3. Container With Most Water
- *   M4. Rotate Array
- *   M5. Next Permutation
- *   M6. Sort Colors (Dutch National Flag)
- *   M7. Merge Intervals
- *   M8. Spiral Matrix
+ *  Problems & Interview Frequencies:
+ *   M1. 3Sum                           [🔥🔥🔥 Very High - Meta, Amazon, Google, Microsoft, Apple]
+ *   M2. Product of Array Except Self   [🔥🔥🔥 Very High - Amazon, Meta, Google, Apple, Microsoft]
+ *   M3. Container With Most Water      [🔥🔥🔥 Very High - Amazon, Google, Meta, Adobe]
+ *   M4. Rotate Array                   [🔥🔥🔥 Very High - Amazon, Microsoft, Meta]
+ *   M5. Next Permutation               [🔥🔥🔥 Very High - Meta, Google, Amazon, Bloomberg]
+ *   M6. Sort Colors                    [🔥🔥🔥 Very High - Microsoft, Amazon, Meta, Google]
+ *   M7. Merge Intervals                [🔥🔥🔥 Very High - Meta, Amazon, Google, Microsoft]
+ *   M8. Spiral Matrix                  [🔥🔥🔥 Very High - Microsoft, Amazon, Apple, Google]
  *
  * ============================================================
  */
@@ -24,6 +24,8 @@ public class Medium {
     // =========================================================
     // M1. 3SUM
     // Pattern: Sort + Two Pointers (reduce to Two Sum)
+    // LeetCode: LC 15
+    // Frequency: 🔥🔥🔥 Very High (Meta, Amazon, Google, Microsoft, Apple)
     // =========================================================
     /**
      * Problem: Find all unique triplets [a, b, c] where a + b + c = 0.
@@ -89,6 +91,8 @@ public class Medium {
     // =========================================================
     // M2. PRODUCT OF ARRAY EXCEPT SELF
     // Pattern: Prefix Product + Suffix Product
+    // LeetCode: LC 238
+    // Frequency: 🔥🔥🔥 Very High (Amazon, Meta, Google, Apple, Microsoft)
     // =========================================================
     /**
      * Problem: Return array where output[i] = product of all elements
@@ -144,6 +148,8 @@ public class Medium {
     // =========================================================
     // M3. CONTAINER WITH MOST WATER
     // Pattern: Two Pointers (greedy shrink from outside)
+    // LeetCode: LC 11
+    // Frequency: 🔥🔥🔥 Very High (Amazon, Google, Meta, Adobe)
     // =========================================================
     /**
      * Problem: Given heights[0..n-1], find two lines that form a container
@@ -197,6 +203,8 @@ public class Medium {
     // =========================================================
     // M4. ROTATE ARRAY
     // Pattern: Reverse Trick (three reverses)
+    // LeetCode: LC 189
+    // Frequency: 🔥🔥🔥 Very High (Amazon, Microsoft, Meta)
     // =========================================================
     /**
      * Problem: Rotate array right by k positions.
@@ -248,6 +256,8 @@ public class Medium {
     // =========================================================
     // M5. NEXT PERMUTATION
     // Pattern: Lexicographic Algorithm (find, swap, reverse)
+    // LeetCode: LC 31
+    // Frequency: 🔥🔥🔥 Very High (Meta, Google, Amazon, Bloomberg)
     // =========================================================
     /**
      * Problem: Rearrange numbers into the next lexicographically
@@ -308,6 +318,8 @@ public class Medium {
     // =========================================================
     // M6. SORT COLORS (DUTCH NATIONAL FLAG)
     // Pattern: Three-Way Partition (Dijkstra)
+    // LeetCode: LC 75
+    // Frequency: 🔥🔥🔥 Very High (Microsoft, Amazon, Meta, Google)
     // =========================================================
     /**
      * Problem: Sort array containing only 0, 1, 2 in ONE pass.
@@ -366,6 +378,8 @@ public class Medium {
     // =========================================================
     // M7. MERGE INTERVALS
     // Pattern: Sort + Linear Sweep
+    // LeetCode: LC 56
+    // Frequency: 🔥🔥🔥 Very High (Meta, Amazon, Google, Microsoft, Bloomberg)
     // =========================================================
     /**
      * Problem: Given intervals [[1,3],[2,6],[8,10],[15,18]],
@@ -439,6 +453,8 @@ public class Medium {
     // =========================================================
     // M8. SPIRAL MATRIX
     // Pattern: Boundary Simulation (4 pointers)
+    // LeetCode: LC 54
+    // Frequency: 🔥🔥🔥 Very High (Microsoft, Amazon, Apple, Google, Meta)
     // =========================================================
     /**
      * Problem: Return all elements of an m×n matrix in spiral order.

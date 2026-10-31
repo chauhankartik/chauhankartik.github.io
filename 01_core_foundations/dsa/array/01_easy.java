@@ -5,18 +5,19 @@
  *  pattern from 00_theory.md.
  * ============================================================
  *
- *  Problems:
- *   E1. Remove Duplicates from Sorted Array
- *   E2. Best Time to Buy and Sell Stock
- *   E3. Merge Sorted Array
- *   E4. Move Zeroes
- *   E5. Plus One
- *   E6. Pascal's Triangle
- *   E7. Running Sum of 1D Array
- *   E8. Maximum Subarray (Kadane's Algorithm)
+ *  Problems & Interview Frequencies:
+ *   E1. Remove Duplicates from Sorted Array [🔥🔥🔥 Very High - Meta, Amazon, Microsoft]
+ *   E2. Best Time to Buy and Sell Stock     [🔥🔥🔥 Very High - Amazon, Meta, Google, Microsoft]
+ *   E3. Merge Sorted Array                  [🔥🔥🔥 Very High - Meta, Microsoft, Amazon]
+ *   E4. Move Zeroes                         [🔥🔥🔥 Very High - Meta, Amazon, Apple]
+ *   E5. Plus One                            [🔥🔥 High - Google, Amazon]
+ *   E6. Pascal's Triangle                   [🔥🔥 High - Amazon, Apple, Bloomberg]
+ *   E7. Running Sum of 1D Array             [🔥🔥 High - Amazon, Apple]
+ *   E8. Maximum Subarray (Kadane's)         [🔥🔥🔥 Very High - Amazon, Microsoft, Google]
  *
  *  Each problem includes:
  *   - Pattern tag
+ *   - LeetCode reference & Interview Frequency
  *   - Brute force → optimal progression
  *   - Complexity proof
  *   - Follow-up question + answer
@@ -29,6 +30,8 @@ public class Easy {
     // =========================================================
     // E1. REMOVE DUPLICATES FROM SORTED ARRAY
     // Pattern: Two Pointers (slow/fast — in-place write)
+    // LeetCode: LC 26
+    // Frequency: 🔥🔥🔥 Very High (Meta, Amazon, Microsoft, Apple)
     // =========================================================
     /**
      * Problem: Given a sorted array nums, remove duplicates IN-PLACE
@@ -89,6 +92,8 @@ public class Easy {
     // =========================================================
     // E2. BEST TIME TO BUY AND SELL STOCK
     // Pattern: Running Minimum (Kadane's variant)
+    // LeetCode: LC 121
+    // Frequency: 🔥🔥🔥 Very High (Amazon, Meta, Google, Microsoft, Citadel)
     // =========================================================
     /**
      * Problem: Given prices[i] = price on day i, find max profit from
@@ -149,6 +154,8 @@ public class Easy {
     // =========================================================
     // E3. MERGE SORTED ARRAY
     // Pattern: Two Pointers from End (reverse merge)
+    // LeetCode: LC 88
+    // Frequency: 🔥🔥🔥 Very High (Meta, Microsoft, Amazon)
     // =========================================================
     /**
      * Problem: nums1 has m elements + n extra zeros at end.
@@ -193,6 +200,8 @@ public class Easy {
     // =========================================================
     // E4. MOVE ZEROES
     // Pattern: Two Pointers (partition / snowball technique)
+    // LeetCode: LC 283
+    // Frequency: 🔥🔥🔥 Very High (Meta, Amazon, Apple, Microsoft)
     // =========================================================
     /**
      * Problem: Move all zeroes to end of array, maintaining order
@@ -246,6 +255,8 @@ public class Easy {
     // =========================================================
     // E5. PLUS ONE
     // Pattern: Array Simulation (Carry Propagation)
+    // LeetCode: LC 66
+    // Frequency: 🔥🔥 High (Google, Amazon)
     // =========================================================
     /**
      * Problem: Given a number as an array of digits, add one.
@@ -288,6 +299,8 @@ public class Easy {
     // =========================================================
     // E6. PASCAL'S TRIANGLE
     // Pattern: Dynamic Programming on Array (build row from previous)
+    // LeetCode: LC 118
+    // Frequency: 🔥🔥 High (Amazon, Apple, Bloomberg)
     // =========================================================
     /**
      * Problem: Generate first numRows rows of Pascal's Triangle.
@@ -344,6 +357,8 @@ public class Easy {
     // =========================================================
     // E7. RUNNING SUM OF 1D ARRAY
     // Pattern: Prefix Sum (in-place)
+    // LeetCode: LC 1480
+    // Frequency: 🔥🔥 High (Amazon, Apple)
     // =========================================================
     /**
      * Problem: Return running sum where runningSum[i] = sum(nums[0]..nums[i]).
@@ -385,6 +400,8 @@ public class Easy {
     // =========================================================
     // E8. MAXIMUM SUBARRAY (KADANE'S ALGORITHM)
     // Pattern: Kadane's Algorithm (DP / Greedy on subarrays)
+    // LeetCode: LC 53
+    // Frequency: 🔥🔥🔥 Very High (Amazon, Microsoft, Google, LinkedIn)
     // =========================================================
     /**
      * Problem: Find the contiguous subarray with the largest sum.

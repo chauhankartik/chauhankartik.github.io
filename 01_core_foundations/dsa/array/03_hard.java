@@ -5,13 +5,13 @@
  *  algorithmic thinking and multi-pattern reasoning.
  * ============================================================
  *
- *  Problems:
- *   H1. Trapping Rain Water
- *   H2. First Missing Positive
- *   H3. Sliding Window Maximum
- *   H4. Median of Two Sorted Arrays
- *   H5. Maximum Gap
- *   H6. Longest Increasing Subsequence
+ *  Problems & Interview Frequencies:
+ *   H1. Trapping Rain Water            [🔥🔥🔥 Very High - Google, Amazon, Meta, Goldman Sachs]
+ *   H2. First Missing Positive         [🔥🔥🔥 Very High - Amazon, Microsoft, Google, Meta]
+ *   H3. Sliding Window Maximum         [🔥🔥🔥 Very High - Amazon, Google, Meta, Citadel]
+ *   H4. Median of Two Sorted Arrays    [🔥🔥🔥 Very High - Google, Amazon, Microsoft, Apple]
+ *   H5. Maximum Gap                    [🔥 Medium - Google, Amazon]
+ *   H6. Longest Increasing Subsequence [🔥🔥🔥 Very High - Amazon, Google, Microsoft]
  *
  * ============================================================
  */
@@ -22,6 +22,8 @@ public class Hard {
     // =========================================================
     // H1. TRAPPING RAIN WATER
     // Pattern: Two Pointers / Prefix Max (multiple approaches)
+    // LeetCode: LC 42
+    // Frequency: 🔥🔥🔥 Very High (Google, Amazon, Meta, Goldman Sachs)
     // =========================================================
     /**
      * Problem: Given elevation map height[0..n-1], compute how much
@@ -110,6 +112,8 @@ public class Hard {
     // =========================================================
     // H2. FIRST MISSING POSITIVE
     // Pattern: Cyclic Sort / In-Place Hashing
+    // LeetCode: LC 41
+    // Frequency: 🔥🔥🔥 Very High (Amazon, Microsoft, Google, Meta)
     // =========================================================
     /**
      * Problem: Find the smallest positive integer NOT in the array.
@@ -171,6 +175,8 @@ public class Hard {
     // =========================================================
     // H3. SLIDING WINDOW MAXIMUM
     // Pattern: Monotonic Deque
+    // LeetCode: LC 239
+    // Frequency: 🔥🔥🔥 Very High (Amazon, Google, Meta, Citadel)
     // =========================================================
     /**
      * Problem: Given array and window size k, return max element in
@@ -234,6 +240,8 @@ public class Hard {
     // =========================================================
     // H4. MEDIAN OF TWO SORTED ARRAYS
     // Pattern: Binary Search on Partition
+    // LeetCode: LC 4
+    // Frequency: 🔥🔥🔥 Very High (Google, Amazon, Microsoft, Apple, Goldman Sachs)
     // =========================================================
     /**
      * Problem: Find median of two sorted arrays in O(log(m+n)) time.
@@ -312,6 +320,8 @@ public class Hard {
     // =========================================================
     // H5. MAXIMUM GAP
     // Pattern: Bucket / Pigeonhole Principle
+    // LeetCode: LC 164
+    // Frequency: 🔥 Medium (Google, Amazon)
     // =========================================================
     /**
      * Problem: Given an unsorted array, find the max difference between
@@ -387,6 +397,8 @@ public class Hard {
     // =========================================================
     // H6. LONGEST INCREASING SUBSEQUENCE
     // Pattern: DP + Binary Search (Patience Sorting)
+    // LeetCode: LC 300
+    // Frequency: 🔥🔥🔥 Very High (Amazon, Google, Microsoft)
     // =========================================================
     /**
      * Problem: Find the length of the longest strictly increasing subsequence.

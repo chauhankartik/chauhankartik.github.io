@@ -178,27 +178,27 @@ for (int right = 0; right < n; right++) {
 
 ---
 
-## Problem → Pattern Map (for Google interviews)
+## Problem → Pattern Map (with Interview Frequency)
 
 ```
-Two Sum (sorted)         → Two Pointers
-3Sum                     → Sort + Two Pointers
-Container With Most Water → Two Pointers (greedy)
-Trapping Rain Water      → Two Pointers / Prefix max
-Max Subarray             → Kadane's Algorithm
-Buy/Sell Stock           → Running Minimum (Kadane variant)
-Product Except Self      → Prefix/Suffix Product
-Remove Duplicates        → Two Pointers (slow/fast)
-Merge Sorted Array       → Two Pointers from end
-Rotate Array             → Three Reverses
-Next Permutation         → Lexicographic Algorithm
-Sort Colors              → Dutch National Flag
-Merge Intervals          → Sort + Sweep
-Sliding Window Max       → Monotonic Deque
-First Missing Positive   → Cyclic Sort
-Median of 2 Sorted       → Binary Search on Partition
-Split Array Largest Sum  → Binary Search on Answer
-LIS                      → DP + Binary Search (Patience Sort)
+Two Sum (sorted)          [🔥🔥🔥 Very High] → Two Pointers
+3Sum                      [🔥🔥🔥 Very High] → Sort + Two Pointers
+Container With Most Water [🔥🔥🔥 Very High] → Two Pointers (greedy)
+Trapping Rain Water       [🔥🔥🔥 Very High] → Two Pointers / Prefix max
+Max Subarray              [🔥🔥🔥 Very High] → Kadane's Algorithm
+Buy/Sell Stock            [🔥🔥🔥 Very High] → Running Minimum (Kadane variant)
+Product Except Self       [🔥🔥🔥 Very High] → Prefix/Suffix Product
+Remove Duplicates         [🔥🔥🔥 Very High] → Two Pointers (slow/fast)
+Merge Sorted Array        [🔥🔥🔥 Very High] → Two Pointers from end
+Rotate Array              [🔥🔥🔥 Very High] → Three Reverses
+Next Permutation          [🔥🔥🔥 Very High] → Lexicographic Algorithm
+Sort Colors               [🔥🔥🔥 Very High] → Dutch National Flag
+Merge Intervals           [🔥🔥🔥 Very High] → Sort + Sweep
+Sliding Window Max        [🔥🔥🔥 Very High] → Monotonic Deque
+First Missing Positive    [🔥🔥🔥 Very High] → Cyclic Sort
+Median of 2 Sorted        [🔥🔥🔥 Very High] → Binary Search on Partition
+Split Array Largest Sum   [🔥🔥 High]      → Binary Search on Answer
+LIS                       [🔥🔥🔥 Very High] → DP + Binary Search (Patience Sort)
 ```
 
 ---

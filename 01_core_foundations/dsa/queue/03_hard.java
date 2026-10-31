@@ -3,12 +3,12 @@
  *  QUEUE — HARD PROBLEMS
  * ============================================================
  *
- *  H1.  Sliding Window Maximum                    LC 239
- *  H2.  Shortest Subarray with Sum at Least K     LC 862
- *  H3.  Jump Game VI                              LC 1696
- *  H4.  Word Ladder                               LC 127
- *  H5.  Constrained Subsequence Sum               LC 1425
- *  H6.  Shortest Path with Obstacles Elimination  LC 1293
+ *  H1.  Sliding Window Maximum                    LC 239 [🔥🔥🔥 Very High - Amazon, Google, Meta, Citadel]
+ *  H2.  Shortest Subarray with Sum at Least K     LC 862 [🔥🔥 High - Google, Amazon]
+ *  H3.  Jump Game VI                              LC 1696 [🔥🔥 High - Google, Amazon]
+ *  H4.  Word Ladder                               LC 127 [🔥🔥🔥 Very High - Amazon, Google, Meta, Bloomberg]
+ *  H5.  Constrained Subsequence Sum               LC 1425 [🔥🔥 High - Google, ByteDance]
+ *  H6.  Shortest Path with Obstacles Elimination  LC 1293 [🔥🔥 High - Amazon, Google, Microsoft]
  *
  *  Each problem includes:
  *   - Pattern tag
@@ -24,6 +24,7 @@ class QueueHard {
     // =========================================================
     // H1. Sliding Window Maximum  LC 239
     // Pattern: MONOTONIC DEQUE (decreasing)
+    // Frequency: 🔥🔥🔥 Very High (Amazon, Google, Meta, Citadel)
     // =========================================================
     /**
      * Find the maximum in every contiguous window of size k.
@@ -84,6 +85,7 @@ class QueueHard {
     // =========================================================
     // H2. Shortest Subarray with Sum at Least K  LC 862
     // Pattern: MONOTONIC DEQUE + PREFIX SUMS
+    // Frequency: 🔥🔥 High (Google, Amazon)
     // =========================================================
     /**
      * Find the shortest subarray with sum ≥ k. Array can have NEGATIVES.
@@ -152,6 +154,7 @@ class QueueHard {
     // =========================================================
     // H3. Jump Game VI  LC 1696
     // Pattern: DP + MONOTONIC DEQUE
+    // Frequency: 🔥🔥 High (Google, Amazon)
     // =========================================================
     /**
      * From index 0, jump at most k steps forward. Maximize score sum.
@@ -201,6 +204,7 @@ class QueueHard {
     // =========================================================
     // H4. Word Ladder  LC 127
     // Pattern: BFS — State-Space Search with HashSet
+    // Frequency: 🔥🔥🔥 Very High (Amazon, Google, Meta, Bloomberg)
     // =========================================================
     /**
      * Transform beginWord → endWord, changing one letter at a time.
@@ -267,6 +271,7 @@ class QueueHard {
     // =========================================================
     // H5. Constrained Subsequence Sum  LC 1425
     // Pattern: DP + MONOTONIC DEQUE (same as Jump Game VI)
+    // Frequency: 🔥🔥 High (Google, ByteDance)
     // =========================================================
     /**
      * Maximum sum of a subsequence where consecutive chosen elements
@@ -316,6 +321,7 @@ class QueueHard {
     // =========================================================
     // H6. Shortest Path with Obstacles Elimination  LC 1293
     // Pattern: BFS with Extra State Dimension
+    // Frequency: 🔥🔥 High (Amazon, Google, Microsoft)
     // =========================================================
     /**
      * Grid with obstacles. Can eliminate at most k obstacles.

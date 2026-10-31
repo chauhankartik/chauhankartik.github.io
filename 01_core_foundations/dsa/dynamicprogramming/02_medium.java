@@ -3,15 +3,15 @@
  *  DYNAMIC PROGRAMMING — MEDIUM PROBLEMS
  * ============================================================
  *
- *  M1.  Coin Change                               LC 322
- *  M2.  Longest Increasing Subsequence            LC 300
- *  M3.  Word Break                                LC 139
- *  M4.  Decode Ways                               LC 91
- *  M5.  Unique Paths                              LC 62
- *  M6.  Partition Equal Subset Sum                 LC 416
- *  M7.  House Robber II                           LC 213
- *  M8.  Longest Palindromic Substring             LC 5
- *  M9.  Jump Game II                              LC 45
+ *  M1.  Coin Change                               LC 322 [🔥🔥🔥 Very High - Amazon, Meta, Google, Microsoft]
+ *  M2.  Longest Increasing Subsequence            LC 300 [🔥🔥🔥 Very High - Amazon, Google, Microsoft]
+ *  M3.  Word Break                                LC 139 [🔥🔥🔥 Very High - Meta, Amazon, Bloomberg, Google]
+ *  M4.  Decode Ways                               LC 91 [🔥🔥🔥 Very High - Meta, Google, Amazon]
+ *  M5.  Unique Paths                              LC 62 [🔥🔥🔥 Very High - Amazon, Google, Meta]
+ *  M6.  Partition Equal Subset Sum                 LC 416 [🔥🔥🔥 Very High - Meta, Amazon, Google]
+ *  M7.  House Robber II                           LC 213 [🔥🔥 High - Meta, Amazon]
+ *  M8.  Longest Palindromic Substring             LC 5 [🔥🔥🔥 Very High - Amazon, Microsoft, Google, Meta]
+ *  M9.  Jump Game II                              LC 45 [🔥🔥🔥 Very High - Amazon, Google, Meta]
  *
  *  Each problem includes:
  *   - Pattern tag
@@ -27,6 +27,7 @@ class DPMedium {
     // =========================================================
     // M1. Coin Change  LC 322
     // Pattern: UNBOUNDED KNAPSACK (min count to reach target)
+    // Frequency: 🔥🔥🔥 Very High (Amazon, Meta, Google, Microsoft)
     // =========================================================
     /**
      * Given coins[] and amount, find MINIMUM number of coins to make that amount.
@@ -73,6 +74,7 @@ class DPMedium {
     // =========================================================
     // M2. Longest Increasing Subsequence  LC 300
     // Pattern: LINEAR DP + BINARY SEARCH optimization
+    // Frequency: 🔥🔥🔥 Very High (Amazon, Google, Microsoft)
     // =========================================================
     /**
      * Find the length of the longest strictly increasing subsequence.
@@ -145,6 +147,7 @@ class DPMedium {
     // =========================================================
     // M3. Word Break  LC 139
     // Pattern: LINEAR DP with substring matching
+    // Frequency: 🔥🔥🔥 Very High (Meta, Amazon, Bloomberg, Google)
     // =========================================================
     /**
      * Given a string s and a dictionary wordDict, return true if s can be
@@ -189,6 +192,7 @@ class DPMedium {
     // =========================================================
     // M4. Decode Ways  LC 91
     // Pattern: LINEAR DP (single digit or two digits)
+    // Frequency: 🔥🔥🔥 Very High (Meta, Google, Amazon)
     // =========================================================
     /**
      * 'A' → "1", 'B' → "2", ..., 'Z' → "26".
@@ -235,6 +239,7 @@ class DPMedium {
     // =========================================================
     // M5. Unique Paths  LC 62
     // Pattern: GRID DP (2D)
+    // Frequency: 🔥🔥🔥 Very High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Robot at top-left of m×n grid. Can only move right or down.
@@ -283,6 +288,7 @@ class DPMedium {
     // =========================================================
     // M6. Partition Equal Subset Sum  LC 416
     // Pattern: 0/1 KNAPSACK (subset sum variant)
+    // Frequency: 🔥🔥🔥 Very High (Meta, Amazon, Google)
     // =========================================================
     /**
      * Can the array be partitioned into two subsets with equal sum?
@@ -328,6 +334,7 @@ class DPMedium {
     // =========================================================
     // M7. House Robber II (Circular)  LC 213
     // Pattern: LINEAR DP + CIRCULAR DECOMPOSITION
+    // Frequency: 🔥🔥 High (Meta, Amazon)
     // =========================================================
     /**
      * Same as House Robber I, but houses are in a circle.
@@ -367,6 +374,7 @@ class DPMedium {
     // =========================================================
     // M8. Longest Palindromic Substring  LC 5
     // Pattern: INTERVAL DP / EXPAND AROUND CENTER
+    // Frequency: 🔥🔥🔥 Very High (Amazon, Microsoft, Google, Meta)
     // =========================================================
     /**
      * Find the longest substring that is a palindrome.
@@ -425,6 +433,7 @@ class DPMedium {
     // =========================================================
     // M9. Jump Game II  LC 45
     // Pattern: GREEDY (optimal) / DP (cleaner to understand)
+    // Frequency: 🔥🔥🔥 Very High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Each element is the max jump length from that position.

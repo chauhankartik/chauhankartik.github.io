@@ -3,14 +3,14 @@
  *  STACK — EASY PROBLEMS
  * ============================================================
  *
- *  E1.  Valid Parentheses                          LC 20
- *  E2.  Min Stack                                  LC 155
- *  E3.  Implement Queue using Stacks               LC 232
- *  E4.  Baseball Game                              LC 682
- *  E5.  Next Greater Element I                     LC 496
- *  E6.  Backspace String Compare                   LC 844
- *  E7.  Remove All Adjacent Duplicates in String   LC 1047
- *  E8.  Make The String Great                      LC 1544
+ *  E1.  Valid Parentheses                          LC 20 [🔥🔥🔥 Very High - Meta, Amazon, Google, Microsoft, Apple]
+ *  E2.  Min Stack                                  LC 155 [🔥🔥🔥 Very High - Amazon, Bloomberg, Microsoft]
+ *  E3.  Implement Queue using Stacks               LC 232 [🔥🔥 High - Amazon, Microsoft, Apple]
+ *  E4.  Baseball Game                              LC 682 [🔥 Medium - Amazon]
+ *  E5.  Next Greater Element I                     LC 496 [🔥🔥 High - Amazon, Google]
+ *  E6.  Backspace String Compare                   LC 844 [🔥🔥 High - Google, Amazon]
+ *  E7.  Remove All Adjacent Duplicates in String   LC 1047 [🔥🔥🔥 Very High - Meta, Amazon]
+ *  E8.  Make The String Great                      LC 1544 [🔥 Medium - Google]
  *
  *  Each problem includes:
  *   - Pattern tag
@@ -26,6 +26,7 @@ class StackEasy {
     // =========================================================
     // E1. Valid Parentheses  LC 20
     // Pattern: MATCHING — Stack for bracket pairing
+    // Frequency: 🔥🔥🔥 Very High (Meta, Amazon, Google, Microsoft, Apple)
     // =========================================================
     /**
      * Given a string with '(', ')', '{', '}', '[', ']', determine
@@ -63,6 +64,7 @@ class StackEasy {
     // =========================================================
     // E2. Min Stack  LC 155
     // Pattern: STACK AS HISTORY — O(1) getMin
+    // Frequency: 🔥🔥🔥 Very High (Amazon, Bloomberg, Microsoft)
     // =========================================================
     /**
      * Design a stack supporting push, pop, top, and getMin in O(1).
@@ -112,6 +114,7 @@ class StackEasy {
     // =========================================================
     // E3. Implement Queue using Stacks  LC 232
     // Pattern: DESIGN — Two Stacks (amortized O(1))
+    // Frequency: 🔥🔥 High (Amazon, Microsoft, Apple)
     // =========================================================
     /**
      * Implement FIFO queue using only two LIFO stacks.
@@ -163,6 +166,7 @@ class StackEasy {
     // =========================================================
     // E4. Baseball Game  LC 682
     // Pattern: SIMULATION — Stack as record keeper
+    // Frequency: 🔥 Medium (Amazon)
     // =========================================================
     /**
      * Process operations: integer (add score), '+' (sum of last two),
@@ -208,6 +212,7 @@ class StackEasy {
     // =========================================================
     // E5. Next Greater Element I  LC 496
     // Pattern: MONOTONIC STACK (decreasing)
+    // Frequency: 🔥🔥 High (Amazon, Google)
     // =========================================================
     /**
      * Two arrays: nums1 is a subset of nums2.
@@ -250,6 +255,7 @@ class StackEasy {
     // =========================================================
     // E6. Backspace String Compare  LC 844
     // Pattern: SIMULATION — Stack or Two Pointers
+    // Frequency: 🔥🔥 High (Google, Amazon)
     // =========================================================
     /**
      * '#' means backspace. Compare two strings after applying backspaces.
@@ -287,6 +293,7 @@ class StackEasy {
     // =========================================================
     // E7. Remove All Adjacent Duplicates in String  LC 1047
     // Pattern: STACK AS BUFFER
+    // Frequency: 🔥🔥🔥 Very High (Meta, Amazon)
     // =========================================================
     /**
      * Repeatedly remove adjacent duplicate pairs until no more exist.
@@ -322,6 +329,7 @@ class StackEasy {
     // =========================================================
     // E8. Make The String Great  LC 1544
     // Pattern: STACK AS BUFFER
+    // Frequency: 🔥 Medium (Google)
     // =========================================================
     /**
      * Remove pairs of adjacent characters where one is upper and one

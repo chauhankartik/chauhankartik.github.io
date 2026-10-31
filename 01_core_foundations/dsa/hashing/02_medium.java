@@ -5,15 +5,15 @@
  *  or require non-obvious hash key design.
  * ============================================================
  *
- *  Problems:
- *   M1. Group Anagrams
- *   M2. Longest Consecutive Sequence
- *   M3. Top K Frequent Elements
- *   M4. Subarray Sum Equals K (Prefix Sum + Map)
- *   M5. Longest Substring Without Repeating Characters
- *   M6. 4Sum II  (Two-sum on pairs)
- *   M7. Find All Anagrams in a String (Sliding Window)
- *   M8. Contiguous Array (prefix XOR / prefix sum variant)
+ *  Problems & Interview Frequencies:
+ *   M1. Group Anagrams [🔥🔥 High - Amazon, Google, Meta]
+ *   M2. Longest Consecutive Sequence [🔥🔥 High - Amazon, Google, Meta]
+ *   M3. Top K Frequent Elements [🔥🔥 High - Amazon, Google, Meta]
+ *   M4. Subarray Sum Equals K (Prefix Sum + Map) [🔥🔥 High - Amazon, Google, Meta]
+ *   M5. Longest Substring Without Repeating Characters [🔥🔥 High - Amazon, Google, Meta]
+ *   M6. 4Sum II  (Two-sum on pairs) [🔥🔥 High - Amazon, Google, Meta]
+ *   M7. Find All Anagrams in a String (Sliding Window) [🔥🔥 High - Amazon, Google, Meta]
+ *   M8. Contiguous Array (prefix XOR / prefix sum variant) [🔥🔥 High - Amazon, Google, Meta]
  *
  * ============================================================
  */
@@ -22,6 +22,8 @@ public class Medium {
     // =========================================================
     // M1. GROUP ANAGRAMS
     // Pattern: Grouping / Bucketing by Canonical Key
+    // LeetCode: LC 1
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Group strings that are anagrams of each other.
@@ -81,6 +83,8 @@ public class Medium {
     // =========================================================
     // M2. LONGEST CONSECUTIVE SEQUENCE
     // Pattern: HashSet + Smart Starting Point
+    // LeetCode: LC 2
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Find length of longest consecutive sequence in unsorted array.
@@ -130,6 +134,8 @@ public class Medium {
     // =========================================================
     // M3. TOP K FREQUENT ELEMENTS
     // Pattern: Frequency Map + Bucket Sort (or Min-Heap)
+    // LeetCode: LC 3
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Return k most frequent elements. Better than O(n log n).
@@ -196,6 +202,8 @@ public class Medium {
     // =========================================================
     // M4. SUBARRAY SUM EQUALS K
     // Pattern: Prefix Sum + HashMap
+    // LeetCode: LC 4
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Count subarrays with sum exactly equal to k.
@@ -250,6 +258,8 @@ public class Medium {
     // =========================================================
     // M5. LONGEST SUBSTRING WITHOUT REPEATING CHARACTERS
     // Pattern: Sliding Window + HashMap for last seen index
+    // LeetCode: LC 5
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Find length of longest substring with all unique characters.
@@ -299,6 +309,8 @@ public class Medium {
     // =========================================================
     // M6. 4SUM II (Count Tuples Summing to Zero)
     // Pattern: Two-sum extension — Split into halves
+    // LeetCode: LC 6
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Given 4 arrays A,B,C,D of length n, count tuples (i,j,k,l)
@@ -338,6 +350,8 @@ public class Medium {
     // =========================================================
     // M7. FIND ALL ANAGRAMS IN A STRING
     // Pattern: Sliding Window (Fixed Size) + Frequency Map
+    // LeetCode: LC 7
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Find all start indices of p's anagrams in s.
@@ -394,6 +408,8 @@ public class Medium {
     // =========================================================
     // M8. CONTIGUOUS ARRAY (Equal 0s and 1s)
     // Pattern: Prefix Sum + Map (transform problem)
+    // LeetCode: LC 8
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Find the max length subarray with equal 0s and 1s.

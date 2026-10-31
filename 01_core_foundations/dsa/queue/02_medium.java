@@ -3,15 +3,15 @@
  *  QUEUE — MEDIUM PROBLEMS
  * ============================================================
  *
- *  M1.  Rotting Oranges                            LC 994
- *  M2.  Design Circular Queue                      LC 622
- *  M3.  Task Scheduler                             LC 621
- *  M4.  Dota2 Senate                               LC 649
- *  M5.  Walls and Gates                            LC 286
- *  M6.  Design Circular Deque                      LC 641
- *  M7.  Open the Lock                              LC 752
- *  M8.  Shortest Path in Binary Matrix             LC 1091
- *  M9.  01 Matrix                                  LC 542
+ *  M1.  Rotting Oranges                            LC 994 [🔥🔥🔥 Very High - Amazon, Microsoft, Meta]
+ *  M2.  Design Circular Queue                      LC 622 [🔥🔥 High - Amazon, Meta, Goldman Sachs]
+ *  M3.  Task Scheduler                             LC 621 [🔥🔥🔥 Very High - Meta, Amazon, Google]
+ *  M4.  Dota2 Senate                               LC 649 [🔥🔥 High - Amazon, Google, Microsoft]
+ *  M5.  Walls and Gates                            LC 286 [🔥🔥 High - Amazon, Google, Microsoft]
+ *  M6.  Design Circular Deque                      LC 641 [🔥🔥 High - Google, Amazon]
+ *  M7.  Open the Lock                              LC 752 [🔥🔥 High - Amazon, Google, Microsoft]
+ *  M8.  Shortest Path in Binary Matrix             LC 1091 [🔥🔥 High - Amazon, Google, Microsoft]
+ *  M9.  01 Matrix                                  LC 542 [🔥🔥 High - Google, Amazon]
  *
  *  Each problem includes:
  *   - Pattern tag
@@ -27,6 +27,7 @@ class QueueMedium {
     // =========================================================
     // M1. Rotting Oranges  LC 994
     // Pattern: MULTI-SOURCE BFS
+    // Frequency: 🔥🔥🔥 Very High (Amazon, Microsoft, Meta)
     // =========================================================
     /**
      * Grid with 0=empty, 1=fresh, 2=rotten.
@@ -100,6 +101,7 @@ class QueueMedium {
     // =========================================================
     // M2. Design Circular Queue  LC 622
     // Pattern: DESIGN — Array-Based Circular Buffer
+    // Frequency: 🔥🔥 High (Amazon, Meta, Goldman Sachs)
     // =========================================================
     /**
      * Implement a circular queue with fixed capacity.
@@ -164,6 +166,7 @@ class QueueMedium {
     // =========================================================
     // M3. Task Scheduler  LC 621
     // Pattern: GREEDY + QUEUE / MATH
+    // Frequency: 🔥🔥🔥 Very High (Meta, Amazon, Google)
     // =========================================================
     /**
      * Tasks with cooldown: same task must wait n intervals between executions.
@@ -205,6 +208,7 @@ class QueueMedium {
     // =========================================================
     // M4. Dota2 Senate  LC 649
     // Pattern: TWO-QUEUE GREEDY SIMULATION
+    // Frequency: 🔥🔥 High (Amazon, Google, Microsoft)
     // =========================================================
     /**
      * Two parties: Radiant (R) and Dire (D).
@@ -251,6 +255,7 @@ class QueueMedium {
     // =========================================================
     // M5. Walls and Gates  LC 286
     // Pattern: MULTI-SOURCE BFS (from gates)
+    // Frequency: 🔥🔥 High (Amazon, Google, Microsoft)
     // =========================================================
     /**
      * Grid: -1 = wall, 0 = gate, INF = empty room.
@@ -299,6 +304,7 @@ class QueueMedium {
     // =========================================================
     // M6. Design Circular Deque  LC 641
     // Pattern: DESIGN — Array-Based Circular Double-Ended Queue
+    // Frequency: 🔥🔥 High (Google, Amazon)
     // =========================================================
     /**
      * Circular deque with fixed capacity.
@@ -365,6 +371,7 @@ class QueueMedium {
     // =========================================================
     // M7. Open the Lock  LC 752
     // Pattern: BFS — State Space Search
+    // Frequency: 🔥🔥 High (Amazon, Google, Microsoft)
     // =========================================================
     /**
      * 4-digit lock (0000 to 9999). Each move: rotate one wheel ±1.
@@ -426,6 +433,7 @@ class QueueMedium {
     // =========================================================
     // M8. Shortest Path in Binary Matrix  LC 1091
     // Pattern: BFS — 8-Directional Grid
+    // Frequency: 🔥🔥 High (Amazon, Google, Microsoft)
     // =========================================================
     /**
      * Shortest path from top-left to bottom-right in binary grid.
@@ -472,6 +480,7 @@ class QueueMedium {
     // =========================================================
     // M9. 01 Matrix  LC 542
     // Pattern: MULTI-SOURCE BFS (from zeros)
+    // Frequency: 🔥🔥 High (Google, Amazon)
     // =========================================================
     /**
      * Find the distance of each cell to the nearest 0.

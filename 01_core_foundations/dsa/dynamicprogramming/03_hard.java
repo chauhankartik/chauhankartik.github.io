@@ -3,12 +3,12 @@
  *  DYNAMIC PROGRAMMING — HARD PROBLEMS
  * ============================================================
  *
- *  H1.  Edit Distance                             LC 72
- *  H2.  Burst Balloons                            LC 312
- *  H3.  Palindrome Partitioning II                LC 132
- *  H4.  Longest Common Subsequence                LC 1143
- *  H5.  Maximal Square                            LC 221
- *  H6.  Interleaving String                       LC 97
+ *  H1.  Edit Distance                             LC 72 [🔥🔥🔥 Very High - Google, Amazon, Microsoft]
+ *  H2.  Burst Balloons                            LC 312 [🔥🔥 High - Google, Amazon]
+ *  H3.  Palindrome Partitioning II                LC 132 [🔥🔥 High - Google, Amazon, Microsoft]
+ *  H4.  Longest Common Subsequence                LC 1143 [🔥🔥🔥 Very High - Amazon, Microsoft, Google]
+ *  H5.  Maximal Square                            LC 221 [🔥🔥 High - Google, Amazon]
+ *  H6.  Interleaving String                       LC 97 [🔥🔥 High - Google, Amazon, Microsoft]
  *
  *  Each problem includes:
  *   - Pattern tag
@@ -24,6 +24,7 @@ class DPHard {
     // =========================================================
     // H1. Edit Distance (Levenshtein Distance)  LC 72
     // Pattern: STRING DP (2D: two strings)
+    // Frequency: 🔥🔥🔥 Very High (Google, Amazon, Microsoft)
     // =========================================================
     /**
      * Minimum operations to convert word1 → word2.
@@ -115,6 +116,7 @@ class DPHard {
     // =========================================================
     // H2. Burst Balloons  LC 312
     // Pattern: INTERVAL DP (reverse thinking: last balloon burst)
+    // Frequency: 🔥🔥 High (Google, Amazon)
     // =========================================================
     /**
      * n balloons with values nums[i]. Burst balloon i → get
@@ -175,6 +177,7 @@ class DPHard {
     // =========================================================
     // H3. Palindrome Partitioning II  LC 132
     // Pattern: LINEAR DP + PALINDROME PRECOMPUTATION
+    // Frequency: 🔥🔥 High (Google, Amazon, Microsoft)
     // =========================================================
     /**
      * Minimum cuts to partition a string into palindromic substrings.
@@ -226,6 +229,7 @@ class DPHard {
     // =========================================================
     // H4. Longest Common Subsequence  LC 1143
     // Pattern: STRING DP (classic 2D)
+    // Frequency: 🔥🔥🔥 Very High (Amazon, Microsoft, Google)
     // =========================================================
     /**
      * Find the length of the longest subsequence present in both strings.
@@ -314,6 +318,7 @@ class DPHard {
     // =========================================================
     // H5. Maximal Square  LC 221
     // Pattern: GRID DP (2D, square substructure)
+    // Frequency: 🔥🔥 High (Google, Amazon)
     // =========================================================
     /**
      * Find the largest square containing only 1's in a binary matrix.
@@ -372,6 +377,7 @@ class DPHard {
     // =========================================================
     // H6. Interleaving String  LC 97
     // Pattern: STRING DP (2D: two pointers advancing)
+    // Frequency: 🔥🔥 High (Google, Amazon, Microsoft)
     // =========================================================
     /**
      * Given s1, s2, s3: can s3 be formed by interleaving s1 and s2?

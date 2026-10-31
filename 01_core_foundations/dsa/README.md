@@ -19,7 +19,7 @@ Each module follows the same proven structure:
 | [Array](./array/) | Memory Contiguity, Two Pointers, Prefix Sums, Kadane's, Binary Search, Matrix | 7 files |
 | [Two Pointers](./twopointers/) | Left-Right Pointers, Fast-Slow Pointers, Container With Most Water, 3Sum | 7 files |
 | [Sliding Window](./sliding_window/) | Fixed Window, Dynamic Window, Monotonic Deque, Substring Maps | 7 files |
-| [Linked List](./linkedlist/) | Pointer Inversion, Cycle Detection (Floyd's), Merge K Sorted Lists, LRU Cache | 5 files |
+| [Linked List](./linkedlist/) | Pointer Inversion, Cycle Detection (Floyd's), Merge K Sorted Lists, LRU Cache | 6 files |
 | [Stack](./stack/) | LIFO Parsing, Balanced Parentheses, Monotonic Stack Linear Lookbehinds | 7 files |
 | [Queue](./queue/) | FIFO Buffers, Circular Queues, Monotonic Deques, Breadth Buffering | 7 files |
 | [Hashing](./hashing/) | Frequency Counting, Complement Lookup, Prefix+HashMap, Distributed Hash Maps | 8 files |
@@ -28,7 +28,7 @@ Each module follows the same proven structure:
 ### Phase 2: Hierarchical, Trees & Combinatorial Search
 | Module | Focus & Patterns | Files |
 |---|---|---|
-| [Tree](./tree/) | Binary Trees, BST Invariants, DFS/BFS, Lowest Common Ancestor (LCA), Serializer | 5 files |
+| [Tree](./tree/) | Binary Trees, BST Invariants, DFS/BFS, Lowest Common Ancestor (LCA), Serializer | 6 files |
 | [Trie](./trie/) | Prefix Trees, Bitwise XOR Tries, Autocomplete Engines, Word Search II | 7 files |
 | [Greedy](./greedy/) | Interval Scheduling, Two-Pointer Greedy, Heap Greedy, Monotonic Stacks | 7 files |
 | [Backtracking](./backtracking/) | State-Space Search Trees, Choose-Explore-Unchoose, Pruning, N-Queens, Sudoku | 7 files |

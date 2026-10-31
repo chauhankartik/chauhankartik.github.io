@@ -5,15 +5,15 @@
  *  pattern from 00_theory.md.
  * ============================================================
  *
- *  Problems:
- *   E1. Implement Trie (Prefix Tree) (LeetCode 208)
- *   E2. Longest Common Prefix (LeetCode 14)
- *   E3. Replace Words (LeetCode 648)
- *   E4. Map Sum Pairs (LeetCode 677)
- *   E5. Counting Words With a Given Prefix (LeetCode 2185)
- *   E6. Index Pairs of a String (LeetCode 1065)
- *   E7. Search Suggestions System (LeetCode 1268 - Basic Prefix Match)
- *   E8. Remove Sub-Folders from the Filesystem (LeetCode 1233)
+ *  Problems & Interview Frequencies:
+ *   E1. Implement Trie (Prefix Tree) (LeetCode 208) [🔥🔥🔥 Very High - Amazon, Google, Microsoft]
+ *   E2. Longest Common Prefix (LeetCode 14) [🔥🔥🔥 Very High - Amazon, Apple, Google]
+ *   E3. Replace Words (LeetCode 648) [🔥🔥 High - Amazon, Google]
+ *   E4. Map Sum Pairs (LeetCode 677) [🔥 Medium - Google, Amazon]
+ *   E5. Counting Words With a Given Prefix (LeetCode 2185) [🔥 Medium - Google]
+ *   E6. Index Pairs of a String (LeetCode 1065) [🔥 Medium - Amazon]
+ *   E7. Search Suggestions System (LeetCode 1268 - Basic Prefix Match) [🔥🔥🔥 Very High - Amazon, Google]
+ *   E8. Remove Sub-Folders from the Filesystem (LeetCode 1233) [🔥 Medium - Amazon]
  *
  *  Each problem includes:
  *   - Pattern tag
@@ -30,6 +30,7 @@ class Easy {
     // E1. IMPLEMENT TRIE (PREFIX TREE)
     // Pattern: Standard Array-Based Trie Node
     // LeetCode: 208
+    // Frequency: 🔥 Medium (Google, Amazon, Microsoft)
     // =========================================================
     /**
      * Problem: Implement a Trie with insert, search, and startsWith methods.
@@ -88,6 +89,7 @@ class Easy {
     // E2. LONGEST COMMON PREFIX
     // Pattern: Single Branch Trie Traversal
     // LeetCode: 14
+    // Frequency: 🔥 Medium (Google, Amazon, Microsoft)
     // =========================================================
     /**
      * Problem: Find longest common prefix among an array of strings.
@@ -131,6 +133,7 @@ class Easy {
     // E3. REPLACE WORDS
     // Pattern: Shortest Prefix Matching Trie
     // LeetCode: 648
+    // Frequency: 🔥 Medium (Google, Amazon, Microsoft)
     // =========================================================
     /**
      * Problem: Replace sentence words with shortest matching root from dictionary.
@@ -174,6 +177,7 @@ class Easy {
     // E4. MAP SUM PAIRS
     // Pattern: Node Pass-through Sum Tracking
     // LeetCode: 677
+    // Frequency: 🔥 Medium (Google, Amazon, Microsoft)
     // =========================================================
     /**
      * Problem: MapSum pairs string key with int value. Return sum of values of all keys with given prefix.
@@ -222,6 +226,7 @@ class Easy {
     // E5. COUNTING WORDS WITH A GIVEN PREFIX
     // Pattern: Trie Count Property / String Prefix Check
     // LeetCode: 2185
+    // Frequency: 🔥 Medium (Google, Amazon, Microsoft)
     // =========================================================
     /**
      * Problem: Count strings in words that have pref as a prefix.
@@ -243,6 +248,7 @@ class Easy {
     // E6. INDEX PAIRS OF A STRING
     // Pattern: Multi-pattern Substring Matching
     // LeetCode: 1065
+    // Frequency: 🔥 Medium (Google, Amazon, Microsoft)
     // =========================================================
     /**
      * Problem: Given text and words array, return all index pairs [i, j] such that text[i..j] is in words.
@@ -277,6 +283,7 @@ class Easy {
     // E7. SEARCH SUGGESTIONS SYSTEM (BASIC)
     // Pattern: Prefix Node Lexicographical Search
     // LeetCode: 1268
+    // Frequency: 🔥 Medium (Google, Amazon, Microsoft)
     // =========================================================
     /**
      * Problem: Return top 3 lexicographical matching products for each character typed in searchWord.
@@ -323,6 +330,7 @@ class Easy {
     // E8. REMOVE SUB-FOLDERS FROM THE FILESYSTEM
     // Pattern: Folder Path Hierarchy Trie
     // LeetCode: 1233
+    // Frequency: 🔥 Medium (Google, Amazon, Microsoft)
     // =========================================================
     /**
      * Problem: Remove all sub-folders from folder list.

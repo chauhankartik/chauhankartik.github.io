@@ -5,15 +5,15 @@
  *  pattern from 00_theory.md.
  * ============================================================
  *
- *  Problems:
- *   M1. Design Add and Search Words Data Structure (LeetCode 211 - Wildcard '.')
- *   M2. Maximum XOR of Two Numbers in an Array (LeetCode 421 - Bitwise Trie)
- *   M3. Stream of Characters (LeetCode 1032 - Reverse Trie)
- *   M4. Shortest Encoding of Words (LeetCode 820 - Suffix Trie)
- *   M5. Implement Magic Dictionary (LeetCode 676 - 1 Edit Search)
- *   M6. Extra Characters in a String (LeetCode 2707 - Trie + DP)
- *   M7. Camelcase Matching (LeetCode 1023)
- *   M8. Map Sum / Substring Matching (LeetCode 1032 variant)
+ *  Problems & Interview Frequencies:
+ *   M1. Design Add and Search Words Data Structure (LeetCode 211 - Wildcard '.') [🔥🔥 High - Meta, Amazon, Google]
+ *   M2. Maximum XOR of Two Numbers in an Array (LeetCode 421 - Bitwise Trie) [🔥🔥 High - Google, Amazon]
+ *   M3. Stream of Characters (LeetCode 1032 - Reverse Trie) [🔥🔥 High - Google, Amazon]
+ *   M4. Shortest Encoding of Words (LeetCode 820 - Suffix Trie) [🔥🔥 High - Google, Amazon, Microsoft]
+ *   M5. Implement Magic Dictionary (LeetCode 676 - 1 Edit Search) [🔥🔥 High - Google, Amazon, Microsoft]
+ *   M6. Extra Characters in a String (LeetCode 2707 - Trie + DP) [🔥🔥 High - Google, Amazon, Microsoft]
+ *   M7. Camelcase Matching (LeetCode 1023) [🔥🔥 High - Google, Amazon, Microsoft]
+ *   M8. Map Sum / Substring Matching (LeetCode 1032 variant) [🔥🔥 High - Google, Amazon]
  *
  *  Each problem includes:
  *   - Pattern tag
@@ -30,6 +30,7 @@ class Medium {
     // M1. DESIGN ADD AND SEARCH WORDS DATA STRUCTURE
     // Pattern: Trie DFS Backtracking with Wildcard '.'
     // LeetCode: 211
+    // Frequency: 🔥🔥 High (Google, Amazon, Microsoft)
     // =========================================================
     /**
      * Problem: Design data structure supporting addWord(word) and search(word)
@@ -88,6 +89,7 @@ class Medium {
     // M2. MAXIMUM XOR OF TWO NUMBERS IN AN ARRAY
     // Pattern: Bitwise (Binary) 32-bit Trie
     // LeetCode: 421
+    // Frequency: 🔥🔥 High (Google, Amazon, Microsoft)
     // =========================================================
     /**
      * Problem: Given an integer array nums, return maximum result of nums[i] XOR nums[j].
@@ -142,6 +144,7 @@ class Medium {
     // M3. STREAM OF CHARACTERS
     // Pattern: Reverse Suffix Trie Streaming
     // LeetCode: 1032
+    // Frequency: 🔥🔥 High (Google, Amazon, Microsoft)
     // =========================================================
     /**
      * Problem: Stream chars one-by-one. Return true if any suffix of streamed chars matches a word in dictionary.
@@ -193,6 +196,7 @@ class Medium {
     // M4. SHORTEST ENCODING OF WORDS
     // Pattern: Suffix Trie Leaf Counting
     // LeetCode: 820
+    // Frequency: 🔥🔥 High (Google, Amazon, Microsoft)
     // =========================================================
     /**
      * Problem: Encode words into reference string S ending with '#' such that indices can reconstruct all words.
@@ -239,6 +243,7 @@ class Medium {
     // M5. IMPLEMENT MAGIC DICTIONARY
     // Pattern: 1-Character Edit Distance Trie DFS
     // LeetCode: 676
+    // Frequency: 🔥🔥 High (Google, Amazon, Microsoft)
     // =========================================================
     /**
      * Problem: Search if a word can be formed by changing EXACTLY ONE character in dictionary.
@@ -295,6 +300,7 @@ class Medium {
     // M6. EXTRA CHARACTERS IN A STRING
     // Pattern: Trie-Accelerated Dynamic Programming
     // LeetCode: 2707
+    // Frequency: 🔥🔥 High (Google, Amazon, Microsoft)
     // =========================================================
     /**
      * Problem: Break s into dictionary words with minimum leftover extra characters.
@@ -347,6 +353,7 @@ class Medium {
     // M7. CAMELCASE MATCHING
     // Pattern: Two-Pointer Pattern Match
     // LeetCode: 1023
+    // Frequency: 🔥🔥 High (Google, Amazon, Microsoft)
     // =========================================================
     /**
      * Problem: Given queries and pattern, return boolean list indicating if query matches pattern.
@@ -380,6 +387,7 @@ class Medium {
     // M8. MULTI-SEARCH / SUBSTRING MATCHING
     // Pattern: Trie Substring Scanner
     // LeetCode: 1032 variant
+    // Frequency: 🔥🔥 High (Google, Amazon, Microsoft)
     // =========================================================
     /**
      * Problem: Find all positions where words from dictionary appear in text.

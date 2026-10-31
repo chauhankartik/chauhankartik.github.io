@@ -4,15 +4,15 @@
  *  Triplets, partitions, interval problems, and linked lists.
  * ============================================================
  *
- *  Problems:
- *   M1. 3Sum (LC 15)
- *   M2. Container With Most Water (LC 11)
- *   M3. Sort Colors — Dutch National Flag (LC 75)
- *   M4. 3Sum Closest (LC 16)
- *   M5. Linked List Cycle II — Find Cycle Start (LC 142)
- *   M6. Remove Nth Node From End of List (LC 19)
- *   M7. Intersection of Two Arrays II (LC 350)
- *   M8. Minimum Number of Moves to Seat Everyone (LC 2037)
+ *  Problems & Interview Frequencies:
+ *   M1. 3Sum (LC 15) [🔥🔥🔥 Very High - Meta, Amazon, Google, Microsoft, Apple]
+ *   M2. Container With Most Water (LC 11) [🔥🔥🔥 Very High - Amazon, Google, Meta, Adobe]
+ *   M3. Sort Colors — Dutch National Flag (LC 75) [🔥🔥🔥 Very High - Microsoft, Amazon, Meta, Google]
+ *   M4. 3Sum Closest (LC 16) [🔥🔥 High - Amazon, Bloomberg, Meta]
+ *   M5. Linked List Cycle II — Find Cycle Start (LC 142) [🔥🔥 High - Amazon, Microsoft]
+ *   M6. Remove Nth Node From End of List (LC 19) [🔥🔥🔥 Very High - Meta, Amazon, Apple]
+ *   M7. Intersection of Two Arrays II (LC 350) [🔥🔥 High - Meta, Amazon]
+ *   M8. Minimum Number of Moves to Seat Everyone (LC 2037) [🔥 Medium - Amazon]
  *
  * ============================================================
  */
@@ -24,6 +24,7 @@ class Medium {
     // M1. 3SUM
     // Pattern: Sort + Fix + Two-Pointer Inner Pass
     // LeetCode 15
+    // Frequency: 🔥🔥🔥 Very High (Meta, Amazon, Google, Microsoft, Apple)
     // =========================================================
     /**
      * Problem: Given integer array nums, return all triplets [i, j, k]
@@ -96,6 +97,7 @@ class Medium {
     // M2. CONTAINER WITH MOST WATER
     // Pattern: Opposite-End Two Pointers — Greedy Width Reduction
     // LeetCode 11
+    // Frequency: 🔥🔥🔥 Very High (Amazon, Google, Meta, Adobe)
     // =========================================================
     /**
      * Problem: Given heights array, find two lines that together with
@@ -147,6 +149,7 @@ class Medium {
     // M3. SORT COLORS — DUTCH NATIONAL FLAG
     // Pattern: Three Pointers — Dutch National Flag
     // LeetCode 75
+    // Frequency: 🔥🔥🔥 Very High (Microsoft, Amazon, Meta, Google)
     // =========================================================
     /**
      * Problem: Sort array with only 0s, 1s, 2s in-place in one pass.
@@ -200,6 +203,7 @@ class Medium {
     // M4. 3SUM CLOSEST
     // Pattern: Sort + Fix + Two-Pointer — Track Closest Sum
     // LeetCode 16
+    // Frequency: 🔥🔥 High (Amazon, Bloomberg, Meta)
     // =========================================================
     /**
      * Problem: Given integer array nums and int target,
@@ -252,6 +256,7 @@ class Medium {
     // M5. LINKED LIST CYCLE II — FIND START OF CYCLE
     // Pattern: Fast/Slow Pointers — Floyd's Algorithm
     // LeetCode 142
+    // Frequency: 🔥🔥 High (Amazon, Microsoft)
     // =========================================================
     /**
      * Problem: Given linked list, return the node where the cycle begins.
@@ -329,6 +334,7 @@ class Medium {
     // M6. REMOVE NTH NODE FROM END OF LIST
     // Pattern: Fast/Slow Pointers — Distance-Gap Technique
     // LeetCode 19
+    // Frequency: 🔥🔥🔥 Very High (Meta, Amazon, Apple)
     // =========================================================
     /**
      * Problem: Remove the n-th node from the end of a linked list.
@@ -380,6 +386,7 @@ class Medium {
     // M7. INTERSECTION OF TWO ARRAYS II
     // Pattern: Sort + Merge-Style Two Pointers
     // LeetCode 350
+    // Frequency: 🔥🔥 High (Meta, Amazon)
     // =========================================================
     /**
      * Problem: Given two integer arrays nums1 and nums2, return an array
@@ -432,6 +439,7 @@ class Medium {
     // M8. MINIMUM NUMBER OF MOVES TO SEAT EVERYONE
     // Pattern: Sort Both Arrays + Parallel Two Pointers
     // LeetCode 2037
+    // Frequency: 🔥 Medium (Amazon)
     // =========================================================
     /**
      * Problem: n seats and n students at positions seats[] and students[].

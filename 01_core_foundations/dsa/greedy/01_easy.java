@@ -5,15 +5,15 @@
  *  pattern from 00_theory.md.
  * ============================================================
  *
- *  Problems:
- *   E1. Assign Cookies (LeetCode 455)
- *   E2. Lemonade Change (LeetCode 860)
- *   E3. Can Place Flowers (LeetCode 605)
- *   E4. Best Time to Buy and Sell Stock II (LeetCode 122)
- *   E5. Max Array Sum After K Negations (LeetCode 1005)
- *   E6. Maximum Units on a Truck (LeetCode 1710)
- *   E7. Minimum Operations to Make Array Increasing (LeetCode 1827)
- *   E8. Majority Element (LeetCode 169 / InterviewBit)
+ *  Problems & Interview Frequencies:
+ *   E1. Assign Cookies (LeetCode 455) [🔥 Medium - Amazon]
+ *   E2. Lemonade Change (LeetCode 860) [🔥🔥 High - Amazon, Google]
+ *   E3. Can Place Flowers (LeetCode 605) [🔥🔥 High - Meta, Amazon]
+ *   E4. Best Time to Buy and Sell Stock II (LeetCode 122) [🔥🔥🔥 Very High - Amazon, Bloomberg, Meta]
+ *   E5. Max Array Sum After K Negations (LeetCode 1005) [🔥 Medium - Amazon]
+ *   E6. Maximum Units on a Truck (LeetCode 1710) [🔥🔥 High - Amazon, Apple]
+ *   E7. Minimum Operations to Make Array Increasing (LeetCode 1827) [🔥 Medium - Amazon]
+ *   E8. Majority Element (LeetCode 169 / InterviewBit) [🔥🔥🔥 Very High - Amazon, Google, Meta, Microsoft]
  *
  *  Each problem includes:
  *   - Pattern tag
@@ -30,6 +30,7 @@ class Easy {
     // E1. ASSIGN COOKIES
     // Pattern: Two-Pointer Greedy
     // LeetCode: 455
+    // Frequency: 🔥 Medium (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Given greed factor array g and cookie size array s, assign
@@ -69,6 +70,7 @@ class Easy {
     // E2. LEMONADE CHANGE
     // Pattern: Local Greedy Choice (Prioritize larger change)
     // LeetCode: 860
+    // Frequency: 🔥 Medium (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Lemonade costs $5. Customers pay with $5, $10, or $20. Return true if
@@ -113,6 +115,7 @@ class Easy {
     // E3. CAN PLACE FLOWERS
     // Pattern: Single Pass Greedy Placement
     // LeetCode: 605
+    // Frequency: 🔥 Medium (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Given flowerbed array of 0s and 1s and n flowers, return true if n
@@ -143,6 +146,7 @@ class Easy {
     // E4. BEST TIME TO BUY AND SELL STOCK II
     // Pattern: Local Differences / Accumulation Greedy
     // LeetCode: 122
+    // Frequency: 🔥 Medium (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Given stock prices daily, buy and sell as many times as desired. Max profit.
@@ -166,6 +170,7 @@ class Easy {
     // E5. MAX ARRAY SUM AFTER K NEGATIONS
     // Pattern: Sorting & Smallest Element Greedy
     // LeetCode: 1005
+    // Frequency: 🔥 Medium (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Modify array sum by negating elements exactly K times. Maximize sum.
@@ -199,6 +204,7 @@ class Easy {
     // E6. MAXIMUM UNITS ON A TRUCK
     // Pattern: Fractional Knapsack / Ratio Greedy
     // LeetCode: 1710
+    // Frequency: 🔥 Medium (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Given boxTypes [numberOfBoxes, unitsPerBox] and truckSize, maximize units.
@@ -224,6 +230,7 @@ class Easy {
     // E7. MINIMUM OPERATIONS TO MAKE ARRAY INCREASING
     // Pattern: Sequential Pass Greedy Adjustment
     // LeetCode: 1827
+    // Frequency: 🔥 Medium (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Make nums strictly increasing by incrementing elements. Return min operations.
@@ -249,6 +256,7 @@ class Easy {
     // E8. MAJORITY ELEMENT
     // Pattern: Boyer-Moore Voting Algorithm
     // LeetCode: 169 / InterviewBit
+    // Frequency: 🔥 Medium (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Find element appearing > floor(N/2) times.

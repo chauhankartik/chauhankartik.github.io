@@ -4,13 +4,13 @@
  *  Advanced window mechanics, monotonic deques, and "exactly K".
  * ============================================================
  *
- *  Problems:
- *   H1. Minimum Window Substring (LC 76)
- *   H2. Sliding Window Maximum (LC 239)
- *   H3. Longest Substring with At Most K Distinct Characters (LC 340)
- *   H4. Subarrays with K Different Integers (LC 992)
- *   H5. Minimum Window Subsequence (LC 727)
- *   H6. Count Number of Nice Subarrays (LC 1248)
+ *  Problems & Interview Frequencies:
+ *   H1. Minimum Window Substring (LC 76) [🔥🔥🔥 Very High - Meta, Google, Amazon, Airbnb]
+ *   H2. Sliding Window Maximum (LC 239) [🔥🔥🔥 Very High - Amazon, Google, Meta, Citadel]
+ *   H3. Longest Substring with At Most K Distinct Characters (LC 340) [🔥🔥 High - Google, Meta]
+ *   H4. Subarrays with K Different Integers (LC 992) [🔥🔥 High - Google, Amazon]
+ *   H5. Minimum Window Subsequence (LC 727) [🔥 Medium - Google, Meta]
+ *   H6. Count Number of Nice Subarrays (LC 1248) [🔥🔥 High - Amazon, Meta]
  *
  * ============================================================
  */
@@ -22,6 +22,7 @@ class Hard {
     // H1. MINIMUM WINDOW SUBSTRING
     // Pattern: Variable Window — Shortest + Frequency Match
     // LeetCode 76
+    // Frequency: 🔥🔥🔥 Very High (Meta, Google, Amazon, Airbnb)
     // =========================================================
     /**
      * Problem: Given strings s and t, find the minimum window in s
@@ -90,6 +91,7 @@ class Hard {
     // H2. SLIDING WINDOW MAXIMUM
     // Pattern: Fixed Window + Monotonic Deque
     // LeetCode 239
+    // Frequency: 🔥🔥🔥 Very High (Amazon, Google, Meta, Citadel)
     // =========================================================
     /**
      * Problem: Given array nums and window size k, return the max
@@ -147,6 +149,7 @@ class Hard {
     // H3. LONGEST SUBSTRING WITH AT MOST K DISTINCT CHARACTERS
     // Pattern: Variable Window — Longest + HashMap
     // LeetCode 340
+    // Frequency: 🔥🔥 High (Google, Meta)
     // =========================================================
     /**
      * Problem: Given string s and int k, find the length of the
@@ -180,6 +183,7 @@ class Hard {
     // H4. SUBARRAYS WITH K DIFFERENT INTEGERS
     // Pattern: Exactly K = atMost(K) - atMost(K-1)
     // LeetCode 992
+    // Frequency: 🔥🔥 High (Google, Amazon)
     // =========================================================
     /**
      * Problem: Return the number of subarrays with EXACTLY k
@@ -231,6 +235,7 @@ class Hard {
     // H5. MINIMUM WINDOW SUBSEQUENCE
     // Pattern: Variable Window + Forward/Backward Scan
     // LeetCode 727
+    // Frequency: 🔥 Medium (Google, Meta)
     // =========================================================
     /**
      * Problem: Given strings s and t, find the minimum length substring
@@ -285,6 +290,7 @@ class Hard {
     // H6. COUNT NUMBER OF NICE SUBARRAYS
     // Pattern: Exactly K = atMost(K) - atMost(K-1)
     // LeetCode 1248
+    // Frequency: 🔥🔥 High (Amazon, Meta)
     // =========================================================
     /**
      * Problem: Given array of integers and int k, return the number

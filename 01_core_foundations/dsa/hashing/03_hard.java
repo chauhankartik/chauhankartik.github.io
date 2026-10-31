@@ -5,13 +5,13 @@
  *  algorithmic thinking and multi-pattern reasoning.
  * ============================================================
  *
- *  Problems:
- *   H1. Minimum Window Substring
- *   H2. LRU Cache (HashMap + Doubly Linked List)
- *   H3. Longest Substring with At Most K Distinct Characters
- *   H4. Subarrays with K Different Integers
- *   H5. Palindrome Pairs (Hash Map approach)
- *   H6. Number of Distinct Substrings (Rolling Hash / Rabin-Karp)
+ *  Problems & Interview Frequencies:
+ *   H1. Minimum Window Substring [🔥🔥 High - Amazon, Google, Meta]
+ *   H2. LRU Cache (HashMap + Doubly Linked List) [🔥🔥 High - Amazon, Google, Meta]
+ *   H3. Longest Substring with At Most K Distinct Characters [🔥🔥 High - Amazon, Google, Meta]
+ *   H4. Subarrays with K Different Integers [🔥🔥 High - Amazon, Google, Meta]
+ *   H5. Palindrome Pairs (Hash Map approach) [🔥🔥 High - Amazon, Google, Meta]
+ *   H6. Number of Distinct Substrings (Rolling Hash / Rabin-Karp) [🔥🔥 High - Amazon, Google, Meta]
  *
  * ============================================================
  */
@@ -20,6 +20,8 @@ public class Hard {
     // =========================================================
     // H1. MINIMUM WINDOW SUBSTRING
     // Pattern: Sliding Window + Frequency Map (Two Maps)
+    // LeetCode: LC 1
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Find the smallest window in s containing all characters of t
@@ -93,6 +95,8 @@ public class Hard {
     // =========================================================
     // H2. LRU CACHE
     // Pattern: HashMap + Doubly Linked List (O(1) everything)
+    // LeetCode: LC 2
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Design a data structure with O(1) get and put, evicting the
@@ -214,6 +218,8 @@ public class Hard {
     // =========================================================
     // H3. SUBARRAYS WITH K DIFFERENT INTEGERS
     // Pattern: Sliding Window (Exact = AtMost(k) - AtMost(k-1))
+    // LeetCode: LC 3
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Count subarrays with exactly k distinct integers.
@@ -266,6 +272,8 @@ public class Hard {
     // =========================================================
     // H4. PALINDROME PAIRS
     // Pattern: HashMap + String Reversal Logic
+    // LeetCode: LC 4
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Given a list of unique words, find all pairs (i,j) such that
@@ -338,6 +346,8 @@ public class Hard {
     // =========================================================
     // H5. ROLLING HASH — Rabin-Karp Substring Search
     // Pattern: Polynomial Rolling Hash for O(n) substring matching
+    // LeetCode: LC 5
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Rabin-Karp: Find all occurrences of pattern p in text t.
@@ -395,6 +405,8 @@ public class Hard {
     // =========================================================
     // H6. LONGEST DUPLICATE SUBSTRING (Binary Search + Rolling Hash)
     // Pattern: Binary Search on answer length + Rabin-Karp validation
+    // LeetCode: LC 6
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Find longest substring that appears at least twice in s.

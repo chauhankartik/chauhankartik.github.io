@@ -5,15 +5,15 @@
  *  pattern from 00_theory.md.
  * ============================================================
  *
- *  Problems:
- *   E1. Number of Islands (BFS/DFS on Grid)
- *   E2. Flood Fill (BFS/DFS on Grid)
- *   E3. Find if Path Exists in Graph (BFS/DFS/Union-Find)
- *   E4. Clone Graph (HashMap + BFS/DFS)
- *   E5. Find the Town Judge (In-degree / Out-degree)
- *   E6. Number of Connected Components (Union-Find / DFS)
- *   E7. Is Graph Bipartite? (BFS/DFS 2-Coloring)
- *   E8. Surrounded Regions (Border BFS/DFS)
+ *  Problems & Interview Frequencies:
+ *   E1. Number of Islands (BFS/DFS on Grid) [🔥 Medium - Google, Amazon, Meta]
+ *   E2. Flood Fill (BFS/DFS on Grid) [🔥 Medium - Google, Amazon, Meta]
+ *   E3. Find if Path Exists in Graph (BFS/DFS/Union-Find) [🔥 Medium - Google, Amazon, Meta]
+ *   E4. Clone Graph (HashMap + BFS/DFS) [🔥 Medium - Google, Amazon, Meta]
+ *   E5. Find the Town Judge (In-degree / Out-degree) [🔥 Medium - Google, Amazon, Meta]
+ *   E6. Number of Connected Components (Union-Find / DFS) [🔥 Medium - Google, Amazon, Meta]
+ *   E7. Is Graph Bipartite? (BFS/DFS 2-Coloring) [🔥 Medium - Google, Amazon, Meta]
+ *   E8. Surrounded Regions (Border BFS/DFS) [🔥 Medium - Google, Amazon, Meta]
  *
  *  Each problem includes:
  *   - Pattern tag
@@ -29,6 +29,8 @@ public class Easy {
     // =========================================================
     // E1. NUMBER OF ISLANDS
     // Pattern: Grid as Graph + DFS/BFS Flood Fill
+    // LeetCode: LC 1
+    // Frequency: 🔥 Medium (Google, Amazon, Meta)
     // =========================================================
     /**
      * Problem: Given a 2D grid of '1' (land) and '0' (water), count the
@@ -90,6 +92,8 @@ public class Easy {
     // =========================================================
     // E2. FLOOD FILL
     // Pattern: BFS/DFS Traversal on Grid
+    // LeetCode: LC 2
+    // Frequency: 🔥 Medium (Google, Amazon, Meta)
     // =========================================================
     /**
      * Problem: Starting from pixel (sr, sc), change all connected pixels
@@ -133,6 +137,8 @@ public class Easy {
     // =========================================================
     // E3. FIND IF PATH EXISTS IN GRAPH
     // Pattern: BFS/DFS + Connectivity Check
+    // LeetCode: LC 3
+    // Frequency: 🔥 Medium (Google, Amazon, Meta)
     // =========================================================
     /**
      * Problem: Given undirected graph with n vertices and edges,
@@ -216,6 +222,8 @@ public class Easy {
     // =========================================================
     // E4. CLONE GRAPH
     // Pattern: HashMap (old → new) + BFS/DFS
+    // LeetCode: LC 4
+    // Frequency: 🔥 Medium (Google, Amazon, Meta)
     // =========================================================
     /**
      * Problem: Deep copy a connected undirected graph. Each node has
@@ -294,6 +302,8 @@ public class Easy {
     // =========================================================
     // E5. FIND THE TOWN JUDGE
     // Pattern: In-Degree / Out-Degree Counting
+    // LeetCode: LC 5
+    // Frequency: 🔥 Medium (Google, Amazon, Meta)
     // =========================================================
     /**
      * Problem: In a town of n people, the town judge:
@@ -341,6 +351,8 @@ public class Easy {
     // =========================================================
     // E6. NUMBER OF CONNECTED COMPONENTS (Undirected)
     // Pattern: Union-Find / DFS Component Counting
+    // LeetCode: LC 6
+    // Frequency: 🔥 Medium (Google, Amazon, Meta)
     // =========================================================
     /**
      * Problem: Given n vertices and edges, count connected components.
@@ -408,6 +420,8 @@ public class Easy {
     // =========================================================
     // E7. IS GRAPH BIPARTITE?
     // Pattern: BFS/DFS 2-Coloring
+    // LeetCode: LC 7
+    // Frequency: 🔥 Medium (Google, Amazon, Meta)
     // =========================================================
     /**
      * Problem: Can we color the graph with 2 colors such that no two
@@ -466,6 +480,8 @@ public class Easy {
     // =========================================================
     // E8. SURROUNDED REGIONS
     // Pattern: Border BFS/DFS (Reverse Thinking)
+    // LeetCode: LC 8
+    // Frequency: 🔥 Medium (Google, Amazon, Meta)
     // =========================================================
     /**
      * Problem: Capture all 'O' regions surrounded by 'X'. A region is

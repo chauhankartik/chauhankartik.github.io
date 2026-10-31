@@ -3,14 +3,14 @@
  *  STACK — MEDIUM PROBLEMS
  * ============================================================
  *
- *  M1.  Daily Temperatures                         LC 739
- *  M2.  Evaluate Reverse Polish Notation           LC 150
- *  M3.  Decode String                              LC 394
- *  M4.  Asteroid Collision                         LC 735
- *  M5.  Remove K Digits                            LC 402
- *  M6.  Online Stock Span                          LC 901
- *  M7.  Simplify Path                              LC 71
- *  M8.  132 Pattern                                LC 456
+ *  M1.  Daily Temperatures                         LC 739 [🔥🔥🔥 Very High - Meta, Amazon, Google]
+ *  M2.  Evaluate Reverse Polish Notation           LC 150 [🔥🔥🔥 Very High - Amazon, LinkedIn, Meta]
+ *  M3.  Decode String                              LC 394 [🔥🔥🔥 Very High - Google, Bloomberg, Meta]
+ *  M4.  Asteroid Collision                         LC 735 [🔥🔥🔥 Very High - Meta, Amazon, Google]
+ *  M5.  Remove K Digits                            LC 402 [🔥🔥 High - Google, Amazon, Microsoft]
+ *  M6.  Online Stock Span                          LC 901 [🔥🔥 High - Amazon, Meta]
+ *  M7.  Simplify Path                              LC 71 [🔥🔥🔥 Very High - Meta, Amazon, Microsoft]
+ *  M8.  132 Pattern                                LC 456 [🔥🔥 High - Amazon, Google]
  *
  *  Each problem includes:
  *   - Pattern tag
@@ -26,6 +26,7 @@ class StackMedium {
     // =========================================================
     // M1. Daily Temperatures  LC 739
     // Pattern: MONOTONIC STACK (decreasing — stores indices)
+    // Frequency: 🔥🔥🔥 Very High (Meta, Amazon, Google)
     // =========================================================
     /**
      * Given daily temperatures, for each day find how many days
@@ -69,6 +70,7 @@ class StackMedium {
     // =========================================================
     // M2. Evaluate Reverse Polish Notation  LC 150
     // Pattern: EXPRESSION EVALUATION — Stack-based
+    // Frequency: 🔥🔥🔥 Very High (Amazon, LinkedIn, Meta)
     // =========================================================
     /**
      * Evaluate arithmetic expression in Reverse Polish Notation (postfix).
@@ -109,6 +111,7 @@ class StackMedium {
     // =========================================================
     // M3. Decode String  LC 394
     // Pattern: NESTED STACK PARSING
+    // Frequency: 🔥🔥🔥 Very High (Google, Bloomberg, Meta)
     // =========================================================
     /**
      * Decode encoded string: "3[a2[c]]" → "accaccacc".
@@ -162,6 +165,7 @@ class StackMedium {
     // =========================================================
     // M4. Asteroid Collision  LC 735
     // Pattern: SIMULATION — Stack-based collision resolution
+    // Frequency: 🔥🔥🔥 Very High (Meta, Amazon, Google)
     // =========================================================
     /**
      * Asteroids in a row. Positive = moving right, negative = moving left.
@@ -217,6 +221,7 @@ class StackMedium {
     // =========================================================
     // M5. Remove K Digits  LC 402
     // Pattern: MONOTONIC STACK (increasing — greedy removal)
+    // Frequency: 🔥🔥 High (Google, Amazon, Microsoft)
     // =========================================================
     /**
      * Remove k digits from a number string to make it the smallest.
@@ -270,6 +275,7 @@ class StackMedium {
     // =========================================================
     // M6. Online Stock Span  LC 901
     // Pattern: MONOTONIC STACK (decreasing — span calculation)
+    // Frequency: 🔥🔥 High (Amazon, Meta)
     // =========================================================
     /**
      * For each day's stock price, find the span: number of consecutive
@@ -313,6 +319,7 @@ class StackMedium {
     // =========================================================
     // M7. Simplify Path  LC 71
     // Pattern: STACK PARSING — Unix path simplification
+    // Frequency: 🔥🔥🔥 Very High (Meta, Amazon, Microsoft)
     // =========================================================
     /**
      * Simplify Unix-style absolute path.
@@ -356,6 +363,7 @@ class StackMedium {
     // =========================================================
     // M8. 132 Pattern  LC 456
     // Pattern: MONOTONIC STACK — Reverse traversal
+    // Frequency: 🔥🔥 High (Amazon, Google)
     // =========================================================
     /**
      * Find i < j < k such that nums[i] < nums[k] < nums[j] (132 pattern).

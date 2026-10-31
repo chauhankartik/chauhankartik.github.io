@@ -5,13 +5,13 @@
  *  pattern from 00_theory.md.
  * ============================================================
  *
- *  Problems:
- *   H1. N-Queens I & II (LeetCode 51 / 52 - Bitmask Diagonal Tracking)
- *   H2. Sudoku Solver (LeetCode 37 - 9x9 Bitmask Backtracking)
- *   H3. Word Break II (LeetCode 140 - Recursion + Memoization)
- *   H4. Remove Invalid Parentheses (LeetCode 301 - Min Removal DFS)
- *   H5. Expression Add Operators (LeetCode 282 - String Evaluation Backtracking)
- *   H6. Matchsticks to Square (LeetCode 473 - Subset Partitioning)
+ *  Problems & Interview Frequencies:
+ *   H1. N-Queens I & II (LeetCode 51 / 52 - Bitmask Diagonal Tracking) [🔥🔥 High - Google, Amazon]
+ *   H2. Sudoku Solver (LeetCode 37 - 9x9 Bitmask Backtracking) [🔥🔥 High - Google, Microsoft]
+ *   H3. Word Break II (LeetCode 140 - Recursion + Memoization) [🔥🔥 High - Amazon, Google]
+ *   H4. Remove Invalid Parentheses (LeetCode 301 - Min Removal DFS) [🔥🔥🔥 Very High - Meta, Google]
+ *   H5. Expression Add Operators (LeetCode 282 - String Evaluation Backtracking) [🔥🔥 High - Meta, Google]
+ *   H6. Matchsticks to Square (LeetCode 473 - Subset Partitioning) [🔥 Medium - Google, Amazon]
  *
  *  Each problem includes:
  *   - Pattern tag
@@ -28,6 +28,7 @@ class Hard {
     // H1. N-QUEENS I & II
     // Pattern: Bitmask / Array Diagonal Collision Tracking
     // LeetCode: 51 / 52
+    // Frequency: 🔥🔥 High (Meta, Amazon, Google)
     // =========================================================
     /**
      * Problem: Place n queens on n x n chessboard such that no two queens attack each other.
@@ -79,6 +80,7 @@ class Hard {
     // H2. SUDOKU SOLVER
     // Pattern: 9x9 Bitmask Validation Backtracking
     // LeetCode: 37
+    // Frequency: 🔥🔥 High (Meta, Amazon, Google)
     // =========================================================
     /**
      * Problem: Write a program to solve a Sudoku puzzle by filling empty cells.
@@ -142,6 +144,7 @@ class Hard {
     // H3. WORD BREAK II
     // Pattern: Recursion + Memoized Partitioning
     // LeetCode: 140
+    // Frequency: 🔥🔥 High (Meta, Amazon, Google)
     // =========================================================
     /**
      * Problem: Add spaces in s to construct all valid sentences from wordDict.
@@ -184,6 +187,7 @@ class Hard {
     // H4. REMOVE INVALID PARENTHESES
     // Pattern: Minimum Removal BFS / DFS Backtracking
     // LeetCode: 301
+    // Frequency: 🔥🔥 High (Meta, Amazon, Google)
     // =========================================================
     /**
      * Problem: Remove minimum number of invalid parentheses to make input string s valid.
@@ -247,6 +251,7 @@ class Hard {
     // H5. EXPRESSION ADD OPERATORS
     // Pattern: String Operand Evaluation Backtracking
     // LeetCode: 282
+    // Frequency: 🔥🔥 High (Meta, Amazon, Google)
     // =========================================================
     /**
      * Problem: Insert operators '+', '-', '*' into num string to evaluate to target.
@@ -302,6 +307,7 @@ class Hard {
     // H6. MATCHSTICKS TO SQUARE
     // Pattern: 4-Bucket Subset Partitioning
     // LeetCode: 473
+    // Frequency: 🔥🔥 High (Meta, Amazon, Google)
     // =========================================================
     /**
      * Problem: Form a square using all matchsticks.

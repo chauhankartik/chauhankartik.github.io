@@ -5,15 +5,15 @@
  *  pattern from 00_theory.md.
  * ============================================================
  *
- *  Problems:
- *   E1. Two Sum
- *   E2. Contains Duplicate
- *   E3. Single Number (XOR bonus + HashMap approach)
- *   E4. Intersection of Two Arrays
- *   E5. First Unique Character in a String
- *   E6. Isomorphic Strings
- *   E7. Happy Number
- *   E8. Valid Anagram
+ *  Problems & Interview Frequencies:
+ *   E1. Two Sum [🔥 Medium - Amazon, Google, Meta]
+ *   E2. Contains Duplicate [🔥 Medium - Amazon, Google, Meta]
+ *   E3. Single Number (XOR bonus + HashMap approach) [🔥 Medium - Amazon, Google, Meta]
+ *   E4. Intersection of Two Arrays [🔥 Medium - Amazon, Google, Meta]
+ *   E5. First Unique Character in a String [🔥 Medium - Amazon, Google, Meta]
+ *   E6. Isomorphic Strings [🔥 Medium - Amazon, Google, Meta]
+ *   E7. Happy Number [🔥 Medium - Amazon, Google, Meta]
+ *   E8. Valid Anagram [🔥 Medium - Amazon, Google, Meta]
  *
  *  Each problem includes:
  *   - Pattern tag
@@ -27,6 +27,8 @@ public class Easy {
     // =========================================================
     // E1. TWO SUM
     // Pattern: Two-Sum / Complement + Index Tracking
+    // LeetCode: LC 1
+    // Frequency: 🔥 Medium (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Given int[] nums and int target, return indices [i, j]
@@ -92,6 +94,8 @@ public class Easy {
     // =========================================================
     // E2. CONTAINS DUPLICATE
     // Pattern: Deduplication via HashSet
+    // LeetCode: LC 2
+    // Frequency: 🔥 Medium (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Return true if any value appears at least twice.
@@ -132,6 +136,8 @@ public class Easy {
     // =========================================================
     // E3. FIRST UNIQUE CHARACTER IN A STRING
     // Pattern: Frequency Count (fixed alphabet → O(1) space)
+    // LeetCode: LC 3
+    // Frequency: 🔥 Medium (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Return index of first non-repeating character in string s.
@@ -179,6 +185,8 @@ public class Easy {
     // =========================================================
     // E4. VALID ANAGRAM
     // Pattern: Frequency Count + Difference Array
+    // LeetCode: LC 4
+    // Frequency: 🔥 Medium (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Return true if t is an anagram of s (same chars, same frequency).
@@ -211,6 +219,8 @@ public class Easy {
     // =========================================================
     // E5. INTERSECTION OF TWO ARRAYS
     // Pattern: HashSet Deduplication
+    // LeetCode: LC 5
+    // Frequency: 🔥 Medium (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Return array of unique elements present in both arrays.
@@ -244,6 +254,8 @@ public class Easy {
     // =========================================================
     // E6. ISOMORPHIC STRINGS
     // Pattern: Two-way Index Tracking (Bidirectional Map)
+    // LeetCode: LC 6
+    // Frequency: 🔥 Medium (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Two strings s and t are isomorphic if chars can be mapped
@@ -288,6 +300,8 @@ public class Easy {
     // =========================================================
     // E7. HAPPY NUMBER
     // Pattern: Cycle Detection via HashSet (Floyd's alternative)
+    // LeetCode: LC 7
+    // Frequency: 🔥 Medium (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: A "happy number" eventually reaches 1 when repeatedly replaced

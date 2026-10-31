@@ -3,11 +3,11 @@
  *  LINKED LIST — HARD PROBLEMS
  * ============================================================
  *
- *  H1.  Merge K Sorted Lists                    LC 23
- *  H2.  Reverse Nodes in k-Group               LC 25
- *  H3.  Sort List (Merge Sort)                  LC 148
- *  H4.  Flatten a Multilevel Doubly LL          LC 430
- *  H5.  LFU Cache                               LC 460
+ *  H1.  Merge K Sorted Lists                    LC 23 [🔥🔥🔥 Very High - Meta, Amazon, Google, Microsoft, Uber]
+ *  H2.  Reverse Nodes in k-Group               LC 25 [🔥🔥🔥 Very High - Google, Meta, Amazon, Microsoft]
+ *  H3.  Sort List (Merge Sort)                  LC 148 [🔥🔥 High - Google, Amazon]
+ *  H4.  Flatten a Multilevel Doubly LL          LC 430 [🔥🔥 High - Bloomberg, Amazon]
+ *  H5.  LFU Cache                               LC 460 [🔥🔥🔥 Very High - Google, Amazon, Meta]
  *
  *  Each problem includes:
  *   - Pattern tag
@@ -41,6 +41,7 @@ class Hard {
     // =========================================================
     // H1. Merge K Sorted Lists  LC 23
     // Pattern: MIN-HEAP (Priority Queue)
+    // Frequency: 🔥🔥🔥 Very High (Meta, Amazon, Google, Microsoft, Uber)
     // =========================================================
     /**
      * Brute 1: merge one by one — O(kN) where N = total nodes
@@ -113,6 +114,7 @@ class Hard {
     // =========================================================
     // H2. Reverse Nodes in k-Group  LC 25
     // Pattern: GROUP REVERSE + RE-ATTACH
+    // Frequency: 🔥🔥🔥 Very High (Google, Meta, Amazon, Microsoft)
     // =========================================================
     /**
      * Reverse every k consecutive nodes. If remaining nodes < k, leave them as-is.
@@ -188,6 +190,7 @@ class Hard {
     // =========================================================
     // H3. Sort List  LC 148
     // Pattern: MERGE SORT ON LINKED LIST
+    // Frequency: 🔥🔥 High (Google, Amazon)
     // =========================================================
     /**
      * Sort a linked list in O(n log n) time and O(1) space.
@@ -286,6 +289,7 @@ class Hard {
     // =========================================================
     // H4. Flatten a Multilevel Doubly Linked List  LC 430
     // Pattern: DFS / ITERATIVE STACK
+    // Frequency: 🔥🔥 High (Bloomberg, Amazon)
     // =========================================================
     /**
      * A doubly linked list where some nodes have a child pointer
@@ -345,6 +349,7 @@ class Hard {
     // =========================================================
     // H5. LFU Cache  LC 460
     // Pattern: MIN-FREQ TRACKING + DOUBLY LL PER FREQUENCY
+    // Frequency: 🔥🔥🔥 Very High (Google, Amazon, Meta)
     // =========================================================
     /**
      * LFU (Least Frequently Used): evict the item used fewest times.

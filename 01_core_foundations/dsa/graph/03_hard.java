@@ -6,13 +6,13 @@
  *  algorithmic thinking and multi-pattern reasoning.
  * ============================================================
  *
- *  Problems:
- *   H1. Shortest Path in Binary Matrix (BFS with 8 directions)
- *   H2. Minimum Cost to Connect All Points (MST — Prim/Kruskal)
- *   H3. Cheapest Flights Within K Stops (Modified Dijkstra / BFS)
- *   H4. Critical Connections (Tarjan's Bridge Finding)
- *   H5. Accounts Merge (Union-Find + HashMap)
- *   H6. Alien Dictionary (Topological Sort on Characters)
+ *  Problems & Interview Frequencies:
+ *   H1. Shortest Path in Binary Matrix (BFS with 8 directions) [🔥🔥 High - Google, Amazon, Meta]
+ *   H2. Minimum Cost to Connect All Points (MST — Prim/Kruskal) [🔥🔥 High - Google, Amazon, Meta]
+ *   H3. Cheapest Flights Within K Stops (Modified Dijkstra / BFS) [🔥🔥 High - Google, Amazon, Meta]
+ *   H4. Critical Connections (Tarjan's Bridge Finding) [🔥🔥 High - Google, Amazon, Meta]
+ *   H5. Accounts Merge (Union-Find + HashMap) [🔥🔥 High - Google, Amazon, Meta]
+ *   H6. Alien Dictionary (Topological Sort on Characters) [🔥🔥 High - Google, Amazon, Meta]
  *
  * ============================================================
  */
@@ -23,6 +23,8 @@ public class Hard {
     // =========================================================
     // H1. SHORTEST PATH IN BINARY MATRIX
     // Pattern: BFS — 8-Directional Shortest Path
+    // LeetCode: LC 1
+    // Frequency: 🔥🔥 High (Google, Amazon, Meta)
     // =========================================================
     /**
      * Problem: Find shortest path from top-left (0,0) to bottom-right (n-1,n-1)
@@ -90,6 +92,8 @@ public class Hard {
     // =========================================================
     // H2. MINIMUM COST TO CONNECT ALL POINTS (MST)
     // Pattern: Prim's Algorithm / Kruskal's Algorithm
+    // LeetCode: LC 2
+    // Frequency: 🔥🔥 High (Google, Amazon, Meta)
     // =========================================================
     /**
      * Problem: Given n points in 2D, find minimum cost to connect ALL points.
@@ -208,6 +212,8 @@ public class Hard {
     // =========================================================
     // H3. CHEAPEST FLIGHTS WITHIN K STOPS
     // Pattern: Modified BFS / Bellman-Ford with relaxation limit
+    // LeetCode: LC 3
+    // Frequency: 🔥🔥 High (Google, Amazon, Meta)
     // =========================================================
     /**
      * Problem: Find cheapest price from src to dst with at most k stops
@@ -302,6 +308,8 @@ public class Hard {
     // =========================================================
     // H4. CRITICAL CONNECTIONS IN A NETWORK (Bridges)
     // Pattern: Tarjan's Algorithm — Bridge Finding
+    // LeetCode: LC 4
+    // Frequency: 🔥🔥 High (Google, Amazon, Meta)
     // =========================================================
     /**
      * Problem: Find all edges whose removal disconnects the graph.
@@ -385,6 +393,8 @@ public class Hard {
     // =========================================================
     // H5. ACCOUNTS MERGE
     // Pattern: Union-Find + HashMap (Grouping by Identity)
+    // LeetCode: LC 5
+    // Frequency: 🔥🔥 High (Google, Amazon, Meta)
     // =========================================================
     /**
      * Problem: Given accounts [[name, email1, email2, ...], ...],
@@ -490,6 +500,8 @@ public class Hard {
     // =========================================================
     // H6. ALIEN DICTIONARY
     // Pattern: Topological Sort on Character Graph
+    // LeetCode: LC 6
+    // Frequency: 🔥🔥 High (Google, Amazon, Meta)
     // =========================================================
     /**
      * Problem: Given a sorted dictionary of an alien language, derive the

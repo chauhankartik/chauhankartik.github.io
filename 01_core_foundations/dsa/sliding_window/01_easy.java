@@ -6,15 +6,15 @@
  *  pattern from 00_theory.md.
  * ============================================================
  *
- *  Problems:
- *   E1. Maximum Sum Subarray of Size K
- *   E2. Max Consecutive Ones
- *   E3. Contains Duplicate II
- *   E4. Maximum Number of Vowels in a Substring of Given Length
- *   E5. Minimum Difference Between Highest and Lowest of K Scores
- *   E6. Defuse the Bomb (Circular Fixed Window)
- *   E7. Diet Plan Performance
- *   E8. Number of Sub-arrays of Size K with Average ≥ Threshold
+ *  Problems & Interview Frequencies:
+ *   E1. Maximum Sum Subarray of Size K [🔥 Medium - Amazon, Google, Meta]
+ *   E2. Max Consecutive Ones [🔥 Medium - Amazon, Google, Meta]
+ *   E3. Contains Duplicate II [🔥 Medium - Amazon, Google, Meta]
+ *   E4. Maximum Number of Vowels in a Substring of Given Length [🔥 Medium - Amazon, Google, Meta]
+ *   E5. Minimum Difference Between Highest and Lowest of K Scores [🔥 Medium - Amazon, Google, Meta]
+ *   E6. Defuse the Bomb (Circular Fixed Window) [🔥 Medium - Amazon, Google, Meta]
+ *   E7. Diet Plan Performance [🔥 Medium - Amazon, Google, Meta]
+ *   E8. Number of Sub-arrays of Size K with Average ≥ Threshold [🔥 Medium - Amazon, Google, Meta]
  *
  *  Each problem includes:
  *   - Pattern tag
@@ -30,6 +30,8 @@ class Easy {
     // =========================================================
     // E1. MAXIMUM SUM SUBARRAY OF SIZE K
     // Pattern: Fixed-Size Sliding Window
+    // LeetCode: LC 1
+    // Frequency: 🔥 Medium (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Given an array of integers and an integer k, find the
@@ -77,6 +79,7 @@ class Easy {
     // E2. MAX CONSECUTIVE ONES
     // Pattern: Variable Window (simplest form)
     // LeetCode 485
+    // Frequency: 🔥🔥 High (Google, Amazon)
     // =========================================================
     /**
      * Problem: Given a binary array nums, return the maximum number
@@ -139,6 +142,7 @@ class Easy {
     // E3. CONTAINS DUPLICATE II
     // Pattern: Fixed-Size Sliding Window + HashSet
     // LeetCode 219
+    // Frequency: 🔥🔥 High (Amazon, Google)
     // =========================================================
     /**
      * Problem: Given nums and int k, return true if there are two
@@ -173,6 +177,7 @@ class Easy {
     // E4. MAXIMUM NUMBER OF VOWELS IN A SUBSTRING OF GIVEN LENGTH
     // Pattern: Fixed-Size Sliding Window + Counter
     // LeetCode 1456
+    // Frequency: 🔥🔥 High (Amazon, Meta)
     // =========================================================
     /**
      * Problem: Given a string s and integer k, return the maximum number
@@ -214,6 +219,7 @@ class Easy {
     // E5. MINIMUM DIFFERENCE BETWEEN HIGHEST AND LOWEST OF K SCORES
     // Pattern: Sort + Fixed Window
     // LeetCode 1984
+    // Frequency: 🔥 Medium (Amazon)
     // =========================================================
     /**
      * Problem: Given array nums and integer k, pick k scores such that
@@ -238,6 +244,7 @@ class Easy {
     // E6. DEFUSE THE BOMB
     // Pattern: Fixed-Size Circular Sliding Window
     // LeetCode 1652
+    // Frequency: 🔥 Medium (Amazon)
     // =========================================================
     /**
      * Problem: Circular array code and int k.
@@ -275,6 +282,7 @@ class Easy {
     // E7. DIET PLAN PERFORMANCE
     // Pattern: Fixed-Size Sliding Window + Conditional Counting
     // LeetCode 1176
+    // Frequency: 🔥 Medium (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Calories per day array, window size k.
@@ -308,6 +316,7 @@ class Easy {
     // E8. NUMBER OF SUB-ARRAYS OF SIZE K WITH AVERAGE ≥ THRESHOLD
     // Pattern: Fixed-Size Sliding Window + Counting
     // LeetCode 1343
+    // Frequency: 🔥 Medium (Amazon)
     // =========================================================
     /**
      * Problem: Count subarrays of size k whose average is >= threshold.

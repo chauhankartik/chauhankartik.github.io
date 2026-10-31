@@ -5,15 +5,15 @@
  *  pattern from 00_theory.md.
  * ============================================================
  *
- *  Problems:
- *   M1. Gas Station (LeetCode 134 / InterviewBit)
- *   M2. Jump Game I (LeetCode 55)
- *   M3. Jump Game II (LeetCode 45)
- *   M4. Non-overlapping Intervals (LeetCode 435)
- *   M5. Task Scheduler (LeetCode 621)
- *   M6. Partition Labels (LeetCode 763)
- *   M7. Bag of Tokens (LeetCode 948)
- *   M8. Minimum Number of Arrows to Burst Balloons (LeetCode 452)
+ *  Problems & Interview Frequencies:
+ *   M1. Gas Station (LeetCode 134 / InterviewBit) [🔥🔥🔥 Very High - Amazon, Google, Meta]
+ *   M2. Jump Game I (LeetCode 55) [🔥🔥🔥 Very High - Amazon, Google, Meta]
+ *   M3. Jump Game II (LeetCode 45) [🔥🔥🔥 Very High - Amazon, Google, Meta]
+ *   M4. Non-overlapping Intervals (LeetCode 435) [🔥🔥 High - Meta, Amazon, Google]
+ *   M5. Task Scheduler (LeetCode 621) [🔥🔥🔥 Very High - Meta, Amazon, Google]
+ *   M6. Partition Labels (LeetCode 763) [🔥🔥 High - Amazon, Google]
+ *   M7. Bag of Tokens (LeetCode 948) [🔥🔥 High - Amazon, Google, Meta]
+ *   M8. Minimum Number of Arrows to Burst Balloons (LeetCode 452) [🔥🔥 High - Amazon, Google, Meta]
  *
  *  Each problem includes:
  *   - Pattern tag
@@ -30,6 +30,7 @@ class Medium {
     // M1. GAS STATION
     // Pattern: Single Pass Greedy Range Elimination
     // LeetCode: 134 / InterviewBit
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Given gas array A and cost array B, find minimum starting station
@@ -67,6 +68,7 @@ class Medium {
     // M2. JUMP GAME I
     // Pattern: Max Reachable Boundary Tracking
     // LeetCode: 55
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Given non-negative array nums where nums[i] is max jump length,
@@ -93,6 +95,7 @@ class Medium {
     // M3. JUMP GAME II
     // Pattern: BFS / Greedy Level Extension
     // LeetCode: 45
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Return minimum number of jumps to reach last index.
@@ -121,6 +124,7 @@ class Medium {
     // M4. NON-OVERLAPPING INTERVALS
     // Pattern: Interval Scheduling (Sort by End Time)
     // LeetCode: 435
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Find min number of intervals to remove to make rest non-overlapping.
@@ -152,6 +156,7 @@ class Medium {
     // M5. TASK SCHEDULER
     // Pattern: Frequency Counting & Formula / Heap Greedy
     // LeetCode: 621
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Minimum CPU intervals to finish tasks with cooling period n.
@@ -186,6 +191,7 @@ class Medium {
     // M6. PARTITION LABELS
     // Pattern: Last Occurrence Index Boundary Tracking
     // LeetCode: 763
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Partition string into max parts such that each letter appears in at most one part.
@@ -220,6 +226,7 @@ class Medium {
     // M7. BAG OF TOKENS
     // Pattern: Two-Pointer Greedy (Buy Low, Sell High)
     // LeetCode: 948
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Maximize score using tokens.
@@ -255,6 +262,7 @@ class Medium {
     // M8. MINIMUM ARROWS TO BURST BALLOONS
     // Pattern: Interval Overlap Count
     // LeetCode: 452
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Burst all balloons using min number of vertical arrows.

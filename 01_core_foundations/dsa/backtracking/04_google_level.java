@@ -4,13 +4,13 @@
  *  Pattern-oriented multi-pattern complex problems.
  * ============================================================
  *
- *  Problems:
- *   G1. Robot Room Cleaner (LeetCode 489 - Backtracking with Direction State)
- *   G2. Word Ladder II (LeetCode 126 - BFS Distance Map + DFS Backtracking)
- *   G3. Unique Paths III (LeetCode 980 - Hamiltonian Path Grid Backtracking)
- *   G4. Parsing A Boolean Expression (LeetCode 1106 - Recursive Descent Parser)
- *   G5. Tiling a Rectangle with Fewest Squares (LeetCode 1240 - Geometric Grid Backtracking)
- *   G6. Grid Paths 48-Step Optimization (CSES 1625 / Google Classic Pruning)
+ *  Problems & Interview Frequencies:
+ *   G1. Robot Room Cleaner (LeetCode 489 - Backtracking with Direction State) [🔥🔥 High - Meta, Amazon, Google]
+ *   G2. Word Ladder II (LeetCode 126 - BFS Distance Map + DFS Backtracking) [🔥🔥 High - Meta, Amazon, Google]
+ *   G3. Unique Paths III (LeetCode 980 - Hamiltonian Path Grid Backtracking) [🔥🔥 High - Meta, Amazon, Google]
+ *   G4. Parsing A Boolean Expression (LeetCode 1106 - Recursive Descent Parser) [🔥🔥 High - Meta, Amazon, Google]
+ *   G5. Tiling a Rectangle with Fewest Squares (LeetCode 1240 - Geometric Grid Backtracking) [🔥🔥 High - Meta, Amazon, Google]
+ *   G6. Grid Paths 48-Step Optimization (CSES 1625 / Google Classic Pruning) [🔥🔥 High - Meta, Amazon, Google]
  *
  *  Each problem includes:
  *   - Pattern tag
@@ -27,6 +27,7 @@ class GoogleLevel {
     // G1. ROBOT ROOM CLEANER
     // Pattern: Physical Environment Backtracking + Orientation State
     // LeetCode: 489
+    // Frequency: 🔥🔥 High (Meta, Amazon, Google)
     // =========================================================
     /**
      * Mock Robot Interface for LeetCode 489.
@@ -83,6 +84,7 @@ class GoogleLevel {
     // G2. WORD LADDER II
     // Pattern: Two-Phase BFS Shortest Distance Map + DFS Path Backtracking
     // LeetCode: 126
+    // Frequency: 🔥🔥 High (Meta, Amazon, Google)
     // =========================================================
     /**
      * Problem: Return all shortest transformation sequences from beginWord to endWord.
@@ -167,6 +169,7 @@ class GoogleLevel {
     // G3. UNIQUE PATHS III
     // Pattern: Hamiltonian Path Grid Backtracking
     // LeetCode: 980
+    // Frequency: 🔥🔥 High (Meta, Amazon, Google)
     // =========================================================
     /**
      * Problem: Return number of 4-directional walks from 1 to 2 visiting every non-obstacle cell (0) exactly once.
@@ -219,6 +222,7 @@ class GoogleLevel {
     // G4. PARSING A BOOLEAN EXPRESSION
     // Pattern: Recursive Descent Parser
     // LeetCode: 1106
+    // Frequency: 🔥🔥 High (Meta, Amazon, Google)
     // =========================================================
     /**
      * Problem: Evaluate boolean expression containing 't', 'f', '!', '&', '|'.
@@ -264,6 +268,7 @@ class GoogleLevel {
     // G5. TILING A RECTANGLE WITH FEWEST SQUARES
     // Pattern: Geometric Grid Backtracking + Lowest Cell Pruning
     // LeetCode: 1240
+    // Frequency: 🔥🔥 High (Meta, Amazon, Google)
     // =========================================================
     /**
      * Problem: Tile an n x m rectangle using the fewest number of integer squares.
@@ -336,6 +341,7 @@ class GoogleLevel {
     // G6. GRID PATHS 48-STEP OPTIMIZATION
     // Pattern: 4-Way Wall & Dead-End Split Pruning
     // CSES 1625 / Google Classic
+    // Frequency: 🔥🔥 High (Meta, Amazon, Google)
     // =========================================================
     /**
      * Problem: Find number of paths of length 48 on a 7x7 grid starting at (0,0) and ending at (6,0).

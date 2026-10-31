@@ -5,15 +5,15 @@
  *  pattern from 00_theory.md.
  * ============================================================
  *
- *  Problems:
- *   E1. Subsets / Power Set (LeetCode 78)
- *   E2. Permutations (LeetCode 46)
- *   E3. Combinations (LeetCode 77)
- *   E4. Generate Parentheses (LeetCode 22)
- *   E5. Letter Combinations of a Phone Number (LeetCode 17)
- *   E6. Binary Tree Path Sum I (LeetCode 112)
- *   E7. Combination Sum I (LeetCode 39)
- *   E8. Sum of All Subset XOR Totals (LeetCode 1863)
+ *  Problems & Interview Frequencies:
+ *   E1. Subsets / Power Set (LeetCode 78) [🔥🔥🔥 Very High - Meta, Amazon, Google]
+ *   E2. Permutations (LeetCode 46) [🔥🔥🔥 Very High - Meta, Amazon, Google]
+ *   E3. Combinations (LeetCode 77) [🔥🔥 High - Google, Amazon]
+ *   E4. Generate Parentheses (LeetCode 22) [🔥🔥🔥 Very High - Meta, Amazon, Microsoft]
+ *   E5. Letter Combinations of a Phone Number (LeetCode 17) [🔥🔥🔥 Very High - Meta, Amazon, Google]
+ *   E6. Binary Tree Path Sum I (LeetCode 112) [🔥🔥 High - Amazon, Microsoft]
+ *   E7. Combination Sum I (LeetCode 39) [🔥🔥🔥 Very High - Meta, Amazon, Google]
+ *   E8. Sum of All Subset XOR Totals (LeetCode 1863) [🔥 Medium - Google, Amazon]
  *
  *  Each problem includes:
  *   - Pattern tag
@@ -30,6 +30,7 @@ class Easy {
     // E1. SUBSETS / POWER SET
     // Pattern: Inclusion / Exclusion Backtracking
     // LeetCode: 78
+    // Frequency: 🔥 Medium (Meta, Amazon, Google)
     // =========================================================
     /**
      * Problem: Return all possible subsets (the power set) of unique elements nums.
@@ -58,6 +59,7 @@ class Easy {
     // E2. PERMUTATIONS
     // Pattern: Visited Array Backtracking
     // LeetCode: 46
+    // Frequency: 🔥 Medium (Meta, Amazon, Google)
     // =========================================================
     /**
      * Problem: Return all possible permutations of array nums of distinct integers.
@@ -93,6 +95,7 @@ class Easy {
     // E3. COMBINATIONS
     // Pattern: Fixed Length K Backtracking
     // LeetCode: 77
+    // Frequency: 🔥 Medium (Meta, Amazon, Google)
     // =========================================================
     /**
      * Problem: Return all combinations of k numbers chosen from range [1, n].
@@ -127,6 +130,7 @@ class Easy {
     // E4. GENERATE PARENTHESES
     // Pattern: Valid Prefix State Backtracking
     // LeetCode: 22
+    // Frequency: 🔥 Medium (Meta, Amazon, Google)
     // =========================================================
     /**
      * Problem: Given n pairs of parentheses, generate all combinations of well-formed parentheses.
@@ -165,6 +169,7 @@ class Easy {
     // E5. LETTER COMBINATIONS OF A PHONE NUMBER
     // Pattern: Combination Mapping Backtracking
     // LeetCode: 17
+    // Frequency: 🔥 Medium (Meta, Amazon, Google)
     // =========================================================
     /**
      * Problem: Return all possible letter combinations for phone digits string.
@@ -203,6 +208,7 @@ class Easy {
     // E6. BINARY TREE PATH SUM I
     // Pattern: Tree Root-to-Leaf Path Backtracking
     // LeetCode: 112
+    // Frequency: 🔥 Medium (Meta, Amazon, Google)
     // =========================================================
     public static class TreeNode {
         public int val;
@@ -224,6 +230,7 @@ class Easy {
     // E7. COMBINATION SUM I
     // Pattern: Unlimited Reuse Backtracking
     // LeetCode: 39
+    // Frequency: 🔥 Medium (Meta, Amazon, Google)
     // =========================================================
     /**
      * Problem: Find all unique combinations of candidates that sum to target.
@@ -259,6 +266,7 @@ class Easy {
     // E8. SUM OF ALL SUBSET XOR TOTALS
     // Pattern: Bitwise Subset XOR Accumulation
     // LeetCode: 1863
+    // Frequency: 🔥 Medium (Meta, Amazon, Google)
     // =========================================================
     /**
      * Problem: Return the sum of all subset XOR totals for array nums.

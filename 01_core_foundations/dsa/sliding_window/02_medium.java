@@ -4,15 +4,15 @@
  *  Variable-size windows, frequency matching, and counting.
  * ============================================================
  *
- *  Problems:
- *   M1. Longest Substring Without Repeating Characters (LC 3)
- *   M2. Max Consecutive Ones III (LC 1004)
- *   M3. Fruit Into Baskets (LC 904)
- *   M4. Longest Repeating Character Replacement (LC 424)
- *   M5. Permutation in String (LC 567)
- *   M6. Find All Anagrams in a String (LC 438)
- *   M7. Subarray Product Less Than K (LC 713)
- *   M8. Grumpy Bookstore Owner (LC 1052)
+ *  Problems & Interview Frequencies:
+ *   M1. Longest Substring Without Repeating Characters (LC 3) [🔥🔥🔥 Very High - Amazon, Meta, Google, Microsoft, Apple]
+ *   M2. Max Consecutive Ones III (LC 1004) [🔥🔥🔥 Very High - Meta, Google, Amazon]
+ *   M3. Fruit Into Baskets (LC 904) [🔥🔥 High - Google, Amazon]
+ *   M4. Longest Repeating Character Replacement (LC 424) [🔥🔥🔥 Very High - Google, Amazon, Meta]
+ *   M5. Permutation in String (LC 567) [🔥🔥🔥 Very High - Meta, Microsoft, Amazon]
+ *   M6. Find All Anagrams in a String (LC 438) [🔥🔥🔥 Very High - Amazon, Meta, Microsoft]
+ *   M7. Subarray Product Less Than K (LC 713) [🔥🔥 High - Amazon, Google]
+ *   M8. Grumpy Bookstore Owner (LC 1052) [🔥 Medium - Amazon, Google]
  *
  * ============================================================
  */
@@ -24,6 +24,7 @@ class Medium {
     // M1. LONGEST SUBSTRING WITHOUT REPEATING CHARACTERS
     // Pattern: Variable Window — Longest + HashMap/Set
     // LeetCode 3
+    // Frequency: 🔥🔥🔥 Very High (Amazon, Meta, Google, Microsoft, Apple)
     // =========================================================
     /**
      * Problem: Given string s, find the length of the longest substring
@@ -87,6 +88,7 @@ class Medium {
     // M2. MAX CONSECUTIVE ONES III
     // Pattern: Variable Window — Longest + Counter
     // LeetCode 1004
+    // Frequency: 🔥🔥🔥 Very High (Meta, Google, Amazon)
     // =========================================================
     /**
      * Problem: Given binary array nums, return the maximum number of
@@ -136,6 +138,7 @@ class Medium {
     // M3. FRUIT INTO BASKETS
     // Pattern: Variable Window — Longest + At Most K Distinct
     // LeetCode 904
+    // Frequency: 🔥🔥 High (Google, Amazon)
     // =========================================================
     /**
      * Problem: Array where fruits[i] is the type of fruit at tree i.
@@ -169,6 +172,7 @@ class Medium {
     // M4. LONGEST REPEATING CHARACTER REPLACEMENT
     // Pattern: Variable Window — Longest + Frequency Trick
     // LeetCode 424
+    // Frequency: 🔥🔥🔥 Very High (Google, Amazon, Meta)
     // =========================================================
     /**
      * Problem: String s and int k. You can replace at most k characters.
@@ -215,6 +219,7 @@ class Medium {
     // M5. PERMUTATION IN STRING
     // Pattern: Fixed Window + Frequency Match
     // LeetCode 567
+    // Frequency: 🔥🔥🔥 Very High (Meta, Microsoft, Amazon)
     // =========================================================
     /**
      * Problem: Given strings s1 and s2, return true if s2 contains a
@@ -266,6 +271,7 @@ class Medium {
     // M6. FIND ALL ANAGRAMS IN A STRING
     // Pattern: Fixed Window + Frequency Match (collect all positions)
     // LeetCode 438
+    // Frequency: 🔥🔥🔥 Very High (Amazon, Meta, Microsoft)
     // =========================================================
     /**
      * Problem: Given strings s and p, find all start indices of p's
@@ -310,6 +316,7 @@ class Medium {
     // M7. SUBARRAY PRODUCT LESS THAN K
     // Pattern: Variable Window — Counting
     // LeetCode 713
+    // Frequency: 🔥🔥 High (Amazon, Google)
     // =========================================================
     /**
      * Problem: Given array of positive integers nums and int k,
@@ -351,6 +358,7 @@ class Medium {
     // M8. GRUMPY BOOKSTORE OWNER
     // Pattern: Fixed Window + Overlay
     // LeetCode 1052
+    // Frequency: 🔥 Medium (Amazon, Google)
     // =========================================================
     /**
      * Problem: customers[i] = customers at minute i.

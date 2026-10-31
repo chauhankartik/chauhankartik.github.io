@@ -3,14 +3,14 @@
  *  LINKED LIST — MEDIUM PROBLEMS
  * ============================================================
  *
- *  M1.  Add Two Numbers                         LC 2
- *  M2.  Odd Even Linked List                    LC 328
- *  M3.  Reverse Linked List II (sublist)        LC 92
- *  M4.  Rotate List                             LC 61
- *  M5.  Copy List with Random Pointer           LC 138
- *  M6.  Reorder List                            LC 143
- *  M7.  LRU Cache                               LC 146
- *  M8.  Swap Nodes in Pairs                     LC 24
+ *  M1.  Add Two Numbers                         LC 2 [🔥🔥🔥 Very High - Amazon, Meta, Google, Microsoft, Apple]
+ *  M2.  Odd Even Linked List                    LC 328 [🔥🔥 High - Amazon, Google]
+ *  M3.  Reverse Linked List II (sublist)        LC 92 [🔥🔥🔥 Very High - Meta, Amazon, Microsoft]
+ *  M4.  Rotate List                             LC 61 [🔥🔥 High - Amazon, Bloomberg]
+ *  M5.  Copy List with Random Pointer           LC 138 [🔥🔥🔥 Very High - Meta, Amazon, Google, Microsoft]
+ *  M6.  Reorder List                            LC 143 [🔥🔥🔥 Very High - Meta, Amazon]
+ *  M7.  LRU Cache                               LC 146 [🔥🔥🔥 Very High - Meta, Google, Amazon, Apple, Bloomberg]
+ *  M8.  Swap Nodes in Pairs                     LC 24 [🔥🔥 High - Amazon, Microsoft]
  *
  *  Each problem includes:
  *   - Pattern tag
@@ -50,6 +50,7 @@ class Medium {
     // =========================================================
     // M1. Add Two Numbers  LC 2
     // Pattern: CARRY ARITHMETIC + DUMMY NODE
+    // Frequency: 🔥🔥🔥 Very High (Amazon, Meta, Google, Microsoft, Apple)
     // =========================================================
     /**
      * Numbers stored in REVERSE order (ones digit first).
@@ -84,6 +85,7 @@ class Medium {
     // =========================================================
     // M2. Odd Even Linked List  LC 328
     // Pattern: IN-PLACE POINTER MANIPULATION
+    // Frequency: 🔥🔥 High (Amazon, Google)
     // =========================================================
     /**
      * Group all nodes at ODD positions first, then EVEN.
@@ -119,6 +121,7 @@ class Medium {
     // =========================================================
     // M3. Reverse Linked List II  LC 92
     // Pattern: IN-PLACE SUBLIST REVERSE
+    // Frequency: 🔥🔥🔥 Very High (Meta, Amazon, Microsoft)
     // =========================================================
     /**
      * Reverse nodes from position left to right (1-indexed).
@@ -162,6 +165,7 @@ class Medium {
     // =========================================================
     // M4. Rotate List  LC 61
     // Pattern: FIND NEW TAIL + RECONNECT
+    // Frequency: 🔥🔥 High (Amazon, Bloomberg)
     // =========================================================
     /**
      * Rotate right by k positions.
@@ -205,6 +209,7 @@ class Medium {
     // =========================================================
     // M5. Copy List with Random Pointer  LC 138
     // Pattern: HASH MAP (node → clone)
+    // Frequency: 🔥🔥🔥 Very High (Meta, Amazon, Google, Microsoft)
     // =========================================================
     /**
      * Brute: two passes with HashMap — O(n) time O(n) space
@@ -278,6 +283,7 @@ class Medium {
     // =========================================================
     // M6. Reorder List  LC 143
     // Pattern: FIND MIDDLE + REVERSE + MERGE
+    // Frequency: 🔥🔥🔥 Very High (Meta, Amazon)
     // =========================================================
     /**
      * L0 → L1 → L2 → … → Ln-1 → Ln
@@ -335,6 +341,7 @@ class Medium {
     // =========================================================
     // M7. LRU Cache  LC 146
     // Pattern: DOUBLY LINKED LIST + HASHMAP
+    // Frequency: 🔥🔥🔥 Very High (Meta, Google, Amazon, Apple, Bloomberg)
     // =========================================================
     /**
      * Requirements: get() and put() both O(1).
@@ -422,6 +429,7 @@ class Medium {
     // =========================================================
     // M8. Swap Nodes in Pairs  LC 24
     // Pattern: IN-PLACE PAIR SWAP + DUMMY NODE
+    // Frequency: 🔥🔥 High (Amazon, Microsoft)
     // =========================================================
     /**
      * Swap every two adjacent nodes.

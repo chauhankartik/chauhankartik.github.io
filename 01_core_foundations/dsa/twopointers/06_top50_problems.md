@@ -15,7 +15,7 @@
 
 ---
 
-## 🏆 Top 15 Must-Solve Twopointers Problems (Highest Frequency)
+## 🏆 Top 15 Must-Solve Two Pointers Problems (Highest Frequency)
 
 If you have limited time before an interview, solve these first:
 
@@ -169,14 +169,6 @@ Tier 1 Sprint (Emergency FAANG Prep):
   Focus exclusively on 🔥🔥🔥 (Very High) problems in the Top list above.
 
 Complete Roadmap (Intuition-Building):
-
-```
-Tier 1 Sprint (Emergency FAANG Prep):
-  Focus exclusively on 🔥🔥🔥 (Very High) problems in the Top list above.
-
-Complete Roadmap (Intuition-Building):
-
-```
 Week 1 (Days 1-2):  Phase 1 — Opposite-end basics (#1-#8)
 Week 1 (Days 3-4):  Phase 2 — Read/write in-place (#9-#16)
 Week 1 (Day 5):     Phase 3 — Dutch National Flag (#17-#20)

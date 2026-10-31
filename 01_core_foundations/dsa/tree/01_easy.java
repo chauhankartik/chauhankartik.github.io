@@ -3,14 +3,14 @@
  *  BINARY TREE — EASY PROBLEMS
  * ============================================================
  *
- *  E1.  Maximum Depth of Binary Tree            LC 104
- *  E2.  Minimum Depth of Binary Tree            LC 111
- *  E3.  Invert Binary Tree                      LC 226
- *  E4.  Symmetric Tree                          LC 101
- *  E5.  Same Tree                               LC 100
- *  E6.  Path Sum I                              LC 112
- *  E7.  Count Nodes Equal to Average of Subtree LC 2265
- *  E8.  Level Order Traversal (BFS template)    LC 102
+ *  E1.  Maximum Depth of Binary Tree            LC 104 [🔥🔥 High - Amazon, Meta, Google]
+ *  E2.  Minimum Depth of Binary Tree            LC 111 [🔥 Medium - Amazon]
+ *  E3.  Invert Binary Tree                      LC 226 [🔥🔥 High - Google, Meta, Apple]
+ *  E4.  Symmetric Tree                          LC 101 [🔥🔥 High - Amazon, Microsoft]
+ *  E5.  Same Tree                               LC 100 [🔥🔥 High - Amazon, Google]
+ *  E6.  Path Sum I                              LC 112 [🔥🔥 High - Amazon, Microsoft]
+ *  E7.  Count Nodes Equal to Average of Subtree LC 2265 [🔥 Medium - Google]
+ *  E8.  Level Order Traversal (BFS template)    LC 102 [🔥🔥🔥 Very High - Amazon, Meta, Microsoft, Bloomberg]
  *
  *  Each problem includes:
  *   - Pattern tag
@@ -61,6 +61,7 @@ class TreeEasy {
     // =========================================================
     // E1. Maximum Depth  LC 104
     // Pattern: RECURSIVE DFS (bottom-up)
+    // Frequency: 🔥🔥 High (Amazon, Meta, Google)
     // =========================================================
     /**
      * Depth of tree = 1 + max(depth(left), depth(right)).
@@ -100,6 +101,7 @@ class TreeEasy {
     // =========================================================
     // E2. Minimum Depth  LC 111
     // Pattern: BFS (finds min-depth leaf faster) or DFS
+    // Frequency: 🔥 Medium (Amazon)
     // =========================================================
     /**
      * Minimum depth = shortest path from root to a LEAF.
@@ -149,6 +151,7 @@ class TreeEasy {
     // =========================================================
     // E3. Invert Binary Tree  LC 226
     // Pattern: RECURSIVE DFS
+    // Frequency: 🔥🔥 High (Google, Meta, Apple)
     // =========================================================
     /**
      * Swap left and right children at every node.
@@ -190,6 +193,7 @@ class TreeEasy {
     // =========================================================
     // E4. Symmetric Tree  LC 101
     // Pattern: RECURSIVE / BFS MIRROR CHECK
+    // Frequency: 🔥🔥 High (Amazon, Microsoft)
     // =========================================================
     /**
      * A tree is symmetric if it's a mirror of itself around its center.
@@ -233,6 +237,7 @@ class TreeEasy {
     // =========================================================
     // E5. Same Tree  LC 100
     // Pattern: RECURSIVE DFS (structural comparison)
+    // Frequency: 🔥🔥 High (Amazon, Google)
     // =========================================================
     /**
      * Two trees are the same if they have identical structure and values.
@@ -252,6 +257,7 @@ class TreeEasy {
     // =========================================================
     // E6. Path Sum I  LC 112
     // Pattern: RECURSIVE DFS (root-to-leaf path)
+    // Frequency: 🔥🔥 High (Amazon, Microsoft)
     // =========================================================
     /**
      * Does a root-to-leaf path exist with sum = targetSum?
@@ -277,6 +283,7 @@ class TreeEasy {
     // =========================================================
     // E7. Count Nodes Equal to Average of Subtree  LC 2265
     // Pattern: RECURSIVE DFS (return multiple values: sum + count)
+    // Frequency: 🔥 Medium (Google)
     // =========================================================
     /**
      * Count nodes where node.val == average of its subtree (including itself).
@@ -317,6 +324,7 @@ class TreeEasy {
     // =========================================================
     // E8. Level Order Traversal  LC 102
     // Pattern: BFS — the canonical template
+    // Frequency: 🔥🔥🔥 Very High (Amazon, Meta, Microsoft, Bloomberg)
     // =========================================================
     /**
      * Return node values grouped by level.

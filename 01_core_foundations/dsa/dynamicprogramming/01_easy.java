@@ -3,14 +3,14 @@
  *  DYNAMIC PROGRAMMING — EASY PROBLEMS
  * ============================================================
  *
- *  E1.  Fibonacci Number                         LC 509
- *  E2.  Climbing Stairs                          LC 70
- *  E3.  Min Cost Climbing Stairs                 LC 746
- *  E4.  House Robber                             LC 198
- *  E5.  Maximum Subarray (Kadane's)              LC 53
- *  E6.  Counting Bits                            LC 338
- *  E7.  N-th Tribonacci Number                   LC 1137
- *  E8.  Divisor Game                             LC 1025
+ *  E1.  Fibonacci Number                         LC 509 [🔥🔥 High - Amazon, Apple]
+ *  E2.  Climbing Stairs                          LC 70 [🔥🔥🔥 Very High - Amazon, Google, Meta]
+ *  E3.  Min Cost Climbing Stairs                 LC 746 [🔥🔥 High - Amazon, Google]
+ *  E4.  House Robber                             LC 198 [🔥🔥🔥 Very High - Meta, Amazon, Google]
+ *  E5.  Maximum Subarray (Kadane's)              LC 53 [🔥🔥🔥 Very High - Amazon, Microsoft, Google, LinkedIn]
+ *  E6.  Counting Bits                            LC 338 [🔥🔥 High - Google, Amazon]
+ *  E7.  N-th Tribonacci Number                   LC 1137 [🔥 Medium - Amazon]
+ *  E8.  Divisor Game                             LC 1025 [🔥 Medium - Amazon]
  *
  *  Each problem includes:
  *   - Pattern tag
@@ -26,6 +26,7 @@ class DPEasy {
     // =========================================================
     // E1. Fibonacci Number  LC 509
     // Pattern: LINEAR DP (1D, two previous states)
+    // Frequency: 🔥🔥 High (Amazon, Apple)
     // =========================================================
     /**
      * F(0) = 0, F(1) = 1, F(n) = F(n-1) + F(n-2)
@@ -85,6 +86,7 @@ class DPEasy {
     // =========================================================
     // E2. Climbing Stairs  LC 70
     // Pattern: LINEAR DP (identical to Fibonacci)
+    // Frequency: 🔥🔥🔥 Very High (Amazon, Google, Meta)
     // =========================================================
     /**
      * You can climb 1 or 2 steps. How many distinct ways to reach step n?
@@ -120,6 +122,7 @@ class DPEasy {
     // =========================================================
     // E3. Min Cost Climbing Stairs  LC 746
     // Pattern: LINEAR DP (min cost instead of count)
+    // Frequency: 🔥🔥 High (Amazon, Google)
     // =========================================================
     /**
      * Each step has a cost. Pay cost[i] to step on stair i.
@@ -152,6 +155,7 @@ class DPEasy {
     // =========================================================
     // E4. House Robber  LC 198
     // Pattern: LINEAR DP (take or skip, no adjacents)
+    // Frequency: 🔥🔥🔥 Very High (Meta, Amazon, Google)
     // =========================================================
     /**
      * Rob houses along a street. Can't rob two adjacent houses.
@@ -192,6 +196,7 @@ class DPEasy {
     // =========================================================
     // E5. Maximum Subarray (Kadane's Algorithm)  LC 53
     // Pattern: LINEAR DP (extend or restart)
+    // Frequency: 🔥🔥🔥 Very High (Amazon, Microsoft, Google, LinkedIn)
     // =========================================================
     /**
      * Find the contiguous subarray with the largest sum.
@@ -250,6 +255,7 @@ class DPEasy {
     // =========================================================
     // E6. Counting Bits  LC 338
     // Pattern: LINEAR DP (bit manipulation + DP)
+    // Frequency: 🔥🔥 High (Google, Amazon)
     // =========================================================
     /**
      * For every number i in [0, n], count the number of 1's in its binary.
@@ -283,6 +289,7 @@ class DPEasy {
     // =========================================================
     // E7. N-th Tribonacci Number  LC 1137
     // Pattern: LINEAR DP (three previous states)
+    // Frequency: 🔥 Medium (Amazon)
     // =========================================================
     /**
      * T(0) = 0, T(1) = 1, T(2) = 1
@@ -313,6 +320,7 @@ class DPEasy {
     // =========================================================
     // E8. Divisor Game  LC 1025
     // Pattern: GAME DP (boolean DP / mathematical insight)
+    // Frequency: 🔥 Medium (Amazon)
     // =========================================================
     /**
      * Alice and Bob take turns. On a turn with number n:

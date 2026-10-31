@@ -6,21 +6,21 @@
  *  questions. Each problem is designed to test MULTIPLE topics
  *  simultaneously and require system-level thinking.
  *
- *  Problems:
- *   G1. Design In-Memory File System (HashMap + Trie)
- *   G2. Random Pick with Blacklist (HashMap + Math)
- *   G3. Substring with Concatenation of All Words (Sliding Window + HashMap)
- *   G4. Stream Checker / Spell Check (HashMap + Trie / Hashing)
- *   G5. Minimum Operations to Reduce X to Zero (Prefix Sum + HashMap ↔ Sliding Window)
- *   G6. Count Subarrays Where Max Element Appears at Least K Times (HashMap/Stack variant)
+ *  Problems & Interview Frequencies:
+ *   G1. Design In-Memory File System (HashMap + Trie) [🔥🔥 High - Amazon, Google, Meta]
+ *   G2. Random Pick with Blacklist (HashMap + Math) [🔥🔥 High - Amazon, Google, Meta]
+ *   G3. Substring with Concatenation of All Words (Sliding Window + HashMap) [🔥🔥 High - Amazon, Google, Meta]
+ *   G4. Stream Checker / Spell Check (HashMap + Trie / Hashing) [🔥🔥 High - Amazon, Google, Meta]
+ *   G5. Minimum Operations to Reduce X to Zero (Prefix Sum + HashMap ↔ Sliding Window) [🔥🔥 High - Amazon, Google, Meta]
+ *   G6. Count Subarrays Where Max Element Appears at Least K Times (HashMap/Stack variant) [🔥🔥 High - Amazon, Google, Meta]
  *
  *  Multi-topic matrix:
- *   G1: HashMap + Trie + OOP Design
- *   G2: HashMap + Math + Randomization
- *   G3: HashMap + Sliding Window + String
- *   G4: HashMap + Trie + Stream processing
- *   G5: Prefix Sum + HashMap + Two-pointer duality
- *   G6: Monotonic Stack + HashMap + Sliding Window
+ *   G1: HashMap + Trie + OOP Design [🔥🔥 High - Amazon, Google, Meta]
+ *   G2: HashMap + Math + Randomization [🔥🔥 High - Amazon, Google, Meta]
+ *   G3: HashMap + Sliding Window + String [🔥🔥 High - Amazon, Google, Meta]
+ *   G4: HashMap + Trie + Stream processing [🔥🔥 High - Amazon, Google, Meta]
+ *   G5: Prefix Sum + HashMap + Two-pointer duality [🔥🔥 High - Amazon, Google, Meta]
+ *   G6: Monotonic Stack + HashMap + Sliding Window [🔥🔥 High - Amazon, Google, Meta]
  * ============================================================
  */
 import java.util.*;
@@ -30,6 +30,8 @@ public class GoogleLevel {
     // =========================================================
     // G1. DESIGN IN-MEMORY FILE SYSTEM
     // Topics: HashMap + Trie + OOP Design
+    // LeetCode: LC 1
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Implement:
@@ -115,6 +117,8 @@ public class GoogleLevel {
     // =========================================================
     // G2. RANDOM PICK WITH BLACKLIST
     // Topics: HashMap + Math + Remap Strategy
+    // LeetCode: LC 2
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Given n integers [0, n-1] and a blacklist B, design a class to
@@ -181,6 +185,8 @@ public class GoogleLevel {
     // =========================================================
     // G3. SUBSTRING WITH CONCATENATION OF ALL WORDS
     // Topics: Sliding Window + HashMap + String Hashing
+    // LeetCode: LC 3
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Find all start indices in s where s[i..i+total_len-1] is a
@@ -255,6 +261,8 @@ public class GoogleLevel {
     // =========================================================
     // G4. MINIMUM OPERATIONS TO REDUCE X TO ZERO
     // Topics: Prefix Sum + HashMap ↔ Sliding Window Duality
+    // LeetCode: LC 4
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Given nums and x, find minimum number of operations to reduce x to 0
@@ -311,6 +319,8 @@ public class GoogleLevel {
     // =========================================================
     // G5. MAXIMUM POINTS YOU CAN OBTAIN FROM CARDS
     // Topics: Sliding Window + HashMap (Complement Thinking)
+    // LeetCode: LC 5
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Given cardPoints[], pick exactly k cards from left and/or right
@@ -361,6 +371,8 @@ public class GoogleLevel {
     // =========================================================
     // G6. LONGEST SUBARRAY WITH MAXIMUM FREQUENCY
     // Topics: HashMap + Frequency Reasoning
+    // LeetCode: LC 6
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Find the length of the longest subarray where the maximum element

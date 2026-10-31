@@ -5,15 +5,15 @@
  *  pattern from 00_theory.md.
  * ============================================================
  *
- *  Problems:
- *   M1. Subsets II (With Duplicates) (LeetCode 90)
- *   M2. Permutations II (With Duplicates) (LeetCode 47)
- *   M3. Combination Sum II (With Duplicates) (LeetCode 40)
- *   M4. Combination Sum III (LeetCode 216)
- *   M5. Palindrome Partitioning (LeetCode 131)
- *   M6. Word Search I - Grid Backtracking (LeetCode 79)
- *   M7. Restore IP Addresses (LeetCode 93)
- *   M8. Partition to K Equal Sum Subsets (LeetCode 698)
+ *  Problems & Interview Frequencies:
+ *   M1. Subsets II (With Duplicates) (LeetCode 90) [🔥🔥 High - Amazon, Meta]
+ *   M2. Permutations II (With Duplicates) (LeetCode 47) [🔥🔥 High - Amazon, Google]
+ *   M3. Combination Sum II (With Duplicates) (LeetCode 40) [🔥🔥 High - Meta, Amazon]
+ *   M4. Combination Sum III (LeetCode 216) [🔥🔥 High - Amazon, Google]
+ *   M5. Palindrome Partitioning (LeetCode 131) [🔥🔥 High - Meta, Amazon]
+ *   M6. Word Search I - Grid Backtracking (LeetCode 79) [🔥🔥🔥 Very High - Meta, Amazon, Bloomberg]
+ *   M7. Restore IP Addresses (LeetCode 93) [🔥🔥 High - Amazon, Google]
+ *   M8. Partition to K Equal Sum Subsets (LeetCode 698) [🔥🔥 High - Google, Amazon]
  *
  *  Each problem includes:
  *   - Pattern tag
@@ -30,6 +30,7 @@ class Medium {
     // M1. SUBSETS II (WITH DUPLICATES)
     // Pattern: Duplicate Pruning (`i > start && nums[i] == nums[i-1]`)
     // LeetCode: 90
+    // Frequency: 🔥🔥 High (Meta, Amazon, Google)
     // =========================================================
     /**
      * Problem: Return all possible subsets of nums that may contain duplicates.
@@ -60,6 +61,7 @@ class Medium {
     // M2. PERMUTATIONS II (WITH DUPLICATES)
     // Pattern: Used Array + Duplicate Pruning
     // LeetCode: 47
+    // Frequency: 🔥🔥 High (Meta, Amazon, Google)
     // =========================================================
     /**
      * Problem: Return all unique permutations of nums containing duplicates.
@@ -99,6 +101,7 @@ class Medium {
     // M3. COMBINATION SUM II (WITH DUPLICATES)
     // Pattern: Single Use + Duplicate Pruning
     // LeetCode: 40
+    // Frequency: 🔥🔥 High (Meta, Amazon, Google)
     // =========================================================
     /**
      * Problem: Each number in candidates may only be used ONCE in combination. Candidates contain duplicates.
@@ -135,6 +138,7 @@ class Medium {
     // M4. COMBINATION SUM III
     // Pattern: Fixed Length K + Single Use Range [1, 9]
     // LeetCode: 216
+    // Frequency: 🔥🔥 High (Meta, Amazon, Google)
     // =========================================================
     /**
      * Problem: Find combinations of k numbers that sum to n using numbers 1 through 9. Each number used at most once.
@@ -168,6 +172,7 @@ class Medium {
     // M5. PALINDROME PARTITIONING
     // Pattern: String Partitioning Backtracking
     // LeetCode: 131
+    // Frequency: 🔥🔥 High (Meta, Amazon, Google)
     // =========================================================
     /**
      * Problem: Partition string s such that every substring of the partition is a palindrome.
@@ -209,6 +214,7 @@ class Medium {
     // M6. WORD SEARCH I
     // Pattern: Grid Backtracking DFS with Cell In-Place Marking
     // LeetCode: 79
+    // Frequency: 🔥🔥 High (Meta, Amazon, Google)
     // =========================================================
     /**
      * Problem: Given m x n grid and word, return true if word exists in grid.
@@ -257,6 +263,7 @@ class Medium {
     // M7. RESTORE IP ADDRESSES
     // Pattern: String Segment 4-Part Partitioning
     // LeetCode: 93
+    // Frequency: 🔥🔥 High (Meta, Amazon, Google)
     // =========================================================
     /**
      * Problem: Return all valid IPv4 addresses that can be formed from string s.
@@ -302,6 +309,7 @@ class Medium {
     // M8. PARTITION TO K EQUAL SUM SUBSETS
     // Pattern: Bucket Partitioning + Descending Sort Pruning
     // LeetCode: 698
+    // Frequency: 🔥🔥 High (Meta, Amazon, Google)
     // =========================================================
     /**
      * Problem: Partition nums into k non-empty subsets with equal sums.

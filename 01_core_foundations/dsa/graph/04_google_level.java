@@ -6,21 +6,21 @@
  *  questions. Each problem tests MULTIPLE topics simultaneously
  *  and requires system-level thinking.
  *
- *  Problems:
- *   G1. Shortest Path to Get All Keys (BFS + Bitmask State)
- *   G2. Swim in Rising Water (Binary Search + BFS / Dijkstra)
- *   G3. Making A Large Island (DFS + Connected Component ID)
- *   G4. Bus Routes (BFS on Route Graph)
- *   G5. Longest Path in DAG (Topological Sort + DP)
- *   G6. Minimum Height Trees (Graph Pruning / Peeling)
+ *  Problems & Interview Frequencies:
+ *   G1. Shortest Path to Get All Keys (BFS + Bitmask State) [🔥🔥 High - Google, Amazon, Meta]
+ *   G2. Swim in Rising Water (Binary Search + BFS / Dijkstra) [🔥🔥 High - Google, Amazon, Meta]
+ *   G3. Making A Large Island (DFS + Connected Component ID) [🔥🔥 High - Google, Amazon, Meta]
+ *   G4. Bus Routes (BFS on Route Graph) [🔥🔥 High - Google, Amazon, Meta]
+ *   G5. Longest Path in DAG (Topological Sort + DP) [🔥🔥 High - Google, Amazon, Meta]
+ *   G6. Minimum Height Trees (Graph Pruning / Peeling) [🔥🔥 High - Google, Amazon, Meta]
  *
  *  Multi-topic matrix:
- *   G1: BFS + Bitmask DP + State Space Search
- *   G2: Dijkstra / Binary Search + BFS + Monotonic reasoning
- *   G3: DFS + Component Labeling + Brute Force Optimization
- *   G4: BFS + Graph Abstraction + HashMap
- *   G5: Topological Sort + DP + DAG reasoning
- *   G6: Graph theory + Leaf pruning + Tree centroid
+ *   G1: BFS + Bitmask DP + State Space Search [🔥🔥 High - Google, Amazon, Meta]
+ *   G2: Dijkstra / Binary Search + BFS + Monotonic reasoning [🔥🔥 High - Google, Amazon, Meta]
+ *   G3: DFS + Component Labeling + Brute Force Optimization [🔥🔥 High - Google, Amazon, Meta]
+ *   G4: BFS + Graph Abstraction + HashMap [🔥🔥 High - Google, Amazon, Meta]
+ *   G5: Topological Sort + DP + DAG reasoning [🔥🔥 High - Google, Amazon, Meta]
+ *   G6: Graph theory + Leaf pruning + Tree centroid [🔥🔥 High - Google, Amazon, Meta]
  * ============================================================
  */
 import java.util.*;
@@ -30,6 +30,8 @@ public class GoogleLevel {
     // =========================================================
     // G1. SHORTEST PATH TO GET ALL KEYS
     // Topics: BFS + Bitmask State Space + Grid
+    // LeetCode: LC 1
+    // Frequency: 🔥🔥 High (Google, Amazon, Meta)
     // =========================================================
     /**
      * Problem: Grid with '@' (start), 'a'-'f' (keys), 'A'-'F' (locks),
@@ -125,6 +127,8 @@ public class GoogleLevel {
     // =========================================================
     // G2. SWIM IN RISING WATER
     // Topics: Dijkstra / Binary Search + BFS
+    // LeetCode: LC 2
+    // Frequency: 🔥🔥 High (Google, Amazon, Meta)
     // =========================================================
     /**
      * Problem: n×n grid where elevation[r][c] = water level at which cell
@@ -201,6 +205,8 @@ public class GoogleLevel {
     // =========================================================
     // G3. MAKING A LARGE ISLAND
     // Topics: DFS + Component Labeling + Enumeration
+    // LeetCode: LC 3
+    // Frequency: 🔥🔥 High (Google, Amazon, Meta)
     // =========================================================
     /**
      * Problem: In a binary grid (0/1), flip at most one 0 to 1. Find the
@@ -287,6 +293,8 @@ public class GoogleLevel {
     // =========================================================
     // G4. BUS ROUTES
     // Topics: BFS on Route Graph + HashMap + Abstraction
+    // LeetCode: LC 4
+    // Frequency: 🔥🔥 High (Google, Amazon, Meta)
     // =========================================================
     /**
      * Problem: routes[i] = list of stops for bus i. Start at source stop,
@@ -371,6 +379,8 @@ public class GoogleLevel {
     // =========================================================
     // G5. LONGEST PATH IN A DAG
     // Topics: Topological Sort + DP
+    // LeetCode: LC 5
+    // Frequency: 🔥🔥 High (Google, Amazon, Meta)
     // =========================================================
     /**
      * Problem: Find the longest path in a Directed Acyclic Graph.
@@ -442,6 +452,8 @@ public class GoogleLevel {
     // =========================================================
     // G6. MINIMUM HEIGHT TREES
     // Topics: Graph Pruning + Tree Centroid
+    // LeetCode: LC 6
+    // Frequency: 🔥🔥 High (Google, Amazon, Meta)
     // =========================================================
     /**
      * Problem: Given a tree, find all roots that minimize the tree height.

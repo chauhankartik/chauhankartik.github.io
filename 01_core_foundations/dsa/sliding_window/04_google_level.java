@@ -4,13 +4,13 @@
  *  Deque optimizations, DP + sliding window hybrids.
  * ============================================================
  *
- *  Problems:
- *   G1. Minimum Number of K Consecutive Bit Flips (LC 995)
- *   G2. Shortest Subarray with Sum at Least K (LC 862)
- *   G3. Max Value of Equation (LC 1499)
- *   G4. Longest Substring with At Least K Repeating Chars (LC 395)
- *   G5. Substring with Concatenation of All Words (LC 30)
- *   G6. Constrained Subsequence Sum (LC 1425)
+ *  Problems & Interview Frequencies:
+ *   G1. Minimum Number of K Consecutive Bit Flips (LC 995) [🔥 Medium - Google, ByteDance]
+ *   G2. Shortest Subarray with Sum at Least K (LC 862) [🔥🔥 High - Google, Amazon]
+ *   G3. Max Value of Equation (LC 1499) [🔥 Medium - Google, Citadel]
+ *   G4. Longest Substring with At Least K Repeating Chars (LC 395) [🔥🔥 High - Amazon, Google]
+ *   G5. Substring with Concatenation of All Words (LC 30) [🔥🔥 High - Amazon, Apple]
+ *   G6. Constrained Subsequence Sum (LC 1425) [🔥🔥 High - Google, ByteDance]
  *
  * ============================================================
  */
@@ -22,6 +22,7 @@ class GoogleLevel {
     // G1. MINIMUM NUMBER OF K CONSECUTIVE BIT FLIPS
     // Pattern: Greedy Sliding Window + Flip Tracking
     // LeetCode 995
+    // Frequency: 🔥 Medium (Google, ByteDance)
     // =========================================================
     /**
      * Problem: Binary array nums. A k-bit flip flips k consecutive bits.
@@ -65,6 +66,7 @@ class GoogleLevel {
     // G2. SHORTEST SUBARRAY WITH SUM AT LEAST K
     // Pattern: Prefix Sum + Monotonic Deque
     // LeetCode 862
+    // Frequency: 🔥🔥 High (Google, Amazon)
     // =========================================================
     /**
      * Problem: Given integer array nums (can have NEGATIVES) and int k,
@@ -128,6 +130,7 @@ class GoogleLevel {
     // G3. MAX VALUE OF EQUATION
     // Pattern: Monotonic Deque Optimization
     // LeetCode 1499
+    // Frequency: 🔥 Medium (Google, Citadel)
     // =========================================================
     /**
      * Problem: Given points sorted by x. Find max value of
@@ -174,6 +177,7 @@ class GoogleLevel {
     // G4. LONGEST SUBSTRING WITH AT LEAST K REPEATING CHARACTERS
     // Pattern: Sliding Window with Bounded Unique Chars
     // LeetCode 395
+    // Frequency: 🔥🔥 High (Amazon, Google)
     // =========================================================
     /**
      * Problem: Given string s and int k, find the length of the longest
@@ -224,6 +228,7 @@ class GoogleLevel {
     // G5. SUBSTRING WITH CONCATENATION OF ALL WORDS
     // Pattern: Fixed Window + Sliding HashMap
     // LeetCode 30
+    // Frequency: 🔥🔥 High (Amazon, Apple)
     // =========================================================
     /**
      * Problem: String s and array of equal-length words.
@@ -286,6 +291,7 @@ class GoogleLevel {
     // G6. CONSTRAINED SUBSEQUENCE SUM
     // Pattern: DP + Monotonic Deque (Sliding Window Max DP)
     // LeetCode 1425
+    // Frequency: 🔥🔥 High (Google, ByteDance)
     // =========================================================
     /**
      * Problem: Given array nums and int k, find the maximum sum of a

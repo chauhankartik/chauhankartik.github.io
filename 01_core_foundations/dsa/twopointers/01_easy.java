@@ -6,15 +6,15 @@
  *  pattern from 00_theory.md.
  * ============================================================
  *
- *  Problems:
- *   E1. Two Sum II — Input Array Is Sorted (LC 167)
- *   E2. Valid Palindrome (LC 125)
- *   E3. Remove Duplicates from Sorted Array (LC 26)
- *   E4. Move Zeroes (LC 283)
- *   E5. Squares of a Sorted Array (LC 977)
- *   E6. Reverse String (LC 344)
- *   E7. Remove Element (LC 27)
- *   E8. Merge Sorted Array (LC 88)
+ *  Problems & Interview Frequencies:
+ *   E1. Two Sum II — Input Array Is Sorted (LC 167) [🔥🔥🔥 Very High - Amazon, Google, Apple]
+ *   E2. Valid Palindrome (LC 125) [🔥🔥🔥 Very High - Meta, Microsoft, Amazon]
+ *   E3. Remove Duplicates from Sorted Array (LC 26) [🔥🔥🔥 Very High - Meta, Amazon, Microsoft]
+ *   E4. Move Zeroes (LC 283) [🔥🔥🔥 Very High - Meta, Amazon, Apple, Microsoft]
+ *   E5. Squares of a Sorted Array (LC 977) [🔥🔥 High - Meta, Amazon, Google]
+ *   E6. Reverse String (LC 344) [🔥🔥 High - Apple, Amazon]
+ *   E7. Remove Element (LC 27) [🔥🔥 High - Amazon, Google]
+ *   E8. Merge Sorted Array (LC 88) [🔥🔥🔥 Very High - Meta, Microsoft, Amazon]
  *
  *  Each problem includes:
  *   - Pattern tag
@@ -31,6 +31,7 @@ class Easy {
     // E1. TWO SUM II — INPUT ARRAY IS SORTED
     // Pattern: Opposite-End Two Pointers — Pair Sum
     // LeetCode 167
+    // Frequency: 🔥🔥🔥 Very High (Amazon, Google, Apple)
     // =========================================================
     /**
      * Problem: Given a 1-indexed sorted array numbers, find two numbers
@@ -87,6 +88,7 @@ class Easy {
     // E2. VALID PALINDROME
     // Pattern: Opposite-End Two Pointers — Palindrome Check
     // LeetCode 125
+    // Frequency: 🔥🔥🔥 Very High (Meta, Microsoft, Amazon)
     // =========================================================
     /**
      * Problem: Given string s, return true if it is a palindrome
@@ -140,6 +142,7 @@ class Easy {
     // E3. REMOVE DUPLICATES FROM SORTED ARRAY
     // Pattern: Same-Direction Two Pointers — Read/Write
     // LeetCode 26
+    // Frequency: 🔥🔥🔥 Very High (Meta, Amazon, Microsoft)
     // =========================================================
     /**
      * Problem: Given sorted array nums, remove duplicates IN-PLACE.
@@ -194,6 +197,7 @@ class Easy {
     // E4. MOVE ZEROES
     // Pattern: Same-Direction Two Pointers — Partition
     // LeetCode 283
+    // Frequency: 🔥🔥🔥 Very High (Meta, Amazon, Apple, Microsoft)
     // =========================================================
     /**
      * Problem: Move all zeros in nums to the end IN-PLACE,
@@ -244,6 +248,7 @@ class Easy {
     // E5. SQUARES OF A SORTED ARRAY
     // Pattern: Opposite-End Two Pointers — Merge-Like Fill
     // LeetCode 977
+    // Frequency: 🔥🔥 High (Meta, Amazon, Google)
     // =========================================================
     /**
      * Problem: Given integer array nums sorted in non-decreasing order,
@@ -298,6 +303,7 @@ class Easy {
     // E6. REVERSE STRING
     // Pattern: Opposite-End Two Pointers — Symmetric Swap
     // LeetCode 344
+    // Frequency: 🔥🔥 High (Apple, Amazon)
     // =========================================================
     /**
      * Problem: Reverse a char array s in-place with O(1) extra memory.
@@ -331,6 +337,7 @@ class Easy {
     // E7. REMOVE ELEMENT
     // Pattern: Same-Direction Two Pointers — Filter
     // LeetCode 27
+    // Frequency: 🔥🔥 High (Amazon, Google)
     // =========================================================
     /**
      * Problem: Remove all occurrences of val from nums in-place.
@@ -376,6 +383,7 @@ class Easy {
     // E8. MERGE SORTED ARRAY
     // Pattern: Merge Two Arrays — Three Pointers (Fill from Right)
     // LeetCode 88
+    // Frequency: 🔥🔥🔥 Very High (Meta, Microsoft, Amazon)
     // =========================================================
     /**
      * Problem: nums1 has m valid elements + n spaces. nums2 has n elements.

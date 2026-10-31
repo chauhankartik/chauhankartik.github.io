@@ -3,11 +3,11 @@
  *  LINKED LIST — GOOGLE-LEVEL PROBLEMS
  * ============================================================
  *
- *  G1.  Design Browser History                 LC 1472
- *  G2.  All O'one Data Structure               LC 432  ★ Google
- *  G3.  Find the Duplicate Number (LL cycle)   LC 287  ★ Google
- *  G4.  Reverse Nodes in Even Length Groups    LC 2074
- *  G5.  Maximum Twin Sum of a Linked List      LC 2130
+ *  G1.  Design Browser History                 LC 1472 [🔥🔥🔥 Very High - Bloomberg, Amazon, Google]
+ *  G2.  All O'one Data Structure               LC 432  ★ Google [🔥🔥 High - Google, Meta]
+ *  G3.  Find the Duplicate Number (LL cycle)   LC 287  ★ Google [🔥🔥 High - Google, Amazon]
+ *  G4.  Reverse Nodes in Even Length Groups    LC 2074 [🔥 Medium - Google]
+ *  G5.  Maximum Twin Sum of a Linked List      LC 2130 [🔥🔥 High - Amazon, Meta]
  *
  *  Each problem includes:
  *   - Why Google asks it
@@ -40,6 +40,7 @@ class GoogleLevel {
 
     // =========================================================
     // G1. Design Browser History  LC 1472
+    // Frequency: 🔥🔥🔥 Very High (Bloomberg, Amazon, Google)
     // =========================================================
     /**
      * WHY GOOGLE ASKS IT:
@@ -100,6 +101,7 @@ class GoogleLevel {
 
     // =========================================================
     // G2. All O'one Data Structure  LC 432  ★ Google Favorite
+    // Frequency: 🔥🔥 High (Google, Meta)
     // =========================================================
     /**
      * WHY GOOGLE ASKS IT:
@@ -210,6 +212,7 @@ class GoogleLevel {
 
     // =========================================================
     // G3. Find the Duplicate Number  LC 287  ★ Google
+    // Frequency: 🔥🔥 High (Google, Amazon)
     // =========================================================
     /**
      * WHY GOOGLE ASKS IT:
@@ -256,6 +259,7 @@ class GoogleLevel {
 
     // =========================================================
     // G4. Reverse Nodes in Even Length Groups  LC 2074
+    // Frequency: 🔥 Medium (Google)
     // =========================================================
     /**
      * WHY GOOGLE ASKS IT:
@@ -329,6 +333,7 @@ class GoogleLevel {
 
     // =========================================================
     // G5. Maximum Twin Sum of a Linked List  LC 2130
+    // Frequency: 🔥🔥 High (Amazon, Meta)
     // =========================================================
     /**
      * WHY GOOGLE ASKS IT:

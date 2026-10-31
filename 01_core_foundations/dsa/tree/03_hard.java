@@ -3,12 +3,12 @@
  *  BINARY TREE — HARD PROBLEMS
  * ============================================================
  *
- *  H1.  Binary Tree Maximum Path Sum            LC 124
- *  H2.  Serialize and Deserialize Binary Tree   LC 297
- *  H3.  Binary Tree Cameras                     LC 968
- *  H4.  Recover Binary Search Tree              LC 99
- *  H5.  Morris Traversal (O(1) space inorder)   LC concept
- *  H6.  Flatten Binary Tree to Linked List      LC 114
+ *  H1.  Binary Tree Maximum Path Sum            LC 124 [🔥🔥🔥 Very High - Meta, Google, Amazon]
+ *  H2.  Serialize and Deserialize Binary Tree   LC 297 [🔥🔥🔥 Very High - Meta, Google, Amazon]
+ *  H3.  Binary Tree Cameras                     LC 968 [🔥🔥 High - Google, ByteDance]
+ *  H4.  Recover Binary Search Tree              LC 99 [🔥🔥 High - Google, Amazon]
+ *  H5.  Morris Traversal (O(1) space inorder)   LC concept [🔥🔥 High - Meta, Amazon, Google]
+ *  H6.  Flatten Binary Tree to Linked List      LC 114 [🔥🔥 High - Meta, Amazon, Microsoft]
  *
  *  Each problem includes:
  *   - Pattern tag
@@ -31,6 +31,7 @@ class TreeHard {
     // =========================================================
     // H1. Binary Tree Maximum Path Sum  LC 124
     // Pattern: BOTTOM-UP DFS (global ≠ return, allows negative paths)
+    // Frequency: 🔥🔥🔥 Very High (Meta, Google, Amazon)
     // =========================================================
     /**
      * A path can start and end at any node. Values can be negative.
@@ -75,6 +76,7 @@ class TreeHard {
     // =========================================================
     // H2. Serialize and Deserialize Binary Tree  LC 297
     // Pattern: PREORDER DFS with NULL MARKERS
+    // Frequency: 🔥🔥🔥 Very High (Meta, Google, Amazon)
     // =========================================================
     /**
      * Serialize: encode the tree to a string.
@@ -141,6 +143,7 @@ class TreeHard {
     // =========================================================
     // H3. Binary Tree Cameras  LC 968
     // Pattern: GREEDY DFS (bottom-up, 3 states)
+    // Frequency: 🔥🔥 High (Google, ByteDance)
     // =========================================================
     /**
      * Place minimum cameras such that every node is watched.
@@ -192,6 +195,7 @@ class TreeHard {
     // =========================================================
     // H4. Recover Binary Search Tree  LC 99
     // Pattern: INORDER + DETECT SWAPPED PAIR
+    // Frequency: 🔥🔥 High (Google, Amazon)
     // =========================================================
     /**
      * Exactly two nodes were swapped in a BST. Find and recover them.
@@ -241,6 +245,8 @@ class TreeHard {
 
     // =========================================================
     // H5. Morris Traversal — O(1) Space Inorder
+    // LeetCode: LC 5
+    // Frequency: 🔥🔥 High (Meta, Amazon, Google)
     // =========================================================
     /**
      * Standard inorder needs O(h) stack space. Morris traversal uses O(1) space.
@@ -295,6 +301,7 @@ class TreeHard {
 
     // =========================================================
     // H6. Flatten Binary Tree to Linked List  LC 114
+    // Frequency: 🔥🔥 High (Meta, Amazon, Microsoft)
     // =========================================================
     /**
      * Flatten tree in-place to a right-skewed "linked list" using PREORDER order.

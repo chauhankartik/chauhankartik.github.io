@@ -4,15 +4,15 @@
  *  BINARY TREE — MEDIUM PROBLEMS
  * ============================================================
  *
- *  M1.  Binary Tree Diameter                    LC 543
- *  M2.  Binary Tree Right Side View             LC 199
- *  M3.  Path Sum II (all paths)                 LC 113
- *  M4.  Path Sum III (any node, any direction)  LC 437
- *  M5.  Lowest Common Ancestor (BT)             LC 236
- *  M6.  Construct from Preorder + Inorder       LC 105
- *  M7.  Validate BST                            LC 98
- *  M8.  Kth Smallest in BST                     LC 230
- *  M9.  Zigzag Level Order                      LC 103
+ *  M1.  Binary Tree Diameter                    LC 543 [🔥🔥🔥 Very High - Meta, Amazon, Google]
+ *  M2.  Binary Tree Right Side View             LC 199 [🔥🔥🔥 Very High - Meta, Amazon, Google]
+ *  M3.  Path Sum II (all paths)                 LC 113 [🔥🔥 High - Amazon, Bloomberg]
+ *  M4.  Path Sum III (any node, any direction)  LC 437 [🔥🔥 High - Amazon, Meta]
+ *  M5.  Lowest Common Ancestor (BT)             LC 236 [🔥🔥🔥 Very High - Meta, Amazon, Microsoft, Apple]
+ *  M6.  Construct from Preorder + Inorder       LC 105 [🔥🔥🔥 Very High - Amazon, Meta, Microsoft]
+ *  M7.  Validate BST                            LC 98 [🔥🔥🔥 Very High - Amazon, Meta, Bloomberg, Microsoft]
+ *  M8.  Kth Smallest in BST                     LC 230 [🔥🔥 High - Amazon, Microsoft]
+ *  M9.  Zigzag Level Order                      LC 103 [🔥🔥 High - Amazon, Microsoft]
  *
  *  Each problem includes:
  *   - Pattern tag
@@ -43,6 +43,7 @@ class TreeMedium {
     // =========================================================
     // M1. Binary Tree Diameter LC 543
     // Pattern: BOTTOM-UP DFS (key: global vs return are DIFFERENT)
+    // Frequency: 🔥🔥🔥 Very High (Meta, Amazon, Google)
     // =========================================================
     /**
      * Diameter = longest path between ANY two nodes (may not pass through root).
@@ -80,6 +81,7 @@ class TreeMedium {
     // =========================================================
     // M2. Binary Tree Right Side View LC 199
     // Pattern: BFS (last node of each level)
+    // Frequency: 🔥🔥🔥 Very High (Meta, Amazon, Google)
     // =========================================================
     /**
      * Return the value of the rightmost node at each level.
@@ -158,6 +160,7 @@ class TreeMedium {
     // =========================================================
     // M3. Path Sum II — All Root-to-Leaf Paths LC 113
     // Pattern: DFS BACKTRACKING
+    // Frequency: 🔥🔥 High (Amazon, Bloomberg)
     // =========================================================
     /**
      * Collect ALL root-to-leaf paths that sum to targetSum.
@@ -194,6 +197,7 @@ class TreeMedium {
     // =========================================================
     // M4. Path Sum III — Any Node to Node LC 437
     // Pattern: DFS + PREFIX SUM (HashMap)
+    // Frequency: 🔥🔥 High (Amazon, Meta)
     // =========================================================
     /**
      * Count paths (any start, any end, must go downward) that sum to targetSum.
@@ -238,6 +242,7 @@ class TreeMedium {
     // =========================================================
     // M5. Lowest Common Ancestor — Binary Tree LC 236
     // Pattern: RECURSIVE DFS (bottom-up search)
+    // Frequency: 🔥🔥🔥 Very High (Meta, Amazon, Microsoft, Apple)
     // =========================================================
     /**
      * LCA of two nodes p and q is the deepest node that has both p and q as
@@ -284,6 +289,7 @@ class TreeMedium {
     // =========================================================
     // M6. Construct from Preorder + Inorder LC 105
     // Pattern: DIVIDE & CONQUER with HashMap index
+    // Frequency: 🔥🔥🔥 Very High (Amazon, Meta, Microsoft)
     // =========================================================
     /**
      * Preorder: [root, left subtree, right subtree]
@@ -333,6 +339,7 @@ class TreeMedium {
     // =========================================================
     // M7. Validate BST LC 98
     // Pattern: DFS WITH VALID RANGE [min, max]
+    // Frequency: 🔥🔥🔥 Very High (Amazon, Meta, Bloomberg, Microsoft)
     // =========================================================
     /**
      * BST property: left subtree values < node.val < right subtree values.
@@ -390,6 +397,7 @@ class TreeMedium {
     // =========================================================
     // M8. Kth Smallest in BST LC 230
     // Pattern: INORDER TRAVERSAL (BST inorder = sorted)
+    // Frequency: 🔥🔥 High (Amazon, Microsoft)
     // =========================================================
     /**
      * BST inorder traversal visits nodes in ASCENDING order.
@@ -427,6 +435,7 @@ class TreeMedium {
     // =========================================================
     // M9. Binary Tree Zigzag Level Order LC 103
     // Pattern: BFS + DIRECTION FLAG
+    // Frequency: 🔥🔥 High (Amazon, Microsoft)
     // =========================================================
     /**
      * Level order but alternating direction (left-to-right then right-to-left).

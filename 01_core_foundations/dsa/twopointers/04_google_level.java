@@ -5,13 +5,13 @@
  *  or non-obvious pointer schemes.
  * ============================================================
  *
- *  Problems:
- *   G1. Minimum Number of Swaps to Make Strings Balanced (LC 1963)
- *   G2. Maximum Score of a Good Subarray (LC 1793)
- *   G3. Minimum Operations to Make Array Continuous (LC 2009)
- *   G4. Find the Longest Substring Containing Vowels in Even Counts (LC 1371)
- *   G5. Minimize Maximum Pair Sum in Array (LC 1877)
- *   G6. Reorder List (LC 143) — Find Mid + Reverse + Merge
+ *  Problems & Interview Frequencies:
+ *   G1. Minimum Number of Swaps to Make Strings Balanced (LC 1963) [🔥🔥 High - Meta, Amazon, Google]
+ *   G2. Maximum Score of a Good Subarray (LC 1793) [🔥🔥 High - Google, ByteDance]
+ *   G3. Minimum Operations to Make Array Continuous (LC 2009) [🔥🔥 High - Google, Meta]
+ *   G4. Find the Longest Substring Containing Vowels in Even Counts (LC 1371) [🔥🔥 High - Meta, Amazon, Google]
+ *   G5. Minimize Maximum Pair Sum in Array (LC 1877) [🔥 Medium - Amazon]
+ *   G6. Reorder List (LC 143) — Find Mid + Reverse + Merge [🔥🔥🔥 Very High - Meta, Amazon]
  *
  * ============================================================
  */
@@ -23,6 +23,7 @@ class GoogleLevel {
     // G1. MINIMUM NUMBER OF SWAPS TO MAKE STRINGS BALANCED
     // Pattern: Two Pointers — Greedy Bracket Balancing
     // LeetCode 1963
+    // Frequency: 🔥🔥 High (Meta, Amazon, Google)
     // =========================================================
     /**
      * Problem: Given string s of ']' and '[' of even length n (equal counts).
@@ -80,6 +81,7 @@ class GoogleLevel {
     // G2. MAXIMUM SCORE OF A GOOD SUBARRAY
     // Pattern: Two Pointers — Expand from Fixed Middle
     // LeetCode 1793
+    // Frequency: 🔥🔥 High (Google, ByteDance)
     // =========================================================
     /**
      * Problem: Given array nums of n integers and int k.
@@ -147,6 +149,7 @@ class GoogleLevel {
     // G3. MINIMUM OPERATIONS TO MAKE ARRAY CONTINUOUS
     // Pattern: Sort + Sliding Window / Two Pointers on Sorted Array
     // LeetCode 2009
+    // Frequency: 🔥🔥 High (Google, Meta)
     // =========================================================
     /**
      * Problem: An array is continuous if: length = n, all elements distinct,
@@ -207,6 +210,7 @@ class GoogleLevel {
     // G4. FIND THE LONGEST SUBSTRING CONTAINING VOWELS IN EVEN COUNTS
     // Pattern: Bitmask + Prefix XOR (Two-Pointer Inspired)
     // LeetCode 1371
+    // Frequency: 🔥🔥 High (Meta, Amazon, Google)
     // =========================================================
     /**
      * Problem: Find the length of the longest substring of s where
@@ -269,6 +273,7 @@ class GoogleLevel {
     // G5. MINIMIZE MAXIMUM PAIR SUM IN ARRAY
     // Pattern: Sort + Opposite-End Two Pointers — Greedy Pairing
     // LeetCode 1877
+    // Frequency: 🔥 Medium (Amazon)
     // =========================================================
     /**
      * Problem: Given even-length array nums, pair up all elements.
@@ -317,6 +322,7 @@ class GoogleLevel {
     // G6. REORDER LIST
     // Pattern: Find Mid + Reverse Second Half + Merge
     // LeetCode 143
+    // Frequency: 🔥🔥🔥 Very High (Meta, Amazon)
     // =========================================================
     /**
      * Problem: Given linked list L0 → L1 → ... → Ln, reorder it to:

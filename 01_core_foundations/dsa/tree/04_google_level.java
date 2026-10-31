@@ -3,11 +3,11 @@
  *  BINARY TREE — GOOGLE-LEVEL PROBLEMS
  * ============================================================
  *
- *  G1.  BST Iterator                            LC 173  ★ Google
- *  G2.  Count Complete Tree Nodes               LC 222  ★ Google
- *  G3.  Vertical Order Traversal                LC 987  ★ Google
- *  G4.  Count Good Nodes in Binary Tree         LC 1448
- *  G5.  Step-by-Step Directions (LCA + path)    LC 2096 ★ Google
+ *  G1.  BST Iterator                            LC 173  ★ Google [🔥🔥 High - Meta, Google, Amazon]
+ *  G2.  Count Complete Tree Nodes               LC 222  ★ Google [🔥🔥 High - Google, Amazon]
+ *  G3.  Vertical Order Traversal                LC 987  ★ Google [🔥🔥🔥 Very High - Meta, Google, Amazon]
+ *  G4.  Count Good Nodes in Binary Tree         LC 1448 [🔥🔥 High - Microsoft, Amazon]
+ *  G5.  Step-by-Step Directions (LCA + path)    LC 2096 ★ Google [🔥🔥 High - Google, Amazon]
  *
  *  Each problem includes:
  *   - Why Google asks it
@@ -29,6 +29,7 @@ class TreeGoogleLevel {
 
     // =========================================================
     // G1. BST Iterator  LC 173  ★ Google
+    // Frequency: 🔥🔥 High (Meta, Google, Amazon)
     // =========================================================
     /**
      * WHY GOOGLE ASKS IT:
@@ -83,6 +84,7 @@ class TreeGoogleLevel {
 
     // =========================================================
     // G2. Count Complete Tree Nodes  LC 222  ★ Google
+    // Frequency: 🔥🔥 High (Google, Amazon)
     // =========================================================
     /**
      * WHY GOOGLE ASKS IT:
@@ -140,6 +142,7 @@ class TreeGoogleLevel {
 
     // =========================================================
     // G3. Vertical Order Traversal  LC 987  ★ Google
+    // Frequency: 🔥🔥🔥 Very High (Meta, Google, Amazon)
     // =========================================================
     /**
      * WHY GOOGLE ASKS IT:
@@ -193,6 +196,7 @@ class TreeGoogleLevel {
 
     // =========================================================
     // G4. Count Good Nodes in Binary Tree  LC 1448
+    // Frequency: 🔥🔥 High (Microsoft, Amazon)
     // =========================================================
     /**
      * WHY GOOGLE ASKS IT:
@@ -222,6 +226,7 @@ class TreeGoogleLevel {
 
     // =========================================================
     // G5. Step-by-Step Directions (LCA + path)  LC 2096  ★ Google
+    // Frequency: 🔥🔥 High (Google, Amazon)
     // =========================================================
     /**
      * WHY GOOGLE ASKS IT:

@@ -4,13 +4,13 @@
  *  Pattern-oriented multi-pattern complex problems.
  * ============================================================
  *
- *  Problems:
- *   G1. Patching Array (LeetCode 330)
- *   G2. Construct Target Array With Multiple Sums (LeetCode 1354)
- *   G3. Stamping The Sequence (LeetCode 936)
- *   G4. Rearrange String k Distance Apart (LeetCode 358)
- *   G5. IPO - Initial Public Offering (LeetCode 502)
- *   G6. Minimum Cost to Hire K Workers (LeetCode 857)
+ *  Problems & Interview Frequencies:
+ *   G1. Patching Array (LeetCode 330) [🔥🔥 High - Amazon, Google, Meta]
+ *   G2. Construct Target Array With Multiple Sums (LeetCode 1354) [🔥🔥 High - Amazon, Google, Meta]
+ *   G3. Stamping The Sequence (LeetCode 936) [🔥🔥 High - Amazon, Google, Meta]
+ *   G4. Rearrange String k Distance Apart (LeetCode 358) [🔥🔥 High - Amazon, Google, Meta]
+ *   G5. IPO - Initial Public Offering (LeetCode 502) [🔥🔥 High - Amazon, Google, Meta]
+ *   G6. Minimum Cost to Hire K Workers (LeetCode 857) [🔥🔥 High - Amazon, Google, Meta]
  *
  *  Each problem includes:
  *   - Pattern tag
@@ -27,6 +27,7 @@ class GoogleLevel {
     // G1. PATCHING ARRAY
     // Pattern: Reachability Range Expansion Greedy
     // LeetCode: 330
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Given sorted nums array and integer n, add minimum patches
@@ -60,6 +61,7 @@ class GoogleLevel {
     // G2. CONSTRUCT TARGET ARRAY WITH MULTIPLE SUMS
     // Pattern: Reverse Priority Queue Greedy
     // LeetCode: 1354
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Start with array of 1s. Replace an element with total sum of array.
@@ -101,6 +103,7 @@ class GoogleLevel {
     // G3. STAMPING THE SEQUENCE
     // Pattern: Reverse Matching Greedy
     // LeetCode: 936
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Given stamp string and target string, return order of stamp indices to form target.
@@ -162,6 +165,7 @@ class GoogleLevel {
     // G4. REARRANGE STRING K DISTANCE APART
     // Pattern: Priority Queue Frequency & Cooldown Queue
     // LeetCode: 358
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Rearrange string s such that same characters are at least distance k apart.
@@ -206,6 +210,7 @@ class GoogleLevel {
     // G5. IPO (INITIAL PUBLIC OFFERING)
     // Pattern: Min-Capital Heap + Max-Profit Heap Dual Greedy
     // LeetCode: 502
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Given capital w, pick at most k distinct projects to maximize capital.
@@ -246,6 +251,7 @@ class GoogleLevel {
     // G6. MINIMUM COST TO HIRE K WORKERS
     // Pattern: Sorting Ratio + PriorityQueue Sum Greedy
     // LeetCode: 857
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Hire k workers such that worker pay is proportional to quality and

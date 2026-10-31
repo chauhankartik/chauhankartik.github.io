@@ -3,14 +3,14 @@
  *  LINKED LIST — EASY PROBLEMS
  * ============================================================
  *
- *  E1.  Reverse Linked List                     LC 206
- *  E2.  Find Middle of Linked List              LC 876
- *  E3.  Detect Cycle                            LC 141
- *  E4.  Merge Two Sorted Lists                  LC 21
- *  E5.  Remove Nth Node From End                LC 19
- *  E6.  Palindrome Linked List                  LC 234
- *  E7.  Intersection of Two Linked Lists        LC 160
- *  E8.  Delete Node in a Linked List            LC 237
+ *  E1.  Reverse Linked List                     LC 206 [🔥🔥🔥 Very High - Meta, Amazon, Google, Microsoft, Apple]
+ *  E2.  Find Middle of Linked List              LC 876 [🔥🔥 High - Amazon, Google]
+ *  E3.  Detect Cycle                            LC 141 [🔥🔥🔥 Very High - Amazon, Microsoft, Meta]
+ *  E4.  Merge Two Sorted Lists                  LC 21 [🔥🔥🔥 Very High - Meta, Amazon, Microsoft, Apple]
+ *  E5.  Remove Nth Node From End                LC 19 [🔥🔥🔥 Very High - Meta, Amazon, Apple]
+ *  E6.  Palindrome Linked List                  LC 234 [🔥🔥 High - Meta, Amazon]
+ *  E7.  Intersection of Two Linked Lists        LC 160 [🔥🔥 High - Amazon, Meta, Microsoft]
+ *  E8.  Delete Node in a Linked List            LC 237 [🔥 Medium - Apple, Amazon]
  *
  *  Each problem includes:
  *   - Pattern tag
@@ -53,6 +53,7 @@ class Easy {
     // =========================================================
     // E1. Reverse Linked List  LC 206
     // Pattern: REVERSE (iterative + recursive)
+    // Frequency: 🔥🔥🔥 Very High (Meta, Amazon, Google, Microsoft, Apple)
     // =========================================================
     /**
      * Brute: collect to array, rebuild — O(n) time O(n) space
@@ -92,6 +93,7 @@ class Easy {
     // =========================================================
     // E2. Find Middle of Linked List  LC 876
     // Pattern: FAST & SLOW (single pass)
+    // Frequency: 🔥🔥 High (Amazon, Google)
     // =========================================================
     /**
      * Brute: count n, walk n/2 steps — 2 passes O(n)
@@ -120,6 +122,7 @@ class Easy {
     // =========================================================
     // E3. Detect Cycle  LC 141
     // Pattern: FAST & SLOW (Floyd's Tortoise & Hare)
+    // Frequency: 🔥🔥🔥 Very High (Amazon, Microsoft, Meta)
     // =========================================================
     /**
      * Brute: HashSet of visited nodes — O(n) time O(n) space
@@ -174,6 +177,7 @@ class Easy {
     // =========================================================
     // E4. Merge Two Sorted Lists  LC 21
     // Pattern: MERGE + DUMMY NODE
+    // Frequency: 🔥🔥🔥 Very High (Meta, Amazon, Microsoft, Apple)
     // =========================================================
     /**
      * Use a dummy head to avoid special-casing the first node.
@@ -207,6 +211,7 @@ class Easy {
     // =========================================================
     // E5. Remove Nth Node From End  LC 19
     // Pattern: FAST & SLOW + DUMMY NODE (single pass)
+    // Frequency: 🔥🔥🔥 Very High (Meta, Amazon, Apple)
     // =========================================================
     /**
      * Brute: count length n, walk to (n-k)th node — 2 passes
@@ -246,6 +251,7 @@ class Easy {
     // =========================================================
     // E6. Palindrome Linked List  LC 234
     // Pattern: FAST & SLOW + REVERSE + COMPARE
+    // Frequency: 🔥🔥 High (Meta, Amazon)
     // =========================================================
     /**
      * Brute: copy to array, two-pointer check — O(n) time O(n) space
@@ -303,6 +309,7 @@ class Easy {
     // =========================================================
     // E7. Intersection of Two Linked Lists  LC 160
     // Pattern: TWO POINTERS (length equalization)
+    // Frequency: 🔥🔥 High (Amazon, Meta, Microsoft)
     // =========================================================
     /**
      * Brute: HashSet of nodes from list A, scan list B — O(m+n) O(m)
@@ -335,6 +342,7 @@ class Easy {
     // =========================================================
     // E8. Delete Node in a Linked List  LC 237
     // Pattern: VALUE COPY TRICK
+    // Frequency: 🔥 Medium (Apple, Amazon)
     // =========================================================
     /**
      * Normally deletion requires access to the previous node.

@@ -6,15 +6,15 @@
  *  and state-space search.
  * ============================================================
  *
- *  Problems:
- *   M1. Course Schedule (Cycle Detection / Topological Sort)
- *   M2. Course Schedule II (Topological Ordering)
- *   M3. Rotting Oranges (Multi-Source BFS)
- *   M4. 01 Matrix (Multi-Source BFS — distance)
- *   M5. Pacific Atlantic Water Flow (Multi-Source DFS)
- *   M6. Network Delay Time (Dijkstra's Algorithm)
- *   M7. Redundant Connection (Union-Find Cycle Detection)
- *   M8. Word Ladder (BFS — implicit graph)
+ *  Problems & Interview Frequencies:
+ *   M1. Course Schedule (Cycle Detection / Topological Sort) [🔥🔥 High - Google, Amazon, Meta]
+ *   M2. Course Schedule II (Topological Ordering) [🔥🔥 High - Google, Amazon, Meta]
+ *   M3. Rotting Oranges (Multi-Source BFS) [🔥🔥 High - Google, Amazon, Meta]
+ *   M4. 01 Matrix (Multi-Source BFS — distance) [🔥🔥 High - Google, Amazon, Meta]
+ *   M5. Pacific Atlantic Water Flow (Multi-Source DFS) [🔥🔥 High - Google, Amazon, Meta]
+ *   M6. Network Delay Time (Dijkstra's Algorithm) [🔥🔥 High - Google, Amazon, Meta]
+ *   M7. Redundant Connection (Union-Find Cycle Detection) [🔥🔥 High - Google, Amazon, Meta]
+ *   M8. Word Ladder (BFS — implicit graph) [🔥🔥 High - Google, Amazon, Meta]
  *
  * ============================================================
  */
@@ -25,6 +25,8 @@ public class Medium {
     // =========================================================
     // M1. COURSE SCHEDULE
     // Pattern: Cycle Detection in Directed Graph (Topological Sort)
+    // LeetCode: LC 1
+    // Frequency: 🔥🔥 High (Google, Amazon, Meta)
     // =========================================================
     /**
      * Problem: Given numCourses and prerequisites [a, b] (must take b before a),
@@ -89,6 +91,8 @@ public class Medium {
     // =========================================================
     // M2. COURSE SCHEDULE II
     // Pattern: Topological Sort (return the ordering)
+    // LeetCode: LC 2
+    // Frequency: 🔥🔥 High (Google, Amazon, Meta)
     // =========================================================
     /**
      * Problem: Return a valid ordering of courses to take.
@@ -172,6 +176,8 @@ public class Medium {
     // =========================================================
     // M3. ROTTING ORANGES
     // Pattern: Multi-Source BFS (simultaneous spread)
+    // LeetCode: LC 3
+    // Frequency: 🔥🔥 High (Google, Amazon, Meta)
     // =========================================================
     /**
      * Problem: In a grid, 2=rotten orange, 1=fresh, 0=empty.
@@ -242,6 +248,7 @@ public class Medium {
     // =========================================================
     // M4. 01 MATRIX (Nearest 0 Distance)
     // Pattern: Multi-Source BFS (distance from set of sources)
+    // Frequency: 🔥🔥 High (Google, Amazon, Meta)
     // =========================================================
     /**
      * Problem: For each cell, find distance to nearest 0. (LeetCode 542)
@@ -300,6 +307,8 @@ public class Medium {
     // =========================================================
     // M5. PACIFIC ATLANTIC WATER FLOW
     // Pattern: Multi-Source DFS from Borders
+    // LeetCode: LC 5
+    // Frequency: 🔥🔥 High (Google, Amazon, Meta)
     // =========================================================
     /**
      * Problem: Grid of heights. Water flows to lower/equal cells.
@@ -370,6 +379,8 @@ public class Medium {
     // =========================================================
     // M6. NETWORK DELAY TIME (Dijkstra's Algorithm)
     // Pattern: Shortest Path — Weighted Graph
+    // LeetCode: LC 6
+    // Frequency: 🔥🔥 High (Google, Amazon, Meta)
     // =========================================================
     /**
      * Problem: Given n nodes, edges [u, v, w], and source k, find the
@@ -439,6 +450,8 @@ public class Medium {
     // =========================================================
     // M7. REDUNDANT CONNECTION
     // Pattern: Union-Find — Cycle Detection in Undirected Graph
+    // LeetCode: LC 7
+    // Frequency: 🔥🔥 High (Google, Amazon, Meta)
     // =========================================================
     /**
      * Problem: Given a graph that started as a tree and had ONE extra edge
@@ -487,6 +500,8 @@ public class Medium {
     // =========================================================
     // M8. WORD LADDER
     // Pattern: BFS on Implicit Graph (State Space Search)
+    // LeetCode: LC 8
+    // Frequency: 🔥🔥 High (Google, Amazon, Meta)
     // =========================================================
     /**
      * Problem: Transform beginWord to endWord, changing ONE letter at a time.

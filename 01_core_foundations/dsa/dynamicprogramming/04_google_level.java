@@ -3,11 +3,11 @@
  *  DYNAMIC PROGRAMMING — GOOGLE-LEVEL PROBLEMS
  * ============================================================
  *
- *  G1.  Best Time to Buy/Sell Stock with Cooldown  LC 309  ★ Google
- *  G2.  Longest String Chain                       LC 1048 ★ Google
- *  G3.  Target Sum                                 LC 494  ★ Google
- *  G4.  Ones and Zeroes                            LC 474  ★ Google
- *  G5.  Stone Game                                 LC 877  ★ Google
+ *  G1.  Best Time to Buy/Sell Stock with Cooldown  LC 309  ★ Google [🔥🔥 High - Google, Amazon]
+ *  G2.  Longest String Chain                       LC 1048 ★ Google [🔥🔥 High - Google, Amazon, Microsoft]
+ *  G3.  Target Sum                                 LC 494  ★ Google [🔥🔥 High - Meta, Amazon]
+ *  G4.  Ones and Zeroes                            LC 474  ★ Google [🔥🔥 High - Google, Amazon, Microsoft]
+ *  G5.  Stone Game                                 LC 877  ★ Google [🔥🔥 High - Google, Amazon, Microsoft]
  *
  *  Each problem includes:
  *   - Why Google asks it
@@ -23,6 +23,7 @@ class DPGoogleLevel {
     // =========================================================
     // G1. Best Time to Buy/Sell Stock with Cooldown  LC 309
     //     ★ Google — STATE MACHINE DP
+    // Frequency: 🔥🔥 High (Google, Amazon)
     // =========================================================
     /**
      * WHY GOOGLE ASKS IT:
@@ -82,6 +83,7 @@ class DPGoogleLevel {
 
     // =========================================================
     // G2. Longest String Chain  LC 1048  ★ Google
+    // Frequency: 🔥🔥 High (Google, Amazon, Microsoft)
     // =========================================================
     /**
      * WHY GOOGLE ASKS IT:
@@ -133,6 +135,7 @@ class DPGoogleLevel {
 
     // =========================================================
     // G3. Target Sum  LC 494  ★ Google
+    // Frequency: 🔥🔥 High (Meta, Amazon)
     // =========================================================
     /**
      * WHY GOOGLE ASKS IT:
@@ -202,6 +205,7 @@ class DPGoogleLevel {
 
     // =========================================================
     // G4. Ones and Zeroes  LC 474  ★ Google
+    // Frequency: 🔥🔥 High (Google, Amazon, Microsoft)
     // =========================================================
     /**
      * WHY GOOGLE ASKS IT:
@@ -253,6 +257,7 @@ class DPGoogleLevel {
 
     // =========================================================
     // G5. Stone Game  LC 877  ★ Google
+    // Frequency: 🔥🔥 High (Google, Amazon, Microsoft)
     // =========================================================
     /**
      * WHY GOOGLE ASKS IT:

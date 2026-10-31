@@ -4,13 +4,13 @@
  *  Pattern-oriented multi-pattern complex problems.
  * ============================================================
  *
- *  Problems:
- *   G1. Palindrome Pairs (LeetCode 336 - Reversed Trie + Palindrome Suffix Check)
- *   G2. Concatenated Words (LeetCode 472 - Trie + DP Memoization)
- *   G3. Word Squares (LeetCode 425 - Trie + Backtracking)
- *   G4. Encrypt and Decrypt Strings (LeetCode 2227 - Trie Frequency Count)
- *   G5. Sum of Prefix Scores of Strings (LeetCode 2416 - Pass-through Node Counter)
- *   G6. Delete Duplicate Folders in System (LeetCode 1948 - Trie Subtree Serialization Hashing)
+ *  Problems & Interview Frequencies:
+ *   G1. Palindrome Pairs (LeetCode 336 - Reversed Trie + Palindrome Suffix Check) [🔥🔥 High - Google, Amazon, Microsoft]
+ *   G2. Concatenated Words (LeetCode 472 - Trie + DP Memoization) [🔥🔥 High - Amazon, Google]
+ *   G3. Word Squares (LeetCode 425 - Trie + Backtracking) [🔥🔥 High - Google, Amazon, Microsoft]
+ *   G4. Encrypt and Decrypt Strings (LeetCode 2227 - Trie Frequency Count) [🔥🔥 High - Google, Amazon, Microsoft]
+ *   G5. Sum of Prefix Scores of Strings (LeetCode 2416 - Pass-through Node Counter) [🔥🔥 High - Google, Amazon, Microsoft]
+ *   G6. Delete Duplicate Folders in System (LeetCode 1948 - Trie Subtree Serialization Hashing) [🔥🔥 High - Google, Amazon, Microsoft]
  *
  *  Each problem includes:
  *   - Pattern tag
@@ -27,6 +27,7 @@ class GoogleLevel {
     // G1. PALINDROME PAIRS
     // Pattern: Reversed Trie + Palindrome Prefix/Suffix Check
     // LeetCode: 336
+    // Frequency: 🔥🔥 High (Google, Amazon, Microsoft)
     // =========================================================
     /**
      * Problem: Find all index pairs (i, j) such that words[i] + words[j] forms a palindrome.
@@ -102,6 +103,7 @@ class GoogleLevel {
     // G2. CONCATENATED WORDS
     // Pattern: Trie + DP Memoization
     // LeetCode: 472
+    // Frequency: 🔥🔥 High (Google, Amazon, Microsoft)
     // =========================================================
     /**
      * Problem: Return all words in list that are formed by concatenating >= 2 shorter words in list.
@@ -161,6 +163,7 @@ class GoogleLevel {
     // G3. WORD SQUARES
     // Pattern: Trie Prefix Backtracking
     // LeetCode: 425
+    // Frequency: 🔥🔥 High (Google, Amazon, Microsoft)
     // =========================================================
     /**
      * Problem: Build K x K word squares such that row k == column k for all k.
@@ -228,6 +231,7 @@ class GoogleLevel {
     // G4. ENCRYPT AND DECRYPT STRINGS
     // Pattern: Reverse Trie Frequency Matching
     // LeetCode: 2227
+    // Frequency: 🔥🔥 High (Google, Amazon, Microsoft)
     // =========================================================
     /**
      * Problem: Encrypt key chars to 2-char codes. Decrypt 2-char codes count matching valid dictionary words.
@@ -271,6 +275,7 @@ class GoogleLevel {
     // G5. SUM OF PREFIX SCORES OF STRINGS
     // Pattern: Pass-through Node Counter Trie
     // LeetCode: 2416
+    // Frequency: 🔥🔥 High (Google, Amazon, Microsoft)
     // =========================================================
     /**
      * Problem: For each string, return sum of scores of all its non-empty prefixes (score = count of words with prefix).
@@ -320,6 +325,7 @@ class GoogleLevel {
     // G6. DELETE DUPLICATE FOLDERS IN SYSTEM
     // Pattern: Trie Subtree Serialization Hashing
     // LeetCode: 1948
+    // Frequency: 🔥🔥 High (Google, Amazon, Microsoft)
     // =========================================================
     /**
      * Problem: Delete all subtrees in folder structure that have identical sub-folder structure.

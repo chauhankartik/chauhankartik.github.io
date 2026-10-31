@@ -3,12 +3,12 @@
  *  STACK — HARD PROBLEMS
  * ============================================================
  *
- *  H1.  Largest Rectangle in Histogram              LC 84
- *  H2.  Maximal Rectangle                           LC 85
- *  H3.  Basic Calculator                            LC 224
- *  H4.  Trapping Rain Water                         LC 42
- *  H5.  Longest Valid Parentheses                   LC 32
- *  H6.  Sum of Subarray Minimums                    LC 907
+ *  H1.  Largest Rectangle in Histogram              LC 84 [🔥🔥🔥 Very High - Google, Amazon, Meta]
+ *  H2.  Maximal Rectangle                           LC 85 [🔥🔥 High - Amazon, Google]
+ *  H3.  Basic Calculator                            LC 224 [🔥🔥🔥 Very High - Meta, Google, Amazon]
+ *  H4.  Trapping Rain Water                         LC 42 [🔥🔥🔥 Very High - Google, Amazon, Meta, Goldman Sachs]
+ *  H5.  Longest Valid Parentheses                   LC 32 [🔥🔥🔥 Very High - Google, Amazon, Meta]
+ *  H6.  Sum of Subarray Minimums                    LC 907 [🔥🔥 High - Amazon, Google]
  *
  *  Each problem includes:
  *   - Pattern tag
@@ -24,6 +24,7 @@ class StackHard {
     // =========================================================
     // H1. Largest Rectangle in Histogram  LC 84
     // Pattern: MONOTONIC STACK (increasing — area calculation)
+    // Frequency: 🔥🔥🔥 Very High (Google, Amazon, Meta)
     // =========================================================
     /**
      * Find the largest rectangle that can be formed in a histogram.
@@ -76,6 +77,7 @@ class StackHard {
     // =========================================================
     // H2. Maximal Rectangle  LC 85
     // Pattern: HISTOGRAM PER ROW + H1
+    // Frequency: 🔥🔥 High (Amazon, Google)
     // =========================================================
     /**
      * Find the largest rectangle containing only 1's in a binary matrix.
@@ -119,6 +121,7 @@ class StackHard {
     // =========================================================
     // H3. Basic Calculator  LC 224
     // Pattern: STACK — Recursive descent / sign tracking
+    // Frequency: 🔥🔥🔥 Very High (Meta, Google, Amazon)
     // =========================================================
     /**
      * Evaluate expression with +, -, (, ), and non-negative integers.
@@ -187,6 +190,7 @@ class StackHard {
     // =========================================================
     // H4. Trapping Rain Water  LC 42
     // Pattern: MONOTONIC STACK or TWO POINTERS
+    // Frequency: 🔥🔥🔥 Very High (Google, Amazon, Meta, Goldman Sachs)
     // =========================================================
     /**
      * Given elevation map bars, compute trapped water after rain.
@@ -255,6 +259,7 @@ class StackHard {
     // =========================================================
     // H5. Longest Valid Parentheses  LC 32
     // Pattern: STACK WITH INDICES
+    // Frequency: 🔥🔥🔥 Very High (Google, Amazon, Meta)
     // =========================================================
     /**
      * Find the length of the longest valid parentheses substring.
@@ -302,6 +307,7 @@ class StackHard {
     // =========================================================
     // H6. Sum of Subarray Minimums  LC 907
     // Pattern: MONOTONIC STACK — Contribution technique
+    // Frequency: 🔥🔥 High (Amazon, Google)
     // =========================================================
     /**
      * Sum of min(subarray) for all contiguous subarrays.

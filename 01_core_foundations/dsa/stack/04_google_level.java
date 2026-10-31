@@ -3,11 +3,11 @@
  *  STACK — GOOGLE-LEVEL PROBLEMS
  * ============================================================
  *
- *  G1.  Basic Calculator II                        LC 227  ★ Google
- *  G2.  Maximum Frequency Stack                    LC 895  ★ Google
- *  G3.  Number of Visible People in a Queue        LC 1944 ★ Google
- *  G4.  Remove Duplicate Letters                   LC 316  ★ Google
- *  G5.  Sum of Subarray Ranges                     LC 2104 ★ Google
+ *  G1.  Basic Calculator II                        LC 227  ★ Google [🔥🔥🔥 Very High - Meta, Amazon, Microsoft]
+ *  G2.  Maximum Frequency Stack                    LC 895  ★ Google [🔥🔥🔥 Very High - Amazon, Meta, Google]
+ *  G3.  Number of Visible People in a Queue        LC 1944 ★ Google [🔥🔥 High - Google, Meta]
+ *  G4.  Remove Duplicate Letters                   LC 316  ★ Google [🔥🔥 High - Google, Amazon]
+ *  G5.  Sum of Subarray Ranges                     LC 2104 ★ Google [🔥🔥 High - Amazon, Google]
  *
  *  Each problem includes:
  *   - Why Google asks it
@@ -22,6 +22,7 @@ class StackGoogleLevel {
 
     // =========================================================
     // G1. Basic Calculator II  LC 227  ★ Google
+    // Frequency: 🔥🔥🔥 Very High (Meta, Amazon, Microsoft)
     // =========================================================
     /**
      * WHY GOOGLE ASKS IT:
@@ -85,6 +86,7 @@ class StackGoogleLevel {
 
     // =========================================================
     // G2. Maximum Frequency Stack  LC 895  ★ Google
+    // Frequency: 🔥🔥🔥 Very High (Amazon, Meta, Google)
     // =========================================================
     /**
      * WHY GOOGLE ASKS IT:
@@ -153,6 +155,7 @@ class StackGoogleLevel {
 
     // =========================================================
     // G3. Number of Visible People in a Queue  LC 1944  ★ Google
+    // Frequency: 🔥🔥 High (Google, Meta)
     // =========================================================
     /**
      * WHY GOOGLE ASKS IT:
@@ -210,6 +213,7 @@ class StackGoogleLevel {
 
     // =========================================================
     // G4. Remove Duplicate Letters  LC 316  ★ Google
+    // Frequency: 🔥🔥 High (Google, Amazon)
     // =========================================================
     /**
      * WHY GOOGLE ASKS IT:
@@ -268,6 +272,7 @@ class StackGoogleLevel {
 
     // =========================================================
     // G5. Sum of Subarray Ranges  LC 2104  ★ Google
+    // Frequency: 🔥🔥 High (Amazon, Google)
     // =========================================================
     /**
      * WHY GOOGLE ASKS IT:

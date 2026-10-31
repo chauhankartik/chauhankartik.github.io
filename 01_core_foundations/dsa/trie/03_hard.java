@@ -5,13 +5,13 @@
  *  pattern from 00_theory.md.
  * ============================================================
  *
- *  Problems:
- *   H1. Word Search II (LeetCode 212 - Trie + Backtracking + Node Pruning)
- *   H2. Word Break II (LeetCode 140 - Trie + Memoized DP Backtracking)
- *   H3. Prefix and Suffix Search (LeetCode 745 - Combined Wrapped Trie)
- *   H4. Maximum XOR With an Element From Array (LeetCode 1707 - Offline Queries + Bitwise Trie)
- *   H5. Design Search Autocomplete System (LeetCode 642 - Trie + Frequency Top 3)
- *   H6. Count Pairs With XOR in a Range (LeetCode 1803 - Bitwise Trie Subtree Count)
+ *  Problems & Interview Frequencies:
+ *   H1. Word Search II (LeetCode 212 - Trie + Backtracking + Node Pruning) [🔥🔥🔥 Very High - Amazon, Meta, Google]
+ *   H2. Word Break II (LeetCode 140 - Trie + Memoized DP Backtracking) [🔥🔥 High - Amazon, Google]
+ *   H3. Prefix and Suffix Search (LeetCode 745 - Combined Wrapped Trie) [🔥🔥 High - Google, Amazon, Microsoft]
+ *   H4. Maximum XOR With an Element From Array (LeetCode 1707 - Offline Queries + Bitwise Trie) [🔥🔥 High - Google, Amazon, Microsoft]
+ *   H5. Design Search Autocomplete System (LeetCode 642 - Trie + Frequency Top 3) [🔥🔥 High - Google, Amazon, Microsoft]
+ *   H6. Count Pairs With XOR in a Range (LeetCode 1803 - Bitwise Trie Subtree Count) [🔥🔥 High - Google, Amazon, Microsoft]
  *
  *  Each problem includes:
  *   - Pattern tag
@@ -28,6 +28,7 @@ class Hard {
     // H1. WORD SEARCH II
     // Pattern: Trie Grid Backtracking + Dynamic Node Pruning
     // LeetCode: 212
+    // Frequency: 🔥🔥 High (Google, Amazon, Microsoft)
     // =========================================================
     /**
      * Problem: Given an m x n board of characters and a list of words, return all words on the board.
@@ -115,6 +116,7 @@ class Hard {
     // H2. WORD BREAK II
     // Pattern: Trie + Memoized DP Backtracking
     // LeetCode: 140
+    // Frequency: 🔥🔥 High (Google, Amazon, Microsoft)
     // =========================================================
     /**
      * Problem: Given a string s and wordDict, insert spaces to construct all valid sentences.
@@ -178,6 +180,7 @@ class Hard {
     // H3. PREFIX AND SUFFIX SEARCH
     // Pattern: Wrapped Combination Trie (`suffix + '{' + prefix`)
     // LeetCode: 745
+    // Frequency: 🔥🔥 High (Google, Amazon, Microsoft)
     // =========================================================
     /**
      * Problem: Design WordFilter(words) supporting f(prefix, suffix) returning max index of matching word.
@@ -237,6 +240,7 @@ class Hard {
     // H4. MAXIMUM XOR WITH AN ELEMENT FROM ARRAY
     // Pattern: Offline Sorted Queries + Bitwise Trie
     // LeetCode: 1707
+    // Frequency: 🔥🔥 High (Google, Amazon, Microsoft)
     // =========================================================
     /**
      * Problem: Given nums and queries [xi, mi], find max XOR of xi with nums[j] <= mi.
@@ -310,6 +314,7 @@ class Hard {
     // H5. DESIGN SEARCH AUTOCOMPLETE SYSTEM
     // Pattern: Trie Node Frequency Top-3 Tracking
     // LeetCode: 642
+    // Frequency: 🔥🔥 High (Google, Amazon, Microsoft)
     // =========================================================
     /**
      * Problem: Design Autocomplete System returning top 3 historical search sentences matching prefix.
@@ -384,6 +389,7 @@ class Hard {
     // H6. COUNT PAIRS WITH XOR IN A RANGE
     // Pattern: Bitwise Trie Subtree Counter
     // LeetCode: 1803
+    // Frequency: 🔥🔥 High (Google, Amazon, Microsoft)
     // =========================================================
     /**
      * Problem: Count pairs (i, j) such that low <= (nums[i] XOR nums[j]) <= high.

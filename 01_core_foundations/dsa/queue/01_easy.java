@@ -3,14 +3,14 @@
  *  QUEUE — EASY PROBLEMS
  * ============================================================
  *
- *  E1.  Implement Queue using Stacks               LC 232
- *  E2.  Number of Recent Calls                     LC 933
- *  E3.  First Unique Character in a String         LC 387
- *  E4.  Moving Average from Data Stream            LC 346
- *  E5.  Number of Students Unable to Eat Lunch     LC 1700
- *  E6.  Implement Stack using Queues               LC 225
- *  E7.  Time Needed to Buy Tickets                 LC 2073
- *  E8.  Reveal Cards In Increasing Order           LC 950
+ *  E1.  Implement Queue using Stacks               LC 232 [🔥🔥 High - Amazon, Microsoft, Apple]
+ *  E2.  Number of Recent Calls                     LC 933 [🔥🔥 High - Google, Amazon]
+ *  E3.  First Unique Character in a String         LC 387 [🔥🔥🔥 Very High - Amazon, Apple, Microsoft]
+ *  E4.  Moving Average from Data Stream            LC 346 [🔥🔥 High - Google, Meta, Spotify]
+ *  E5.  Number of Students Unable to Eat Lunch     LC 1700 [🔥 Medium - Amazon]
+ *  E6.  Implement Stack using Queues               LC 225 [🔥🔥 High - Amazon, Microsoft]
+ *  E7.  Time Needed to Buy Tickets                 LC 2073 [🔥 Medium - Amazon]
+ *  E8.  Reveal Cards In Increasing Order           LC 950 [🔥 Medium - Amazon]
  *
  *  Each problem includes:
  *   - Pattern tag
@@ -26,6 +26,7 @@ class QueueEasy {
     // =========================================================
     // E1. Implement Queue using Stacks  LC 232
     // Pattern: DESIGN — Two Stacks (amortized O(1))
+    // Frequency: 🔥🔥 High (Amazon, Microsoft, Apple)
     // =========================================================
     /**
      * Implement FIFO queue using only two LIFO stacks.
@@ -85,6 +86,7 @@ class QueueEasy {
     // =========================================================
     // E2. Number of Recent Calls  LC 933
     // Pattern: QUEUE — Sliding Time Window
+    // Frequency: 🔥🔥 High (Google, Amazon)
     // =========================================================
     /**
      * Count requests in the last 3000 milliseconds.
@@ -120,6 +122,7 @@ class QueueEasy {
     // =========================================================
     // E3. First Unique Character in a String  LC 387
     // Pattern: QUEUE + FREQUENCY COUNT
+    // Frequency: 🔥🔥🔥 Very High (Amazon, Apple, Microsoft)
     // =========================================================
     /**
      * Find the index of the first non-repeating character.
@@ -171,6 +174,7 @@ class QueueEasy {
     // =========================================================
     // E4. Moving Average from Data Stream  LC 346
     // Pattern: QUEUE — Fixed-Size Sliding Window
+    // Frequency: 🔥🔥 High (Google, Meta, Spotify)
     // =========================================================
     /**
      * Calculate the moving average of the last `size` values.
@@ -208,6 +212,7 @@ class QueueEasy {
     // =========================================================
     // E5. Number of Students Unable to Eat Lunch  LC 1700
     // Pattern: QUEUE SIMULATION
+    // Frequency: 🔥 Medium (Amazon)
     // =========================================================
     /**
      * Students in a queue, sandwiches in a stack.
@@ -252,6 +257,7 @@ class QueueEasy {
     // =========================================================
     // E6. Implement Stack using Queues  LC 225
     // Pattern: DESIGN — Queue to Stack Conversion
+    // Frequency: 🔥🔥 High (Amazon, Microsoft)
     // =========================================================
     /**
      * Implement LIFO stack using only queues.
@@ -296,6 +302,7 @@ class QueueEasy {
     // =========================================================
     // E7. Time Needed to Buy Tickets  LC 2073
     // Pattern: QUEUE SIMULATION / MATH
+    // Frequency: 🔥 Medium (Amazon)
     // =========================================================
     /**
      * People in a line, each wants tickets[i] tickets.
@@ -331,6 +338,7 @@ class QueueEasy {
     // =========================================================
     // E8. Reveal Cards In Increasing Order  LC 950
     // Pattern: DEQUE SIMULATION (reverse process)
+    // Frequency: 🔥 Medium (Amazon)
     // =========================================================
     /**
      * Reveal cards one by one: reveal top, move next to bottom, repeat.

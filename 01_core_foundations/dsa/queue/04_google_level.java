@@ -3,11 +3,11 @@
  *  QUEUE — GOOGLE-LEVEL PROBLEMS
  * ============================================================
  *
- *  G1.  Design Hit Counter                         LC 362  ★ Google
- *  G2.  Design Snake Game                          LC 353  ★ Google
- *  G3.  Minimum Cost to Make at Least One Valid Path LC 1368 ★ Google
- *  G4.  Shortest Path to Get All Keys              LC 864  ★ Google
- *  G5.  Maximum Number of Events That Can Be Attended LC 1353 ★ Google
+ *  G1.  Design Hit Counter                         LC 362  ★ Google [🔥🔥 High - Amazon, Google, Microsoft]
+ *  G2.  Design Snake Game                          LC 353  ★ Google [🔥🔥 High - Amazon, Google, Microsoft]
+ *  G3.  Minimum Cost to Make at Least One Valid Path LC 1368 ★ Google [🔥🔥 High - Amazon, Google, Microsoft]
+ *  G4.  Shortest Path to Get All Keys              LC 864  ★ Google [🔥🔥 High - Amazon, Google, Microsoft]
+ *  G5.  Maximum Number of Events That Can Be Attended LC 1353 ★ Google [🔥🔥 High - Amazon, Google, Microsoft]
  *
  *  Each problem includes:
  *   - Why Google asks it
@@ -22,6 +22,7 @@ class QueueGoogleLevel {
 
     // =========================================================
     // G1. Design Hit Counter  LC 362  ★ Google
+    // Frequency: 🔥🔥 High (Amazon, Google, Microsoft)
     // =========================================================
     /**
      * WHY GOOGLE ASKS IT:
@@ -82,6 +83,7 @@ class QueueGoogleLevel {
 
     // =========================================================
     // G2. Design Snake Game  LC 353  ★ Google
+    // Frequency: 🔥🔥 High (Amazon, Google, Microsoft)
     // =========================================================
     /**
      * WHY GOOGLE ASKS IT:
@@ -171,6 +173,7 @@ class QueueGoogleLevel {
     // =========================================================
     // G3. Min Cost to Make at Least One Valid Path  LC 1368
     //     ★ Google — 0-1 BFS
+    // Frequency: 🔥🔥 High (Amazon, Google, Microsoft)
     // =========================================================
     /**
      * WHY GOOGLE ASKS IT:
@@ -238,6 +241,7 @@ class QueueGoogleLevel {
 
     // =========================================================
     // G4. Shortest Path to Get All Keys  LC 864  ★ Google
+    // Frequency: 🔥🔥 High (Amazon, Google, Microsoft)
     // =========================================================
     /**
      * WHY GOOGLE ASKS IT:
@@ -329,6 +333,7 @@ class QueueGoogleLevel {
     // =========================================================
     // G5. Maximum Number of Events That Can Be Attended  LC 1353
     //     ★ Google — Greedy + Priority Queue
+    // Frequency: 🔥🔥 High (Amazon, Google, Microsoft)
     // =========================================================
     /**
      * WHY GOOGLE ASKS IT:

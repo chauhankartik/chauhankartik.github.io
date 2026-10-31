@@ -4,13 +4,13 @@
  *  Trapping water, k-diff pairs, interval merging, and more.
  * ============================================================
  *
- *  Problems:
- *   H1. Trapping Rain Water (LC 42)
- *   H2. 4Sum (LC 18)
- *   H3. Minimum Window Substring using Two Pointer Variant (LC 76)
- *   H4. Find the Closest Pair from Two Sorted Arrays
- *   H5. Count Pairs with Given Sum (Two Pointer on Sorted Array)
- *   H6. Palindrome Pairs (LC 336) — Two Pointer & Trie Hybrid
+ *  Problems & Interview Frequencies:
+ *   H1. Trapping Rain Water (LC 42) [🔥🔥🔥 Very High - Google, Amazon, Meta, Goldman Sachs]
+ *   H2. 4Sum (LC 18) [🔥 Medium - Amazon, Apple]
+ *   H3. Minimum Window Substring using Two Pointer Variant (LC 76) [🔥🔥🔥 Very High - Meta, Google, Amazon, Airbnb]
+ *   H4. Find the Closest Pair from Two Sorted Arrays [🔥🔥 High - Meta, Amazon, Google]
+ *   H5. Count Pairs with Given Sum (Two Pointer on Sorted Array) [🔥🔥 High - Meta, Amazon, Google]
+ *   H6. Palindrome Pairs (LC 336) — Two Pointer & Trie Hybrid [🔥🔥 High - Meta, Amazon, Google]
  *
  * ============================================================
  */
@@ -22,6 +22,7 @@ class Hard {
     // H1. TRAPPING RAIN WATER
     // Pattern: Opposite-End Two Pointers — Max Boundary Tracking
     // LeetCode 42
+    // Frequency: 🔥🔥🔥 Very High (Google, Amazon, Meta, Goldman Sachs)
     // =========================================================
     /**
      * Problem: Given elevation map height[], compute how much
@@ -92,6 +93,7 @@ class Hard {
     // H2. 4SUM
     // Pattern: Fix Two Elements + Two-Pointer Inner Pass
     // LeetCode 18
+    // Frequency: 🔥 Medium (Amazon, Apple)
     // =========================================================
     /**
      * Problem: Given integer array nums and int target,
@@ -170,6 +172,7 @@ class Hard {
     // H3. MINIMUM WINDOW SUBSTRING (Two-Pointer / Shrink Variant)
     // Pattern: Variable Two-Pointer — Shrink When Valid
     // LeetCode 76
+    // Frequency: 🔥🔥🔥 Very High (Meta, Google, Amazon, Airbnb)
     // =========================================================
     /**
      * Problem: Given strings s and t, find the minimum window substring
@@ -252,6 +255,8 @@ class Hard {
     // H4. CLOSEST PAIR FROM TWO SORTED ARRAYS
     // Pattern: Merge-Style Two Pointers — Cross-Array
     // Classic interview problem
+    // LeetCode: LC 4
+    // Frequency: 🔥🔥 High (Meta, Amazon, Google)
     // =========================================================
     /**
      * Problem: Given two sorted arrays a[] and b[], find a pair (a[i], b[j])
@@ -310,6 +315,8 @@ class Hard {
     // H5. COUNT TRIPLETS WITH SUM LESS THAN TARGET
     // Pattern: Sort + Fix + Two-Pointer Counting
     // Classic problem (variant of 3Sum)
+    // LeetCode: LC 5
+    // Frequency: 🔥🔥 High (Meta, Amazon, Google)
     // =========================================================
     /**
      * Problem: Given array nums and int target, count triplets
@@ -362,6 +369,7 @@ class Hard {
     // H6. PALINDROME PAIRS
     // Pattern: Trie + Two-Pointer String Check
     // LeetCode 336
+    // Frequency: 🔥🔥 High (Meta, Amazon, Google)
     // =========================================================
     /**
      * Problem: Given list of unique strings words, find all pairs

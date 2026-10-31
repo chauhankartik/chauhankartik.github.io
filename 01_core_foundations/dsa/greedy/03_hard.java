@@ -5,13 +5,13 @@
  *  pattern from 00_theory.md.
  * ============================================================
  *
- *  Problems:
- *   H1. Candy (LeetCode 135 / InterviewBit)
- *   H2. Create Maximum Number (LeetCode 321)
- *   H3. Remove K Digits (LeetCode 402)
- *   H4. Minimum Replacement to Sort Array (LeetCode 2366)
- *   H5. Course Schedule III (LeetCode 630)
- *   H6. Maximum Performance of a Team (LeetCode 1383)
+ *  Problems & Interview Frequencies:
+ *   H1. Candy (LeetCode 135 / InterviewBit) [🔥🔥🔥 Very High - Google, Amazon, Microsoft]
+ *   H2. Create Maximum Number (LeetCode 321) [🔥🔥 High - Amazon, Google, Meta]
+ *   H3. Remove K Digits (LeetCode 402) [🔥🔥 High - Google, Amazon, Microsoft]
+ *   H4. Minimum Replacement to Sort Array (LeetCode 2366) [🔥🔥 High - Amazon, Google, Meta]
+ *   H5. Course Schedule III (LeetCode 630) [🔥🔥 High - Amazon, Google, Meta]
+ *   H6. Maximum Performance of a Team (LeetCode 1383) [🔥🔥 High - Amazon, Google, Meta]
  *
  *  Each problem includes:
  *   - Pattern tag
@@ -28,6 +28,7 @@ class Hard {
     // H1. CANDY
     // Pattern: Two-Pass / Bidirectional Greedy
     // LeetCode: 135 / InterviewBit
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: N children in line with ratings. Give candies such that:
@@ -70,6 +71,7 @@ class Hard {
     // H2. CREATE MAXIMUM NUMBER
     // Pattern: Monotonic Stack + Merge Subproblems
     // LeetCode: 321
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Create max number of length k from two arrays preserving relative order.
@@ -145,6 +147,7 @@ class Hard {
     // H3. REMOVE K DIGITS
     // Pattern: Monotonic Increasing Stack Greedy
     // LeetCode: 402
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Remove k digits from non-negative number num to get smallest number.
@@ -186,6 +189,7 @@ class Hard {
     // H4. MINIMUM REPLACEMENT TO SORT ARRAY
     // Pattern: Reverse Pass Splitting Greedy
     // LeetCode: 2366
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Replace elements with sums equal to element to make array non-decreasing.
@@ -219,6 +223,7 @@ class Hard {
     // H5. COURSE SCHEDULE III
     // Pattern: PriorityQueue Max-Heap Replacement Greedy
     // LeetCode: 630
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Given courses [duration, lastDay], return max number of courses you can take.
@@ -252,6 +257,7 @@ class Hard {
     // H6. MAXIMUM PERFORMANCE OF A TEAM
     // Pattern: Fixed Efficiency + Max-Heap Speed Priority
     // LeetCode: 1383
+    // Frequency: 🔥🔥 High (Amazon, Google, Meta)
     // =========================================================
     /**
      * Problem: Select at most k engineers to maximize performance = sum(speed) * min(efficiency).

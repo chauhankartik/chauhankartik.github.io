@@ -88,6 +88,14 @@ Welcome to the **2026 Software Engineering Master Study Repository**. This repos
 ### 7. Infrastructure Tech-Stack Deep Dives
 * **[`04_infrastructure/tech-stack/`](04_infrastructure/tech-stack/README.md)** — 16 staff-level technology study guides (Redis, Postgres, JDBC, Mongo, Cassandra, ES, S3, Kafka, Gateways, Docker, K8s, Git, Spring Boot, Grafana, Splunk, Hibernate).
 
+### 8. Company-Wise Technical Interview Preparation
+* **[`05_company_prep/`](05_company_prep/README.md)** — Targeted company-specific interview playbooks, real past question banks, runnable machine coding solutions, and domain-specific distributed system designs:
+  * **[`05_company_prep/zepto/`](05_company_prep/zepto/README.md)** — **Zepto SDE-2 & SDE-3 Flagship Guide**: 10-minute dark-store dispatch HLD, flash-sale inventory reservation machine coding, database row-level locking (`SKIP LOCKED`), Kafka ordering, and verified past questions bank.
+  * **[`05_company_prep/swiggy_zomato/`](05_company_prep/swiggy_zomato/README.md)** — **Swiggy & Zomato**: Food delivery and quick-commerce (Instamart/Blinkit), real-time dynamic surge pricing, and catalog search engines.
+  * **[`05_company_prep/uber_ola/`](05_company_prep/uber_ola/README.md)** — **Uber & Ola**: Planetary-scale mobility networks, Uber H3 hexagonal geospatial dispatch, and GPS telemetry streaming.
+  * **[`05_company_prep/amazon_flipkart/`](05_company_prep/amazon_flipkart/README.md)** — **Amazon & Flipkart**: E-commerce scale, high-availability checkout, DynamoDB single-table design, and Amazon Leadership Principles (STAR).
+  * **[`05_company_prep/google_meta/`](05_company_prep/google_meta/README.md)** — **Google & Meta**: Advanced algorithmic problem solving, planetary distributed storage, caching hierarchies, and systems resilience.
+
 ---
 
 ## 3. Quick Navigation & Navigation Rules

@@ -1,14 +1,14 @@
 {
-  "generated": "2026-10-17T13:29:22.317229Z",
+  "generated": "2026-10-31T14:08:06.230765Z",
   "stats": {
-    "totalFiles": 813,
-    "markdownFiles": 513,
+    "totalFiles": 821,
+    "markdownFiles": 521,
     "javaFiles": 283,
     "sqlFiles": 5,
     "rustFiles": 12,
-    "topics": 43,
+    "topics": 48,
     "weeks": 13,
-    "domains": 4
+    "domains": 5
   },
   "levels": {
     "L1": {
@@ -277,403 +277,6 @@
       "fileCount": 386,
       "topics": [
         {
-          "description": "Welcome to the C Programming: A Modern Approach Masterclass Module. This module covers deep C programming across C89, C99, and C11 standards based on K. N. King's definitive textbo...",
-          "title": "C Programming: A Modern Approach (2nd Edition) — K. N. King",
-          "files": [
-            {
-              "name": "README.md",
-              "path": "01_core_foundations/c_programming_a_modern_approach/README.md",
-              "ext": "md",
-              "size": 4229
-            },
-            {
-              "name": "00_c_king_cheatsheet.md",
-              "path": "01_core_foundations/c_programming_a_modern_approach/00_c_king_cheatsheet.md",
-              "ext": "md",
-              "size": 4096
-            }
-          ],
-          "subtopics": [
-            {
-              "description": "The C language type system defines explicit rules for representation sizes and implicit type conversions.",
-              "title": "C Fundamentals, Type Systems, Sequence Points & Linkage Mechanics",
-              "files": [
-                {
-                  "name": "01_types_expressions_vlas_and_linkage.md",
-                  "path": "01_core_foundations/c_programming_a_modern_approach/01_c_fundamentals_control_arrays_and_functions/01_types_expressions_vlas_and_linkage.md",
-                  "ext": "md",
-                  "size": 4921
-                }
-              ],
-              "subtopics": [],
-              "fileCount": 1,
-              "id": "01_c_fundamentals_control_arrays_and_functions",
-              "name": "C Fundamentals Control Arrays And Functions",
-              "path": "01_core_foundations/c_programming_a_modern_approach/01_c_fundamentals_control_arrays_and_functions"
-            },
-            {
-              "description": "Pointers store raw memory addresses. Understanding pointer types, indirection levels, and const-correctness is fundamental to system-level C programming.",
-              "title": "Pointers, Custom Arena Allocators, Struct Alignment Padding & Bit-Fields",
-              "files": [
-                {
-                  "name": "02_pointers_arena_allocators_padding_and_bitfields.md",
-                  "path": "01_core_foundations/c_programming_a_modern_approach/02_pointers_dynamic_memory_structs_and_bit_fields/02_pointers_arena_allocators_padding_and_bitfields.md",
-                  "ext": "md",
-                  "size": 5792
-                }
-              ],
-              "subtopics": [],
-              "fileCount": 1,
-              "id": "02_pointers_dynamic_memory_structs_and_bit_fields",
-              "name": "Pointers Dynamic Memory Structs And Bit Fields",
-              "path": "01_core_foundations/c_programming_a_modern_approach/02_pointers_dynamic_memory_structs_and_bit_fields"
-            },
-            {
-              "description": "The C Preprocessor operates prior to code compilation, manipulating source tokens directly:",
-              "title": "C Preprocessor Metaprogramming, Standard Library I/O, `memmove` & C11 `_Generic` Features",
-              "files": [
-                {
-                  "name": "03_macros_file_io_memmove_generic_and_atomics.md",
-                  "path": "01_core_foundations/c_programming_a_modern_approach/03_preprocessor_stdio_string_and_c99_c11_features/03_macros_file_io_memmove_generic_and_atomics.md",
-                  "ext": "md",
-                  "size": 4710
-                }
-              ],
-              "subtopics": [],
-              "fileCount": 1,
-              "id": "03_preprocessor_stdio_string_and_c99_c11_features",
-              "name": "Preprocessor Stdio String And C99 C11 Features",
-              "path": "01_core_foundations/c_programming_a_modern_approach/03_preprocessor_stdio_string_and_c99_c11_features"
-            }
-          ],
-          "fileCount": 5,
-          "id": "c_programming_a_modern_approach",
-          "name": "C Programming: A Modern Approach",
-          "path": "01_core_foundations/c_programming_a_modern_approach",
-          "levels": [
-            "L1",
-            "L2",
-            "L3"
-          ],
-          "languages": [
-            "cpp",
-            "c"
-          ],
-          "extCounts": {
-            "md": 5
-          },
-          "totalFiles": 5
-        },
-        {
-          "description": "C++11 introduced std::thread, providing a cross-platform API for OS threads.",
-          "title": "C++ Concurrency in Action (Anthony Williams)",
-          "files": [
-            {
-              "name": "README.md",
-              "path": "01_core_foundations/cpp_concurrency_in_action/README.md",
-              "ext": "md",
-              "size": 2085
-            }
-          ],
-          "subtopics": [],
-          "fileCount": 1,
-          "id": "cpp_concurrency_in_action",
-          "name": "C++ Concurrency in Action",
-          "path": "01_core_foundations/cpp_concurrency_in_action",
-          "levels": [
-            "L3",
-            "L4"
-          ],
-          "languages": [
-            "cpp"
-          ],
-          "extCounts": {
-            "md": 1
-          },
-          "totalFiles": 1
-        },
-        {
-          "description": "C++ ties resource lifecycle to object lifetime via block scope.",
-          "title": "The C++ Programming Language (Bjarne Stroustrup)",
-          "files": [
-            {
-              "name": "README.md",
-              "path": "01_core_foundations/cpp_programming_language/README.md",
-              "ext": "md",
-              "size": 1839
-            }
-          ],
-          "subtopics": [],
-          "fileCount": 1,
-          "id": "cpp_programming_language",
-          "name": "The C++ Programming Language",
-          "path": "01_core_foundations/cpp_programming_language",
-          "levels": [
-            "L2",
-            "L3"
-          ],
-          "languages": [
-            "cpp"
-          ],
-          "extCounts": {
-            "md": 1
-          },
-          "totalFiles": 1
-        },
-        {
-          "description": "Containers manage collections of data. They handle memory allocation and destruction automatically.",
-          "title": "C++ Standard Template Library (STL)",
-          "files": [
-            {
-              "name": "README.md",
-              "path": "01_core_foundations/cpp_stl/README.md",
-              "ext": "md",
-              "size": 2185
-            }
-          ],
-          "subtopics": [],
-          "fileCount": 1,
-          "id": "cpp_stl",
-          "name": "C++ Standard Template Library (STL)",
-          "path": "01_core_foundations/cpp_stl",
-          "levels": [
-            "L1",
-            "L2",
-            "L3"
-          ],
-          "languages": [
-            "cpp"
-          ],
-          "extCounts": {
-            "md": 1
-          },
-          "totalFiles": 1
-        },
-        {
-          "description": "> Resource Goal: Master competitive programming, advanced data structures, graph algorithms, dynamic programming, and mathematics through the CSES Problem Set (University of Helsin...",
-          "title": "CSES Problem Set — Master Progress Tracker & Roadmap",
-          "files": [
-            {
-              "name": "README.md",
-              "path": "01_core_foundations/cses/README.md",
-              "ext": "md",
-              "size": 3644
-            },
-            {
-              "name": "00_progress_tracker.md",
-              "path": "01_core_foundations/cses/00_progress_tracker.md",
-              "ext": "md",
-              "size": 9531
-            }
-          ],
-          "subtopics": [
-            {
-              "description": "This module covers fundamental algorithm implementation, basic math simulation, recursion, and bitwise operations.",
-              "title": "CSES Module 01: Introductory Problems",
-              "files": [
-                {
-                  "name": "README.md",
-                  "path": "01_core_foundations/cses/01_introductory/README.md",
-                  "ext": "md",
-                  "size": 1798
-                }
-              ],
-              "subtopics": [],
-              "fileCount": 1,
-              "id": "01_introductory",
-              "name": "Introductory",
-              "path": "01_core_foundations/cses/01_introductory"
-            },
-            {
-              "description": "This module covers two-pointer techniques, binary search on answers, sliding window algorithms, coordinate compression, monotonic deques, and custom comparator sorting.",
-              "title": "CSES Module 02: Sorting and Searching",
-              "files": [
-                {
-                  "name": "README.md",
-                  "path": "01_core_foundations/cses/02_sorting_and_searching/README.md",
-                  "ext": "md",
-                  "size": 3205
-                }
-              ],
-              "subtopics": [],
-              "fileCount": 1,
-              "id": "02_sorting_and_searching",
-              "name": "Sorting And Searching",
-              "path": "01_core_foundations/cses/02_sorting_and_searching"
-            },
-            {
-              "description": "This module covers state transitions, 1D/2D table optimizations, Knapsack variations, Digit DP, Tree DP, Bitmask DP, and Profile DP.",
-              "title": "CSES Module 03: Dynamic Programming",
-              "files": [
-                {
-                  "name": "README.md",
-                  "path": "01_core_foundations/cses/03_dynamic_programming/README.md",
-                  "ext": "md",
-                  "size": 1815
-                }
-              ],
-              "subtopics": [],
-              "fileCount": 1,
-              "id": "03_dynamic_programming",
-              "name": "Dynamic Programming",
-              "path": "01_core_foundations/cses/03_dynamic_programming"
-            },
-            {
-              "description": "This module covers graph traversals (BFS/DFS), shortest paths (Dijkstra, Bellman-Ford, Floyd-Warshall), cycle detection, topological sorting, minimum spanning trees, strongly conne...",
-              "title": "CSES Module 04: Graph Algorithms",
-              "files": [
-                {
-                  "name": "README.md",
-                  "path": "01_core_foundations/cses/04_graph_algorithms/README.md",
-                  "ext": "md",
-                  "size": 2931
-                }
-              ],
-              "subtopics": [],
-              "fileCount": 1,
-              "id": "04_graph_algorithms",
-              "name": "Graph Algorithms",
-              "path": "01_core_foundations/cses/04_graph_algorithms"
-            },
-            {
-              "description": "This module covers Fenwick Trees (Binary Indexed Trees), Segment Trees (Point Updates, Range Updates with Lazy Propagation), Sparse Tables, and 2D Range Queries.",
-              "title": "CSES Module 05: Range Queries",
-              "files": [
-                {
-                  "name": "README.md",
-                  "path": "01_core_foundations/cses/05_range_queries/README.md",
-                  "ext": "md",
-                  "size": 1469
-                }
-              ],
-              "subtopics": [],
-              "fileCount": 1,
-              "id": "05_range_queries",
-              "name": "Range Queries",
-              "path": "01_core_foundations/cses/05_range_queries"
-            },
-            {
-              "description": "This module covers Tree traversals, Tree DP, Tree Diameter, Binary Lifting for Lowest Common Ancestor (LCA), Euler Tour Tree Flattening, Heavy-Light Decomposition (HLD), and Centro...",
-              "title": "CSES Module 06: Tree Algorithms",
-              "files": [
-                {
-                  "name": "README.md",
-                  "path": "01_core_foundations/cses/06_tree_algorithms/README.md",
-                  "ext": "md",
-                  "size": 1662
-                }
-              ],
-              "subtopics": [],
-              "fileCount": 1,
-              "id": "06_tree_algorithms",
-              "name": "Tree Algorithms",
-              "path": "01_core_foundations/cses/06_tree_algorithms"
-            },
-            {
-              "description": "This module covers Number Theory (Modular Exponentiation, Sieve of Eratosthenes, GCD/LCM, Divisor Counting), Combinatorics (Pascal's Triangle, Binomial Coefficients, Derangements),...",
-              "title": "CSES Module 07: Mathematics",
-              "files": [
-                {
-                  "name": "README.md",
-                  "path": "01_core_foundations/cses/07_mathematics/README.md",
-                  "ext": "md",
-                  "size": 2716
-                }
-              ],
-              "subtopics": [],
-              "fileCount": 1,
-              "id": "07_mathematics",
-              "name": "Mathematics",
-              "path": "01_core_foundations/cses/07_mathematics"
-            },
-            {
-              "description": "This module covers String Hashing, Knuth-Morris-Pratt (KMP) Prefix Function, Z-Algorithm, Manacher's Algorithm, Aho-Corasick Automaton, Suffix Automaton, and Suffix Arrays.",
-              "title": "CSES Module 08: String Algorithms",
-              "files": [
-                {
-                  "name": "README.md",
-                  "path": "01_core_foundations/cses/08_string_algorithms/README.md",
-                  "ext": "md",
-                  "size": 1446
-                }
-              ],
-              "subtopics": [],
-              "fileCount": 1,
-              "id": "08_string_algorithms",
-              "name": "String Algorithms",
-              "path": "01_core_foundations/cses/08_string_algorithms"
-            },
-            {
-              "description": "This module covers Vector Cross Products, Orientation Tests, Line Segment Intersection, Polygon Area (Shoelace Formula), Point-in-Polygon (Ray Casting), Pick's Theorem, Minimum Euc...",
-              "title": "CSES Module 09: Geometry",
-              "files": [
-                {
-                  "name": "README.md",
-                  "path": "01_core_foundations/cses/09_geometry/README.md",
-                  "ext": "md",
-                  "size": 1049
-                }
-              ],
-              "subtopics": [],
-              "fileCount": 1,
-              "id": "09_geometry",
-              "name": "Geometry",
-              "path": "01_core_foundations/cses/09_geometry"
-            },
-            {
-              "description": "This module covers Meet in the Middle, Bitwise Optimization (std::bitset), Treap (Self-Balancing Binary Search Tree & Rope), Heavy-Light Decomposition, Fast Fourier Transform (FFT)...",
-              "title": "CSES Module 10: Advanced Techniques",
-              "files": [
-                {
-                  "name": "README.md",
-                  "path": "01_core_foundations/cses/10_advanced_techniques/README.md",
-                  "ext": "md",
-                  "size": 1297
-                }
-              ],
-              "subtopics": [],
-              "fileCount": 1,
-              "id": "10_advanced_techniques",
-              "name": "Advanced Techniques",
-              "path": "01_core_foundations/cses/10_advanced_techniques"
-            },
-            {
-              "description": "This module contains 77 additional challenging competitive programming problems covering complex combinations of dynamic programming, graph theory, data structures, and mathematica...",
-              "title": "CSES Module 11: Additional Problems",
-              "files": [
-                {
-                  "name": "README.md",
-                  "path": "01_core_foundations/cses/11_additional_problems/README.md",
-                  "ext": "md",
-                  "size": 1433
-                }
-              ],
-              "subtopics": [],
-              "fileCount": 1,
-              "id": "11_additional_problems",
-              "name": "Additional Problems",
-              "path": "01_core_foundations/cses/11_additional_problems"
-            }
-          ],
-          "fileCount": 13,
-          "id": "cses",
-          "name": "CSES Problem Set Roadmap",
-          "path": "01_core_foundations/cses",
-          "levels": [
-            "L1",
-            "L2"
-          ],
-          "languages": [
-            "cpp",
-            "java",
-            "universal"
-          ],
-          "extCounts": {
-            "md": 13
-          },
-          "totalFiles": 13
-        },
-        {
           "description": "A structured, pattern-oriented study module for mastering Data Structures & Algorithms, built for senior and Google-level technical interviews.",
           "title": "DSA Mastery — Google Interview Preparation",
           "files": [
@@ -699,37 +302,37 @@
                   "name": "01_easy.java",
                   "path": "01_core_foundations/dsa/array/01_easy.java",
                   "ext": "java",
-                  "size": 17331
+                  "size": 18595
                 },
                 {
                   "name": "02_medium.java",
                   "path": "01_core_foundations/dsa/array/02_medium.java",
                   "ext": "java",
-                  "size": 19930
+                  "size": 21329
                 },
                 {
                   "name": "03_hard.java",
                   "path": "01_core_foundations/dsa/array/03_hard.java",
                   "ext": "java",
-                  "size": 18785
+                  "size": 19755
                 },
                 {
                   "name": "04_google_level.java",
                   "path": "01_core_foundations/dsa/array/04_google_level.java",
                   "ext": "java",
-                  "size": 20755
+                  "size": 21618
                 },
                 {
                   "name": "05_cheatsheet.md",
                   "path": "01_core_foundations/dsa/array/05_cheatsheet.md",
                   "ext": "md",
-                  "size": 8441
+                  "size": 8907
                 },
                 {
                   "name": "06_top50_problems.md",
                   "path": "01_core_foundations/dsa/array/06_top50_problems.md",
                   "ext": "md",
-                  "size": 6088
+                  "size": 12181
                 }
               ],
               "subtopics": [],
@@ -2271,6 +1874,403 @@
             "other": 1
           },
           "totalFiles": 188
+        },
+        {
+          "description": "Welcome to the C Programming: A Modern Approach Masterclass Module. This module covers deep C programming across C89, C99, and C11 standards based on K. N. King's definitive textbo...",
+          "title": "C Programming: A Modern Approach (2nd Edition) — K. N. King",
+          "files": [
+            {
+              "name": "README.md",
+              "path": "01_core_foundations/c_programming_a_modern_approach/README.md",
+              "ext": "md",
+              "size": 4229
+            },
+            {
+              "name": "00_c_king_cheatsheet.md",
+              "path": "01_core_foundations/c_programming_a_modern_approach/00_c_king_cheatsheet.md",
+              "ext": "md",
+              "size": 4096
+            }
+          ],
+          "subtopics": [
+            {
+              "description": "The C language type system defines explicit rules for representation sizes and implicit type conversions.",
+              "title": "C Fundamentals, Type Systems, Sequence Points & Linkage Mechanics",
+              "files": [
+                {
+                  "name": "01_types_expressions_vlas_and_linkage.md",
+                  "path": "01_core_foundations/c_programming_a_modern_approach/01_c_fundamentals_control_arrays_and_functions/01_types_expressions_vlas_and_linkage.md",
+                  "ext": "md",
+                  "size": 4921
+                }
+              ],
+              "subtopics": [],
+              "fileCount": 1,
+              "id": "01_c_fundamentals_control_arrays_and_functions",
+              "name": "C Fundamentals Control Arrays And Functions",
+              "path": "01_core_foundations/c_programming_a_modern_approach/01_c_fundamentals_control_arrays_and_functions"
+            },
+            {
+              "description": "Pointers store raw memory addresses. Understanding pointer types, indirection levels, and const-correctness is fundamental to system-level C programming.",
+              "title": "Pointers, Custom Arena Allocators, Struct Alignment Padding & Bit-Fields",
+              "files": [
+                {
+                  "name": "02_pointers_arena_allocators_padding_and_bitfields.md",
+                  "path": "01_core_foundations/c_programming_a_modern_approach/02_pointers_dynamic_memory_structs_and_bit_fields/02_pointers_arena_allocators_padding_and_bitfields.md",
+                  "ext": "md",
+                  "size": 5792
+                }
+              ],
+              "subtopics": [],
+              "fileCount": 1,
+              "id": "02_pointers_dynamic_memory_structs_and_bit_fields",
+              "name": "Pointers Dynamic Memory Structs And Bit Fields",
+              "path": "01_core_foundations/c_programming_a_modern_approach/02_pointers_dynamic_memory_structs_and_bit_fields"
+            },
+            {
+              "description": "The C Preprocessor operates prior to code compilation, manipulating source tokens directly:",
+              "title": "C Preprocessor Metaprogramming, Standard Library I/O, `memmove` & C11 `_Generic` Features",
+              "files": [
+                {
+                  "name": "03_macros_file_io_memmove_generic_and_atomics.md",
+                  "path": "01_core_foundations/c_programming_a_modern_approach/03_preprocessor_stdio_string_and_c99_c11_features/03_macros_file_io_memmove_generic_and_atomics.md",
+                  "ext": "md",
+                  "size": 4710
+                }
+              ],
+              "subtopics": [],
+              "fileCount": 1,
+              "id": "03_preprocessor_stdio_string_and_c99_c11_features",
+              "name": "Preprocessor Stdio String And C99 C11 Features",
+              "path": "01_core_foundations/c_programming_a_modern_approach/03_preprocessor_stdio_string_and_c99_c11_features"
+            }
+          ],
+          "fileCount": 5,
+          "id": "c_programming_a_modern_approach",
+          "name": "C Programming: A Modern Approach",
+          "path": "01_core_foundations/c_programming_a_modern_approach",
+          "levels": [
+            "L1",
+            "L2",
+            "L3"
+          ],
+          "languages": [
+            "cpp",
+            "c"
+          ],
+          "extCounts": {
+            "md": 5
+          },
+          "totalFiles": 5
+        },
+        {
+          "description": "C++11 introduced std::thread, providing a cross-platform API for OS threads.",
+          "title": "C++ Concurrency in Action (Anthony Williams)",
+          "files": [
+            {
+              "name": "README.md",
+              "path": "01_core_foundations/cpp_concurrency_in_action/README.md",
+              "ext": "md",
+              "size": 2085
+            }
+          ],
+          "subtopics": [],
+          "fileCount": 1,
+          "id": "cpp_concurrency_in_action",
+          "name": "C++ Concurrency in Action",
+          "path": "01_core_foundations/cpp_concurrency_in_action",
+          "levels": [
+            "L3",
+            "L4"
+          ],
+          "languages": [
+            "cpp"
+          ],
+          "extCounts": {
+            "md": 1
+          },
+          "totalFiles": 1
+        },
+        {
+          "description": "C++ ties resource lifecycle to object lifetime via block scope.",
+          "title": "The C++ Programming Language (Bjarne Stroustrup)",
+          "files": [
+            {
+              "name": "README.md",
+              "path": "01_core_foundations/cpp_programming_language/README.md",
+              "ext": "md",
+              "size": 1839
+            }
+          ],
+          "subtopics": [],
+          "fileCount": 1,
+          "id": "cpp_programming_language",
+          "name": "The C++ Programming Language",
+          "path": "01_core_foundations/cpp_programming_language",
+          "levels": [
+            "L2",
+            "L3"
+          ],
+          "languages": [
+            "cpp"
+          ],
+          "extCounts": {
+            "md": 1
+          },
+          "totalFiles": 1
+        },
+        {
+          "description": "Containers manage collections of data. They handle memory allocation and destruction automatically.",
+          "title": "C++ Standard Template Library (STL)",
+          "files": [
+            {
+              "name": "README.md",
+              "path": "01_core_foundations/cpp_stl/README.md",
+              "ext": "md",
+              "size": 2185
+            }
+          ],
+          "subtopics": [],
+          "fileCount": 1,
+          "id": "cpp_stl",
+          "name": "C++ Standard Template Library (STL)",
+          "path": "01_core_foundations/cpp_stl",
+          "levels": [
+            "L1",
+            "L2",
+            "L3"
+          ],
+          "languages": [
+            "cpp"
+          ],
+          "extCounts": {
+            "md": 1
+          },
+          "totalFiles": 1
+        },
+        {
+          "description": "> Resource Goal: Master competitive programming, advanced data structures, graph algorithms, dynamic programming, and mathematics through the CSES Problem Set (University of Helsin...",
+          "title": "CSES Problem Set — Master Progress Tracker & Roadmap",
+          "files": [
+            {
+              "name": "README.md",
+              "path": "01_core_foundations/cses/README.md",
+              "ext": "md",
+              "size": 3644
+            },
+            {
+              "name": "00_progress_tracker.md",
+              "path": "01_core_foundations/cses/00_progress_tracker.md",
+              "ext": "md",
+              "size": 9531
+            }
+          ],
+          "subtopics": [
+            {
+              "description": "This module covers fundamental algorithm implementation, basic math simulation, recursion, and bitwise operations.",
+              "title": "CSES Module 01: Introductory Problems",
+              "files": [
+                {
+                  "name": "README.md",
+                  "path": "01_core_foundations/cses/01_introductory/README.md",
+                  "ext": "md",
+                  "size": 1798
+                }
+              ],
+              "subtopics": [],
+              "fileCount": 1,
+              "id": "01_introductory",
+              "name": "Introductory",
+              "path": "01_core_foundations/cses/01_introductory"
+            },
+            {
+              "description": "This module covers two-pointer techniques, binary search on answers, sliding window algorithms, coordinate compression, monotonic deques, and custom comparator sorting.",
+              "title": "CSES Module 02: Sorting and Searching",
+              "files": [
+                {
+                  "name": "README.md",
+                  "path": "01_core_foundations/cses/02_sorting_and_searching/README.md",
+                  "ext": "md",
+                  "size": 3205
+                }
+              ],
+              "subtopics": [],
+              "fileCount": 1,
+              "id": "02_sorting_and_searching",
+              "name": "Sorting And Searching",
+              "path": "01_core_foundations/cses/02_sorting_and_searching"
+            },
+            {
+              "description": "This module covers state transitions, 1D/2D table optimizations, Knapsack variations, Digit DP, Tree DP, Bitmask DP, and Profile DP.",
+              "title": "CSES Module 03: Dynamic Programming",
+              "files": [
+                {
+                  "name": "README.md",
+                  "path": "01_core_foundations/cses/03_dynamic_programming/README.md",
+                  "ext": "md",
+                  "size": 1815
+                }
+              ],
+              "subtopics": [],
+              "fileCount": 1,
+              "id": "03_dynamic_programming",
+              "name": "Dynamic Programming",
+              "path": "01_core_foundations/cses/03_dynamic_programming"
+            },
+            {
+              "description": "This module covers graph traversals (BFS/DFS), shortest paths (Dijkstra, Bellman-Ford, Floyd-Warshall), cycle detection, topological sorting, minimum spanning trees, strongly conne...",
+              "title": "CSES Module 04: Graph Algorithms",
+              "files": [
+                {
+                  "name": "README.md",
+                  "path": "01_core_foundations/cses/04_graph_algorithms/README.md",
+                  "ext": "md",
+                  "size": 2931
+                }
+              ],
+              "subtopics": [],
+              "fileCount": 1,
+              "id": "04_graph_algorithms",
+              "name": "Graph Algorithms",
+              "path": "01_core_foundations/cses/04_graph_algorithms"
+            },
+            {
+              "description": "This module covers Fenwick Trees (Binary Indexed Trees), Segment Trees (Point Updates, Range Updates with Lazy Propagation), Sparse Tables, and 2D Range Queries.",
+              "title": "CSES Module 05: Range Queries",
+              "files": [
+                {
+                  "name": "README.md",
+                  "path": "01_core_foundations/cses/05_range_queries/README.md",
+                  "ext": "md",
+                  "size": 1469
+                }
+              ],
+              "subtopics": [],
+              "fileCount": 1,
+              "id": "05_range_queries",
+              "name": "Range Queries",
+              "path": "01_core_foundations/cses/05_range_queries"
+            },
+            {
+              "description": "This module covers Tree traversals, Tree DP, Tree Diameter, Binary Lifting for Lowest Common Ancestor (LCA), Euler Tour Tree Flattening, Heavy-Light Decomposition (HLD), and Centro...",
+              "title": "CSES Module 06: Tree Algorithms",
+              "files": [
+                {
+                  "name": "README.md",
+                  "path": "01_core_foundations/cses/06_tree_algorithms/README.md",
+                  "ext": "md",
+                  "size": 1662
+                }
+              ],
+              "subtopics": [],
+              "fileCount": 1,
+              "id": "06_tree_algorithms",
+              "name": "Tree Algorithms",
+              "path": "01_core_foundations/cses/06_tree_algorithms"
+            },
+            {
+              "description": "This module covers Number Theory (Modular Exponentiation, Sieve of Eratosthenes, GCD/LCM, Divisor Counting), Combinatorics (Pascal's Triangle, Binomial Coefficients, Derangements),...",
+              "title": "CSES Module 07: Mathematics",
+              "files": [
+                {
+                  "name": "README.md",
+                  "path": "01_core_foundations/cses/07_mathematics/README.md",
+                  "ext": "md",
+                  "size": 2716
+                }
+              ],
+              "subtopics": [],
+              "fileCount": 1,
+              "id": "07_mathematics",
+              "name": "Mathematics",
+              "path": "01_core_foundations/cses/07_mathematics"
+            },
+            {
+              "description": "This module covers String Hashing, Knuth-Morris-Pratt (KMP) Prefix Function, Z-Algorithm, Manacher's Algorithm, Aho-Corasick Automaton, Suffix Automaton, and Suffix Arrays.",
+              "title": "CSES Module 08: String Algorithms",
+              "files": [
+                {
+                  "name": "README.md",
+                  "path": "01_core_foundations/cses/08_string_algorithms/README.md",
+                  "ext": "md",
+                  "size": 1446
+                }
+              ],
+              "subtopics": [],
+              "fileCount": 1,
+              "id": "08_string_algorithms",
+              "name": "String Algorithms",
+              "path": "01_core_foundations/cses/08_string_algorithms"
+            },
+            {
+              "description": "This module covers Vector Cross Products, Orientation Tests, Line Segment Intersection, Polygon Area (Shoelace Formula), Point-in-Polygon (Ray Casting), Pick's Theorem, Minimum Euc...",
+              "title": "CSES Module 09: Geometry",
+              "files": [
+                {
+                  "name": "README.md",
+                  "path": "01_core_foundations/cses/09_geometry/README.md",
+                  "ext": "md",
+                  "size": 1049
+                }
+              ],
+              "subtopics": [],
+              "fileCount": 1,
+              "id": "09_geometry",
+              "name": "Geometry",
+              "path": "01_core_foundations/cses/09_geometry"
+            },
+            {
+              "description": "This module covers Meet in the Middle, Bitwise Optimization (std::bitset), Treap (Self-Balancing Binary Search Tree & Rope), Heavy-Light Decomposition, Fast Fourier Transform (FFT)...",
+              "title": "CSES Module 10: Advanced Techniques",
+              "files": [
+                {
+                  "name": "README.md",
+                  "path": "01_core_foundations/cses/10_advanced_techniques/README.md",
+                  "ext": "md",
+                  "size": 1297
+                }
+              ],
+              "subtopics": [],
+              "fileCount": 1,
+              "id": "10_advanced_techniques",
+              "name": "Advanced Techniques",
+              "path": "01_core_foundations/cses/10_advanced_techniques"
+            },
+            {
+              "description": "This module contains 77 additional challenging competitive programming problems covering complex combinations of dynamic programming, graph theory, data structures, and mathematica...",
+              "title": "CSES Module 11: Additional Problems",
+              "files": [
+                {
+                  "name": "README.md",
+                  "path": "01_core_foundations/cses/11_additional_problems/README.md",
+                  "ext": "md",
+                  "size": 1433
+                }
+              ],
+              "subtopics": [],
+              "fileCount": 1,
+              "id": "11_additional_problems",
+              "name": "Additional Problems",
+              "path": "01_core_foundations/cses/11_additional_problems"
+            }
+          ],
+          "fileCount": 13,
+          "id": "cses",
+          "name": "CSES Problem Set Roadmap",
+          "path": "01_core_foundations/cses",
+          "levels": [
+            "L1",
+            "L2"
+          ],
+          "languages": [
+            "cpp",
+            "java",
+            "universal"
+          ],
+          "extCounts": {
+            "md": 13
+          },
+          "totalFiles": 13
         },
         {
           "description": "A structured, production-grade guide to Joshua Bloch's Effective Java (3rd Edition), enriched with modern Java features (Java 11, 17, 21+), architectural best practices, and interv...",
@@ -9111,6 +9111,192 @@
           "totalFiles": 169
         }
       ]
+    },
+    {
+      "id": "05_company_prep",
+      "name": "Company-Wise Prep",
+      "icon": "🎯",
+      "color": "#ec4899",
+      "badge": "Interview Playbooks",
+      "description": "Company-specific interview guides, real past questions, machine coding problems, and system design case studies for Tier-1 tech.",
+      "topicCount": 5,
+      "fileCount": 8,
+      "topics": [
+        {
+          "description": "Amazon and Flipkart operate massive e-commerce and retail cloud platforms. At Amazon, technical evaluations are strictly paired with Amazon's 16 Leadership Principles (LPs). At Fli...",
+          "title": "Amazon & Flipkart — SDE-2, SDE-3 & Principal Interview Preparation Guide",
+          "files": [
+            {
+              "name": "README.md",
+              "path": "05_company_prep/amazon_flipkart/README.md",
+              "ext": "md",
+              "size": 2574
+            }
+          ],
+          "subtopics": [],
+          "fileCount": 1,
+          "id": "amazon_flipkart",
+          "name": "Amazon & Flipkart E-Commerce Scale",
+          "path": "05_company_prep/amazon_flipkart",
+          "levels": [
+            "L2",
+            "L3",
+            "L4",
+            "Architect"
+          ],
+          "languages": [
+            "java",
+            "universal"
+          ],
+          "extCounts": {
+            "md": 1
+          },
+          "totalFiles": 1
+        },
+        {
+          "description": "Google and Meta represent the pinnacle of algorithmic depth and planetary-scale systems engineering. Google places extreme emphasis on algorithmic optimization, mathematical bounds...",
+          "title": "Google & Meta — L4 (SDE-2), L5 (Senior SDE) & Staff Interview Preparation Guide",
+          "files": [
+            {
+              "name": "README.md",
+              "path": "05_company_prep/google_meta/README.md",
+              "ext": "md",
+              "size": 2305
+            }
+          ],
+          "subtopics": [],
+          "fileCount": 1,
+          "id": "google_meta",
+          "name": "Google & Meta Algorithmic & Planetary Systems",
+          "path": "05_company_prep/google_meta",
+          "levels": [
+            "L2",
+            "L3",
+            "L4",
+            "Architect"
+          ],
+          "languages": [
+            "java",
+            "cpp",
+            "universal"
+          ],
+          "extCounts": {
+            "md": 1
+          },
+          "totalFiles": 1
+        },
+        {
+          "description": "Swiggy and Zomato are India's leading consumer tech platforms covering food delivery, dining, and quick commerce (Instamart & Blinkit). Their technical loops focus on multi-sided m...",
+          "title": "Swiggy & Zomato — SDE-2 & SDE-3 Interview Preparation Guide",
+          "files": [
+            {
+              "name": "README.md",
+              "path": "05_company_prep/swiggy_zomato/README.md",
+              "ext": "md",
+              "size": 2621
+            }
+          ],
+          "subtopics": [],
+          "fileCount": 1,
+          "id": "swiggy_zomato",
+          "name": "Swiggy & Zomato Quick-Commerce & Food Delivery",
+          "path": "05_company_prep/swiggy_zomato",
+          "levels": [
+            "L2",
+            "L3",
+            "L4"
+          ],
+          "languages": [
+            "java",
+            "universal"
+          ],
+          "extCounts": {
+            "md": 1
+          },
+          "totalFiles": 1
+        },
+        {
+          "description": "Uber and Ola operate planetary-scale mobility and logistics networks. Their technical loops are renowned for rigorous geospatial indexing, distributed telemetry ingestion, location...",
+          "title": "Uber & Ola — SDE-2 & SDE-3 Interview Preparation Guide",
+          "files": [
+            {
+              "name": "README.md",
+              "path": "05_company_prep/uber_ola/README.md",
+              "ext": "md",
+              "size": 2503
+            }
+          ],
+          "subtopics": [],
+          "fileCount": 1,
+          "id": "uber_ola",
+          "name": "Uber & Ola Mobility & Geospatial Systems",
+          "path": "05_company_prep/uber_ola",
+          "levels": [
+            "L2",
+            "L3",
+            "L4",
+            "Architect"
+          ],
+          "languages": [
+            "java",
+            "cpp",
+            "universal"
+          ],
+          "extCounts": {
+            "md": 1
+          },
+          "totalFiles": 1
+        },
+        {
+          "description": "Zepto is India's pioneer in 10-minute quick commerce, operating a high-density network of automated dark stores (micro-fulfillment centers). Because Zepto relies on sub-second inve...",
+          "title": "Zepto — SDE-2 & SDE-3 Technical Interview Preparation Guide",
+          "files": [
+            {
+              "name": "README.md",
+              "path": "05_company_prep/zepto/README.md",
+              "ext": "md",
+              "size": 10103
+            },
+            {
+              "name": "01_machine_coding_inventory_reservation.md",
+              "path": "05_company_prep/zepto/01_machine_coding_inventory_reservation.md",
+              "ext": "md",
+              "size": 14673
+            },
+            {
+              "name": "02_hld_dark_store_10min_delivery.md",
+              "path": "05_company_prep/zepto/02_hld_dark_store_10min_delivery.md",
+              "ext": "md",
+              "size": 6535
+            },
+            {
+              "name": "03_past_interview_questions_bank.md",
+              "path": "05_company_prep/zepto/03_past_interview_questions_bank.md",
+              "ext": "md",
+              "size": 6589
+            }
+          ],
+          "subtopics": [],
+          "fileCount": 4,
+          "id": "zepto",
+          "name": "Zepto SDE-2 & SDE-3 Interview Playbook",
+          "path": "05_company_prep/zepto",
+          "levels": [
+            "L2",
+            "L3",
+            "L4"
+          ],
+          "languages": [
+            "java",
+            "cpp",
+            "universal"
+          ],
+          "extCounts": {
+            "md": 4
+          },
+          "totalFiles": 4
+        }
+      ]
     }
   ],
   "roadmap": [
@@ -9643,379 +9829,6 @@
     }
   ],
   "searchIndex": [
-    {
-      "title": "README.md",
-      "path": "01_core_foundations/c_programming_a_modern_approach/README.md",
-      "domain": "Core Foundations",
-      "domainId": "01_core_foundations",
-      "topic": "C Programming: A Modern Approach",
-      "topicPath": "01_core_foundations/c_programming_a_modern_approach",
-      "ext": "md",
-      "levels": [
-        "L1",
-        "L2",
-        "L3"
-      ],
-      "languages": [
-        "cpp",
-        "c"
-      ]
-    },
-    {
-      "title": "00_c_king_cheatsheet.md",
-      "path": "01_core_foundations/c_programming_a_modern_approach/00_c_king_cheatsheet.md",
-      "domain": "Core Foundations",
-      "domainId": "01_core_foundations",
-      "topic": "C Programming: A Modern Approach",
-      "topicPath": "01_core_foundations/c_programming_a_modern_approach",
-      "ext": "md",
-      "levels": [
-        "L1",
-        "L2",
-        "L3"
-      ],
-      "languages": [
-        "cpp",
-        "c"
-      ]
-    },
-    {
-      "title": "01_types_expressions_vlas_and_linkage.md",
-      "path": "01_core_foundations/c_programming_a_modern_approach/01_c_fundamentals_control_arrays_and_functions/01_types_expressions_vlas_and_linkage.md",
-      "domain": "Core Foundations",
-      "domainId": "01_core_foundations",
-      "topic": "C Programming: A Modern Approach",
-      "topicPath": "01_core_foundations/c_programming_a_modern_approach",
-      "ext": "md",
-      "levels": [
-        "L1",
-        "L2",
-        "L3"
-      ],
-      "languages": [
-        "cpp",
-        "c"
-      ]
-    },
-    {
-      "title": "02_pointers_arena_allocators_padding_and_bitfields.md",
-      "path": "01_core_foundations/c_programming_a_modern_approach/02_pointers_dynamic_memory_structs_and_bit_fields/02_pointers_arena_allocators_padding_and_bitfields.md",
-      "domain": "Core Foundations",
-      "domainId": "01_core_foundations",
-      "topic": "C Programming: A Modern Approach",
-      "topicPath": "01_core_foundations/c_programming_a_modern_approach",
-      "ext": "md",
-      "levels": [
-        "L1",
-        "L2",
-        "L3"
-      ],
-      "languages": [
-        "cpp",
-        "c"
-      ]
-    },
-    {
-      "title": "03_macros_file_io_memmove_generic_and_atomics.md",
-      "path": "01_core_foundations/c_programming_a_modern_approach/03_preprocessor_stdio_string_and_c99_c11_features/03_macros_file_io_memmove_generic_and_atomics.md",
-      "domain": "Core Foundations",
-      "domainId": "01_core_foundations",
-      "topic": "C Programming: A Modern Approach",
-      "topicPath": "01_core_foundations/c_programming_a_modern_approach",
-      "ext": "md",
-      "levels": [
-        "L1",
-        "L2",
-        "L3"
-      ],
-      "languages": [
-        "cpp",
-        "c"
-      ]
-    },
-    {
-      "title": "README.md",
-      "path": "01_core_foundations/cpp_concurrency_in_action/README.md",
-      "domain": "Core Foundations",
-      "domainId": "01_core_foundations",
-      "topic": "C++ Concurrency in Action",
-      "topicPath": "01_core_foundations/cpp_concurrency_in_action",
-      "ext": "md",
-      "levels": [
-        "L3",
-        "L4"
-      ],
-      "languages": [
-        "cpp"
-      ]
-    },
-    {
-      "title": "README.md",
-      "path": "01_core_foundations/cpp_programming_language/README.md",
-      "domain": "Core Foundations",
-      "domainId": "01_core_foundations",
-      "topic": "The C++ Programming Language",
-      "topicPath": "01_core_foundations/cpp_programming_language",
-      "ext": "md",
-      "levels": [
-        "L2",
-        "L3"
-      ],
-      "languages": [
-        "cpp"
-      ]
-    },
-    {
-      "title": "README.md",
-      "path": "01_core_foundations/cpp_stl/README.md",
-      "domain": "Core Foundations",
-      "domainId": "01_core_foundations",
-      "topic": "C++ Standard Template Library (STL)",
-      "topicPath": "01_core_foundations/cpp_stl",
-      "ext": "md",
-      "levels": [
-        "L1",
-        "L2",
-        "L3"
-      ],
-      "languages": [
-        "cpp"
-      ]
-    },
-    {
-      "title": "README.md",
-      "path": "01_core_foundations/cses/README.md",
-      "domain": "Core Foundations",
-      "domainId": "01_core_foundations",
-      "topic": "CSES Problem Set Roadmap",
-      "topicPath": "01_core_foundations/cses",
-      "ext": "md",
-      "levels": [
-        "L1",
-        "L2"
-      ],
-      "languages": [
-        "cpp",
-        "java",
-        "universal"
-      ]
-    },
-    {
-      "title": "00_progress_tracker.md",
-      "path": "01_core_foundations/cses/00_progress_tracker.md",
-      "domain": "Core Foundations",
-      "domainId": "01_core_foundations",
-      "topic": "CSES Problem Set Roadmap",
-      "topicPath": "01_core_foundations/cses",
-      "ext": "md",
-      "levels": [
-        "L1",
-        "L2"
-      ],
-      "languages": [
-        "cpp",
-        "java",
-        "universal"
-      ]
-    },
-    {
-      "title": "README.md",
-      "path": "01_core_foundations/cses/01_introductory/README.md",
-      "domain": "Core Foundations",
-      "domainId": "01_core_foundations",
-      "topic": "CSES Problem Set Roadmap",
-      "topicPath": "01_core_foundations/cses",
-      "ext": "md",
-      "levels": [
-        "L1",
-        "L2"
-      ],
-      "languages": [
-        "cpp",
-        "java",
-        "universal"
-      ]
-    },
-    {
-      "title": "README.md",
-      "path": "01_core_foundations/cses/02_sorting_and_searching/README.md",
-      "domain": "Core Foundations",
-      "domainId": "01_core_foundations",
-      "topic": "CSES Problem Set Roadmap",
-      "topicPath": "01_core_foundations/cses",
-      "ext": "md",
-      "levels": [
-        "L1",
-        "L2"
-      ],
-      "languages": [
-        "cpp",
-        "java",
-        "universal"
-      ]
-    },
-    {
-      "title": "README.md",
-      "path": "01_core_foundations/cses/03_dynamic_programming/README.md",
-      "domain": "Core Foundations",
-      "domainId": "01_core_foundations",
-      "topic": "CSES Problem Set Roadmap",
-      "topicPath": "01_core_foundations/cses",
-      "ext": "md",
-      "levels": [
-        "L1",
-        "L2"
-      ],
-      "languages": [
-        "cpp",
-        "java",
-        "universal"
-      ]
-    },
-    {
-      "title": "README.md",
-      "path": "01_core_foundations/cses/04_graph_algorithms/README.md",
-      "domain": "Core Foundations",
-      "domainId": "01_core_foundations",
-      "topic": "CSES Problem Set Roadmap",
-      "topicPath": "01_core_foundations/cses",
-      "ext": "md",
-      "levels": [
-        "L1",
-        "L2"
-      ],
-      "languages": [
-        "cpp",
-        "java",
-        "universal"
-      ]
-    },
-    {
-      "title": "README.md",
-      "path": "01_core_foundations/cses/05_range_queries/README.md",
-      "domain": "Core Foundations",
-      "domainId": "01_core_foundations",
-      "topic": "CSES Problem Set Roadmap",
-      "topicPath": "01_core_foundations/cses",
-      "ext": "md",
-      "levels": [
-        "L1",
-        "L2"
-      ],
-      "languages": [
-        "cpp",
-        "java",
-        "universal"
-      ]
-    },
-    {
-      "title": "README.md",
-      "path": "01_core_foundations/cses/06_tree_algorithms/README.md",
-      "domain": "Core Foundations",
-      "domainId": "01_core_foundations",
-      "topic": "CSES Problem Set Roadmap",
-      "topicPath": "01_core_foundations/cses",
-      "ext": "md",
-      "levels": [
-        "L1",
-        "L2"
-      ],
-      "languages": [
-        "cpp",
-        "java",
-        "universal"
-      ]
-    },
-    {
-      "title": "README.md",
-      "path": "01_core_foundations/cses/07_mathematics/README.md",
-      "domain": "Core Foundations",
-      "domainId": "01_core_foundations",
-      "topic": "CSES Problem Set Roadmap",
-      "topicPath": "01_core_foundations/cses",
-      "ext": "md",
-      "levels": [
-        "L1",
-        "L2"
-      ],
-      "languages": [
-        "cpp",
-        "java",
-        "universal"
-      ]
-    },
-    {
-      "title": "README.md",
-      "path": "01_core_foundations/cses/08_string_algorithms/README.md",
-      "domain": "Core Foundations",
-      "domainId": "01_core_foundations",
-      "topic": "CSES Problem Set Roadmap",
-      "topicPath": "01_core_foundations/cses",
-      "ext": "md",
-      "levels": [
-        "L1",
-        "L2"
-      ],
-      "languages": [
-        "cpp",
-        "java",
-        "universal"
-      ]
-    },
-    {
-      "title": "README.md",
-      "path": "01_core_foundations/cses/09_geometry/README.md",
-      "domain": "Core Foundations",
-      "domainId": "01_core_foundations",
-      "topic": "CSES Problem Set Roadmap",
-      "topicPath": "01_core_foundations/cses",
-      "ext": "md",
-      "levels": [
-        "L1",
-        "L2"
-      ],
-      "languages": [
-        "cpp",
-        "java",
-        "universal"
-      ]
-    },
-    {
-      "title": "README.md",
-      "path": "01_core_foundations/cses/10_advanced_techniques/README.md",
-      "domain": "Core Foundations",
-      "domainId": "01_core_foundations",
-      "topic": "CSES Problem Set Roadmap",
-      "topicPath": "01_core_foundations/cses",
-      "ext": "md",
-      "levels": [
-        "L1",
-        "L2"
-      ],
-      "languages": [
-        "cpp",
-        "java",
-        "universal"
-      ]
-    },
-    {
-      "title": "README.md",
-      "path": "01_core_foundations/cses/11_additional_problems/README.md",
-      "domain": "Core Foundations",
-      "domainId": "01_core_foundations",
-      "topic": "CSES Problem Set Roadmap",
-      "topicPath": "01_core_foundations/cses",
-      "ext": "md",
-      "levels": [
-        "L1",
-        "L2"
-      ],
-      "languages": [
-        "cpp",
-        "java",
-        "universal"
-      ]
-    },
     {
       "title": "README.md",
       "path": "01_core_foundations/dsa/README.md",
@@ -13566,6 +13379,379 @@
       "languages": [
         "java",
         "cpp",
+        "universal"
+      ]
+    },
+    {
+      "title": "README.md",
+      "path": "01_core_foundations/c_programming_a_modern_approach/README.md",
+      "domain": "Core Foundations",
+      "domainId": "01_core_foundations",
+      "topic": "C Programming: A Modern Approach",
+      "topicPath": "01_core_foundations/c_programming_a_modern_approach",
+      "ext": "md",
+      "levels": [
+        "L1",
+        "L2",
+        "L3"
+      ],
+      "languages": [
+        "cpp",
+        "c"
+      ]
+    },
+    {
+      "title": "00_c_king_cheatsheet.md",
+      "path": "01_core_foundations/c_programming_a_modern_approach/00_c_king_cheatsheet.md",
+      "domain": "Core Foundations",
+      "domainId": "01_core_foundations",
+      "topic": "C Programming: A Modern Approach",
+      "topicPath": "01_core_foundations/c_programming_a_modern_approach",
+      "ext": "md",
+      "levels": [
+        "L1",
+        "L2",
+        "L3"
+      ],
+      "languages": [
+        "cpp",
+        "c"
+      ]
+    },
+    {
+      "title": "01_types_expressions_vlas_and_linkage.md",
+      "path": "01_core_foundations/c_programming_a_modern_approach/01_c_fundamentals_control_arrays_and_functions/01_types_expressions_vlas_and_linkage.md",
+      "domain": "Core Foundations",
+      "domainId": "01_core_foundations",
+      "topic": "C Programming: A Modern Approach",
+      "topicPath": "01_core_foundations/c_programming_a_modern_approach",
+      "ext": "md",
+      "levels": [
+        "L1",
+        "L2",
+        "L3"
+      ],
+      "languages": [
+        "cpp",
+        "c"
+      ]
+    },
+    {
+      "title": "02_pointers_arena_allocators_padding_and_bitfields.md",
+      "path": "01_core_foundations/c_programming_a_modern_approach/02_pointers_dynamic_memory_structs_and_bit_fields/02_pointers_arena_allocators_padding_and_bitfields.md",
+      "domain": "Core Foundations",
+      "domainId": "01_core_foundations",
+      "topic": "C Programming: A Modern Approach",
+      "topicPath": "01_core_foundations/c_programming_a_modern_approach",
+      "ext": "md",
+      "levels": [
+        "L1",
+        "L2",
+        "L3"
+      ],
+      "languages": [
+        "cpp",
+        "c"
+      ]
+    },
+    {
+      "title": "03_macros_file_io_memmove_generic_and_atomics.md",
+      "path": "01_core_foundations/c_programming_a_modern_approach/03_preprocessor_stdio_string_and_c99_c11_features/03_macros_file_io_memmove_generic_and_atomics.md",
+      "domain": "Core Foundations",
+      "domainId": "01_core_foundations",
+      "topic": "C Programming: A Modern Approach",
+      "topicPath": "01_core_foundations/c_programming_a_modern_approach",
+      "ext": "md",
+      "levels": [
+        "L1",
+        "L2",
+        "L3"
+      ],
+      "languages": [
+        "cpp",
+        "c"
+      ]
+    },
+    {
+      "title": "README.md",
+      "path": "01_core_foundations/cpp_concurrency_in_action/README.md",
+      "domain": "Core Foundations",
+      "domainId": "01_core_foundations",
+      "topic": "C++ Concurrency in Action",
+      "topicPath": "01_core_foundations/cpp_concurrency_in_action",
+      "ext": "md",
+      "levels": [
+        "L3",
+        "L4"
+      ],
+      "languages": [
+        "cpp"
+      ]
+    },
+    {
+      "title": "README.md",
+      "path": "01_core_foundations/cpp_programming_language/README.md",
+      "domain": "Core Foundations",
+      "domainId": "01_core_foundations",
+      "topic": "The C++ Programming Language",
+      "topicPath": "01_core_foundations/cpp_programming_language",
+      "ext": "md",
+      "levels": [
+        "L2",
+        "L3"
+      ],
+      "languages": [
+        "cpp"
+      ]
+    },
+    {
+      "title": "README.md",
+      "path": "01_core_foundations/cpp_stl/README.md",
+      "domain": "Core Foundations",
+      "domainId": "01_core_foundations",
+      "topic": "C++ Standard Template Library (STL)",
+      "topicPath": "01_core_foundations/cpp_stl",
+      "ext": "md",
+      "levels": [
+        "L1",
+        "L2",
+        "L3"
+      ],
+      "languages": [
+        "cpp"
+      ]
+    },
+    {
+      "title": "README.md",
+      "path": "01_core_foundations/cses/README.md",
+      "domain": "Core Foundations",
+      "domainId": "01_core_foundations",
+      "topic": "CSES Problem Set Roadmap",
+      "topicPath": "01_core_foundations/cses",
+      "ext": "md",
+      "levels": [
+        "L1",
+        "L2"
+      ],
+      "languages": [
+        "cpp",
+        "java",
+        "universal"
+      ]
+    },
+    {
+      "title": "00_progress_tracker.md",
+      "path": "01_core_foundations/cses/00_progress_tracker.md",
+      "domain": "Core Foundations",
+      "domainId": "01_core_foundations",
+      "topic": "CSES Problem Set Roadmap",
+      "topicPath": "01_core_foundations/cses",
+      "ext": "md",
+      "levels": [
+        "L1",
+        "L2"
+      ],
+      "languages": [
+        "cpp",
+        "java",
+        "universal"
+      ]
+    },
+    {
+      "title": "README.md",
+      "path": "01_core_foundations/cses/01_introductory/README.md",
+      "domain": "Core Foundations",
+      "domainId": "01_core_foundations",
+      "topic": "CSES Problem Set Roadmap",
+      "topicPath": "01_core_foundations/cses",
+      "ext": "md",
+      "levels": [
+        "L1",
+        "L2"
+      ],
+      "languages": [
+        "cpp",
+        "java",
+        "universal"
+      ]
+    },
+    {
+      "title": "README.md",
+      "path": "01_core_foundations/cses/02_sorting_and_searching/README.md",
+      "domain": "Core Foundations",
+      "domainId": "01_core_foundations",
+      "topic": "CSES Problem Set Roadmap",
+      "topicPath": "01_core_foundations/cses",
+      "ext": "md",
+      "levels": [
+        "L1",
+        "L2"
+      ],
+      "languages": [
+        "cpp",
+        "java",
+        "universal"
+      ]
+    },
+    {
+      "title": "README.md",
+      "path": "01_core_foundations/cses/03_dynamic_programming/README.md",
+      "domain": "Core Foundations",
+      "domainId": "01_core_foundations",
+      "topic": "CSES Problem Set Roadmap",
+      "topicPath": "01_core_foundations/cses",
+      "ext": "md",
+      "levels": [
+        "L1",
+        "L2"
+      ],
+      "languages": [
+        "cpp",
+        "java",
+        "universal"
+      ]
+    },
+    {
+      "title": "README.md",
+      "path": "01_core_foundations/cses/04_graph_algorithms/README.md",
+      "domain": "Core Foundations",
+      "domainId": "01_core_foundations",
+      "topic": "CSES Problem Set Roadmap",
+      "topicPath": "01_core_foundations/cses",
+      "ext": "md",
+      "levels": [
+        "L1",
+        "L2"
+      ],
+      "languages": [
+        "cpp",
+        "java",
+        "universal"
+      ]
+    },
+    {
+      "title": "README.md",
+      "path": "01_core_foundations/cses/05_range_queries/README.md",
+      "domain": "Core Foundations",
+      "domainId": "01_core_foundations",
+      "topic": "CSES Problem Set Roadmap",
+      "topicPath": "01_core_foundations/cses",
+      "ext": "md",
+      "levels": [
+        "L1",
+        "L2"
+      ],
+      "languages": [
+        "cpp",
+        "java",
+        "universal"
+      ]
+    },
+    {
+      "title": "README.md",
+      "path": "01_core_foundations/cses/06_tree_algorithms/README.md",
+      "domain": "Core Foundations",
+      "domainId": "01_core_foundations",
+      "topic": "CSES Problem Set Roadmap",
+      "topicPath": "01_core_foundations/cses",
+      "ext": "md",
+      "levels": [
+        "L1",
+        "L2"
+      ],
+      "languages": [
+        "cpp",
+        "java",
+        "universal"
+      ]
+    },
+    {
+      "title": "README.md",
+      "path": "01_core_foundations/cses/07_mathematics/README.md",
+      "domain": "Core Foundations",
+      "domainId": "01_core_foundations",
+      "topic": "CSES Problem Set Roadmap",
+      "topicPath": "01_core_foundations/cses",
+      "ext": "md",
+      "levels": [
+        "L1",
+        "L2"
+      ],
+      "languages": [
+        "cpp",
+        "java",
+        "universal"
+      ]
+    },
+    {
+      "title": "README.md",
+      "path": "01_core_foundations/cses/08_string_algorithms/README.md",
+      "domain": "Core Foundations",
+      "domainId": "01_core_foundations",
+      "topic": "CSES Problem Set Roadmap",
+      "topicPath": "01_core_foundations/cses",
+      "ext": "md",
+      "levels": [
+        "L1",
+        "L2"
+      ],
+      "languages": [
+        "cpp",
+        "java",
+        "universal"
+      ]
+    },
+    {
+      "title": "README.md",
+      "path": "01_core_foundations/cses/09_geometry/README.md",
+      "domain": "Core Foundations",
+      "domainId": "01_core_foundations",
+      "topic": "CSES Problem Set Roadmap",
+      "topicPath": "01_core_foundations/cses",
+      "ext": "md",
+      "levels": [
+        "L1",
+        "L2"
+      ],
+      "languages": [
+        "cpp",
+        "java",
+        "universal"
+      ]
+    },
+    {
+      "title": "README.md",
+      "path": "01_core_foundations/cses/10_advanced_techniques/README.md",
+      "domain": "Core Foundations",
+      "domainId": "01_core_foundations",
+      "topic": "CSES Problem Set Roadmap",
+      "topicPath": "01_core_foundations/cses",
+      "ext": "md",
+      "levels": [
+        "L1",
+        "L2"
+      ],
+      "languages": [
+        "cpp",
+        "java",
+        "universal"
+      ]
+    },
+    {
+      "title": "README.md",
+      "path": "01_core_foundations/cses/11_additional_problems/README.md",
+      "domain": "Core Foundations",
+      "domainId": "01_core_foundations",
+      "topic": "CSES Problem Set Roadmap",
+      "topicPath": "01_core_foundations/cses",
+      "ext": "md",
+      "levels": [
+        "L1",
+        "L2"
+      ],
+      "languages": [
+        "cpp",
+        "java",
         "universal"
       ]
     },
@@ -24468,6 +24654,159 @@
         "universal",
         "java",
         "cpp"
+      ]
+    },
+    {
+      "title": "README.md",
+      "path": "05_company_prep/amazon_flipkart/README.md",
+      "domain": "Company-Wise Prep",
+      "domainId": "05_company_prep",
+      "topic": "Amazon & Flipkart E-Commerce Scale",
+      "topicPath": "05_company_prep/amazon_flipkart",
+      "ext": "md",
+      "levels": [
+        "L2",
+        "L3",
+        "L4",
+        "Architect"
+      ],
+      "languages": [
+        "java",
+        "universal"
+      ]
+    },
+    {
+      "title": "README.md",
+      "path": "05_company_prep/google_meta/README.md",
+      "domain": "Company-Wise Prep",
+      "domainId": "05_company_prep",
+      "topic": "Google & Meta Algorithmic & Planetary Systems",
+      "topicPath": "05_company_prep/google_meta",
+      "ext": "md",
+      "levels": [
+        "L2",
+        "L3",
+        "L4",
+        "Architect"
+      ],
+      "languages": [
+        "java",
+        "cpp",
+        "universal"
+      ]
+    },
+    {
+      "title": "README.md",
+      "path": "05_company_prep/swiggy_zomato/README.md",
+      "domain": "Company-Wise Prep",
+      "domainId": "05_company_prep",
+      "topic": "Swiggy & Zomato Quick-Commerce & Food Delivery",
+      "topicPath": "05_company_prep/swiggy_zomato",
+      "ext": "md",
+      "levels": [
+        "L2",
+        "L3",
+        "L4"
+      ],
+      "languages": [
+        "java",
+        "universal"
+      ]
+    },
+    {
+      "title": "README.md",
+      "path": "05_company_prep/uber_ola/README.md",
+      "domain": "Company-Wise Prep",
+      "domainId": "05_company_prep",
+      "topic": "Uber & Ola Mobility & Geospatial Systems",
+      "topicPath": "05_company_prep/uber_ola",
+      "ext": "md",
+      "levels": [
+        "L2",
+        "L3",
+        "L4",
+        "Architect"
+      ],
+      "languages": [
+        "java",
+        "cpp",
+        "universal"
+      ]
+    },
+    {
+      "title": "README.md",
+      "path": "05_company_prep/zepto/README.md",
+      "domain": "Company-Wise Prep",
+      "domainId": "05_company_prep",
+      "topic": "Zepto SDE-2 & SDE-3 Interview Playbook",
+      "topicPath": "05_company_prep/zepto",
+      "ext": "md",
+      "levels": [
+        "L2",
+        "L3",
+        "L4"
+      ],
+      "languages": [
+        "java",
+        "cpp",
+        "universal"
+      ]
+    },
+    {
+      "title": "01_machine_coding_inventory_reservation.md",
+      "path": "05_company_prep/zepto/01_machine_coding_inventory_reservation.md",
+      "domain": "Company-Wise Prep",
+      "domainId": "05_company_prep",
+      "topic": "Zepto SDE-2 & SDE-3 Interview Playbook",
+      "topicPath": "05_company_prep/zepto",
+      "ext": "md",
+      "levels": [
+        "L2",
+        "L3",
+        "L4"
+      ],
+      "languages": [
+        "java",
+        "cpp",
+        "universal"
+      ]
+    },
+    {
+      "title": "02_hld_dark_store_10min_delivery.md",
+      "path": "05_company_prep/zepto/02_hld_dark_store_10min_delivery.md",
+      "domain": "Company-Wise Prep",
+      "domainId": "05_company_prep",
+      "topic": "Zepto SDE-2 & SDE-3 Interview Playbook",
+      "topicPath": "05_company_prep/zepto",
+      "ext": "md",
+      "levels": [
+        "L2",
+        "L3",
+        "L4"
+      ],
+      "languages": [
+        "java",
+        "cpp",
+        "universal"
+      ]
+    },
+    {
+      "title": "03_past_interview_questions_bank.md",
+      "path": "05_company_prep/zepto/03_past_interview_questions_bank.md",
+      "domain": "Company-Wise Prep",
+      "domainId": "05_company_prep",
+      "topic": "Zepto SDE-2 & SDE-3 Interview Playbook",
+      "topicPath": "05_company_prep/zepto",
+      "ext": "md",
+      "levels": [
+        "L2",
+        "L3",
+        "L4"
+      ],
+      "languages": [
+        "java",
+        "cpp",
+        "universal"
       ]
     },
     {

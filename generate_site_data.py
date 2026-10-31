@@ -40,6 +40,14 @@ DOMAINS_CONFIG = [
         "color": "#ef4444",
         "badge": "Tech Stack & Cloud",
         "description": "16 tech stack deep dives (Kafka, Redis, K8s, etc.), API security, and high-throughput data pipelines."
+    },
+    {
+        "id": "05_company_prep",
+        "name": "Company-Wise Prep",
+        "icon": "🎯",
+        "color": "#ec4899",
+        "badge": "Interview Playbooks",
+        "description": "Company-specific interview guides, real past questions, machine coding problems, and system design case studies for Tier-1 tech."
     }
 ]
 
@@ -84,6 +92,13 @@ CUSTOM_TOPIC_NAMES = {
     "api_security_in_action": "API Security in Action (OAuth2 & Zero Trust)",
     "high_throughput_data_pipelines": "High-Throughput Data Pipelines",
     "tech-stack": "Infrastructure Tech-Stack Guides (16 Systems)",
+    # Company-Wise Interview Guides
+    "company_prep": "Company-Wise Technical Interview Preparation",
+    "zepto": "Zepto SDE-2 & SDE-3 Interview Playbook",
+    "swiggy_zomato": "Swiggy & Zomato Quick-Commerce & Food Delivery",
+    "uber_ola": "Uber & Ola Mobility & Geospatial Systems",
+    "amazon_flipkart": "Amazon & Flipkart E-Commerce Scale",
+    "google_meta": "Google & Meta Algorithmic & Planetary Systems",
     # DSA Reorganized Modules
     "array": "Arrays & Memory Foundations",
     "twopointers": "Two Pointers Pattern",
@@ -161,7 +176,12 @@ TOPIC_LEVELS = {
     "minidb": ["L3", "L4", "Architect"],
     "api_security_in_action": ["L4", "Architect"],
     "high_throughput_data_pipelines": ["L4", "Architect"],
-    "tech-stack": ["L2", "L3", "L4", "Architect"]
+    "tech-stack": ["L2", "L3", "L4", "Architect"],
+    "zepto": ["L2", "L3", "L4"],
+    "swiggy_zomato": ["L2", "L3", "L4"],
+    "uber_ola": ["L2", "L3", "L4", "Architect"],
+    "amazon_flipkart": ["L2", "L3", "L4", "Architect"],
+    "google_meta": ["L2", "L3", "L4", "Architect"]
 }
 
 LEVELS_CONFIG = {
@@ -257,7 +277,12 @@ TOPIC_LANGUAGES = {
     "minidb": ["rust"],
     "api_security_in_action": ["universal", "java"],
     "high_throughput_data_pipelines": ["universal", "java"],
-    "tech-stack": ["universal", "java", "cpp"]
+    "tech-stack": ["universal", "java", "cpp"],
+    "zepto": ["java", "cpp", "universal"],
+    "swiggy_zomato": ["java", "universal"],
+    "uber_ola": ["java", "cpp", "universal"],
+    "amazon_flipkart": ["java", "universal"],
+    "google_meta": ["java", "cpp", "universal"]
 }
 
 LANGUAGES_CONFIG = {

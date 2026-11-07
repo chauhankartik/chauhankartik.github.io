@@ -38,6 +38,7 @@ mindmap
         "Logging Framework - Log4j pipeline"
         "In Memory Cache - LRU, LFU, FIFO"
         "Distributed Rate Limiter - 5 Algorithms"
+        "Infrastructure Autoscaler - HPA Target Tracking"
       "Resource Booking and Space"
         "Parking Lot System"
         "Movie Booking System - BookMyShow TTL"

@@ -77,7 +77,8 @@ lld/
     │   ├── version_control_system/                   — LLD: Version Control System (Mini-Git)
     │   ├── logging_framework/                        — LLD: Log4j Logging Framework
     │   ├── cache/                                    — LLD: In-Memory Cache (O(1) Eviction)
-    │   └── rate_limiter/                             — LLD: Rate Limiter (Token/Leaky Bucket, Sliding Log/Counter)
+    │   ├── rate_limiter/                             — LLD: Rate Limiter (Token/Leaky Bucket, Sliding Log/Counter)
+    │   └── autoscaler/                               — LLD: Infrastructure Autoscaler (HPA / Target Tracking)
     ├── resource_booking/
     │   ├── parking_lot/                              — LLD: Parking Lot System
     │   ├── movie_booking_system/                     — LLD: Movie Booking System (BookMyShow)
@@ -131,6 +132,7 @@ lld/
   📄 **1-Page Revision Card:** [`00_OnePage_Revision.pdf`](03_system_designs/infrastructure/cache/00_OnePage_Revision.pdf)
 - **Distributed Rate Limiter** ([`rate_limiter/`](03_system_designs/infrastructure/rate_limiter/)): High-throughput rate limiter implementing 5 core algorithms (Token Bucket, Leaky Bucket, Fixed Window, Sliding Window Log, and Sliding Window Counter) with multithreaded thread safety.  
   📄 **1-Page Revision Card:** [`00_OnePage_Revision.pdf`](03_system_designs/infrastructure/rate_limiter/00_OnePage_Revision.pdf)
+- **Infrastructure Autoscaler System** ([`autoscaler/`](03_system_designs/infrastructure/autoscaler/)): Production-grade autoscaler emulating Kubernetes HPA and AWS ASG with target tracking, hysteresis deadbands, cool-down stabilization windows, and graceful connection draining.
 
 #### Resource & Reservation Systems ([`resource_booking/`](03_system_designs/resource_booking/))
 - **Parking Lot System** ([`parking_lot/`](03_system_designs/resource_booking/parking_lot/)): Multi-floor vehicle-to-spot matching, Strategy-based fee calculation, and real-time display boards.  

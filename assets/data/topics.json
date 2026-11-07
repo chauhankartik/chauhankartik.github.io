@@ -1,9 +1,9 @@
 {
-  "generated": "2026-11-07T22:33:46.494492Z",
+  "generated": "2026-11-07T22:40:49.797294Z",
   "stats": {
-    "totalFiles": 837,
-    "markdownFiles": 534,
-    "javaFiles": 284,
+    "totalFiles": 840,
+    "markdownFiles": 536,
+    "javaFiles": 285,
     "sqlFiles": 5,
     "rustFiles": 12,
     "topics": 50,
@@ -3998,7 +3998,7 @@
       "badge": "LLD & HLD",
       "description": "SOLID principles, GoF design patterns, production LLD case studies, and staff-level HLD architectures.",
       "topicCount": 5,
-      "fileCount": 147,
+      "fileCount": 150,
       "topics": [
         {
           "description": "A production-grade masterclass on software architecture principles, architectural characteristics (\"-ilities\"), architecture styles, decision governance (ADRs), and automated fitne...",
@@ -4179,13 +4179,13 @@
               "name": "README.md",
               "path": "02_system_design/lld/README.md",
               "ext": "md",
-              "size": 13338
+              "size": 13739
             },
             {
               "name": "00_LLD_MindMap.md",
               "path": "02_system_design/lld/00_LLD_MindMap.md",
               "ext": "md",
-              "size": 6380
+              "size": 6438
             },
             {
               "name": "00_Recommended_Books_and_Resources.md",
@@ -4812,6 +4812,35 @@
                   "files": [],
                   "subtopics": [
                     {
+                      "description": "A production-grade, thread-safe Infrastructure Autoscaler emulating the Kubernetes Horizontal Pod Autoscaler (HPA) and AWS Auto Scaling Groups (ASG).",
+                      "title": "Infrastructure Autoscaler System (LLD)",
+                      "files": [
+                        {
+                          "name": "README.md",
+                          "path": "02_system_design/lld/03_system_designs/infrastructure/autoscaler/README.md",
+                          "ext": "md",
+                          "size": 1150
+                        },
+                        {
+                          "name": "00_Theory_and_Design.md",
+                          "path": "02_system_design/lld/03_system_designs/infrastructure/autoscaler/00_Theory_and_Design.md",
+                          "ext": "md",
+                          "size": 7083
+                        },
+                        {
+                          "name": "AutoscalerSystem.java",
+                          "path": "02_system_design/lld/03_system_designs/infrastructure/autoscaler/AutoscalerSystem.java",
+                          "ext": "java",
+                          "size": 28846
+                        }
+                      ],
+                      "subtopics": [],
+                      "fileCount": 3,
+                      "id": "autoscaler",
+                      "name": "Autoscaler",
+                      "path": "02_system_design/lld/03_system_designs/infrastructure/autoscaler"
+                    },
+                    {
                       "description": "> Interview Difficulty: Google / Amazon L5–L6",
                       "title": "In-Memory Cache (with Eviction Policies) — LLD Deep Dive (Interview Edition)",
                       "files": [
@@ -5059,7 +5088,7 @@
                       "path": "02_system_design/lld/03_system_designs/infrastructure/version_control_system"
                     }
                   ],
-                  "fileCount": 32,
+                  "fileCount": 35,
                   "id": "infrastructure",
                   "name": "Infrastructure",
                   "path": "02_system_design/lld/03_system_designs/infrastructure"
@@ -5294,13 +5323,13 @@
                   "path": "02_system_design/lld/03_system_designs/resource_booking"
                 }
               ],
-              "fileCount": 80,
+              "fileCount": 83,
               "id": "03_system_designs",
               "name": "System Designs",
               "path": "02_system_design/lld/03_system_designs"
             }
           ],
-          "fileCount": 121,
+          "fileCount": 124,
           "id": "lld",
           "name": "Low-Level System Design (LLD)",
           "path": "02_system_design/lld",
@@ -5315,11 +5344,11 @@
             "universal"
           ],
           "extCounts": {
-            "md": 27,
-            "java": 85,
+            "md": 29,
+            "java": 86,
             "pdf": 9
           },
-          "totalFiles": 121
+          "totalFiles": 124
         },
         {
           "description": "A production-grade guide to decomposing monolithic applications into microservices without breaking production. Based on Sam Newman's landmark book Monolith to Microservices: Evolu...",
@@ -17946,6 +17975,63 @@
     {
       "title": "SplitwiseService.java",
       "path": "02_system_design/lld/03_system_designs/finance/splitwise/SplitwiseService.java",
+      "domain": "System Design",
+      "domainId": "02_system_design",
+      "topic": "Low-Level System Design (LLD)",
+      "topicPath": "02_system_design/lld",
+      "ext": "java",
+      "levels": [
+        "L1",
+        "L2",
+        "L3"
+      ],
+      "languages": [
+        "java",
+        "cpp",
+        "universal"
+      ]
+    },
+    {
+      "title": "README.md",
+      "path": "02_system_design/lld/03_system_designs/infrastructure/autoscaler/README.md",
+      "domain": "System Design",
+      "domainId": "02_system_design",
+      "topic": "Low-Level System Design (LLD)",
+      "topicPath": "02_system_design/lld",
+      "ext": "md",
+      "levels": [
+        "L1",
+        "L2",
+        "L3"
+      ],
+      "languages": [
+        "java",
+        "cpp",
+        "universal"
+      ]
+    },
+    {
+      "title": "00_Theory_and_Design.md",
+      "path": "02_system_design/lld/03_system_designs/infrastructure/autoscaler/00_Theory_and_Design.md",
+      "domain": "System Design",
+      "domainId": "02_system_design",
+      "topic": "Low-Level System Design (LLD)",
+      "topicPath": "02_system_design/lld",
+      "ext": "md",
+      "levels": [
+        "L1",
+        "L2",
+        "L3"
+      ],
+      "languages": [
+        "java",
+        "cpp",
+        "universal"
+      ]
+    },
+    {
+      "title": "AutoscalerSystem.java",
+      "path": "02_system_design/lld/03_system_designs/infrastructure/autoscaler/AutoscalerSystem.java",
       "domain": "System Design",
       "domainId": "02_system_design",
       "topic": "Low-Level System Design (LLD)",

@@ -194,17 +194,19 @@ Depending on which tier you are targeting, prioritize these modules from the **2
    * Low-Level OS: [`03_systems_and_databases/ostep/`](../03_systems_and_databases/ostep/)
    * Advanced Algorithms: [`01_core_foundations/cses/`](../01_core_foundations/cses/)
 
-2. **Targeting Tier 1 & 2 (Big Tech / SaaS):**
+2. **Targeting Tier 1 & 2 (Big Tech / SaaS / FinTech):**
    * DSA Patterns: [`01_core_foundations/dsa/`](../01_core_foundations/dsa/README.md)
    * High-Level Design (HLD): [`02_system_design/hld/`](../02_system_design/hld/01_system_design_interview_framework.md)
    * Detailed Company Playbooks:
+     * [`05_company_prep/stripe_razorpay/`](stripe_razorpay/README.md) — Stripe & Razorpay Flagship Guide
      * [`05_company_prep/google_meta/`](google_meta/README.md)
      * [`05_company_prep/amazon_flipkart/`](amazon_flipkart/README.md)
      * [`05_company_prep/uber_ola/`](uber_ola/README.md)
 
 3. **Targeting Tier 3 (Unicorns & Machine Coding):**
    * Machine Coding & Design Patterns: [`02_system_design/lld/`](../02_system_design/lld/)
-   * Live Dark-Store & Real-Time Logistics Case Studies:
+   * Live Machine Coding & Real-Time Case Studies:
+     * [`05_company_prep/stripe_razorpay/`](stripe_razorpay/README.md) — Idempotent Payment & Double-Entry Ledger Machine Coding
      * [`05_company_prep/zepto/`](zepto/README.md)
      * [`05_company_prep/swiggy_zomato/`](swiggy_zomato/README.md)
    * Distributed Infrastructure (Kafka, Redis, Postgres): [`04_infrastructure/tech-stack/`](../04_infrastructure/tech-stack/)

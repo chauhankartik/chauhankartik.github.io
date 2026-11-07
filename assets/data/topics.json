@@ -1,12 +1,12 @@
 {
-  "generated": "2026-11-07T20:05:42.968732Z",
+  "generated": "2026-11-07T22:15:28.348851Z",
   "stats": {
-    "totalFiles": 831,
-    "markdownFiles": 529,
+    "totalFiles": 835,
+    "markdownFiles": 533,
     "javaFiles": 283,
     "sqlFiles": 5,
     "rustFiles": 12,
-    "topics": 49,
+    "topics": 50,
     "weeks": 13,
     "domains": 6
   },
@@ -9131,8 +9131,8 @@
       "color": "#ec4899",
       "badge": "Interview Playbooks",
       "description": "Company-specific interview guides, real past questions, machine coding problems, and system design case studies for Tier-1 tech.",
-      "topicCount": 5,
-      "fileCount": 8,
+      "topicCount": 6,
+      "fileCount": 12,
       "topics": [
         {
           "description": "Amazon and Flipkart operate massive e-commerce and retail cloud platforms. At Amazon, technical evaluations are strictly paired with Amazon's 16 Leadership Principles (LPs). At Fli...",
@@ -9196,6 +9196,56 @@
             "md": 1
           },
           "totalFiles": 1
+        },
+        {
+          "description": "Stripe and Razorpay represent the gold standard of modern financial technology, payment gateway infrastructure, and developer-first APIs. While consumer-tech companies emphasize su...",
+          "title": "Stripe & Razorpay — SDE-2, SDE-3 & Staff Technical Interview Preparation Guide",
+          "files": [
+            {
+              "name": "README.md",
+              "path": "05_company_prep/stripe_razorpay/README.md",
+              "ext": "md",
+              "size": 7385
+            },
+            {
+              "name": "01_machine_coding_idempotent_payment_and_ledger.md",
+              "path": "05_company_prep/stripe_razorpay/01_machine_coding_idempotent_payment_and_ledger.md",
+              "ext": "md",
+              "size": 21110
+            },
+            {
+              "name": "02_hld_payment_gateway_and_ledger.md",
+              "path": "05_company_prep/stripe_razorpay/02_hld_payment_gateway_and_ledger.md",
+              "ext": "md",
+              "size": 10251
+            },
+            {
+              "name": "03_past_interview_questions_bank.md",
+              "path": "05_company_prep/stripe_razorpay/03_past_interview_questions_bank.md",
+              "ext": "md",
+              "size": 8821
+            }
+          ],
+          "subtopics": [],
+          "fileCount": 4,
+          "id": "stripe_razorpay",
+          "name": "Stripe & Razorpay FinTech & Payment Systems",
+          "path": "05_company_prep/stripe_razorpay",
+          "levels": [
+            "L2",
+            "L3",
+            "L4",
+            "Architect"
+          ],
+          "languages": [
+            "java",
+            "cpp",
+            "universal"
+          ],
+          "extCounts": {
+            "md": 4
+          },
+          "totalFiles": 4
         },
         {
           "description": "Swiggy and Zomato are India's leading consumer tech platforms covering food delivery, dining, and quick commerce (Instamart & Blinkit). Their technical loops focus on multi-sided m...",
@@ -24899,6 +24949,86 @@
       "domainId": "05_company_prep",
       "topic": "Google & Meta Algorithmic & Planetary Systems",
       "topicPath": "05_company_prep/google_meta",
+      "ext": "md",
+      "levels": [
+        "L2",
+        "L3",
+        "L4",
+        "Architect"
+      ],
+      "languages": [
+        "java",
+        "cpp",
+        "universal"
+      ]
+    },
+    {
+      "title": "README.md",
+      "path": "05_company_prep/stripe_razorpay/README.md",
+      "domain": "Company-Wise Prep",
+      "domainId": "05_company_prep",
+      "topic": "Stripe & Razorpay FinTech & Payment Systems",
+      "topicPath": "05_company_prep/stripe_razorpay",
+      "ext": "md",
+      "levels": [
+        "L2",
+        "L3",
+        "L4",
+        "Architect"
+      ],
+      "languages": [
+        "java",
+        "cpp",
+        "universal"
+      ]
+    },
+    {
+      "title": "01_machine_coding_idempotent_payment_and_ledger.md",
+      "path": "05_company_prep/stripe_razorpay/01_machine_coding_idempotent_payment_and_ledger.md",
+      "domain": "Company-Wise Prep",
+      "domainId": "05_company_prep",
+      "topic": "Stripe & Razorpay FinTech & Payment Systems",
+      "topicPath": "05_company_prep/stripe_razorpay",
+      "ext": "md",
+      "levels": [
+        "L2",
+        "L3",
+        "L4",
+        "Architect"
+      ],
+      "languages": [
+        "java",
+        "cpp",
+        "universal"
+      ]
+    },
+    {
+      "title": "02_hld_payment_gateway_and_ledger.md",
+      "path": "05_company_prep/stripe_razorpay/02_hld_payment_gateway_and_ledger.md",
+      "domain": "Company-Wise Prep",
+      "domainId": "05_company_prep",
+      "topic": "Stripe & Razorpay FinTech & Payment Systems",
+      "topicPath": "05_company_prep/stripe_razorpay",
+      "ext": "md",
+      "levels": [
+        "L2",
+        "L3",
+        "L4",
+        "Architect"
+      ],
+      "languages": [
+        "java",
+        "cpp",
+        "universal"
+      ]
+    },
+    {
+      "title": "03_past_interview_questions_bank.md",
+      "path": "05_company_prep/stripe_razorpay/03_past_interview_questions_bank.md",
+      "domain": "Company-Wise Prep",
+      "domainId": "05_company_prep",
+      "topic": "Stripe & Razorpay FinTech & Payment Systems",
+      "topicPath": "05_company_prep/stripe_razorpay",
       "ext": "md",
       "levels": [
         "L2",

@@ -18,6 +18,7 @@ This module maps engineering knowledge directly to the specific interview loops,
 | **Swiggy & Zomato** | SDE-2 / SDE-3 / Architect | Food Delivery, Quick Commerce (Instamart/Blinkit), Surge Pricing | DSA + LLD + Distributed HLD + Tech Leadership | **[`swiggy_zomato/`](swiggy_zomato/README.md)** |
 | **Uber & Ola** | SDE-2 / SDE-3 / Staff | Hyperlocal Logistics, Real-time GPS Streaming, H3 Geospatial | DSA + Complex Machine Coding + Geospatial HLD | **[`uber_ola/`](uber_ola/README.md)** |
 | **Amazon & Flipkart** | SDE-2 / SDE-3 / Principal | E-commerce Scale, High Availability, Leadership Principles | DSA (Hard) + OOD/LLD + HLD + Bar Raiser (LP) | **[`amazon_flipkart/`](amazon_flipkart/README.md)** |
+| **Stripe & Razorpay** | SDE-2 / SDE-3 / Staff | FinTech, Payment Gateways, Double-Entry Ledgers, Idempotency | DSA + Machine Coding (Ledger/Idempotency) + Financial HLD + BarRaiser | **[`stripe_razorpay/`](stripe_razorpay/README.md)** |
 | **Google & Meta** | L4 (SDE-2) / L5 (Senior) | Massive Scale, In-memory Computing, Distributed Storage | DSA (Hard DP/Graphs) + High-Scale HLD + Behavioral | **[`google_meta/`](google_meta/README.md)** |
 
 ---
@@ -36,6 +37,7 @@ quadrantChart
     "Zepto": [0.82, 0.85]
     "Swiggy / Blinkit": [0.78, 0.75]
     "Uber": [0.85, 0.80]
+    "Stripe / Razorpay": [0.88, 0.90]
     "Amazon": [0.65, 0.55]
     "Google": [0.25, 0.20]
     "Meta": [0.30, 0.25]
@@ -58,6 +60,13 @@ quadrantChart
 * **DSA Focus:** Clean code, standard data structures (Trees, Hash Maps, Priority Queues, Binary Search).
 * **Leadership Principles:** Half the interview weight is dedicated to behavioral behavioral leadership stories (STAR method).
 * **System Design:** Shopping carts, fulfillment networks, DynamoDB single-table design, and resilient service orchestration (Saga/Step Functions).
+
+### 4. The FinTech & Global Payment Gateway Archetype (Stripe, Razorpay)
+* **Core Philosophy:** *Absolute Financial Invariants, Zero-Loss Durability, Exactly-Once Idempotency.*
+* **DSA Focus:** Practical algorithms, interval trees, rate limiters, graph currency arbitrage, and robust string parsing.
+* **LLD / Machine Coding:** Idempotent payment processors, double-entry multi-currency ledgers ($\sum \text{Debits} = \sum \text{Credits}$), sliding window rate limiters.
+* **HLD Focus:** Payment gateway smart routing, bank fallback cascades, transactional outbox for webhooks, and 3-way automated financial reconciliation.
+* **Database & Infra:** Postgres MVCC, distributed locks, immutable append-only ledger logs, Kafka event streaming, and HMAC-SHA256 signature verification.
 
 ---
 

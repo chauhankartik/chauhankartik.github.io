@@ -95,6 +95,7 @@ Welcome to the **2026 Software Engineering Master Study Repository**. This repos
   * **[`05_company_prep/swiggy_zomato/`](05_company_prep/swiggy_zomato/README.md)** — **Swiggy & Zomato**: Food delivery and quick-commerce (Instamart/Blinkit), real-time dynamic surge pricing, and catalog search engines.
   * **[`05_company_prep/uber_ola/`](05_company_prep/uber_ola/README.md)** — **Uber & Ola**: Planetary-scale mobility networks, Uber H3 hexagonal geospatial dispatch, and GPS telemetry streaming.
   * **[`05_company_prep/amazon_flipkart/`](05_company_prep/amazon_flipkart/README.md)** — **Amazon & Flipkart**: E-commerce scale, high-availability checkout, DynamoDB single-table design, and Amazon Leadership Principles (STAR).
+  * **[`05_company_prep/stripe_razorpay/`](05_company_prep/stripe_razorpay/README.md)** — **Stripe & Razorpay**: Global FinTech and payment gateway infrastructure, idempotent charge APIs (`Idempotency-Key`), double-entry bookkeeping ledgers ($\sum \text{Debits} = \sum \text{Credits}$), smart bank routing, transactional outbox webhooks, and 3-way financial reconciliation.
   * **[`05_company_prep/google_meta/`](05_company_prep/google_meta/README.md)** — **Google & Meta**: Advanced algorithmic problem solving, planetary distributed storage, caching hierarchies, and systems resilience.
 
 ### 9. Learning Projects (Build Your Own Systems from Scratch)

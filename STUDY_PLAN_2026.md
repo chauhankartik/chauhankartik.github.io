@@ -351,6 +351,6 @@ mindmap
 | **[`03_systems_and_databases/relevant_search_solr_elasticsearch/`](03_systems_and_databases/relevant_search_solr_elasticsearch/README.md)** | Relevant Search Solr & Elasticsearch | DisMax Multi-Match & Gaussian Decay, Query-Time Graph Synonyms, Hybrid Vector/BM25 RRF, QuePID |
 | **[`03_systems_and_databases/lucene_in_action/`](03_systems_and_databases/lucene_in_action/README.md)** | Lucene in Action | `MMapDirectory` zero-copy mmap, `IndexWriter` Segment Merging, TokenStream attributes, BKD Spatial Trees, Columnar DocValues |
 | **[`01_core_foundations/interviewbit/`](01_core_foundations/interviewbit/)** | Problem Practice Sets | Array, Greedy (Gas Station, Majority Element) & real-world interview problem collections |
-| **[`05_company_prep/`](05_company_prep/README.md)** | Company-Wise Preparation | Targeted Playbooks for Zepto, Swiggy/Zomato, Uber/Ola, Amazon/Flipkart, Google/Meta (LLD, HLD, Question Banks) |
+| **[`05_company_prep/`](05_company_prep/README.md)** | Company-Wise Preparation | Targeted Playbooks for Zepto, Swiggy/Zomato, Uber/Ola, Amazon/Flipkart, Stripe/Razorpay, Google/Meta (LLD, HLD, Question Banks) |
 | **[`06_learning_projects/`](06_learning_projects/README.md)** | Learning Projects (Systems from Scratch) | Hands-on Implementation: Redis from Scratch (Event loop, RESP2/3, TTL eviction, AOF persistence, PSYNC) |
 | **[`06_learning_projects/redis/`](06_learning_projects/redis/README.md)** | Redis from Scratch | Flagship 10-Milestone project with Python & C++20 non-blocking event-driven starters and protocol test suite |

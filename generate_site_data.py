@@ -106,6 +106,7 @@ CUSTOM_TOPIC_NAMES = {
     "swiggy_zomato": "Swiggy & Zomato Quick-Commerce & Food Delivery",
     "uber_ola": "Uber & Ola Mobility & Geospatial Systems",
     "amazon_flipkart": "Amazon & Flipkart E-Commerce Scale",
+    "stripe_razorpay": "Stripe & Razorpay FinTech & Payment Systems",
     "google_meta": "Google & Meta Algorithmic & Planetary Systems",
     # Learning Projects
     "redis": "Redis from Scratch (In-Memory Key-Value Store)",
@@ -192,6 +193,7 @@ TOPIC_LEVELS = {
     "swiggy_zomato": ["L2", "L3", "L4"],
     "uber_ola": ["L2", "L3", "L4", "Architect"],
     "amazon_flipkart": ["L2", "L3", "L4", "Architect"],
+    "stripe_razorpay": ["L2", "L3", "L4", "Architect"],
     "google_meta": ["L2", "L3", "L4", "Architect"],
     "redis": ["L2", "L3", "L4", "Architect"]
 }
@@ -294,6 +296,7 @@ TOPIC_LANGUAGES = {
     "swiggy_zomato": ["java", "universal"],
     "uber_ola": ["java", "cpp", "universal"],
     "amazon_flipkart": ["java", "universal"],
+    "stripe_razorpay": ["java", "cpp", "universal"],
     "google_meta": ["java", "cpp", "universal"],
     "redis": ["universal", "cpp", "java", "rust"]
 }

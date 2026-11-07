@@ -97,6 +97,16 @@ Welcome to the **2026 Software Engineering Master Study Repository**. This repos
   * **[`05_company_prep/amazon_flipkart/`](05_company_prep/amazon_flipkart/README.md)** — **Amazon & Flipkart**: E-commerce scale, high-availability checkout, DynamoDB single-table design, and Amazon Leadership Principles (STAR).
   * **[`05_company_prep/google_meta/`](05_company_prep/google_meta/README.md)** — **Google & Meta**: Advanced algorithmic problem solving, planetary distributed storage, caching hierarchies, and systems resilience.
 
+### 9. Learning Projects (Build Your Own Systems from Scratch)
+* **[`06_learning_projects/`](06_learning_projects/README.md)** — First-principles engineering projects building canonical infrastructure from scratch to develop mechanical sympathy:
+  * **[`06_learning_projects/redis/`](06_learning_projects/redis/README.md)** — **Redis from Scratch (Flagship Project)**:
+    * Single-threaded Reactor pattern, POSIX I/O multiplexing (`epoll`/`select`), and non-blocking event loop (`01_architecture_and_roadmap.md`).
+    * Full RESP2/RESP3 wire protocol parser and serializer (`02_resp_protocol_specification.md`).
+    * In-memory hashtables with incremental rehashing, Simple Dynamic Strings (SDS), SkipLists, and active/passive TTL key expiration (`03_internals_and_data_structures.md`).
+    * Append-Only File (AOF) persistence with background `fork()` Copy-on-Write rewrite, and master-replica replication stream (`04_persistence_and_replication.md`).
+    * Ready-to-run event-driven starter servers in **Python** (`starter/python/`) and **C++20** (`starter/cpp/`), verified with official `redis-cli` and an automated test suite (`tests/test_redis_server.py`).
+  * **[`03_systems_and_databases/minidb/`](03_systems_and_databases/minidb/)** — **MiniDB Embedded Storage Engine**: Embedded LSM-Tree storage engine written in Rust with WAL crash recovery, MemTable SkipList, binary SSTables, and Bloom filters.
+
 ---
 
 ## 3. Quick Navigation & Navigation Rules

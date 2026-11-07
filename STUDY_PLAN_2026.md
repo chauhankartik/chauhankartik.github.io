@@ -55,6 +55,9 @@ mindmap
       High Throughput Data Pipelines high_throughput_data_pipelines
       Containers Orchestration Kubernetes
       API Security in Action OWASP OAuth2 SPIFFE api_security_in_action
+    Phase 5 Learning Projects & Systems from Scratch
+      Redis from Scratch redis_from_scratch
+      MiniDB LSM Storage Engine minidb
 ```
 
 ---
@@ -349,3 +352,5 @@ mindmap
 | **[`03_systems_and_databases/lucene_in_action/`](03_systems_and_databases/lucene_in_action/README.md)** | Lucene in Action | `MMapDirectory` zero-copy mmap, `IndexWriter` Segment Merging, TokenStream attributes, BKD Spatial Trees, Columnar DocValues |
 | **[`01_core_foundations/interviewbit/`](01_core_foundations/interviewbit/)** | Problem Practice Sets | Array, Greedy (Gas Station, Majority Element) & real-world interview problem collections |
 | **[`05_company_prep/`](05_company_prep/README.md)** | Company-Wise Preparation | Targeted Playbooks for Zepto, Swiggy/Zomato, Uber/Ola, Amazon/Flipkart, Google/Meta (LLD, HLD, Question Banks) |
+| **[`06_learning_projects/`](06_learning_projects/README.md)** | Learning Projects (Systems from Scratch) | Hands-on Implementation: Redis from Scratch (Event loop, RESP2/3, TTL eviction, AOF persistence, PSYNC) |
+| **[`06_learning_projects/redis/`](06_learning_projects/redis/README.md)** | Redis from Scratch | Flagship 10-Milestone project with Python & C++20 non-blocking event-driven starters and protocol test suite |

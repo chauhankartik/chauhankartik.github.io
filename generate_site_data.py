@@ -48,6 +48,14 @@ DOMAINS_CONFIG = [
         "color": "#ec4899",
         "badge": "Interview Playbooks",
         "description": "Company-specific interview guides, real past questions, machine coding problems, and system design case studies for Tier-1 tech."
+    },
+    {
+        "id": "06_learning_projects",
+        "name": "Learning Projects",
+        "icon": "🚀",
+        "color": "#8b5cf6",
+        "badge": "Build Your Own Systems",
+        "description": "First-principles systems engineering projects: building Redis, embedded storage engines, event loops, and distributed consensus from scratch."
     }
 ]
 
@@ -99,6 +107,9 @@ CUSTOM_TOPIC_NAMES = {
     "uber_ola": "Uber & Ola Mobility & Geospatial Systems",
     "amazon_flipkart": "Amazon & Flipkart E-Commerce Scale",
     "google_meta": "Google & Meta Algorithmic & Planetary Systems",
+    # Learning Projects
+    "redis": "Redis from Scratch (In-Memory Key-Value Store)",
+    "learning_projects": "Learning Projects (Build Your Own Systems)",
     # DSA Reorganized Modules
     "array": "Arrays & Memory Foundations",
     "twopointers": "Two Pointers Pattern",
@@ -181,7 +192,8 @@ TOPIC_LEVELS = {
     "swiggy_zomato": ["L2", "L3", "L4"],
     "uber_ola": ["L2", "L3", "L4", "Architect"],
     "amazon_flipkart": ["L2", "L3", "L4", "Architect"],
-    "google_meta": ["L2", "L3", "L4", "Architect"]
+    "google_meta": ["L2", "L3", "L4", "Architect"],
+    "redis": ["L2", "L3", "L4", "Architect"]
 }
 
 LEVELS_CONFIG = {
@@ -282,7 +294,8 @@ TOPIC_LANGUAGES = {
     "swiggy_zomato": ["java", "universal"],
     "uber_ola": ["java", "cpp", "universal"],
     "amazon_flipkart": ["java", "universal"],
-    "google_meta": ["java", "cpp", "universal"]
+    "google_meta": ["java", "cpp", "universal"],
+    "redis": ["universal", "cpp", "java", "rust"]
 }
 
 LANGUAGES_CONFIG = {

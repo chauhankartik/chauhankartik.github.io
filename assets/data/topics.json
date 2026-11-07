@@ -1,14 +1,14 @@
 {
-  "generated": "2026-10-31T16:15:34.286291Z",
+  "generated": "2026-11-07T20:05:42.968732Z",
   "stats": {
-    "totalFiles": 821,
-    "markdownFiles": 521,
+    "totalFiles": 831,
+    "markdownFiles": 529,
     "javaFiles": 283,
     "sqlFiles": 5,
     "rustFiles": 12,
-    "topics": 48,
+    "topics": 49,
     "weeks": 13,
-    "domains": 5
+    "domains": 6
   },
   "levels": {
     "L1": {
@@ -274,7 +274,7 @@
       "badge": "Algorithms & Languages",
       "description": "Data structures, algorithms, CSES, Java internals, modern C++, and advanced SQL interview patterns.",
       "topicCount": 17,
-      "fileCount": 386,
+      "fileCount": 388,
       "topics": [
         {
           "description": "A structured, pattern-oriented study module for mastering Data Structures & Algorithms, built for senior and Google-level technical interviews.",
@@ -355,25 +355,25 @@
                   "name": "01_easy.java",
                   "path": "01_core_foundations/dsa/twopointers/01_easy.java",
                   "ext": "java",
-                  "size": 15554
+                  "size": 16434
                 },
                 {
                   "name": "02_medium.java",
                   "path": "01_core_foundations/dsa/twopointers/02_medium.java",
                   "ext": "java",
-                  "size": 17100
+                  "size": 17970
                 },
                 {
                   "name": "03_hard.java",
                   "path": "01_core_foundations/dsa/twopointers/03_hard.java",
                   "ext": "java",
-                  "size": 17673
+                  "size": 18369
                 },
                 {
                   "name": "04_google_level.java",
                   "path": "01_core_foundations/dsa/twopointers/04_google_level.java",
                   "ext": "java",
-                  "size": 15456
+                  "size": 15992
                 },
                 {
                   "name": "05_cheatsheet.md",
@@ -385,7 +385,7 @@
                   "name": "06_top50_problems.md",
                   "path": "01_core_foundations/dsa/twopointers/06_top50_problems.md",
                   "ext": "md",
-                  "size": 13952
+                  "size": 13785
                 }
               ],
               "subtopics": [],
@@ -408,25 +408,25 @@
                   "name": "01_easy.java",
                   "path": "01_core_foundations/dsa/sliding_window/01_easy.java",
                   "ext": "java",
-                  "size": 11380
+                  "size": 12090
                 },
                 {
                   "name": "02_medium.java",
                   "path": "01_core_foundations/dsa/sliding_window/02_medium.java",
                   "ext": "java",
-                  "size": 14517
+                  "size": 15391
                 },
                 {
                   "name": "03_hard.java",
                   "path": "01_core_foundations/dsa/sliding_window/03_hard.java",
                   "ext": "java",
-                  "size": 11983
+                  "size": 12577
                 },
                 {
                   "name": "04_google_level.java",
                   "path": "01_core_foundations/dsa/sliding_window/04_google_level.java",
                   "ext": "java",
-                  "size": 13698
+                  "size": 14218
                 },
                 {
                   "name": "05_cheatsheet.md",
@@ -461,29 +461,35 @@
                   "name": "01_easy.java",
                   "path": "01_core_foundations/dsa/linkedlist/01_easy.java",
                   "ext": "java",
-                  "size": 14623
+                  "size": 15467
                 },
                 {
                   "name": "02_medium.java",
                   "path": "01_core_foundations/dsa/linkedlist/02_medium.java",
                   "ext": "java",
-                  "size": 16846
+                  "size": 17748
                 },
                 {
                   "name": "03_hard.java",
                   "path": "01_core_foundations/dsa/linkedlist/03_hard.java",
                   "ext": "java",
-                  "size": 17581
+                  "size": 18143
                 },
                 {
                   "name": "04_google_level.java",
                   "path": "01_core_foundations/dsa/linkedlist/04_google_level.java",
                   "ext": "java",
-                  "size": 15732
+                  "size": 16154
+                },
+                {
+                  "name": "06_top50_problems.md",
+                  "path": "01_core_foundations/dsa/linkedlist/06_top50_problems.md",
+                  "ext": "md",
+                  "size": 12616
                 }
               ],
               "subtopics": [],
-              "fileCount": 5,
+              "fileCount": 6,
               "id": "linkedlist",
               "name": "Linked Lists & Pointers",
               "path": "01_core_foundations/dsa/linkedlist"
@@ -502,25 +508,25 @@
                   "name": "01_easy.java",
                   "path": "01_core_foundations/dsa/stack/01_easy.java",
                   "ext": "java",
-                  "size": 15225
+                  "size": 15987
                 },
                 {
                   "name": "02_medium.java",
                   "path": "01_core_foundations/dsa/stack/02_medium.java",
                   "ext": "java",
-                  "size": 18214
+                  "size": 19054
                 },
                 {
                   "name": "03_hard.java",
                   "path": "01_core_foundations/dsa/stack/03_hard.java",
                   "ext": "java",
-                  "size": 15383
+                  "size": 16025
                 },
                 {
                   "name": "04_google_level.java",
                   "path": "01_core_foundations/dsa/stack/04_google_level.java",
                   "ext": "java",
-                  "size": 15558
+                  "size": 16030
                 },
                 {
                   "name": "05_cheatsheet.md",
@@ -555,25 +561,25 @@
                   "name": "01_easy.java",
                   "path": "01_core_foundations/dsa/queue/01_easy.java",
                   "ext": "java",
-                  "size": 15571
+                  "size": 16245
                 },
                 {
                   "name": "02_medium.java",
                   "path": "01_core_foundations/dsa/queue/02_medium.java",
                   "ext": "java",
-                  "size": 21584
+                  "size": 22502
                 },
                 {
                   "name": "03_hard.java",
                   "path": "01_core_foundations/dsa/queue/03_hard.java",
                   "ext": "java",
-                  "size": 16081
+                  "size": 16701
                 },
                 {
                   "name": "04_google_level.java",
                   "path": "01_core_foundations/dsa/queue/04_google_level.java",
                   "ext": "java",
-                  "size": 16128
+                  "size": 16648
                 },
                 {
                   "name": "05_cheatsheet.md",
@@ -608,25 +614,25 @@
                   "name": "01_easy.java",
                   "path": "01_core_foundations/dsa/hashing/01_easy.java",
                   "ext": "java",
-                  "size": 13124
+                  "size": 13969
                 },
                 {
                   "name": "02_medium.java",
                   "path": "01_core_foundations/dsa/hashing/02_medium.java",
                   "ext": "java",
-                  "size": 16793
+                  "size": 17745
                 },
                 {
                   "name": "03_hard.java",
                   "path": "01_core_foundations/dsa/hashing/03_hard.java",
                   "ext": "java",
-                  "size": 17874
+                  "size": 18594
                 },
                 {
                   "name": "04_google_level.java",
                   "path": "01_core_foundations/dsa/hashing/04_google_level.java",
                   "ext": "java",
-                  "size": 16537
+                  "size": 17491
                 },
                 {
                   "name": "05_cheatsheet.md",
@@ -930,29 +936,35 @@
                   "name": "01_easy.java",
                   "path": "01_core_foundations/dsa/tree/01_easy.java",
                   "ext": "java",
-                  "size": 15103
+                  "size": 15811
                 },
                 {
                   "name": "02_medium.java",
                   "path": "01_core_foundations/dsa/tree/02_medium.java",
                   "ext": "java",
-                  "size": 20302
+                  "size": 21258
                 },
                 {
                   "name": "03_hard.java",
                   "path": "01_core_foundations/dsa/tree/03_hard.java",
                   "ext": "java",
-                  "size": 16128
+                  "size": 16738
                 },
                 {
                   "name": "04_google_level.java",
                   "path": "01_core_foundations/dsa/tree/04_google_level.java",
                   "ext": "java",
-                  "size": 13271
+                  "size": 13729
+                },
+                {
+                  "name": "06_top50_problems.md",
+                  "path": "01_core_foundations/dsa/tree/06_top50_problems.md",
+                  "ext": "md",
+                  "size": 12912
                 }
               ],
               "subtopics": [],
-              "fileCount": 5,
+              "fileCount": 6,
               "id": "tree",
               "name": "Trees & Binary Search Trees",
               "path": "01_core_foundations/dsa/tree"
@@ -971,25 +983,25 @@
                   "name": "01_easy.java",
                   "path": "01_core_foundations/dsa/trie/01_easy.java",
                   "ext": "java",
-                  "size": 11498
+                  "size": 12263
                 },
                 {
                   "name": "02_medium.java",
                   "path": "01_core_foundations/dsa/trie/02_medium.java",
                   "ext": "java",
-                  "size": 14325
+                  "size": 15143
                 },
                 {
                   "name": "03_hard.java",
                   "path": "01_core_foundations/dsa/trie/03_hard.java",
                   "ext": "java",
-                  "size": 16067
+                  "size": 16708
                 },
                 {
                   "name": "04_google_level.java",
                   "path": "01_core_foundations/dsa/trie/04_google_level.java",
                   "ext": "java",
-                  "size": 15685
+                  "size": 16322
                 },
                 {
                   "name": "05_cheatsheet.md",
@@ -1024,25 +1036,25 @@
                   "name": "01_easy.java",
                   "path": "01_core_foundations/dsa/greedy/01_easy.java",
                   "ext": "java",
-                  "size": 9261
+                  "size": 9984
                 },
                 {
                   "name": "02_medium.java",
                   "path": "01_core_foundations/dsa/greedy/02_medium.java",
                   "ext": "java",
-                  "size": 9621
+                  "size": 10427
                 },
                 {
                   "name": "03_hard.java",
                   "path": "01_core_foundations/dsa/greedy/03_hard.java",
                   "ext": "java",
-                  "size": 9696
+                  "size": 10303
                 },
                 {
                   "name": "04_google_level.java",
                   "path": "01_core_foundations/dsa/greedy/04_google_level.java",
                   "ext": "java",
-                  "size": 10094
+                  "size": 10682
                 },
                 {
                   "name": "05_cheatsheet.md",
@@ -1077,25 +1089,25 @@
                   "name": "01_easy.java",
                   "path": "01_core_foundations/dsa/backtracking/01_easy.java",
                   "ext": "java",
-                  "size": 10058
+                  "size": 10849
                 },
                 {
                   "name": "02_medium.java",
                   "path": "01_core_foundations/dsa/backtracking/02_medium.java",
                   "ext": "java",
-                  "size": 12949
+                  "size": 13689
                 },
                 {
                   "name": "03_hard.java",
                   "path": "01_core_foundations/dsa/backtracking/03_hard.java",
                   "ext": "java",
-                  "size": 12920
+                  "size": 13478
                 },
                 {
                   "name": "04_google_level.java",
                   "path": "01_core_foundations/dsa/backtracking/04_google_level.java",
                   "ext": "java",
-                  "size": 13171
+                  "size": 13759
                 },
                 {
                   "name": "05_cheatsheet.md",
@@ -1130,25 +1142,25 @@
                   "name": "01_easy.java",
                   "path": "01_core_foundations/dsa/graph/01_easy.java",
                   "ext": "java",
-                  "size": 20163
+                  "size": 21083
                 },
                 {
                   "name": "02_medium.java",
                   "path": "01_core_foundations/dsa/graph/02_medium.java",
                   "ext": "java",
-                  "size": 22436
+                  "size": 23366
                 },
                 {
                   "name": "03_hard.java",
                   "path": "01_core_foundations/dsa/graph/03_hard.java",
                   "ext": "java",
-                  "size": 22242
+                  "size": 22962
                 },
                 {
                   "name": "04_google_level.java",
                   "path": "01_core_foundations/dsa/graph/04_google_level.java",
                   "ext": "java",
-                  "size": 20922
+                  "size": 21876
                 },
                 {
                   "name": "05_cheatsheet.md",
@@ -1475,25 +1487,25 @@
                   "name": "01_easy.java",
                   "path": "01_core_foundations/dsa/dynamicprogramming/01_easy.java",
                   "ext": "java",
-                  "size": 14975
+                  "size": 15709
                 },
                 {
                   "name": "02_medium.java",
                   "path": "01_core_foundations/dsa/dynamicprogramming/02_medium.java",
                   "ext": "java",
-                  "size": 20414
+                  "size": 21464
                 },
                 {
                   "name": "03_hard.java",
                   "path": "01_core_foundations/dsa/dynamicprogramming/03_hard.java",
                   "ext": "java",
-                  "size": 17065
+                  "size": 17681
                 },
                 {
                   "name": "04_google_level.java",
                   "path": "01_core_foundations/dsa/dynamicprogramming/04_google_level.java",
                   "ext": "java",
-                  "size": 14692
+                  "size": 15164
                 },
                 {
                   "name": "05_cheatsheet.md",
@@ -1854,7 +1866,7 @@
               "path": "01_core_foundations/dsa/linesweep"
             }
           ],
-          "fileCount": 188,
+          "fileCount": 190,
           "id": "dsa",
           "name": "Data Structures & Algorithms",
           "path": "01_core_foundations/dsa",
@@ -1869,11 +1881,11 @@
             "universal"
           ],
           "extCounts": {
-            "md": 64,
+            "md": 66,
             "java": 123,
             "other": 1
           },
-          "totalFiles": 188
+          "totalFiles": 190
         },
         {
           "description": "Welcome to the C Programming: A Modern Approach Masterclass Module. This module covers deep C programming across C89, C99, and C11 standards based on K. N. King's definitive textbo...",
@@ -8843,7 +8855,7 @@
               "subtopics": [],
               "fileCount": 10,
               "id": "redis",
-              "name": "Redis",
+              "name": "Redis from Scratch (In-Memory Key-Value Store)",
               "path": "04_infrastructure/tech-stack/redis"
             },
             {
@@ -9295,6 +9307,173 @@
             "md": 4
           },
           "totalFiles": 4
+        }
+      ]
+    },
+    {
+      "id": "06_learning_projects",
+      "name": "Learning Projects",
+      "icon": "🚀",
+      "color": "#8b5cf6",
+      "badge": "Build Your Own Systems",
+      "description": "First-principles systems engineering projects: building Redis, embedded storage engines, event loops, and distributed consensus from scratch.",
+      "topicCount": 1,
+      "fileCount": 13,
+      "topics": [
+        {
+          "description": "Welcome to the Redis from Scratch implementation project. Redis is the industry standard for high-throughput, low-latency, in-memory data structures, caching, messaging, and real-t...",
+          "title": "Redis from Scratch — Production-Grade Learning Project",
+          "files": [
+            {
+              "name": "README.md",
+              "path": "06_learning_projects/redis/README.md",
+              "ext": "md",
+              "size": 6842
+            },
+            {
+              "name": "01_architecture_and_roadmap.md",
+              "path": "06_learning_projects/redis/01_architecture_and_roadmap.md",
+              "ext": "md",
+              "size": 8060
+            },
+            {
+              "name": "02_resp_protocol_specification.md",
+              "path": "06_learning_projects/redis/02_resp_protocol_specification.md",
+              "ext": "md",
+              "size": 5103
+            },
+            {
+              "name": "03_internals_and_data_structures.md",
+              "path": "06_learning_projects/redis/03_internals_and_data_structures.md",
+              "ext": "md",
+              "size": 6470
+            },
+            {
+              "name": "04_persistence_and_replication.md",
+              "path": "06_learning_projects/redis/04_persistence_and_replication.md",
+              "ext": "md",
+              "size": 4446
+            },
+            {
+              "name": "echo_server.c",
+              "path": "06_learning_projects/redis/echo_server.c",
+              "ext": "c",
+              "size": 2510
+            },
+            {
+              "name": "echo_server.py",
+              "path": "06_learning_projects/redis/echo_server.py",
+              "ext": "py",
+              "size": 1805
+            }
+          ],
+          "subtopics": [
+            {
+              "description": "This directory contains starter templates and working implementations in Python and Modern C++20 to bootstrap your Redis from scratch project.",
+              "title": "Redis from Scratch — Starter Codebases",
+              "files": [
+                {
+                  "name": "README.md",
+                  "path": "06_learning_projects/redis/starter/README.md",
+                  "ext": "md",
+                  "size": 1439
+                }
+              ],
+              "subtopics": [
+                {
+                  "description": "",
+                  "title": null,
+                  "files": [
+                    {
+                      "name": "Makefile",
+                      "path": "06_learning_projects/redis/starter/cpp/Makefile",
+                      "ext": "",
+                      "size": 212
+                    },
+                    {
+                      "name": "server.cpp",
+                      "path": "06_learning_projects/redis/starter/cpp/server.cpp",
+                      "ext": "cpp",
+                      "size": 4668
+                    }
+                  ],
+                  "subtopics": [],
+                  "fileCount": 2,
+                  "id": "cpp",
+                  "name": "Cpp",
+                  "path": "06_learning_projects/redis/starter/cpp"
+                },
+                {
+                  "description": "",
+                  "title": null,
+                  "files": [
+                    {
+                      "name": "redis_server.py",
+                      "path": "06_learning_projects/redis/starter/python/redis_server.py",
+                      "ext": "py",
+                      "size": 18270
+                    },
+                    {
+                      "name": "resp.py",
+                      "path": "06_learning_projects/redis/starter/python/resp.py",
+                      "ext": "py",
+                      "size": 4733
+                    }
+                  ],
+                  "subtopics": [],
+                  "fileCount": 2,
+                  "id": "python",
+                  "name": "Python",
+                  "path": "06_learning_projects/redis/starter/python"
+                }
+              ],
+              "fileCount": 5,
+              "id": "starter",
+              "name": "Starter",
+              "path": "06_learning_projects/redis/starter"
+            },
+            {
+              "description": "",
+              "title": null,
+              "files": [
+                {
+                  "name": "test_redis_server.py",
+                  "path": "06_learning_projects/redis/tests/test_redis_server.py",
+                  "ext": "py",
+                  "size": 8085
+                }
+              ],
+              "subtopics": [],
+              "fileCount": 1,
+              "id": "tests",
+              "name": "Tests",
+              "path": "06_learning_projects/redis/tests"
+            }
+          ],
+          "fileCount": 13,
+          "id": "redis",
+          "name": "Redis from Scratch (In-Memory Key-Value Store)",
+          "path": "06_learning_projects/redis",
+          "levels": [
+            "L2",
+            "L3",
+            "L4",
+            "Architect"
+          ],
+          "languages": [
+            "universal",
+            "cpp",
+            "java",
+            "rust"
+          ],
+          "extCounts": {
+            "md": 6,
+            "c": 1,
+            "py": 4,
+            "other": 1,
+            "cpp": 1
+          },
+          "totalFiles": 13
         }
       ]
     }
@@ -10343,6 +10522,25 @@
       ]
     },
     {
+      "title": "06_top50_problems.md",
+      "path": "01_core_foundations/dsa/linkedlist/06_top50_problems.md",
+      "domain": "Core Foundations",
+      "domainId": "01_core_foundations",
+      "topic": "Data Structures & Algorithms",
+      "topicPath": "01_core_foundations/dsa",
+      "ext": "md",
+      "levels": [
+        "L1",
+        "L2",
+        "L3"
+      ],
+      "languages": [
+        "java",
+        "cpp",
+        "universal"
+      ]
+    },
+    {
       "title": "00_theory.md",
       "path": "01_core_foundations/dsa/stack/00_theory.md",
       "domain": "Core Foundations",
@@ -11376,6 +11574,25 @@
       "topic": "Data Structures & Algorithms",
       "topicPath": "01_core_foundations/dsa",
       "ext": "java",
+      "levels": [
+        "L1",
+        "L2",
+        "L3"
+      ],
+      "languages": [
+        "java",
+        "cpp",
+        "universal"
+      ]
+    },
+    {
+      "title": "06_top50_problems.md",
+      "path": "01_core_foundations/dsa/tree/06_top50_problems.md",
+      "domain": "Core Foundations",
+      "domainId": "01_core_foundations",
+      "topic": "Data Structures & Algorithms",
+      "topicPath": "01_core_foundations/dsa",
+      "ext": "md",
       "levels": [
         "L1",
         "L2",
@@ -24807,6 +25024,174 @@
         "java",
         "cpp",
         "universal"
+      ]
+    },
+    {
+      "title": "README.md",
+      "path": "06_learning_projects/redis/README.md",
+      "domain": "Learning Projects",
+      "domainId": "06_learning_projects",
+      "topic": "Redis from Scratch (In-Memory Key-Value Store)",
+      "topicPath": "06_learning_projects/redis",
+      "ext": "md",
+      "levels": [
+        "L2",
+        "L3",
+        "L4",
+        "Architect"
+      ],
+      "languages": [
+        "universal",
+        "cpp",
+        "java",
+        "rust"
+      ]
+    },
+    {
+      "title": "01_architecture_and_roadmap.md",
+      "path": "06_learning_projects/redis/01_architecture_and_roadmap.md",
+      "domain": "Learning Projects",
+      "domainId": "06_learning_projects",
+      "topic": "Redis from Scratch (In-Memory Key-Value Store)",
+      "topicPath": "06_learning_projects/redis",
+      "ext": "md",
+      "levels": [
+        "L2",
+        "L3",
+        "L4",
+        "Architect"
+      ],
+      "languages": [
+        "universal",
+        "cpp",
+        "java",
+        "rust"
+      ]
+    },
+    {
+      "title": "02_resp_protocol_specification.md",
+      "path": "06_learning_projects/redis/02_resp_protocol_specification.md",
+      "domain": "Learning Projects",
+      "domainId": "06_learning_projects",
+      "topic": "Redis from Scratch (In-Memory Key-Value Store)",
+      "topicPath": "06_learning_projects/redis",
+      "ext": "md",
+      "levels": [
+        "L2",
+        "L3",
+        "L4",
+        "Architect"
+      ],
+      "languages": [
+        "universal",
+        "cpp",
+        "java",
+        "rust"
+      ]
+    },
+    {
+      "title": "03_internals_and_data_structures.md",
+      "path": "06_learning_projects/redis/03_internals_and_data_structures.md",
+      "domain": "Learning Projects",
+      "domainId": "06_learning_projects",
+      "topic": "Redis from Scratch (In-Memory Key-Value Store)",
+      "topicPath": "06_learning_projects/redis",
+      "ext": "md",
+      "levels": [
+        "L2",
+        "L3",
+        "L4",
+        "Architect"
+      ],
+      "languages": [
+        "universal",
+        "cpp",
+        "java",
+        "rust"
+      ]
+    },
+    {
+      "title": "04_persistence_and_replication.md",
+      "path": "06_learning_projects/redis/04_persistence_and_replication.md",
+      "domain": "Learning Projects",
+      "domainId": "06_learning_projects",
+      "topic": "Redis from Scratch (In-Memory Key-Value Store)",
+      "topicPath": "06_learning_projects/redis",
+      "ext": "md",
+      "levels": [
+        "L2",
+        "L3",
+        "L4",
+        "Architect"
+      ],
+      "languages": [
+        "universal",
+        "cpp",
+        "java",
+        "rust"
+      ]
+    },
+    {
+      "title": "echo_server.c",
+      "path": "06_learning_projects/redis/echo_server.c",
+      "domain": "Learning Projects",
+      "domainId": "06_learning_projects",
+      "topic": "Redis from Scratch (In-Memory Key-Value Store)",
+      "topicPath": "06_learning_projects/redis",
+      "ext": "c",
+      "levels": [
+        "L2",
+        "L3",
+        "L4",
+        "Architect"
+      ],
+      "languages": [
+        "universal",
+        "cpp",
+        "java",
+        "rust"
+      ]
+    },
+    {
+      "title": "README.md",
+      "path": "06_learning_projects/redis/starter/README.md",
+      "domain": "Learning Projects",
+      "domainId": "06_learning_projects",
+      "topic": "Redis from Scratch (In-Memory Key-Value Store)",
+      "topicPath": "06_learning_projects/redis",
+      "ext": "md",
+      "levels": [
+        "L2",
+        "L3",
+        "L4",
+        "Architect"
+      ],
+      "languages": [
+        "universal",
+        "cpp",
+        "java",
+        "rust"
+      ]
+    },
+    {
+      "title": "server.cpp",
+      "path": "06_learning_projects/redis/starter/cpp/server.cpp",
+      "domain": "Learning Projects",
+      "domainId": "06_learning_projects",
+      "topic": "Redis from Scratch (In-Memory Key-Value Store)",
+      "topicPath": "06_learning_projects/redis",
+      "ext": "cpp",
+      "levels": [
+        "L2",
+        "L3",
+        "L4",
+        "Architect"
+      ],
+      "languages": [
+        "universal",
+        "cpp",
+        "java",
+        "rust"
       ]
     },
     {

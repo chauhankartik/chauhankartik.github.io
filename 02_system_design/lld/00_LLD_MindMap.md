@@ -46,6 +46,7 @@ mindmap
         "Splitwise Expense Sharing - Min Cash Flow"
       "Concurrency and Scheduling"
         "OS Task Scheduler - MLFQ Algorithm"
+        "DAG Workflow Engine - Kahn In-Degree Dynamic Scheduler"
 ```
 
 ---

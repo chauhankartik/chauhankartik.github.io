@@ -85,7 +85,8 @@ lld/
     ├── finance/
     │   └── splitwise/                                — LLD: Expense Sharing System (Splitwise)
     └── concurrency_scheduling/
-        └── task_scheduler/                           — LLD: OS CPU Task Scheduler (MLFQ)
+        ├── task_scheduler/                           — LLD: OS CPU Task Scheduler (MLFQ)
+        └── dag_workflow_engine/                      — LLD: Dynamic DAG Workflow Execution Engine (High Concurrency)
 ```
 
 ---
@@ -146,6 +147,7 @@ lld/
 #### Concurrency & Scheduling ([`concurrency_scheduling/`](03_system_designs/concurrency_scheduling/))
 - **OS Task Scheduler** ([`task_scheduler/`](03_system_designs/concurrency_scheduling/task_scheduler/)): CPU process scheduler implementing FCFS, SJF, SRTF, Round-Robin, Priority, and Multi-Level Feedback Queue (MLFQ).  
   📄 **1-Page Revision Card:** [`00_OnePage_Revision.pdf`](03_system_designs/concurrency_scheduling/task_scheduler/00_OnePage_Revision.pdf)
+- **Dynamic DAG Workflow Engine** ([`dag_workflow_engine/`](03_system_designs/concurrency_scheduling/dag_workflow_engine/)): Production-grade DAG Workflow Execution Engine with Kahn's cycle detection, dynamic in-degree tracking, exponential backoff retries, and cascading failure pruning.
 
 
 ---

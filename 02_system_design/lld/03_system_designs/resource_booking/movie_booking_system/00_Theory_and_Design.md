@@ -3,7 +3,11 @@
 > **Interview Difficulty:** Google / Amazon L5–L6  
 > **Core Patterns Used:** Singleton, Strategy, Factory, Facade, Observer, State, Command  
 > **SOLID Coverage:** All 5 principles applied  
-> **Key Technical Challenge:** Thread-safe concurrent seat locking with auto-expiration (TTL)
+> **Key Technical Challenge:** Thread-safe concurrent seat locking with auto-expiration (TTL)  
+> 
+> 📚 **Companion Guides:**
+> - 📊 [01_Architecture_and_Sequence_Diagrams.md](file:///home/chauhan/Desktop/2026/02_system_design/lld/03_system_designs/resource_booking/movie_booking_system/01_Architecture_and_Sequence_Diagrams.md) — Visual Mermaid diagrams, State Machines & Sequence Flows.
+> - 💡 [02_Interview_QA_and_Revision_Notes.md](file:///home/chauhan/Desktop/2026/02_system_design/lld/03_system_designs/resource_booking/movie_booking_system/02_Interview_QA_and_Revision_Notes.md) — Deep-dive revision notes on concurrency, multi-seat locking & JMM edge cases.
 
 ---
 
@@ -59,6 +63,8 @@ MovieBookingService  → Facade / Orchestrator Singleton coordinating search, lo
 ---
 
 ## 4. Concurrency & Seat Locking Strategy
+
+> 📘 *See full visual diagrams in [01_Architecture_and_Sequence_Diagrams.md](file:///home/chauhan/Desktop/2026/02_system_design/lld/03_system_designs/resource_booking/movie_booking_system/01_Architecture_and_Sequence_Diagrams.md)*
 
 ```
                           User A & User B select Seat A1 at the same time
